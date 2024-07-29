@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+    
+        <addon id="repository.stickdrift29" name="Stickdrift29 Repository" provider-name="stickdrift29" version="1.0.0">
+	        <extension point="xbmc.addon.repository" name="stickdrift29 Repository">
+                <dir minversion="21.0.0">
+                    <info compressed="false">https://stickdrift29.github.io/repository.stickdrift29/repo/addons.xml</info>
+                    <checksum>https://stickdrift29.github.io/repository.stickdrift29/repo/addons.xml.md5</checksum>
+                    <datadir zip="true">https://stickdrift29.github.io/repository.stickdrift29/repo/</datadir>
+                </dir>
+                <dir>
+				    <info compressed="false">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml</info>
+				    <checksum>https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml.md5</checksum>
+				    <datadir zip="true">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/_zips</datadir>
+				    <hashes>false</hashes>
+			    </dir>
+                <dir>
+			        <info compressed="false">https://michaz1988.github.io/repo/addons.xml</info>
+			        <checksum>https://michaz1988.github.io/repo/addons.xml.md5</checksum>
+			        <datadir zip="true">https://michaz1988.github.io/repo/</datadir>
+		        </dir>
+                <dir minversion="20.9.1">
+                    <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/addons.xml</info>
+                    <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/addons.xml.md5</checksum>
+                    <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/</datadir>
+                </dir>
+            </extension>
+            <extension point="xbmc.addon.metadata">
+                <summary>Kodi</summary>
+                <description lang="de">Addons von blatorone</description>
+                <disclaimer></disclaimer>
+                <platform>all</platform>
+                <assets>
+			        <icon>icon.png</icon>
+		        </assets>
+            </extension>
+        </addon>
+        <!--
+        <addon id="plugin.video.sporthdme" name="SportHD" version="0.1.60" provider-name="Bugatsinho">
+            <requires>
+            -->
+                <!--import addon="xbmc.python" version="2.1.0"/-->
+                <!--
+                <import addon="script.module.dateutil" />
+                <import addon="script.module.six" />
+                <import addon="script.module.requests" version="2.19.1"/>
+            </requires>
+            <extension point="xbmc.python.pluginsource" library="default.py">
+                <provides>video</provides>
+            </extension>
+            <extension point="xbmc.addon.metadata">
+                <summary lang="en">SportHD by Bugatsinho</summary>
+                <description lang="en">Sport Streams from SportHD.me</description>
+                <disclaimer lang="en">All the streams on this add-on are hosted on the third party site and uploaded by other people. We are not responsible for any content that hosted on on the third-party sites. If you have any legal issues please contact appropriate video owners hosters.</disclaimer>
+	            <language>EN</language>
+                <license>GNU GPL, version 2</license>
+                <twitter>https://twitter.com/Bugatsinho</twitter>
+                <news>
+                - compatible with Kodi 18.x - 19.x - 20.x - 21.x version
+                - timestamps fix finally credits to GKOBU
+                - fix s2watch resolver
+                </news>
+
+                <assets>
+                <icon>resources/icon.png</icon>
+                <fanart>resources/fanart.jpg</fanart>
+                </assets>
+            </extension>
+        </addon>
+        -->
+</addons>
