@@ -3,7 +3,7 @@
 Here you can find My Modificated Pellucid Skin and more
 
 <!--
-**blatorone/blatorone** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**stickdrift29/repository.stickdrift** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
 

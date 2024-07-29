@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
     
-        <addon id="repository.stickdrift29" name="Stickdrift29 Repository" provider-name="stickdrift29" version="1.0.0">
+        <addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="1.0.0">
 	        <extension point="xbmc.addon.repository" name="stickdrift29 Repository">
                 <dir minversion="21.0.0">
-                    <info compressed="false">https://stickdrift29.github.io/repository.stickdrift29/repo/addons.xml</info>
-                    <checksum>https://stickdrift29.github.io/repository.stickdrift29/repo/addons.xml.md5</checksum>
-                    <datadir zip="true">https://stickdrift29.github.io/repository.stickdrift29/repo/</datadir>
+                    <info compressed="false">https://stickdrift29.github.io/repository.stickdrift/repo/addons.xml</info>
+                    <checksum>https://stickdrift29.github.io/repository.stickdrift/repo/addons.xml.md5</checksum>
+                    <datadir zip="true">https://stickdrift29.github.io/repository.stickdrift/repo/</datadir>
                 </dir>
                 <dir>
 				    <info compressed="false">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml</info>
