@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-    
-        <addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="1.0.5">
-	        <extension point="xbmc.addon.repository" name="stickdrift29 Repository">
-                <dir>
-                    <info compressed="false">https://stickdrift29.github.io/repository.stickdrift/repo/repository.stickdrift/addons.xml</info>
-                    <checksum>https://stickdrift29.github.io/repository.stickdrift/repo/repository.stickdrift/addons.xml.md5</checksum>
-                    <datadir zip="true">https://stickdrift29.github.io/repository.stickdrift/repo/repository.stickdrift/</datadir>
+        <addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="1.0.6">
+	        <extension point="xbmc.addon.repository" name="Stickdrift Repository">
+                <dir minversion="21.0.0">
+                    <info compressed="false">https://blatorone.github.io/blatorone/repo/repository.stickdrift/addons.xml</info>
+                    <checksum>https://blatorone.github.io/blatorone/repo/repository.stickdrift/addons.xml.md5</checksum>
+                    <datadir zip="true">https://blatorone.github.io/blatorone/repo/repository.stickdrift/</datadir>
                 </dir>
-                <dir minversion="19.9.701">
-			        <info compressed="false">https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/nexus/addons.xml</info>
-			        <checksum>https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/nexus/addons.xml.md5</checksum>
-			        <datadir zip="true">https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/nexus/</datadir>
-		        </dir>
                 <dir>
 				    <info compressed="false">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml</info>
 				    <checksum>https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml.md5</checksum>
@@ -24,24 +18,11 @@
 			        <checksum>https://michaz1988.github.io/repo/addons.xml.md5</checksum>
 			        <datadir zip="true">https://michaz1988.github.io/repo/</datadir>
 		        </dir>
-                <dir>
-			        <info compressed="true">https://repo.kodinerds.net/addons/addons.xml</info>
-			        <checksum>https://repo.kodinerds.net/addons/addons.xml.md5</checksum>
-			        <datadir zip="true">https://repo.kodinerds.net/addons</datadir>
-			        <hashes>false</hashes>
-		        </dir>
-		        <dir minversion="20.9.9" maxversion="21.9.0">
-			        <info compressed="true">https://repo.kodinerds.net/addons/omega/addons.xml</info>
-			        <checksum>https://repo.kodinerds.net/addons/omega/addons.xml.md5</checksum>
-			        <datadir zip="true">https://repo.kodinerds.net/addons/omega/zip/</datadir>
-			        <hashes>false</hashes>
-		        </dir>
-		        <dir minversion="20.0.0" maxversion="21.9.0">
-			        <info compressed="true">https://repo.kodinerds.net/addons/nexus/addons.xml</info>
-			        <checksum>https://repo.kodinerds.net/addons/nexus/addons.xml.md5</checksum>
-			        <datadir zip="true">https://repo.kodinerds.net/addons/nexus/zip/</datadir>
-			        <hashes>false</hashes>
-		        </dir>
+                <dir minversion="20.9.1">
+                    <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/addons.xml</info>
+                    <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/addons.xml.md5</checksum>
+                    <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/omega/zips/</datadir>
+                </dir>
             </extension>
             <extension point="xbmc.addon.metadata">
                 <summary>Kodi</summary>
@@ -53,37 +34,4 @@
 		        </assets>
             </extension>
         </addon>
-        <!--
-        <addon id="plugin.video.sporthdme" name="SportHD" version="0.1.60" provider-name="Bugatsinho">
-            <requires>
-            -->
-                <!--import addon="xbmc.python" version="2.1.0"/-->
-                <!--
-                <import addon="script.module.dateutil" />
-                <import addon="script.module.six" />
-                <import addon="script.module.requests" version="2.19.1"/>
-            </requires>
-            <extension point="xbmc.python.pluginsource" library="default.py">
-                <provides>video</provides>
-            </extension>
-            <extension point="xbmc.addon.metadata">
-                <summary lang="en">SportHD by Bugatsinho</summary>
-                <description lang="en">Sport Streams from SportHD.me</description>
-                <disclaimer lang="en">All the streams on this add-on are hosted on the third party site and uploaded by other people. We are not responsible for any content that hosted on on the third-party sites. If you have any legal issues please contact appropriate video owners hosters.</disclaimer>
-	            <language>EN</language>
-                <license>GNU GPL, version 2</license>
-                <twitter>https://twitter.com/Bugatsinho</twitter>
-                <news>
-                - compatible with Kodi 18.x - 19.x - 20.x - 21.x version
-                - timestamps fix finally credits to GKOBU
-                - fix s2watch resolver
-                </news>
-
-                <assets>
-                <icon>resources/icon.png</icon>
-                <fanart>resources/fanart.jpg</fanart>
-                </assets>
-            </extension>
-        </addon>
-        -->
 </addons>
