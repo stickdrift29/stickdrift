@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addons>
-        <addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="2.0.0">
+<addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="2.0.1">
 	        <extension point="xbmc.addon.repository" name="Stickdrift Repository">
                 <dir>
-                    <info compressed="false">https://stickdrift29.github.io/repository.stickdrift/repo/zips/addons.xml</info>
-                    <checksum>https://stickdrift29.github.io/repository.stickdrift/repo/zips/addons.xml.md5</checksum>
-                    <datadir zip="true">https://stickdrift29.github.io/repository.stickdrift/repo/zips/</datadir>
+                    <info compressed="false">https://blatorone.github.io/blatorone/repo/addons.xml</info>
+                    <checksum>https://blatorone.github.io/blatorone/repo/addons.xml.md5</checksum>
+                    <datadir zip="true">https://blatorone.github.io/blatorone/repo/zips/</datadir>
                 </dir>
                 <dir>
 				    <info compressed="false">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml</info>
@@ -34,4 +33,3 @@
 		        </assets>
             </extension>
         </addon>
-</addons>
