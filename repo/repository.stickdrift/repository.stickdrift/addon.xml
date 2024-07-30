@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.stickdrift" name="stickdrift Repository" provider-name="stickdrift29" version="1.0.4">
+<addon id="repository.stickdrift" name="stickdrift Repository" provider-name="stickdrift29" version="1.0.5">
 	    <extension point="xbmc.addon.repository" name="stickdrift Repository">
                 <dir>
                     <info compressed="false">https://stickdrift29.github.io/repository.stickdrift/repo/repository.stickdrift/addons.xml</info>
