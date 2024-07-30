@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1114" type="dialog">
+    <defaultcontrol always="true">200</defaultcontrol>
+    <controls>
+        <include>Backbutton</include>
+        <control type="group">
+            <posx>col-4-begin</posx>
+            <posy>row-9-begin</posy>
+            <!--animations-->
+            <include>modalDialogInOutVertical</include>
+            <control type="image">
+                <posx>390</posx>
+                <posy>-12</posy>
+                <width>520</width>
+                <height>360</height>
+                <texture>colors/black.png</texture>
+                <colordiffuse>black</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            
+            <control type="image">
+                <posx>400</posx>
+                <posy>0</posy>
+                <width>500</width>
+                <height>2-row</height>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <!--title-->
+            <control type="label">
+                <posx>425</posx>
+                <posy>0</posy>
+                <width>18-col-gutter</width>
+                <height>2-row</height>
+                <font>dialogTitle</font>
+                <label>$LOCALIZE[5]</label>
+                <textcolor>$VAR[Home]</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+                
+            
+            <control type="grouplist" id="200">
+                <posx>510</posx>
+                <posy>90</posy>
+                <width>4-col</width>
+                <height>17-row</height>
+                <onleft>8000</onleft>
+                <itemgap>0</itemgap>
+                <orientation>vertical</orientation>
+                <control type="togglebutton" id="1">
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <width>4-col</width>
+                    <label>Addon Poster</label>
+                    <onclick>Container.SetViewMode(54)</onclick>
+                    <onclick>close</onclick>
+                </control>
+                <control type="togglebutton" id="2">
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <width>4-col</width>
+                    <label>Panel</label>
+                    <onclick>Container.SetViewMode(505)</onclick>
+                    <onclick>close</onclick>
+                </control>
+            </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>Homemenulook.xml</label>
+        </control>
+    </controls>
+</window>

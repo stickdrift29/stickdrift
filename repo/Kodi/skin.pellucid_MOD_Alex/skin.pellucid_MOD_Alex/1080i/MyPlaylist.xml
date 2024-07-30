@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">9500</defaultcontrol>
+    <onload condition="Skin.hassetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
+    <include>fadeInOut</include>
+	<views>503,50,51,52,53,54,502,504,505,508,509,591,602,609</views>
+    <controls>
+        <include>globalBackground</include>
+        <!--fanart-->
+        
+        <control type="group">
+            <!--fanart-->
+            <control type="image">
+						
+			    		<include>ViewAnimation</include>
+	            		<include>dimensionsFullscreen</include>
+	            		<texture fallback="backgroundimage.jpg">$INFO[listitem.thumb]</texture>
+	            		<colordiffuse>FF555555</colordiffuse>
+	            		<aspectratio>scale</aspectratio>
+						<fadetime>250</fadetime>
+	        </control>
+            <!--Battery Level-->
+            <include>Battery</include>
+            <!--Backbutton touchscreen-->
+            <include>Backbuttoncross</include>
+            <include content="keyboard select">
+                <param name="posx">85%</param>
+                <param name="posy">35%</param>
+                <param name="back">back</param>
+                <param name="focus">9999</param>
+                <param name="up">up</param>
+                <param name="down">down</param>
+                <param name="left">left</param>
+                <param name="right">right</param>
+                <param name="select">select</param>
+				<param name="visible">skin.hassetting(Touch) + !controlgroup(500).hasfocus + !control.hasfocus(9001)</param>
+                <param name="upview">true</param>
+				<param name="downview">true</param>
+				<param name="leftview">true</param>
+				<param name="rightview">true</param>
+				<param name="selectview">true</param>
+                <param name="color">keyboardInactive</param>
+            </include>
+            <control type="image">
+                <texture>vignette.png</texture>
+                <colordiffuse>ffffffff</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+        </control>
+        <!--page container group-->
+        <control type="group">
+            
+              <!--shift page for certain modal dialogs-->
+            <include>modalDialogContentShift</include>
+            <!--Main content listing-->
+            <control type="group" id="9999">
+                <include>contentOpen</include>
+                <onright>setfocus(7000)</onright>
+                <!--source content-->
+                
+                    <control type="group" id="9500">
+                     <include>View_50_List</include>
+                    <include>View_50_List</include>
+                    <include>View_51_InfoWall</include>
+                    <include>View_52_Landscape</include>
+                    <include>View_53_ShowCase</include>
+                    <include>View_54_ShowCase</include>
+                    <include>View_58_BannerWall</include>
+                    <include>View_502_Episode</include>
+                    <include>View_503_Wall</include>
+                    <include>View_505_Panel</include>
+                    <include>View_504_Gallery</include>
+                    <include>View_505_Panel</include>
+                    <include>View_508_SongList</include>
+                    <include>View_509_MyFlix</include>
+                    <include>View_591_BigFan</include>
+                    <include>View_602_FanartList</include>
+                    <include>View_603_Music_JukeBox</include>
+                    <include>View_609_Fullscreen_Wall</include>
+                    
+                    </control>
+                    <include>videolabel</include>
+                    <control type="button" id="3000">
+                <posx>0</posx>
+                <posy>500</posy>
+                <textwidth>60</textwidth>
+                <font>symbolLarge</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>60</width>
+                <textoffsetx>2</textoffsetx>
+                <label></label>
+                <label2></label2>
+                <textoffsetx>2</textoffsetx>
+                <textcolor>$VAR[selected]</textcolor>
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturenofocus>
+                <onclick>setfocus(9000)</onclick>
+                <visible>skin.hassetting(Touch)  + !window.isactive(1130)</visible>
+            </control>
+            <control type="button" id="3002">
+			<animation effect="fade" start="0" end="100" time="2145" condition="skin.hassetting(Touch) + [controlgroup(500).hasfocus | controlgroup(9000).hasfocus]" reversible="true">Conditional</animation>
+                <posx>384</posx>
+                <posy>500</posy>
+                <textwidth>60</textwidth>
+                <font>symbolLarge</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>60</width>
+                <label></label>
+                <label2></label2>
+                <textcolor>$VAR[selected]</textcolor>
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturenofocus>
+                <textoffsetx>2</textoffsetx>
+				<onclick>Dialog.Close(1132)</onclick>
+				<visible>skin.hassetting(Touch) + [controlgroup(500).hasfocus | controlgroup(9000).hasfocus]</visible>
+        </control>
+            </control>
+            <!--page scrollbar-->
+            <control type="group" id="8000">
+                <visible>Control.IsVisible(61)</visible>
+                <animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
+                <control type="scrollbar" id="61">
+                    <posx>54r</posx>
+                    <posy>row-6-begin</posy>
+                    <height>20-row</height>
+                    <onleft>9999</onleft>
+                    <onback>9999</onback>
+                    <onright>7000</onright>
+                    <onup>7000</onup>
+                </control>
+            </control>
+			<!--page header-->
+            <control type="group">
+				<include>pageHeader</include>    
+            </control>           
+        </control>
+        <!--mini window-->
+        <include>miniVideoPlayer</include>
+        <!--hub menu-->
+        <include>hubMenu</include>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>WindowID</include>
+            <label>MyPlaylist.xml path: $INFO[container.folderpath]   name: $INFO[container.foldername]   content: $INFO[container.content]    Control: $INFO[System.CurrentControl]</label>
+        </control>
+    </controls>
+</window>

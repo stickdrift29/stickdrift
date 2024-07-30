@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol>61</defaultcontrol>
+    <include>fadeInOut</include>
+    <controls>
+        <include>globalBackground</include>
+        <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <control type="group">
+            <posx>col-5-begin</posx>
+            <posy>row-3-begin</posy>
+            <!--animations-->
+            <include>modalDialogInOutVertical</include>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>16-col</width>
+                <height>2-row</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>2-row</posy>
+                <width>16-col</width>
+                <height>21-row</height>
+                <texture>colors/black.png</texture>
+                <colordiffuse>black</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            
+            <control type="label" id="1">
+                <posx>24</posx>
+                <posy>0</posy>
+                <width>1116</width>
+                <height>2-row</height>
+                <aligny>center</aligny>
+                <font>dialogTitle</font>
+                <textcolor>textActive</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+            <control type="textbox" id="5">
+                <description>textarea</description>
+                <posx>24</posx>
+                <posy>3-row</posy>
+                <width>1116</width>
+                <height>19-row</height>
+                <font>textbox</font>
+                <pagecontrol>61</pagecontrol>
+            </control>
+             <!--page scrollbar-->
+                <control type="group" id="8000">
+                    <visible>Control.IsVisible(61)</visible>
+                    <animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
+                    <control type="scrollbar" id="61">
+                        <posx>1420</posx>
+                        <posy>row-11-begin</posy>
+                        <height>10-row</height>
+                        <texturesliderbar></texturesliderbar>
+                        <texturesliderbar></texturesliderbar>
+                        <texturesliderbackground></texturesliderbackground>
+                        <texturesliderbarfocus></texturesliderbarfocus>
+                    </control>
+                </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>DialogTextViewer.xml</label>
+        </control>
+    </controls>
+</window>

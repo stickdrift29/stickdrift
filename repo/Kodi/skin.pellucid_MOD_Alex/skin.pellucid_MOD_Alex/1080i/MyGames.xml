@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">9999</defaultcontrol>
+    <include>fadeInOut</include>
+	<views>50,503,609</views>
+    <controls>
+        <include>globalBackground</include>
+        <!--page container group-->
+        <!--Battery Level-->
+        <include>Battery</include>
+        <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <control type="group">
+            <!--shift page for certain modal dialogs-->
+            <include>modalDialogContentShift</include>
+            <!--Main content listing-->
+            <control type="group" id="9999">
+                <include>contentOpen</include>
+                <onleft>9000</onleft>
+                <include>View_50_List</include>
+                <include>View_503_Wall</include>
+                <include>View_609_Fullscreen_Wall</include>
+            </control>
+            <!--page scrollbar-->
+            <control type="group" id="8000">
+                <visible>Control.IsVisible(60)</visible>
+                <animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
+                <control type="scrollbar" id="60">
+                    <posx>54r</posx>
+                    <posy>row-6-begin</posy>
+                    <height>20-row</height>
+                    <onleft>9999</onleft>
+                    <onback>9999</onback>
+                </control>
+            </control>
+
+            <control type="button" id="3000">
+                <posx>0</posx>
+                <posy>500</posy>
+                <textwidth>60</textwidth>
+                <font>symbolLarge</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>60</width>
+                <textoffsetx>2</textoffsetx>
+                <label></label>
+                <label2></label2>
+                <textoffsetx>2</textoffsetx>
+                <textcolor>$VAR[selected]</textcolor>
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturenofocus>
+                <onclick>setfocus(9000)</onclick>
+                <visible>skin.hassetting(Touch)  + !window.isactive(1130)</visible>
+            </control>
+            <control type="button" id="3002">
+			<animation effect="fade" start="0" end="100" time="2145" condition="skin.hassetting(Touch) + [controlgroup(500).hasfocus | controlgroup(9000).hasfocus]" reversible="true">Conditional</animation>
+                <posx>384</posx>
+                <posy>500</posy>
+                <textwidth>60</textwidth>
+                <font>symbolLarge</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>60</width>
+                <label></label>
+                <label2></label2>
+                <textcolor>$VAR[selected]</textcolor>
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturenofocus>
+                <textoffsetx>2</textoffsetx>
+				<onclick>Dialog.Close(1132)</onclick>
+				<visible>skin.hassetting(Touch) + [controlgroup(500).hasfocus | controlgroup(9000).hasfocus]</visible>
+        </control>
+            <include content="keyboard select">
+                    <param name="posx">87%</param>
+                    <param name="posy">35%</param>
+                    <param name="focus">9999</param>
+                    <param name="up">up</param>
+                    <param name="down">down</param>
+                    <param name="left">left</param>
+                    <param name="right">right</param>
+                    <param name="select">select</param>
+                    <param name="back">back</param>
+					<param name="visible">skin.hassetting(Touch) + !controlgroup(500).hasfocus + !control.hasfocus(9001)</param>
+                    <param name="upview">true</param>
+					<param name="downview">true</param>
+					<param name="leftview">true</param>
+					<param name="rightview">true</param>
+					<param name="selectview">true</param>
+                    <param name="color">keyboardInactive</param>
+                </include>
+			<!--page header-->
+            <control type="group">
+                <include>videolabel</include>
+				<include>pageHeader</include>  
+                <include>pageHeadervideonav</include>
+                
+            </control>
+        </control>
+        <!--hub menu-->
+        <include>hubMenu</include>
+        
+        
+        <!--mini window-->
+        <include>miniVideoPlayer</include>
+        <!--debug-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>WindowID</include>
+            <label>MyGames.xml path: $INFO[container.folderpath] folder: $INFO[container.foldername] content: $INFO[container.content]</label>
+        </control>
+    </controls>
+</window>

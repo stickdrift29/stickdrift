@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <shortcut>
+        <label>$LOCALIZE[31296]</label>
+        <label2>$LOCALIZE[31296]</label2>
+        <icon>DefaultAddonPicture.png</icon>
+        <thumb />
+        <action>ActivateWindow(Videos,sources://video/,return)</action>
+    </shortcut>
+
+</template>

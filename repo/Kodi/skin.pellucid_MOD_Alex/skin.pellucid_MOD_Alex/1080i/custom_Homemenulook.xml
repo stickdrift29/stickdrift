@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1106" type="dialog">
+    <defaultcontrol always="true">200</defaultcontrol>
+    <controls>
+        <!--background-->
+        <include>globalBackground</include>
+        <control type="multiimage">
+			<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+			<include>dimensionsFullscreen</include>
+			<imagepath>$VAR[homeBackgroundLocation]</imagepath>
+			<timeperimage>45000</timeperimage>
+			<fadetime>200</fadetime>
+			<pauseatend>10000</pauseatend>
+			<randomize>true</randomize>
+			<loop>yes</loop>
+			<aspectratio>scale</aspectratio>
+			<colordiffuse>99ffffff</colordiffuse>
+		</control>
+        <!--Battery level-->
+        <include>Battery</include>
+         <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <control type="group">
+            <posx>490</posx>
+            <posy>row-5-begin</posy>
+            <!--animations-->
+            <include>modalDialogInOutVertical</include>
+            <control type="image">
+                <posx>-12</posx>
+                <posy>-12</posy>
+                <width>1030</width>
+                <height>720</height>
+                <texture>colors/black.png</texture>
+                <colordiffuse>overlay</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>14-col</width>
+                <height>2-row</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <!--title-->
+            <control type="label">
+                <posx>24</posx>
+                <posy>0</posy>
+                <width>14-col</width>
+                <height>2-row</height>
+                <font>dialogTitle</font>
+                <label>$LOCALIZE[31261] $LOCALIZE[5]</label>
+                <textcolor>$VAR[Home]</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+            
+            <!--options-->
+            
+            <control type="grouplist" id="200">
+                <posx>0</posx>
+                <posy>84</posy>
+                <width>14-col</width>
+                <height>17-row</height>
+                <onleft>8000</onleft>
+                <itemgap>0</itemgap>
+                <orientation>vertical</orientation>
+                <control type="radiobutton" id="1">
+                    <visible>Skin.HasSetting(homemenugrid)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus></textureradioonfocus>
+                    <textureradioonnofocus></textureradioonnofocus>
+                    <textureradioofffocus></textureradioofffocus>
+                    <textureradiooffnofocus></textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]$LOCALIZE[31262][/COLOR]</label>
+                    <onclick>Skin.ToggleSetting(homemenugrid)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenuslide)">Skin.Reset(homemenuslide)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenuside)">Skin.Reset(homemenuside)</onclick>
+                    <selected>Skin.HasSetting(homemenugrid)</selected>
+                </control>
+                <control type="radiobutton" id="2">
+                    <visible>!Skin.HasSetting(homemenugrid)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus></textureradioonfocus>
+                    <textureradioonnofocus></textureradioonnofocus>
+                    <textureradioofffocus></textureradioofffocus>
+                    <textureradiooffnofocus></textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>$LOCALIZE[31262]</label>
+                    <onclick>Skin.ToggleSetting(homemenugrid)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenuslide)">Skin.Reset(homemenuslide)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenuside)">Skin.Reset(homemenuside)</onclick>
+                    <selected>Skin.HasSetting(homemenugrid)</selected>
+                </control>
+                <control type="radiobutton" id="3">
+                    <visible>Skin.HasSetting(homemenuslide)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus></textureradioonfocus>
+                    <textureradioonnofocus></textureradioonnofocus>
+                    <textureradioofffocus></textureradioofffocus>
+                    <textureradiooffnofocus></textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]$LOCALIZE[31263][/COLOR]</label>
+                    <onclick>Skin.ToggleSetting(homemenuslide)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenuside)">Skin.Reset(homemenuside)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenugrid)">Skin.Reset(homemenugrid)</onclick>
+                    <selected>Skin.HasSetting(homemenuslide)</selected>
+                </control>
+                <control type="radiobutton" id="4">
+                    <visible>!Skin.HasSetting(homemenuslide)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus></textureradioonfocus>
+                    <textureradioonnofocus></textureradioonnofocus>
+                    <textureradioofffocus></textureradioofffocus>
+                    <textureradiooffnofocus></textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>$LOCALIZE[31263]</label>
+                    <onclick>Skin.ToggleSetting(homemenuslide)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenuside)">Skin.Reset(homemenuside)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenugrid)">Skin.Reset(homemenugrid)</onclick>
+                    <selected>Skin.HasSetting(homemenuslide)</selected>
+                </control>
+                <control type="radiobutton" id="5">
+                    <visible>Skin.HasSetting(homemenuside)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus></textureradioonfocus>
+                    <textureradioonnofocus></textureradioonnofocus>
+                    <textureradioofffocus></textureradioofffocus>
+                    <textureradiooffnofocus></textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]$LOCALIZE[31264][/COLOR]</label>
+                    <onclick>Skin.ToggleSetting(homemenuside)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenuslide)">Skin.Reset(homemenuslide)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenugrid)">Skin.Reset(homemenugrid)</onclick>
+                    <selected>Skin.HasSetting(homemenuside)</selected>
+                </control>
+            
+                <control type="radiobutton" id="6">
+                    <visible>!Skin.HasSetting(homemenuside)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus></textureradioonfocus>
+                    <textureradioonnofocus></textureradioonnofocus>
+                    <textureradioofffocus></textureradioofffocus>
+                    <textureradiooffnofocus></textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>$LOCALIZE[31264]</label>
+                    <onclick>Skin.ToggleSetting(homemenuside)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenuslide)">Skin.Reset(homemenuslide)</onclick>
+                    <onclick condition="Skin.HasSetting(homemenugrid)">Skin.Reset(homemenugrid)</onclick>
+                    <selected>Skin.HasSetting(homemenuside)</selected>
+                </control>
+                
+                
+                
+
+
+            </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>Homemenulook.xml</label>
+        </control>
+    </controls>
+</window>

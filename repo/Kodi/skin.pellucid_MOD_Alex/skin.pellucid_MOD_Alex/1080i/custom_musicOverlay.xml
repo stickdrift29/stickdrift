@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1102">
+    <visible>player.hasaudio + !Window.IsActive(visualisation) + !window.isactive(home) + !window.isactive(1103)</visible>
+    <controls>
+        <control type="group">
+            <posx>0</posx>
+            <posy>0</posy>
+            <animation type="windowopen">
+                <effect type="slide" start="0,-50" end="0,0" tween="cubic" easing="out" delay="500" time="300"/>
+                <effect type="fade" start="0" end="100" time="500" delay="500"/>
+            </animation>
+            <control type="image">
+				<animation type="conditional" condition="true">
+					<effect type="fade" start="100" end="33" time="0"/>
+				</animation>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1-col-textbox</width>
+                <height>54</height>
+                <texture>masks/discsurface30%.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+            </control>
+            <control type="image">
+				<animation type="conditional" condition="true">
+					<effect type="fade" start="100" end="33" time="0"/>
+				</animation>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1-col-textbox</width>
+                <height>54</height>
+                <texture>masks/discsurface30%.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+            </control>
+			<control type="image">
+                <visible>player.hasaudio + Skin.HasSetting(show_battery)</visible>
+                <posx>1-col</posx>
+                <posy>0</posy> 
+                <width>1655</width>
+                <height>54</height>
+                <texture>masks/discsurface30%.png</texture>
+                <colordiffuse>$VAR[highlight_Shadow]</colordiffuse>
+            </control>
+            <control type="image">
+                <visible>player.hasaudio + !Skin.HasSetting(show_battery) </visible>
+                <posx>1-col</posx>
+                <posy>0</posy>
+                <width>fullscreenWidth</width>
+                <height>54</height>
+                <texture>masks/discsurface30%.png</texture>
+                <colordiffuse>$VAR[highlight_Shadow]</colordiffuse>
+            </control>
+            <control type="image">
+                <visible>!player.paused + !Skin.HasSetting(lowPowerMode)</visible>
+                <posx>9</posx>
+                <posy>0</posy>
+                <width>1-col-gutter</width>
+                <height>1-col-gutter</height>
+                <texture>special://skin/extras/audio-8777_128.gif</texture>
+                <colordiffuse>$VAR[Home]</colordiffuse>
+            </control>
+            <control type="label">
+                <visible>!player.paused + Skin.HasSetting(lowPowerMode)</visible>
+                <posx>3</posx>
+                <posy>-9</posy>
+                <width>1-col-textbox</width>
+                <height>2-row</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>symbol</font>
+                <textcolor>$VAR[Home]</textcolor>
+                <shadowcolor></shadowcolor>
+                <label></label>
+            </control>
+            <control type="label">
+                <visible>player.paused</visible>
+                <posx>3</posx>
+                <posy>-9</posy>
+                <width>1-col-textbox</width>
+                <height>2-row</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>symbol</font>
+                <textcolor>$VAR[Home]</textcolor>
+                <shadowcolor></shadowcolor>
+                <label></label>
+                <animation type="conditional" condition="true" loop="true">
+                    <effect type="fade" start="0" end="100" time="1000"/>
+                    <effect type="fade" start="100" end="0" time="1000" delay="1000"/>
+                </animation>
+            </control>
+            <control type="label">
+                <description>Artist</description>
+                <posx>1-col-indent</posx>
+                <posy>0</posy>
+                <font>itemSubTitle</font>
+                <width>stretch</width>
+                <height>54</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <height>1-row</height>
+                <label>$INFO[MusicPlayer.TimeRemaining]  [B]$INFO[musicplayer.Artist,, ][/B]$INFO[MusicPlayer.Title]</label>
+                <scroll>true</scroll>
+                <textcolor>$VAR[Home]</textcolor>
+            </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <visible>false</visible>
+            <include>DialogID</include>
+            <label>custom_musicOverlay.xml</label>
+        </control>
+    </controls>
+</window>

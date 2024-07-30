@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true"></defaultcontrol>
+    <controls>
+        <control type="progress" id="10">
+		    <description>Progress Bar</description>
+		    <posx>38%</posx>
+		    <posy>60%</posy>
+		    <width>6-col</width>
+		    <height>12</height>
+		    <texturebg colordiffuse="overlay">masks/discsurface.png</texturebg>
+            <midtexture colordiffuse="$VAR[highlight]">masks/discsurface.png</midtexture>
+            <visible>!Integer.IsEqual(Control.GetLabel(10), 0)</visible>
+		</control>
+        <control type="label">
+            <posx>15</posx>
+            <posy>1025</posy>
+            <include>DialogID</include>
+            <label>DialogBusy.xml</label>
+        </control>
+        <include>loadingIndicator</include>
+        <include>DebugGrid</include>
+    </controls>
+</window>

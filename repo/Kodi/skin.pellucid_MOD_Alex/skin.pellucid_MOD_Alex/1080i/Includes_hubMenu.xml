@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!--main hub menu-->
+    <include name="hubMenu">
+		
+            
+        
+        <control type="group" id="9000">
+            
+            
+            <animation type="Conditional" condition="!controlgroup(9000).hasfocus">
+                <effect type="slide" start="0" end="-1084" tween="sine" time="400"/>
+            </animation>
+            
+            <control type="image">
+                <visible>!window.isactive(1130) </visible>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>384</width>
+                <height>1500</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <!--logo-->
+			<control type="group">
+                <visible>!window.isactive(1130)</visible>
+				<posx>col-1-begin</posx>
+                <posy>row-2-begin</posy>
+	            <control type="label">
+	                <posx>0</posx>
+	                <posy>-12</posy>
+	                <width>73</width>
+	                <height>73</height>
+	                <font>symbolVeryLarge</font>
+	                <aligny>center</aligny>
+	                <textcolor>$VAR[Home]</textcolor>
+	                <label>$VAR[menuLogo]</label>
+	            </control>
+               
+                
+			</control>
+        
+            <control type="grouplist" id="500">
+            <posx>0</posx>
+            <posy>row-5-begin</posy>
+            <width>406</width>
+            <ondown>setfocus(9001,0)</ondown>
+                <onup>setfocus(9001,20)</onup>
+                <onright>9999</onright>
+                <onleft condition="!window.isactive(home)">activateWindow(contextmenu)</onleft>
+                
+            <control type="button" id="501">
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <textcolor>$VAR[Home]</textcolor>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <alttexturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</alttexturefocus>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>384</width>
+				<textwidth>320</textwidth>
+                <font>menuTitle2</font>
+                <label>$INFO[Container.Viewmode,$LOCALIZE[31306] ]</label>
+                <onclick condition="!String.IsEqual(Container.Viewmode,$LOCALIZE[31249])">activateWindow(1130)</onclick>
+                <visible>$EXP[isAddonMovieOrTVshow] + !window.isactive(1130) + !window.isactive(1130) | Container.Content(episodes) + !window.isactive(1130)</visible>
+            </control>
+             <control type="button" id="5">
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <textcolor>$VAR[Home]</textcolor>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <alttexturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</alttexturefocus>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>384</width>
+				<textwidth>320</textwidth>
+                <font>menuTitle2</font>
+                <label>$INFO[Container.Viewmode,$LOCALIZE[5] ]</label>
+                <onclick>activateWindow(1131)</onclick>
+                <visible>$EXP[isAddonMovieOrTVshow] + !window.isactive(1130) + !window.isactive(1130) | Container.Content(episodes) + !window.isactive(1130)</visible>
+            </control>
+            <control type="button" id="41">
+                    <description>Change Main Button Menu to Slider</description>
+                    <width>384</width>
+                    <focusedcolor>$VAR[selected]</focusedcolor>
+                    <textcolor>$VAR[Home]</textcolor>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <alttexturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</alttexturefocus>
+                    <textoffsetx>45</textoffsetx>
+                    <label>$LOCALIZE[31306]</label>
+                    <label2>$VAR[PVRListlook]</label2>
+                    <onclick>Skin.Togglesetting(PVRList)</onclick>
+                    <selected>Skin.HasSetting(PVRList)</selected>
+                    <visible>Window.IsActive(10700) + !window.isactive(1130) + !window.isactive(1130)</visible>
+
+                </control>
+           
+            <control type="button" id="2">
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <textcolor>$VAR[Home]</textcolor>
+                <textwidth>295</textwidth>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus>$VAR[selected]</texturenofocus>
+                <alttexturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</alttexturefocus>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>384</width>
+                <font>menuTitle2</font>
+                <visible>[Container.Content(addons)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(albums)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(songs)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(artists)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(genres)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(years)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Window.IsActive(pictures) + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(files)] + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | window.IsActive(AddonBrowser) + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249])</visible>
+            </control>
+
+            <control type="button" id="6">
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <textcolor>$VAR[Home]</textcolor>
+                <textwidth>295</textwidth>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus>$VAR[selected]</texturenofocus>
+                <alttexturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</alttexturefocus>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>384</width>
+                <font>menuTitle2</font>
+                <label>$LOCALIZE[31306] $LOCALIZE[5]</label>
+                <onclick>activateWindow(1132)</onclick>
+                <visible>[Container.Content(addons)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(albums)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(songs)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(artists)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(genres)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(years)  + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Window.IsActive(pictures) + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | Container.Content(files)] + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249]) | window.IsActive(AddonBrowser) + !window.isactive(1130) + !String.IsEqual(Container.Viewmode,$LOCALIZE[31249])</visible>
+            </control>
+             
+             <control type="button" id="3">
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <textcolor>$VAR[Home]</textcolor>
+			    <description>Sort by button</description>
+			    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus>$VAR[selected]</texturenofocus>
+                <alttexturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</alttexturefocus>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>384</width>
+				<textwidth>295</textwidth>
+                <font>menuTitle2</font>
+			    <label>103</label>
+		    </control>
+		    <control type="togglebutton" id="4">
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <textcolor>$VAR[Home]</textcolor>
+			    <description>Sort asc</description>
+			    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus>textActive</texturenofocus>
+                <alttexturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</alttexturefocus>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>384</width>
+				<textwidth>295</textwidth>
+                <font>menuTitle2</font>
+			    <label>31110</label>
+			    <altlabel>31109</altlabel>
+			    <usealttexture>Container.SortDirection(Ascending)</usealttexture>
+		    </control>
+            </control>
+            
+            
+            
+            <control type="list" id="9001">
+             <visible>!window.isactive(1130)</visible>
+
+                <posx>-23</posx>
+                <posy>row-14-begin</posy>
+                <width>406</width>
+                <height>832</height>
+                <orientation>vertical</orientation>
+                <onleft condition="!window.isactive(home)">activateWindow(contextmenu)</onleft>
+                <onright>9999</onright>
+                <ondown condition="control.Isvisible(501)">501</ondown>
+                <ondown condition="!control.Isvisible(501)">2</ondown>
+                <onup condition="control.Isvisible(501)">4</onup>
+                <onup condition="!control.Isvisible(501)">4</onup>
+                <itemlayout width="col-5-begin" height="2-row">
+                    <control type="label">
+                        <posx>col-1-begin</posx>
+                        <posy>0</posy>
+                        <width>4-col-gutter</width>
+                        <height>2-row</height>
+                        <font>menuTitle2</font>
+                        <aligny>center</aligny>
+                        <textcolor>$VAR[Home]</textcolor>
+                        <shadowcolor></shadowcolor>
+                        <label>[CAPITALIZE]$INFO[ListItem.label][/CAPITALIZE]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="col-5-begin" height="2-row">
+					<control type="image">
+                        <visible>!window.isactive(contextmenu) + !control.hasfocus(501) + !control.hasfocus(2) + !control.hasfocus(3) + !control.hasfocus(4) + !control.hasfocus(5) + !control.hasfocus(41) + !control.hasfocus(6)</visible>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>406</width>
+                        <height>2-row</height>
+                        <texture condition="!control.hasfocus(501) | control.hasfocus(2) | !control.hasfocus(3) | !control.hasfocus(4) | !control.hasfocus(5) | !control.hasfocus(41)" colordiffuse="$VAR[highlight]">masks/discsurface.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <control type="label">
+                        <visible>!window.isactive(contextmenu) + [!control.hasfocus(501) | !control.hasfocus(5) + !control.hasfocus(41) + !control.hasfocus(6)] + !control.hasfocus(2) + !control.hasfocus(3) + !control.hasfocus(4)</visible>
+                        <posx>col-1-begin</posx>
+                        <posy>0</posy>
+                        <width>4-col-gutter</width>
+                        <height>2-row</height>
+                        <font>menuTitle2</font>
+                        <aligny>center</aligny>
+                        <textcolor>$VAR[selected]</textcolor>
+                        <shadowcolor></shadowcolor>
+                        <label>[CAPITALIZE]$INFO[ListItem.label][/CAPITALIZE]</label>
+                    </control>
+                    <control type="label">
+                        <visible>control.hasfocus(501) | window.isactive(contextmenu) | control.hasfocus(5) | control.hasfocus(41) | control.hasfocus(2) | control.hasfocus(3) | control.hasfocus(4) | control.hasfocus(6)</visible>
+                        <posx>col-1-begin</posx>
+                        <posy>0</posy>
+                        <width>4-col-gutter</width>
+                        <height>2-row</height>
+                        <font>menuTitle2</font>
+                        <aligny>center</aligny>
+                        <textcolor>$VAR[Home]</textcolor>
+                        <shadowcolor></shadowcolor>
+                        <label>[CAPITALIZE]$INFO[ListItem.label][/CAPITALIZE]</label>
+                    </control>
+                </focusedlayout>
+                <content>
+                    <include condition="window.isactive(games)">skinshortcuts-group-gamesubmenu</include>
+					<include condition="window.isactive(pictures)">skinshortcuts-group-picturessubmenu</include>
+                    <include condition="String.Contains(container.folderpath,videodb://musicvideos/titles) | window.isactive(music) | window.isactive(radiochannels) | window.isactive(radioguide) | window.isactive(radiorecordings) | window.isactive(radiotimers) | window.isactive(musicplaylist)">skinshortcuts-group-musicsubmenu</include>
+                    <include condition="[window.isactive(videos) + !String.Contains(container.folderpath,videodb://musicvideos/titles)] | window.isactive(tvchannels) | window.isactive(tvrecordings) | window.isactive(tvguide) | window.isactive(tvtimers) | window.isactive(videoplaylist)">skinshortcuts-group-videosubmenu</include>
+                </content>
+            </control>
+      
+            <!--
+           <include content="keyboard select">
+                    <param name="posx">87%</param>
+                    <param name="focus">9000</param>
+                    <param name="up">up</param>
+                    <param name="down">down</param>
+                    <param name="left">left</param>
+                    <param name="right">right</param>
+                    <param name="select">select</param>
+                    <param name="back">back</param>
+					<param name="visible">skin.hassetting(Touch) + [controlgroup(500).hasfocus | control.hasfocus(9001)]</param>
+                    <param name="upview">true</param>
+					<param name="downview">true</param>
+					<param name="leftview">true</param>
+					<param name="rightview">true</param>
+					<param name="selectview">true</param>
+                    <param name="color">keyboardInactive</param>
+                </include>
+                <include content="keyboard select">
+                    <param name="posx">87%</param>
+                    <param name="focus">9000</param>
+                    <param name="up">up</param>
+                    <param name="down">down</param>
+                    <param name="left">left</param>
+                    <param name="right">right</param>
+                    <param name="select">select</param>
+                    <param name="back">back</param>
+					<param name="visible">skin.hassetting(Touch) + [controlgroup(500).hasfocus | control.hasfocus(9001)]</param>
+                    <param name="upview">true</param>
+					<param name="downview">true</param>
+					<param name="leftview">true</param>
+					<param name="rightview">true</param>
+					<param name="selectview">true</param>
+                    <param name="color">keyboardInactive</param>
+                </include>
+                -->
+        </control>
+         
+    </include>
+    
+</includes>

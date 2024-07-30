@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">100</defaultcontrol>
+    <include>fadeInOut</include>
+    <onload>AlarmClock(hidemenu,setfocus(200),10:00,true)</onload>
+	<onunload>CancelAlarm(hidemenu,true)</onunload>
+    <controls>
+        <!--background-->
+        <include>globalBackground</include>
+		<!--page header-->
+        <control type="label">
+	        <posx>col-1-begin</posx>
+            <posy>row-2-begin</posy>
+	        <width>18-col</width>
+	        <font>sectionTitle</font>
+	        <label>$VAR[listTitle]</label>
+	        <textcolor>textActive</textcolor>
+        </control>
+        <!--Battery Level-->
+        <include>Battery</include>
+        
+        <control type="group" id="8000">
+            <posx>col-1-begin</posx>
+            <posy>row-5-begin</posy>
+            <!--today-->
+            <control type="group">
+                <posx>0</posx>
+                <posy>0-row</posy>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>24-col</width>
+                    <height>2-row</height>
+                    <font>veryLarge</font>
+                    <label>$INFO[Window.Property(Location)]</label>
+                    <textcolor>textActive</textcolor>
+                    <shadowcolor></shadowcolor>
+                </control>
+                <control type="group">
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>3-row</posy>
+                        <width>21-col</width>
+                        <height>2-row</height>
+                        <font>largeTitle</font>
+                        <label>$INFO[Window.Property(Day0.Outlook)]</label>
+                        <textcolor>$VAR[highlight]</textcolor>
+                        <shadowcolor></shadowcolor>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>6-row</posy>
+                        <width>21-col</width>
+                        <height>2-row</height>
+                        <font>large</font>
+                        <label>[B]$INFO[Window.Property(Current.Temperature)]$INFO[System.TemperatureUnits][/B]     $LOCALIZE[402]: [B]$INFO[Window.Property(Current.FeelsLike)]$INFO[System.TemperatureUnits][/B], $INFO[Window.Property(current.condition)]</label>
+                        <textcolor>textActive</textcolor>
+                        <shadowcolor></shadowcolor>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>8-row</posy>
+                        <width>12-col</width>
+                        <height>2-row</height>
+                        <font>regular</font>
+                        <label>$LOCALIZE[13508]: [B]$INFO[Window.Property(Day0.HighTemp)]$INFO[System.TemperatureUnits][/B]     $LOCALIZE[418]: [B]$INFO[Window.Property(Day0.LowTemp)]$INFO[System.TemperatureUnits][/B]     $LOCALIZE[406]: [B]$INFO[Window.Property(Current.Humidity)][/B]</label>
+                        <textcolor>textActive</textcolor>
+                        <shadowcolor></shadowcolor>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>336</posy>
+                        <width>fullscreenWidth</width>
+                        <height>2-row</height>
+                        <font>regular</font>
+                        <label>$LOCALIZE[383]: [B]$INFO[Window.Property(Current.wind)][/B]</label>
+                        <textcolor>textActive</textcolor>
+                        <shadowcolor></shadowcolor>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>385</posy>
+                        <width>fullscreenWidth</width>
+                        <height>2-row</height>
+                        <font>regular</font>
+                        <label>$LOCALIZE[33027]: [B]$INFO[Window.Property(Today.Sunrise)][/B]     [B]$LOCALIZE[33028]: $INFO[Window.Property(Today.Sunset)][/B]</label>
+                        <textcolor>textActive</textcolor>
+                        <shadowcolor></shadowcolor>
+                    </control>
+                </control>
+                
+                <control type="multiimage">
+                                <visible>$EXP[hasWeather] + !player.hasvideo</visible>
+                                <posx>1110</posx>
+                                <posy>-300</posy>
+                                <width>700</width>
+                                <height>700</height>
+                                <imagepath>$VAR[WeatherIconsPathVar]$INFO[Weather.FanartCode]$VAR[WeatherIconsExtVar]</imagepath>
+                                <timeperimage>70</timeperimage>
+			                    <fadetime>1</fadetime>
+			                    <pauseatend></pauseatend>
+			                    <randomize>false</randomize>
+			                    <loop>yes</loop>
+			                    <aspectratio>scale</aspectratio>
+			                    <colordiffuse>textActive</colordiffuse>
+                </control>
+                <control type="multiimage">
+                                 <animation type="conditional" condition="!player.hasvideo" reversible="true">
+		    		                <effect type="slide" start="0,0" end="300" time="200" delay="0"/>
+		    	                </animation>
+		   	 	                <animation type="conditional" condition="player.hasvideo" reversible="true">
+		    		                <effect type="slide" start="0,0" end="-300" time="200" delay="0"/>
+        		                </animation>
+                                <visible>$VAR[WeatherIconsPathVar]$INFO[Weather.FanartCode]$VAR[WeatherIconsExtVar]</visible>
+                                <posx>1110</posx>
+                                <posy>-300</posy>
+                                <width>700</width>
+                                <height>700</height>
+                                <imagepath>$VAR[WeatherIconsPathVar]$INFO[Weather.FanartCode]$VAR[WeatherIconsExtVar]</imagepath>
+                                <timeperimage>70</timeperimage>
+			                    <fadetime>1</fadetime>
+			                    <pauseatend></pauseatend>
+			                    <randomize>false</randomize>
+			                    <loop>yes</loop>
+			                    <aspectratio>scale</aspectratio>
+			                    <colordiffuse>overlay</colordiffuse>
+                </control>
+            </control>
+
+            <!--remaining forecast begins-->
+            <control type="group">
+                <control type="panel" id="9000">
+                    <posx>50</posx>
+                    <posy>15-row</posy>
+                    <width>24-col</width>
+                    <height>24-row</height>
+                    <itemlayout width="6-col" height="4-row">
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>-24</posy>
+                            <width>6-col-gutter</width>
+                            <height>2-row</height>
+                            <font>dialogTitle</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <textcolor>textActive</textcolor>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>18</posy>
+                            <width>6-col-gutter</width>
+                            <height>2-row</height>
+                            <font>itemSubTitle</font>
+                            <textcolor>textActive</textcolor>
+                            <autoscroll delay="3000" time="1000" repeat="3000"/>
+                            <label>$INFO[ListItem.Property(Outlook)]</label>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>76</posy>
+                            <width>6-col-gutter</width>
+                            <height>1-row</height>
+                            <font>itemSubTitle</font>
+                            <textcolor>textActive</textcolor>
+                            <label>$LOCALIZE[13508] [B]$INFO[ListItem.Property(HighTemp)] $INFO[ListItem.Property(TempUnits)][/B]  $LOCALIZE[418] [B]$INFO[ListItem.Property(LowTemp)] $INFO[ListItem.Property(TempUnits)][/B]</label>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>-24</posy>
+                            <width>6-col-gutter</width>
+                            <height>2-row</height>
+                            <font>dialogTitle</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <textcolor>textActive</textcolor>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>18</posy>
+                            <width>6-col-gutter</width>
+                            <height>2-row</height>
+                            <font>itemSubTitle</font>
+                            <textcolor>textActive</textcolor>
+                            <autoscroll delay="3000" time="1000" repeat="3000"/>
+                            <label>$INFO[ListItem.Property(Outlook)]</label>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>76</posy>
+                            <width>6-col-gutter</width>
+                            <height>1-row</height>
+                            <font>itemSubTitle</font>
+                            <textcolor>textActive</textcolor>
+                            <label>$LOCALIZE[13508] [B]$INFO[ListItem.Property(HighTemp)] $INFO[ListItem.Property(TempUnits)][/B]  $LOCALIZE[418] [B]$INFO[ListItem.Property(LowTemp)] $INFO[ListItem.Property(TempUnits)][/B]</label>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <item id="2">
+                            <description>Day 1</description>
+                            <label>$INFO[Window.Property(Day1.Title)] $INFO[Window.Property(Daily.2.ShortDate)]</label>
+                            <property name="fanartCode">$INFO[Window.Property(Day1.fanartCode)]</property>
+                            <property name="HighTemp">$INFO[Window.Property(Day1.HighTemp)]</property>
+                            <property name="LowTemp">$INFO[Window.Property(Day1.LowTemp)]</property>
+                            <property name="Outlook">$INFO[Window.Property(Day1.Outlook)]</property>
+                            <property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+                            
+                        </item>
+                        <item id="3">
+                            <description>Day 2</description>
+                            <label>$INFO[Window.Property(Day2.Title)] $INFO[Window.Property(Daily.3.ShortDate)]</label>
+                            <property name="fanartCode">$INFO[Window.Property(Day2.fanartCode)]</property>
+                            <property name="HighTemp">$INFO[Window.Property(Day2.HighTemp)]</property>
+                            <property name="LowTemp">$INFO[Window.Property(Day2.LowTemp)]</property>
+                            <property name="Outlook">$INFO[Window.Property(Day2.Outlook)]</property>
+                            <property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+                        </item>
+                        <item id="4">
+                            <description>Day 3</description>
+                            <label>$INFO[Window.Property(Day3.Title)] $INFO[Window.Property(Daily.4.ShortDate)]</label>
+                            <property name="fanartCode">$INFO[Window.Property(Day3.fanartCode)]</property>
+                            <property name="HighTemp">$INFO[Window.Property(Day3.HighTemp)]</property>
+                            <property name="LowTemp">$INFO[Window.Property(Day3.LowTemp)]</property>
+                            <property name="Outlook">$INFO[Window.Property(Day3.Outlook)]</property>
+                            <property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+                        </item>
+                        <item id="5">
+                            <description>Day 4</description>
+                            <label>$INFO[Window.Property(Day4.Title)] $INFO[Window.Property(Daily.5.ShortDate)]</label>
+                            <property name="fanartCode">$INFO[Window.Property(Day4.fanartCode)]</property>
+                            <property name="HighTemp">$INFO[Window.Property(Day4.HighTemp)]</property>
+                            <property name="LowTemp">$INFO[Window.Property(Day4.LowTemp)]</property>
+                            <property name="Outlook">$INFO[Window.Property(Day4.Outlook)]</property>
+                            <property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+                        </item>   
+                    </content>
+                </control>
+                
+                <control type="multiimage">
+                                <visible>$EXP[hasWeather]</visible>
+                                <posx>-20</posx>
+                                <posy>425</posy>
+                                <width>400</width>
+                                <height>400</height>
+                                <!--<texture>Weathericons/$INFO[Window.Property(Day1.fanartCode)].png</texture>-->
+                                <imagepath>$VAR[WeatherIconsPathVar]$INFO[Window.Property(Day1.fanartCode)]$VAR[WeatherIconsExtVar]</imagepath>
+                                <timeperimage>70</timeperimage>
+			                    <fadetime>1</fadetime>
+			                    <pauseatend></pauseatend>
+			                    <randomize>false</randomize>
+			                    <loop>yes</loop>
+			                    <aspectratio>scale</aspectratio>
+			                    <colordiffuse>overlay</colordiffuse>
+                </control>
+                <control type="multiimage">
+                                <visible>$EXP[hasWeather]</visible>
+                                <posx>410</posx>
+                                <posy>425</posy>
+                                <width>400</width>
+                                <height>400</height>
+                                <imagepath>$VAR[WeatherIconsPathVar]$INFO[Window.Property(Day2.fanartCode)]$VAR[WeatherIconsExtVar]</imagepath>
+                                <timeperimage>70</timeperimage>
+			                    <fadetime>1</fadetime>
+			                    <pauseatend></pauseatend>
+			                    <randomize>false</randomize>
+			                    <loop>yes</loop>
+			                    <aspectratio>scale</aspectratio>
+			                    <colordiffuse>overlay</colordiffuse>
+                </control>
+                <control type="multiimage">
+                                <visible>$EXP[hasWeather]</visible>
+                                <posx>845</posx>
+                                <posy>425</posy>
+                                <width>400</width>
+                                <height>400</height>
+                                <imagepath>$VAR[WeatherIconsPathVar]$INFO[Window.Property(Day3.fanartCode)]$VAR[WeatherIconsExtVar]</imagepath>
+                                <timeperimage>70</timeperimage>
+			                    <fadetime>1</fadetime>
+			                    <pauseatend></pauseatend>
+			                    <randomize>false</randomize>
+			                    <loop>yes</loop>
+			                    <aspectratio>scale</aspectratio>
+			                    <colordiffuse>overlay</colordiffuse>
+                </control>
+                <control type="multiimage">
+                                <visible>$EXP[hasWeather]</visible>
+                                <posx>1270</posx>
+                                <posy>425</posy>
+                                <width>400</width>
+                                <height>400</height>
+                                <imagepath>$VAR[WeatherIconsPathVar]$INFO[Window.Property(Day4.fanartCode)]$VAR[WeatherIconsExtVar]</imagepath>
+                                <timeperimage>70</timeperimage>
+			                    <fadetime>1</fadetime>
+			                    <pauseatend></pauseatend>
+			                    <randomize>false</randomize>
+			                    <loop>yes</loop>
+			                    <aspectratio>scale</aspectratio>
+			                    <colordiffuse>overlay</colordiffuse>
+                </control>
+                <!--panel ends-->
+            </control>
+        </control>
+        <!--location control-->
+        <control type="button" id="100">
+            <description>change location button</description>
+            <left>-100</left>
+            <top>-100</top>
+            <width>6-col</width>
+            <onright>Weather.LocationNext</onright>
+            <onleft>Weather.LocationPrevious</onleft>
+            <onup>300</onup>
+            <ondown>8002</ondown>
+        </control>
+        <control type="button" id="200">
+            <visible>$EXP[hasWeather]</visible>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>fullscreenWidth</width>
+            <height>fullscreenHeight</height>
+            <texture></texture>
+            <texturefocus></texturefocus>
+			<colordiffuse>77000000</colordiffuse>
+        </control>
+        <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <!--Location switch-->
+        <control type="togglebutton" id="300">
+            <visible>Skin.HasSetting(Touch) + !String.isEmpty(Window.Property(Location2)) + !Control.hasfocus(200)</visible>
+            <posx>700</posx>
+            <posy>85</posy>
+            <width>500</width>
+            <height>2-row</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <textoffsetx>24</textoffsetx>
+            <label>396</label>
+            <texturefocus colordiffuse="00FFFFFF">masks/discsurface.png</texturefocus>
+            <texturenofocus colordiffuse="00FFFFFF">masks/discsurface.png</texturenofocus>
+            <alttexturefocus colordiffuse="00FFFFFF">masks/discsurface.png</alttexturefocus>
+            <alttexturenofocus colordiffuse="00FFFFFF">masks/discsurface.png</alttexturenofocus>
+            <font>sectionTitle</font>
+            <textcolor>textDisabled</textcolor>
+            <focusedcolor>textActive</focusedcolor>
+            <disabledcolor>textActive</disabledcolor>
+            <pulseonselect>false</pulseonselect>
+            <colordiffuse>77overlay</colordiffuse>
+            <onclick>Weather.LocationNext</onclick>
+            <onup>100</onup>
+            <ondown>8002</ondown>
+            
+        </control>
+        <control type="panel" id="8002">
+					<posx>50</posx>
+	                <posy>1000</posy>
+	                <width>9-col</width>
+	                <height>2-row</height>
+	                <itemgap>0</itemgap>
+	                <onup>300</onup>
+                    <ondown>300</ondown>
+	                <orientation>horizontal</orientation>
+	                <itemlayout width="1-col" height="2-row">
+	                    <control type="label">
+	                        <posx>0</posx>
+	                        <posy>0</posy>
+	                        <width>1-col</width>
+	                        <height>2-row</height>
+	                        <align>center</align>
+	                        <aligny>center</aligny>
+	                        <font>symbolLarge</font>
+	                        <textcolor>textActive</textcolor>
+	                        <label>$INFO[ListItem.label2]</label>
+	                    </control>
+	                </itemlayout>
+	                <focusedlayout width="1-col" height="2-row">
+	                    <control type="image">
+	                        <posx>0</posx>
+	                        <posy>0</posy>
+	                        <width>1-col</width>
+	                        <height>69</height>
+	                        <aspectratio>stretch</aspectratio>
+	                        <texture diffuse="masks/circle.png">masks/discsurface.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+	                    </control>
+	                    <control type="label">
+	                        <posx>0</posx>
+	                        <posy>0</posy>
+	                        <width>1-col</width>
+	                        <height>2-row</height>
+	                        <align>center</align>
+	                        <aligny>center</aligny>
+	                        <font>symbolLarge</font>
+	                        <textcolor>$VAR[Home]</textcolor>
+	                        <label>$INFO[ListItem.label2]</label>
+	                        <shadowcolor></shadowcolor>
+	                    </control>
+	                </focusedlayout>
+	                <content>
+						<item>
+							<visible>$EXP[hasWeather] + !Control.hasfocus(200)</visible>
+	                    	<description>weather</description>
+	                    	<label2></label2>
+	                    	<thumb></thumb>
+	                    	<onclick>ActivateWindow(ServiceSettings,weather)</onclick>
+	                	</item>
+	                </content>
+	            </control>
+        
+        <!--mini window-->
+        <include>miniVideoPlayer</include>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>WindowID</include>
+            <label>MyWeather.xml</label>
+        </control>
+    </controls>
+</window>

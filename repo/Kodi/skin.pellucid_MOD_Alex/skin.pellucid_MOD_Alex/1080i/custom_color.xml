@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1110" type="window">
+    <defaultcontrol always="true">200</defaultcontrol>
+    <controls>
+        <!--background-->
+        <include>globalBackground</include>
+        <control type="multiimage">
+			<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+			<include>dimensionsFullscreen</include>
+			<imagepath>$VAR[homeBackgroundLocation]</imagepath>
+			<timeperimage>45000</timeperimage>
+			<fadetime>200</fadetime>
+			<pauseatend>10000</pauseatend>
+			<randomize>true</randomize>
+			<loop>yes</loop>
+			<aspectratio>scale</aspectratio>
+			<colordiffuse>99ffffff</colordiffuse>
+		</control>
+        <!--mini window-->
+		<include>miniVideoPlayer</include>
+        
+
+        <!--Battery level-->
+        <include>Battery</include>
+         <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <control type="group">
+            <posx>col-9-begin</posx>
+            <posy>row-6-begin</posy>
+            <!--animations-->
+            <include>modalDialogInOutVertical</include>
+            <!--Initial menu-->
+                <control type="image">
+                    <posx>-12</posx>
+                    <posy>-12</posy>
+                    <width>600</width>
+                    <height>600</height>
+                    <texture>colors/black.png</texture>
+                    <colordiffuse>overlay</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>8-col</width>
+                    <height>2-row</height>
+                    <texture>masks/discsurface.png</texture>
+                    <colordiffuse>$VAR[highlight]</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <!--title-->
+                <control type="label">
+                    <posx>24</posx>
+                    <posy>0</posy>
+                    <width>8-col-gutter</width>
+                    <height>2-row</height>
+                    <font>dialogTitle</font>
+                    <label>$LOCALIZE[31259]</label>
+                    <textcolor>$VAR[Home]</textcolor>
+                    <shadowcolor></shadowcolor>
+                </control>
+            <!--options-->
+
+            <control type="grouplist" id="200">
+                <posx>0</posx>
+                <posy>84</posy>
+                <width>8-col</width>
+                <height>490</height>
+                <itemgap>0</itemgap>
+                <orientation>vertical</orientation>
+                
+                <control type="radiobutton" id="10">
+                    <description>change color Lightblue</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Lightblue.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Lightblue.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Lightblue.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Lightblue.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Lightblue</label> 
+                    <onclick>Skin.Togglesetting(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(lightblue)</selected>
+                    <visible>!Skin.HasSetting(lightblue)</visible>
+                    
+                </control>
+                <control type="radiobutton" id="11">
+                    <description>change color Lightblue</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Lightblue.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Lightblue.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Lightblue.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Lightblue.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Lightblue[/COLOR]</label> 
+                    <onclick>Skin.Togglesetting(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(lightblue)</selected>
+                    <visible>Skin.HasSetting(lightblue)</visible>
+                </control>
+
+                <control type="radiobutton" id="12">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Bluewood.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Bluewood.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Bluewood.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Bluewood.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Bluewood</label>
+                    <onclick>Skin.Togglesetting(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Bluewood)</selected>
+                    <visible>!Skin.HasSetting(Bluewood)</visible>
+                </control>
+                <control type="radiobutton" id="13">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Bluewood.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Bluewood.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Bluewood.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Bluewood.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Bluewood[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Bluewood)</selected>
+                    <visible>Skin.HasSetting(Bluewood)</visible>
+                </control>
+
+                <control type="radiobutton" id="14">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Darkblue.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Darkblue.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Darkblue.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Darkblue.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Darkblue</label>
+                    <onclick>Skin.Togglesetting(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Darkblue)</selected>
+                    <visible>!Skin.HasSetting(Darkblue)</visible>
+                </control>
+                <control type="radiobutton" id="15">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Darkblue.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Darkblue.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Darkblue.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Darkblue.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Darkblue[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Darkblue)</selected>
+                    <visible>Skin.HasSetting(Darkblue)</visible>
+                </control>
+
+                <control type="radiobutton" id="16">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Default.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Default.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Default.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Default.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>$LOCALIZE[15109]</label>
+                    <onclick>Skin.Togglesetting(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Default)</selected>
+                    <visible>!Skin.HasSetting(Default)</visible>
+                </control>
+                <control type="radiobutton" id="17">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Default.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Default.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Default.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Default.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]$LOCALIZE[15109][/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Default)</selected>
+                    <visible>Skin.HasSetting(Default)</visible>
+                </control>
+
+                <control type="radiobutton" id="18">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Dribble.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Dribble.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Dribble.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Dribble.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Dribble</label>
+                    <onclick>Skin.Togglesetting(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Dribble)</selected>
+                    <visible>!Skin.HasSetting(Dribble)</visible>
+                </control>
+                <control type="radiobutton" id="19">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Dribble.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Dribble.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Dribble.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Dribble.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Dribble[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Dribble)</selected>
+                    <visible>Skin.HasSetting(Dribble)</visible>
+                </control>
+
+                <control type="radiobutton" id="20">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Gold.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Gold.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Gold.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Gold.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Gold</label>
+                    <onclick>Skin.Togglesetting(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Gold)</selected>
+                    <visible>!Skin.HasSetting(Gold)</visible>
+                </control>
+                <control type="radiobutton" id="21">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Gold.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Gold.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Gold.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Gold.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Gold[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Gold)</selected>
+                    <visible>Skin.HasSetting(Gold)</visible>
+                </control>
+
+                <control type="radiobutton" id="22">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Green.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Green.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Green.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Green.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Green</label>
+                    <onclick>Skin.Togglesetting(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Green)</selected>
+                    <visible>!Skin.HasSetting(Green)</visible>
+                </control>
+                <control type="radiobutton" id="23">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Green.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Green.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Green.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Green.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Green[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Green)</selected>
+                    <visible>Skin.HasSetting(Green)</visible>
+                </control>
+
+                <control type="radiobutton" id="24">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Interest.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Interest.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Interest.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Interest.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Interest</label>
+                    <onclick>Skin.Togglesetting(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Interest)</selected>
+                    <visible>!Skin.HasSetting(Interest)</visible>
+                </control>
+                <control type="radiobutton" id="25">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Interest.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Interest.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Interest.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Interest.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Interest[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Interest)</selected>
+                    <visible>Skin.HasSetting(Interest)</visible>
+                </control>
+
+                <control type="radiobutton" id="26">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Medium.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Medium.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Medium.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Medium.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Medium</label>
+                    <onclick>Skin.Togglesetting(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Medium)</selected>
+                    <visible>!Skin.HasSetting(Medium)</visible>
+                </control>
+                <control type="radiobutton" id="27">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Medium.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Medium.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Medium.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Medium.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Medium[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Medium)</selected>
+                    <visible>Skin.HasSetting(Medium)</visible>
+                </control>
+
+                <control type="radiobutton" id="28">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Orange.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Orange.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Orange.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Orange.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Orange</label>
+                    <onclick>Skin.Togglesetting(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Orange)</selected>
+                    <visible>!Skin.HasSetting(Orange)</visible>
+                </control>
+                <control type="radiobutton" id="29">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Orange.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Orange.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Orange.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Orange.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Orange[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Orange)</selected>
+                    <visible>Skin.HasSetting(Orange)</visible>
+                </control>
+
+                <control type="radiobutton" id="30">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/PellucidV1.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/PellucidV1.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/PellucidV1.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/PellucidV1.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>PellucidV1</label>
+                    <onclick>Skin.Togglesetting(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(PellucidV1)</selected>
+                    <visible>!Skin.HasSetting(PellucidV1)</visible>
+                </control>
+                <control type="radiobutton" id="31">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/PellucidV1.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/PellucidV1.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/PellucidV1.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/PellucidV1.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]PellucidV1[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(PellucidV1)</selected>
+                    <visible>Skin.HasSetting(PellucidV1)</visible>
+                </control>
+
+                <control type="radiobutton" id="32">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Razzmatazz.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Razzmatazz.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Razzmatazz.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Razzmatazz.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Razzmatazz</label>
+                    <onclick>Skin.Togglesetting(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Razzmatazz)</selected>
+                    <visible>!Skin.HasSetting(Razzmatazz)</visible>
+                </control>
+                <control type="radiobutton" id="33">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Razzmatazz.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Razzmatazz.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Razzmatazz.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Razzmatazz.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Razzmatazz[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Razzmatazz)</selected>
+                    <visible>Skin.HasSetting(Razzmatazz)</visible>
+                </control>
+
+                <control type="radiobutton" id="34">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Tumble.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Tumble.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Tumble.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Tumble.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Tumble</label>
+                    <onclick>Skin.Togglesetting(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Tumble)</selected>
+                    <visible>!Skin.HasSetting(Tumble)</visible>
+                </control>
+                <control type="radiobutton" id="35">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Tumble.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Tumble.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Tumble.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Tumble.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Tumble[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Tumble)</selected>
+                    <visible>Skin.HasSetting(Tumble)</visible>
+                </control>
+
+                <control type="radiobutton" id="36">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Turquoise.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Turquoise.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Turquoise.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Turquoise.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Turquoise</label>
+                    <onclick>Skin.Togglesetting(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Turquoise)</selected>
+                    <visible>!Skin.HasSetting(Turquoise)</visible>
+                </control>
+                <control type="radiobutton" id="37">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Turquoise.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Turquoise.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Turquoise.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Turquoise.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Turquoise[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Turquoise)</selected>
+                    <visible>Skin.HasSetting(Turquoise)</visible>
+                </control>
+
+                <control type="radiobutton" id="38">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Vine.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Vine.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Vine.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Vine.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Vine</label>
+                    <onclick>Skin.Togglesetting(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Vine)</selected>
+                    <visible>!Skin.HasSetting(Vine)</visible>
+                </control>
+                <control type="radiobutton" id="39">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/Vine.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/Vine.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/Vine.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/Vine.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]Vine[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(Vine)</selected>
+                    <visible>Skin.HasSetting(Vine)</visible>
+                </control>
+
+                <control type="radiobutton" id="40">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/VK.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/VK.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/VK.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/VK.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>VK</label>
+                    <onclick>Skin.Togglesetting(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(VK)</selected>
+                    <visible>!Skin.HasSetting(VK)</visible>
+                </control>
+                <control type="radiobutton" id="41">
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <textureradioonfocus colordiffuse="textactive">Colors/VK.png</textureradioonfocus>
+                    <textureradioonnofocus colordiffuse="textActive">Colors/VK.png</textureradioonnofocus>
+                    <textureradioofffocus colordiffuse="textactive">Colors/VK.png</textureradioofffocus>
+                    <textureradiooffnofocus colordiffuse="textactive">Colors/VK.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR $VAR[selected]]VK[/COLOR]</label>
+                    <onclick>Skin.Togglesetting(VK)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(custom)">Skin.Reset(custom)</onclick>
+                    <selected>Skin.HasSetting(VK)</selected>
+                    <visible>Skin.HasSetting(VK)</visible>
+                </control>
+
+                
+                <control type="radiobutton" id="42">
+                    <visible></visible>
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <label>636</label>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <texturefocus></texturefocus>
+                    <textureradioonfocus></textureradioonfocus>
+                    <textureradioonnofocus></textureradioonnofocus>
+                    <textureradioofffocus></textureradioofffocus>
+                    <textureradiooffnofocus></textureradiooffnofocus>
+                    <onclick>Skin.ToggleSetting(custom)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <selected>Skin.HasSetting(custom)</selected>
+                    <onclick>activatewindow(1112),return</onclick>
+                    <visible>!Skin.HasSetting(custom)</visible>
+                </control>
+                <control type="radiobutton" id="43">
+                    <visible></visible>
+                    <description>Enable Home Button Further apart</description>
+                    <width>8-col</width>
+                    <label>[COLOR $VAR[selected]]$LOCALIZE[636][/COLOR]</label>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <textureradioonfocus></textureradioonfocus>
+                    <textureradioonnofocus></textureradioonnofocus>
+                    <textureradioofffocus></textureradioofffocus>
+                    <textureradiooffnofocus></textureradiooffnofocus>
+                    <onclick>Skin.Setting(custom)</onclick>
+                    <onclick condition="Skin.HasSetting(Bluewood)">Skin.Reset(Bluewood)</onclick>
+                    <onclick condition="Skin.HasSetting(Darkblue)">Skin.Reset(Darkblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Default)">Skin.Reset(Default)</onclick>
+                    <onclick condition="Skin.HasSetting(Dribble)">Skin.Reset(Dribble)</onclick>
+                    <onclick condition="Skin.HasSetting(Gold)">Skin.Reset(Gold)</onclick>
+                    <onclick condition="Skin.HasSetting(Green)">Skin.Reset(Green)</onclick>
+                    <onclick condition="Skin.HasSetting(Interest)">Skin.Reset(Interest)</onclick>
+                    <onclick condition="Skin.HasSetting(lightblue)">Skin.Reset(lightblue)</onclick>
+                    <onclick condition="Skin.HasSetting(Medium)">Skin.Reset(Medium)</onclick>
+                    <onclick condition="Skin.HasSetting(Orange)">Skin.Reset(Orange)</onclick>
+                    <onclick condition="Skin.HasSetting(PellucidV1)">Skin.Reset(PellucidV1)</onclick>
+                    <onclick condition="Skin.HasSetting(Razzmatazz)">Skin.Reset(Razzmatazz)</onclick>
+                    <onclick condition="Skin.HasSetting(Tumble)">Skin.Reset(Tumble)</onclick>
+                    <onclick condition="Skin.HasSetting(Turquoise)">Skin.Reset(Turquoise)</onclick>
+                    <onclick condition="Skin.HasSetting(Vine)">Skin.Reset(Vine)</onclick>
+                    <onclick condition="Skin.HasSetting(VK)">Skin.Reset(VK)</onclick>
+                    <selected>Skin.HasSetting(custom)</selected>
+                    <onclick>activatewindow(1112),return</onclick>
+                    <visible>Skin.HasSetting(custom)</visible>
+                </control>
+
+                
+            </control>
+
+            <control type="image">
+                	<visible>control.hasfocus(43)</visible>
+                    <posx>48%</posx>
+                    <posy>-10</posy>
+                    <width>340</width>
+                    <height>100</height>
+                    <texture colordiffuse="overlay">colors/black.png</texture>
+                    <colordiffuse>white</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                	<visible>control.hasfocus(42)</visible>
+                    <posx>48%</posx>
+                    <posy>-10</posy>
+                    <width>340</width>
+                    <height>100</height>
+                    <texture colordiffuse="overlay">colors/black.png</texture>
+                    <colordiffuse>white</colordiffuse>
+                    <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="grouplist">
+                <visible>control.hasfocus(43)</visible>
+                <posx>49%</posx>
+                <posy>10</posy>
+                <width>6-col-gutter</width>
+                <height>400</height>
+                <itemgap>10</itemgap>
+                <orientation>horizontal</orientation>
+                    <control type="image">
+                        <width>60</width>
+                        <height>60</height>
+                        <aspectratio>scale</aspectratio>
+                        <texture colordiffuse="$VAR[highlight]">masks/discsurface.png</texture>
+                        <bordertexture border="3" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+                        <bordersize>3</bordersize>
+                </control>
+                
+                <control type="image">
+                    
+                    <width>60</width>
+                    <height>60</height>
+                    <bordertexture border="3" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+                    <bordersize>3</bordersize>
+                    <colordiffuse>ffFFFFFF</colordiffuse>
+                    <texture colordiffuse="$VAR[highlight_Shadow]">masks/discsurface.png</texture>
+                    <aspectratio>scale</aspectratio>
+                </control>
+                <control type="image">
+                    <width>60</width>
+                    <height>60</height>
+                    <bordertexture border="3" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+                    <bordersize>3</bordersize>
+                    <colordiffuse>ffFFFFFF</colordiffuse>
+                    <texture colordiffuse="$VAR[Home]">masks/discsurface.png</texture>
+                    <aspectratio>scale</aspectratio>
+                </control>
+                <control type="image">
+                    <width>60</width>
+                    <height>60</height>
+                    <bordertexture border="3" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+                    <bordersize>3</bordersize>
+                    <colordiffuse>ffFFFFFF</colordiffuse>
+                    <texture colordiffuse="$VAR[selected]">masks/discsurface.png</texture>
+                    <aspectratio>scale</aspectratio>
+                </control>
+                <control type="image">
+                    <width>60</width>
+                    <height>60</height>
+                    <bordertexture border="3" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+                    <bordersize>3</bordersize>
+                    <colordiffuse>ffFFFFFF</colordiffuse>
+                    <texture colordiffuse="$VAR[selected_box]">masks/discsurface.png</texture>
+                    <aspectratio>scale</aspectratio>
+                </control>
+            </control>
+            <control type="grouplist">
+                <visible>control.hasfocus(42)</visible>
+                <posx>49%</posx>
+                <posy>10</posy>
+                <width>6-col-gutter</width>
+                <height>400</height>
+                <itemgap>10</itemgap>
+                <orientation>horizontal</orientation>
+                    <control type="image">
+                    <width>60</width>
+                    <height>60</height>
+                    <bordertexture border="3" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+                    <bordersize>3</bordersize>
+                    <texture colordiffuse="Skin.String(highlight_color)">masks/discsurface.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <width>60</width>
+                    <height>60</height>
+                    <bordertexture border="3" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+                    <bordersize>3</bordersize>
+                    <texture colordiffuse="Skin.String(highlight_Shadow_color)">masks/discsurface.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <width>60</width>
+                    <height>60</height>
+                    <bordertexture border="3" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+                    <bordersize>3</bordersize>
+                    <texture colordiffuse="Skin.String(Home_color)">masks/discsurface.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <width>60</width>
+                    <height>60</height>
+                    <bordertexture border="3" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+                    <bordersize>3</bordersize>
+                    <texture colordiffuse="Skin.String(Selected_color)">masks/discsurface.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+                <control type="image">
+                    <width>60</width>
+                    <height>60</height>
+                    <bordertexture border="3" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+                    <bordersize>3</bordersize>
+                    <texture colordiffuse="Skin.String(Selected_box_color)">masks/discsurface.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+            </control>
+            
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>custom_color.xml</label>
+        </control>
+    </controls>
+</window>
