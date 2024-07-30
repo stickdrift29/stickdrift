@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-        <addon id="repository.stickdrift" name="stickdrift Repository" provider-name="stickdrift29" version="1.0.3">
+        <addon id="repository.stickdrift" name="stickdrift Repository" provider-name="stickdrift29" version="1.0.4">
 	        <extension point="xbmc.addon.repository" name="stickdrift Repository">
                 <dir>
                     <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Omega/addons.xml</info>
