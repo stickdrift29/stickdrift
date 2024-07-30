@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include name="View_502_Episode">
+        <!--fanart-->
+        <control type="group">
+            <visible>$EXP[isTVShow] | $EXP[isSeason] | $EXP[isEpisode]</visible>  
+        
+        <control type="panel" id="502" width='18-col' height='100' condition='Skin.HasSetting(Touch)'>
+            <visible>$EXP[isTVShow] | $EXP[isSeason] | $EXP[isEpisode]</visible>
+            <viewtype label="$LOCALIZE[20359]">list</viewtype>
+            <posx>col-1-begin</posx>
+            <posy>row-5-begin</posy>
+            <onleft>9000</onleft>
+            <onright>61</onright>
+            <ondown>502</ondown>
+            <onup>502</onup>
+            <pagecontrol>61</pagecontrol>
+            <itemlayout width="24-col" height="2-row" condition='!Skin.HasSetting(touch)'>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>3</posy>
+                    <width>66</width>
+                    <height>66</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+					<colordiffuse>overlay</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>1-col</posx>
+                    <posy>0</posy>
+                    <width>23-col</width>
+                    <height>69</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture border="0">masks/discsurface.png</texture>
+                    <colordiffuse>keyboardInactive</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>1-col-indent</posx>
+                    <posy>0</posy>
+                    <width>22-col-gutter</width>
+                    <height>2-row</height>
+                    <aligny>center</aligny>
+                    <font>itemTitle</font>
+                    <textcolor>textActive</textcolor>
+                    <selectedcolor>yellow</selectedcolor>
+                    <shadowcolor></shadowcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <visible>!String.IsEmpty(ListItem.playcount) + !Skin.HasSetting(Disable.overlays)</visible>
+                    <posx>23-col-gutter</posx>
+                    <posy>0</posy>
+                    <width>1-col</width>
+                    <height>2-row</height>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <font>symbolLarge</font>
+                    <textcolor>textActive</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <label></label>
+                </control>
+                <control type="label">
+			        <visible>ListItem.IsResumable + !String.IsEqual(ListItem.PercentPlayed,0) + !Skin.HasSetting(Disable.overlays)</visible>
+                    <posx>23-col-gutter</posx>
+                    <posy>0</posy>
+                    <width>1-col</width>
+                    <height>2-row</height>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <font>symbolLarge</font>
+                    <textcolor>textActive</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <label></label>
+                </control>
+            </itemlayout>
+            <itemlayout width="20-col" height="3-row" condition='Skin.HasSetting(touch)'>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>3</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+					<colordiffuse>overlay</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>110</posx>
+                    <posy>0</posy>
+                    <width>18-col</width>
+                    <height>100</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture border="0">masks/discsurface.png</texture>
+                    <colordiffuse>keyboardInactive</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>110</posx>
+                    <posy>0</posy>
+                    <width>18-col</width>
+                    <height>100</height>
+                    <aligny>center</aligny>
+                    <font>itemTitle</font>
+                    <textcolor>textActive</textcolor>
+                    <selectedcolor>yellow</selectedcolor>
+                    <shadowcolor></shadowcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <visible>!String.IsEmpty(ListItem.playcount) + !Skin.HasSetting(Disable.overlays)</visible>
+                    <posx>14-col-gutter</posx>
+                    <posy>-60</posy>
+                    <width>5-col</width>
+                    <height>6-row</height>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <font>symbolVeryLarge</font>
+                    <textcolor>textActive</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <label></label>
+                </control>
+                <control type="label">
+			        <visible>ListItem.IsResumable + !String.IsEqual(ListItem.PercentPlayed,0) + !Skin.HasSetting(Disable.overlays)</visible>
+                    <posx>14-col-gutter</posx>
+                    <posy>-60</posy>
+                    <width>5-col</width>
+                    <height>6-row</height>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <font>symbolVeryLarge</font>
+                    <textcolor>textActive</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <label></label>
+                </control>
+            </itemlayout>
+            <focusedlayout width="24-col" height="2-row" condition='!Skin.HasSetting(touch)'>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>3</posy>
+                    <width>66</width>
+                    <height>66</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+                    <animation type="focus" loop="false" reversible="false">
+                        <effect type="fade" time="500"/>
+                        <effect type="rotatey" end="360" center="33" tween="back" easing="out" time="1000"/>
+                    </animation>
+                </control>
+                <control type="image">
+                    <posx>1-col</posx>
+                    <posy>0</posy>
+                    <width>23-col</width>
+                    <height>2-row</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture border="0">masks/discsurface.png</texture>
+                    <colordiffuse>$VAR[highlight]</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>1-col-indent</posx>
+                    <posy>0</posy>
+                    <width>22-col-gutter</width>
+                    <height>2-row</height>
+                    <aligny>center</aligny>
+                    <font>itemTitle</font>
+                    <textcolor>$VAR[Home]</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                    <selectedcolor>yellow</selectedcolor>
+                </control>
+                <control type="label">
+                    <visible>!String.IsEmpty(ListItem.playcount) + !Skin.HasSetting(Disable.overlays)</visible>
+                    <posx>23-col-gutter</posx>
+                    <posy>0</posy>
+                    <width>1-col</width>
+                    <height>2-row</height>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <font>symbolLarge</font>
+                    <textcolor>$VAR[Home]</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <label></label>
+                </control>
+                <control type="label">
+			        <visible>ListItem.IsResumable + !String.IsEqual(ListItem.PercentPlayed,0) + !Skin.HasSetting(Disable.overlays)</visible>
+                    <posx>23-col-gutter</posx>
+                    <posy>0</posy>
+                    <width>1-col</width>
+                    <height>2-row</height>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <font>symbolLarge</font>
+                    <textcolor>$VAR[Home]</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <label></label>
+                </control>
+            </focusedlayout>
+            <focusedlayout width="20-col" height="5-row" condition='Skin.HasSetting(touch)'>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>3</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture fallback="kodilogo.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+                    <animation type="focus" loop="false" reversible="false">
+                        <effect type="fade" time="500"/>
+                        <effect type="rotatey" end="360" center="50" tween="back" easing="out" time="1000"/>
+                    </animation>
+                </control>
+                <control type="image">
+                    <posx>110</posx>
+                    <posy>0</posy>
+                    <width>18-col</width>
+                    <height>100</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture border="0">masks/discsurface.png</texture>
+                    <colordiffuse>$VAR[highlight]</colordiffuse>
+                </control>
+                <control type="label">
+                    <posx>110</posx>
+                    <posy>0</posy>
+                    <width>18-col</width>
+                    <height>100</height>
+                    <aligny>center</aligny>
+                    <font>itemTitle</font>
+                    <textcolor>$VAR[Home]</textcolor>
+                    <selectedcolor>yellow</selectedcolor>
+                    <shadowcolor></shadowcolor>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="label">
+                    <visible>!String.IsEmpty(ListItem.playcount) + !Skin.HasSetting(Disable.overlays)</visible>
+                    <posx>14-col-gutter</posx>
+                    <posy>-60</posy>
+                    <width>5-col</width>
+                    <height>6-row</height>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <font>symbolVeryLarge</font>
+                    <textcolor>$VAR[Home]</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <label></label>
+                </control>
+                <control type="label">
+			        <visible>ListItem.IsResumable + !String.IsEqual(ListItem.PercentPlayed,0) + !Skin.HasSetting(Disable.overlays)</visible>
+                    <posx>14-col-gutter</posx>
+                    <posy>-60</posy>
+                    <width>5-col</width>
+                    <height>6-row</height>
+                    <aligny>center</aligny>
+                    <align>right</align>
+                    <font>symbolVeryLarge</font>
+                    <textcolor>$VAR[Home]</textcolor>
+                    <shadowcolor></shadowcolor>
+                    <label></label>
+                </control>
+            </focusedlayout>
+        </control>
+        </control>
+    </include>
+</includes>

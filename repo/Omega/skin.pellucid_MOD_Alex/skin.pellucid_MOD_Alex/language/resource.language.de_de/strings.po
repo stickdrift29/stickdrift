@@ -1,0 +1,948 @@
+# Kodi Media Center language file
+# Addon Name: Pellucid
+# Addon id: skin.pellucid
+# Addon Provider: chrisbevan
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Skins\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-02-27 16:28+0000\n"
+"Last-Translator: Sylvio B. <berger.sylvio@gmail.com>\n"
+"Language-Team: German <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-pellucid/de_de/>\n"
+"Language: de_de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.11\n"
+
+msgctxt "Addon Summary"
+msgid "A skin for Kodi from theDeadmanInYossariansTent"
+msgstr "Ein Skin für Kodi, von theDeadmanInYossariansTent"
+
+msgctxt "Addon Description"
+msgid "Pellucid is a lightweight, clean and simple Kodi experience designed for maximum usability and minimum fuss."
+msgstr "Pellucid bietet ein leichtgewichtiges, übersichtliches und einfaches Kodi-Erlebnis, geschaffen für höchste Benutzerfreundlichkeit und Minimalismus."
+
+msgctxt "#31008"
+msgid "Sort by"
+msgstr "Sortieren nach"
+
+msgctxt "#31012"
+msgid "My Library"
+msgstr "Eigene Bibliothek"
+
+msgctxt "#31014"
+msgid "title(s)"
+msgstr "Titel"
+
+msgctxt "#31015"
+msgid "On"
+msgstr "Auf"
+
+msgctxt "#31019"
+msgid "Open playlist"
+msgstr "Wiedergabeliste öffnen"
+
+msgctxt "#31020"
+msgid "Save playlist"
+msgstr "Wiedergabeliste speichern"
+
+msgctxt "#31021"
+msgid "Clear playlist"
+msgstr "Wiedergabeliste löschen"
+
+msgctxt "#31022"
+msgid "Select Items"
+msgstr "Einträge auswählen"
+
+msgctxt "#31023"
+msgid "Notification"
+msgstr "Benachrichtigung"
+
+msgctxt "#31031"
+msgid "Play Random"
+msgstr "Zufällige Wiedergabe"
+
+msgctxt "#31034"
+msgid "Enable Debug Grid"
+msgstr "Debug-Raster aktivieren"
+
+msgctxt "#31035"
+msgid "Enable Debug Information"
+msgstr "Debug-Informationen aktivieren"
+
+msgctxt "#31043"
+msgid "Reload Skin"
+msgstr "Skin neu laden"
+
+msgctxt "#31044"
+msgid "Debugging"
+msgstr "Debugging"
+
+msgctxt "#31046"
+msgid "Field"
+msgstr "Feld"
+
+msgctxt "#31048"
+msgid "Create Folder"
+msgstr "Ordner erstellen"
+
+msgctxt "#31051"
+msgid "Disc Menu"
+msgstr "Disk-Menü"
+
+msgctxt "#31054"
+msgid "by"
+msgstr "von"
+
+msgctxt "#31056"
+msgid "Photo Library"
+msgstr "Foto-Bibliothek"
+
+msgctxt "#31057"
+msgid "Create Music Playlist"
+msgstr "Musik-Bibliothek erstellen"
+
+msgctxt "#31060"
+msgid "PVR"
+msgstr "PVR"
+
+msgctxt "#31061"
+msgid "Adjust look and feel of Kodi"
+msgstr "Aussehen und Bedienung von Kodi anpassen"
+
+msgctxt "#31062"
+msgid "Memory"
+msgstr "Speicher"
+
+msgctxt "#31063"
+msgid "Manage content playback"
+msgstr "Verwaltung der Wiedergabe"
+
+msgctxt "#31064"
+msgid "CPU"
+msgstr "CPU"
+
+msgctxt "#31067"
+msgid "Extend Kodi's functionality"
+msgstr "Kodis Funktionalität erweitern"
+
+msgctxt "#31070"
+msgid "Screen"
+msgstr "Bildschirm"
+
+msgctxt "#31071"
+msgid "Communications and sharing"
+msgstr "Kommunikation und Teilen"
+
+msgctxt "#31073"
+msgid "Channel Guide"
+msgstr "Programm-Guide"
+
+msgctxt "#31076"
+msgid "Change Title"
+msgstr "Titel ändern"
+
+msgctxt "#31078"
+msgid "Now and Next"
+msgstr "Jetzt und als Nächstes"
+
+msgctxt "#31079"
+msgid "Import your content into Kodi"
+msgstr "Inhalte in Kodi importieren"
+
+msgctxt "#31081"
+msgid "Digital Television Setup"
+msgstr "Setup für Digital-TV"
+
+msgctxt "#31082"
+msgid "By"
+msgstr "Von"
+
+msgctxt "#31087"
+msgid "Timers"
+msgstr "Timer"
+
+msgctxt "#31088"
+msgid "Video Addons"
+msgstr "Video-Addons"
+
+msgctxt "#31090"
+msgid "Music Addons"
+msgstr "Musik-Addons"
+
+msgctxt "#31093"
+msgid "IP"
+msgstr "IP"
+
+msgctxt "#31095"
+msgid "Transfer and copy files"
+msgstr "Dateien übertragen und kopieren"
+
+msgctxt "#31096"
+msgid "No items found"
+msgstr "Keine Einträge gefunden"
+
+msgctxt "#31099"
+msgid "Add Group"
+msgstr "Gruppe hinzufügen"
+
+msgctxt "#31100"
+msgid "Rename Group"
+msgstr "Gruppe umbenennen"
+
+msgctxt "#31101"
+msgid "Delete Group"
+msgstr "Gruppe löschen"
+
+msgctxt "#31102"
+msgid "Low CPU power mode"
+msgstr "Modus für langsame Prozessoren"
+
+msgctxt "#31103"
+msgid "Control how Kodi is used"
+msgstr "Steuern, wie Kodi genutzt wird"
+
+msgctxt "#31104"
+msgid "Disable this addon"
+msgstr "Dieses Addon deaktivieren"
+
+msgctxt "#31105"
+msgid "Manage your Kodi system"
+msgstr "Kodi-System verwalten"
+
+msgctxt "#31107"
+msgid "Current profile"
+msgstr "Aktuelles Profil"
+
+msgctxt "#31108"
+msgid "About this Kodi Installation"
+msgstr "Über diese Kodi-Installation"
+
+msgctxt "#31109"
+msgid "Order: Ascending"
+msgstr "Sortieren: Aufsteigend"
+
+msgctxt "#31110"
+msgid "Order: Descending"
+msgstr "Sortieren: Absteigend"
+
+msgctxt "#31111"
+msgid "Manage your program addons"
+msgstr "Programm-Addons verwalten"
+
+msgctxt "#31112"
+msgid "TV Guide"
+msgstr "TV-Programm-Guide"
+
+msgctxt "#31113"
+msgid "Kodi Addons"
+msgstr "Kodi-Addons"
+
+msgctxt "#31114"
+msgid "Pixel format"
+msgstr "Pixelformat"
+
+msgctxt "#31116"
+msgid "Set home background directory"
+msgstr "Verzeichnis für Start-Hintergründe festlegen"
+
+msgctxt "#31117"
+msgid "Launch addon"
+msgstr "Addon starten"
+
+msgctxt "#31118"
+msgid "PVR not active"
+msgstr "PVR nicht aktiv"
+
+msgctxt "#31121"
+msgid "My Kodi"
+msgstr "Mein Kodi"
+
+msgctxt "#31122"
+msgid "Reset home backgrounds to default"
+msgstr "Start-Hintergründe auf Standard zurücksetzen"
+
+msgctxt "#31123"
+msgid "Current Queue"
+msgstr "Abspielliste"
+
+msgctxt "#31127"
+msgid "Continue Watching"
+msgstr "Weiterschauen"
+
+msgctxt "#31134"
+msgid "Manual search"
+msgstr "Manuelle Suche"
+
+msgctxt "#31136"
+msgid "Now Playing"
+msgstr "Gerade läuft"
+
+msgctxt "#31138"
+msgid "Stop video playing on return to menu"
+msgstr "Video-Wiedergabe bei Rückkehr zum Menü stoppen"
+
+msgctxt "#31142"
+msgid "Prioritise exit over shutdown in power menu"
+msgstr "Im Power-Menü Verlassen über Herunterfahren priorisieren"
+
+msgctxt "#31143"
+msgid "Remaining"
+msgstr "Rest"
+
+msgctxt "#31144"
+msgid "FPS"
+msgstr "FPS"
+
+msgctxt "#31145"
+msgid "Item(s)"
+msgstr "Einträge"
+
+msgctxt "#31146"
+msgid "Elapsed Time"
+msgstr "Abgelaufen"
+
+msgctxt "#31149"
+msgid "Released"
+msgstr "Veröffentlicht"
+
+msgctxt "#31152"
+msgid "Press OK to cancel"
+msgstr "Zum Abbrechen, OK drücken"
+
+msgctxt "#31153"
+msgid "Playlist saved"
+msgstr "Wiedergabeliste gespeichert"
+
+msgctxt "#31160"
+msgid "Ends"
+msgstr "Endet"
+
+msgctxt "#31165"
+msgid "TV Recordings"
+msgstr "TV-Aufnahmen"
+
+msgctxt "#31169"
+msgid "Rate"
+msgstr "Bewerten"
+
+msgctxt "#31170"
+msgid "Menus"
+msgstr "Menüs"
+
+msgctxt "#31171"
+msgid "Edit home menu"
+msgstr "Start-Menü bearbeiten"
+
+msgctxt "#31172"
+msgid "Edit video section menu"
+msgstr "Video-Menü bearbeiten"
+
+msgctxt "#31173"
+msgid "Edit music section menu"
+msgstr "Musik-Menü bearbeiten"
+
+msgctxt "#31174"
+msgid "Edit picture section menu"
+msgstr "Bilder-Menü bearbeiten"
+
+msgctxt "#31176"
+msgid "New Movies"
+msgstr "Neue Filme"
+
+msgctxt "#31178"
+msgid "New TV Shows"
+msgstr "Neue Serien"
+
+msgctxt "#31179"
+msgid "Options"
+msgstr "Optionen"
+
+msgctxt "#31180"
+msgid "New Albums"
+msgstr "Neue Alben"
+
+msgctxt "#31181"
+msgid "Random Albums"
+msgstr "Zufällige Alben"
+
+msgctxt "#31187"
+msgid "Top Albums"
+msgstr "Top-Alben"
+
+msgctxt "#31188"
+msgid "season(s)"
+msgstr "Staffel(n)"
+
+msgctxt "#31189"
+msgid "episode(s)"
+msgstr "Episode(n)"
+
+msgctxt "#31190"
+msgid "All Episodes"
+msgstr "Alle Episoden"
+
+msgctxt "#31195"
+msgid "Show only unwatched items:"
+msgstr "Nur ungesehene Einträge anzeigen:"
+
+msgctxt "#31199"
+msgid "Artists in"
+msgstr "Interpreten in"
+
+msgctxt "#31203"
+msgid "Smart Playlist"
+msgstr "Intelligente Wiedergabeliste"
+
+msgctxt "#31205"
+msgid "No further details available."
+msgstr "Keine weiteren Details verfügbar."
+
+msgctxt "#31206"
+msgid "Kodi System Information"
+msgstr "Kodi System-Informationen"
+
+msgctxt "#31209"
+msgid "<Source name>"
+msgstr "<Quellen-Name>"
+
+msgctxt "#31211"
+msgid "<Smart playlist name>"
+msgstr "<Name für Intelligente Wiedergabeliste>"
+
+msgctxt "#31212"
+msgid "From"
+msgstr "Von"
+
+msgctxt "#31213"
+msgid "Showing unwatched titles only"
+msgstr "Nur ungesehene Titel anzeigen"
+
+msgctxt "#31215"
+msgid "TV Channels"
+msgstr "TV-Kanäle"
+
+msgctxt "#31216"
+msgid "TV Shows"
+msgstr "Serien"
+
+msgctxt "#31218"
+msgid "Enable this addon"
+msgstr "Dieses Addon aktivieren"
+
+msgctxt "#31220"
+msgid "Disable extended fanart"
+msgstr "Erweiterte Fanart deaktivieren"
+
+msgctxt "#31221"
+msgid "Play Disc"
+msgstr "Disk wiedergeben"
+
+msgctxt "#31222"
+msgid "Change Channel Group"
+msgstr "Kanalgruppe wechseln"
+
+msgctxt "#31223"
+msgid "All Albums"
+msgstr "Alle Alben"
+
+msgctxt "#31224"
+msgid "All Movies"
+msgstr "Alle Filme"
+
+msgctxt "#31225"
+msgid "All TV Shows"
+msgstr "Alle Serien"
+
+msgctxt "#31226"
+msgid "LibreElec Settings"
+msgstr "LibreELEC-Einstellungen"
+
+msgctxt "#31228"
+msgid "Edit Menu"
+msgstr "Menü bearbeiten"
+
+msgctxt "#31229"
+msgid "Play Music"
+msgstr "Musik wiedergeben"
+
+msgctxt "#31230"
+msgid "Game Settings"
+msgstr "Spieleeinstellungen"
+
+msgctxt "#31231"
+msgid "Game related options"
+msgstr "Spielbezogene Optionen"
+
+msgctxt "#31232"
+msgid "Games"
+msgstr "Spiele"
+
+msgctxt "#31233"
+msgid "Edit game section menu"
+msgstr "Spiele-Menü bearbeiten"
+
+msgctxt "#31234"
+msgid "Game Addons"
+msgstr "Spiele-Addons"
+
+msgctxt "#31236"
+msgid "Radio / TV"
+msgstr "Radio / TV"
+
+msgctxt "#31237"
+msgid "Results for"
+msgstr "Ergebnisse für"
+
+msgctxt "#31238"
+msgid "Disable recently added section for Movies"
+msgstr "„Kürzlich hinzugefügt“ für Filme deaktiveren"
+
+msgctxt "#31239"
+msgid "Disable recently added section for TV Shows"
+msgstr "„Kürzlich hinzugefügt“ für Serien deaktivieren"
+
+msgctxt "#31240"
+msgid "Disable recently added section for Albums"
+msgstr "„Kürzlich hinzugefügt“ für Alben deaktivieren"
+
+msgctxt "#31241"
+msgid "Enable Battery Level"
+msgstr "Batterie anzeigen"
+
+msgctxt "#31242"
+msgid "Enable Back Button for Touchscreen"
+msgstr "Zurück Button für Touchscreen"
+
+msgctxt "#31243"
+msgid "Disable Settings"
+msgstr "Einstellung ausblenden"
+
+msgctxt "#31244"
+msgid "Enable Home Button Further apart"
+msgstr "Start Button weiter auseinander"
+
+msgctxt "#31245"
+msgid "Finishes"
+msgstr "Endet"
+
+msgctxt "#31246"
+msgid "Show Android Apps"
+msgstr "Zeige Android Apps"
+
+msgctxt "#31248"
+msgid "Queue"
+msgstr "Warteschlange"
+
+msgctxt "#31249"
+msgid "Live TV"
+msgstr "Live TV"
+
+msgctxt "#31250"
+msgid "Radio"
+msgstr "Radio"
+
+msgctxt "#31251"
+msgid "Eject Disc"
+msgstr "Disk auswerfen"
+
+msgctxt "#31252"
+msgid "Album"
+msgstr "Album"
+
+msgctxt "#31253"
+msgid "Back"
+msgstr "Zurück"
+
+msgctxt "#31254"
+msgid "Homescreen"
+msgstr "Startbildschirm"
+
+msgctxt "#31255"
+msgid "Show Youtube (only on Firetv)"
+msgstr "Anzeigen von Youtube (Nur auf dem Firetv)"
+
+msgctxt "#31256"
+msgid "show SmartTube"
+msgstr "Anzeigen von SmartTube"
+
+msgctxt "#31257"
+msgid "Automatically close video OSD"
+msgstr "Video-OSD automatisch schliessen"
+
+msgctxt "#31258"
+msgid "Video OSD autoclose time (seconds)"
+msgstr "Video-OSD automatisch schließen nach (Sekunden)"
+
+msgctxt "#31259"
+msgid "Change Skin Colors"
+msgstr "Farbe ändern"
+
+msgctxt "#31260"
+msgid "Enable Cross Key (Only Touch)"
+msgstr "Steuerkreuz Aktivieren (Nur Touch)"
+
+msgctxt "#31261"
+msgid "Homemenu Look"
+msgstr "Startmenü Stil"
+
+msgctxt "#31262"
+msgid "Grid"
+msgstr "Gitter"
+
+msgctxt "#31263"
+msgid "Slider"
+msgstr ""
+
+msgctxt "#31264"
+msgid "Side"
+msgstr "Seite"
+
+msgctxt "#31265"
+msgid "Set Weather icons"
+msgstr "Auswahl Wetter Icons"
+
+msgctxt "#31266"
+msgid "Single image background"
+msgstr "Einzelnen Bildhintergrund"
+
+msgctxt "#31267"
+msgid "Multi-image background"
+msgstr "Mehrbild-Hintergrund"
+
+msgctxt "#31268"
+msgid "Reset to default"
+msgstr "Auf Standard zurücksetzen"
+
+msgctxt "#31269"
+msgid "Set Home Image/Path"
+msgstr "Setze Start Bild/Pfad"
+
+msgctxt "#31270"
+msgid "Set Settings Image/Path"
+msgstr "Setze Einstellungen Bild/Pfad"
+
+msgctxt "#31271"
+msgid "Set SettingsCategory Image/Path"
+msgstr "Setze Einstellungen Kategorie Bild/Pfad"
+
+msgctxt "#31272"
+msgid "Set Addonsettings Image/Path"
+msgstr "Setze Addon Einstellung Bild/Pfad"
+
+msgctxt "#31273"
+msgid "Set FileBrowser Image/Path"
+msgstr "Setze Datei Browser Bild/Pfad"
+
+msgctxt "#31274"
+msgid "Set FileManager Image/Path"
+msgstr "Setze Datei Manager Bild/Pfad"
+
+msgctxt "#31275"
+msgid "Set Skinsettings  Image/Path"
+msgstr "Setze Oberflächeneinstellungen Bild/Pfad"
+
+msgctxt "#31276"
+msgid "Set SettingsSystemInfo backgrounds Image/Path"
+msgstr "Setze System Info Bild/Pfad"
+
+msgctxt "#31277"
+msgid "Set AddonInfo Image/Path"
+msgstr "Setze Addon Info Bild/Pfad"
+
+msgctxt "#31278"
+msgid "Set AddonBrowser Image/Path"
+msgstr "Setze Addon Browser Bild/Pfad"
+
+msgctxt "#31279"
+msgid "Set Programms Image/Path"
+msgstr "Setze Programme Bild/Pfad"
+
+msgctxt "#31280"
+msgid "Set Music Image/Path"
+msgstr "Setze Musik Bild/Pfad"
+
+msgctxt "#31281"
+msgid "Set Music Fullscreen Image/Path"
+msgstr "Setze Musik Vollbild Bild/Pfad"
+
+msgctxt "#31282"
+msgid "Set Same for all Image/Path"
+msgstr "Setze Einen für alle Bild/Pfad"
+
+msgctxt "#31283"
+msgid "Change Backgrounds"
+msgstr "Hintergünde ändern"
+
+msgctxt "#31284"
+msgid "Backup / Restore"
+msgstr "Sicherung / Wiederherstellung"
+
+msgctxt "#31285"
+msgid "Restore"
+msgstr "Wiederherstellung"
+
+msgctxt "#31286"
+msgid "Highlight"
+msgstr "Highlight"
+
+msgctxt "#31287"
+msgid "Highlight Transparent"
+msgstr "Highlight Durchsichtig"
+
+msgctxt "#31288"
+msgid "Label Color"
+msgstr "Schrift"
+
+msgctxt "#31289"
+msgid "Selected"
+msgstr "Aktive Auswahl"
+
+msgctxt "#31290"
+msgid "Menu Button"
+msgstr "Menü Knöpfe"
+
+msgctxt "#31291"
+msgid "Manual Input"
+msgstr "Manuelle Eingabe"
+
+msgctxt "#31292"
+msgid "Do You want to reset Colors ?"
+msgstr "Möchten Sie die Farben wirklich Zurücksetzen ?"
+
+msgctxt "#31293"
+msgid "Disable startup intro"
+msgstr "Deaktiviere Start-Intro"
+
+msgctxt "#31294"
+msgid "Video Widget on Homescreen"
+msgstr "Video Widget auf dem Startbildschirm"
+
+msgctxt "#31295"
+msgid "Extra Button on Homescreen edit"
+msgstr "Zusatz Button auf Grundbild bearbeiten"
+
+msgctxt "#31296"
+msgid "Video Files"
+msgstr "Video Dateien"
+
+msgctxt "#31297"
+msgid "Short Settings Menu"
+msgstr "Kleines Einstellungsmenü"
+
+msgctxt "#31298"
+msgid "Advanced Settings"
+msgstr "Erweiterte Einstellungen"
+
+msgctxt "#31299"
+msgid "Gerneral Settings"
+msgstr "Allgemeine Einstellungen"
+
+msgctxt "#31300"
+msgid "App Settings"
+msgstr "App Einstellungen"
+
+msgctxt "#31301"
+msgid "Homescreen Settings"
+msgstr "Startbildschirm Einstellungen"
+
+msgctxt "#31302"
+msgid "Premiered"
+msgstr "Erstmals ausgestrahlt"
+
+msgctxt "#31303"
+msgid "Panel"
+msgstr "Panel"
+
+msgctxt "#31304"
+msgid "Wall"
+msgstr "Wand"
+
+msgctxt "#31305"
+msgid "ShowCase"
+msgstr "SchauKasten"
+
+msgctxt "#31306"
+msgid "View:"
+msgstr "Ansicht:"
+
+msgctxt "#31307"
+msgid "YouTube"
+msgstr "YouTube"
+
+msgctxt "#31308"
+msgid "Live TV Look"
+msgstr "Live TV Darstellung"
+
+msgctxt "#31309"
+msgid "SongList"
+msgstr "Liedliste"
+
+
+msgctxt "#31311"
+msgid "FanartList"
+msgstr "Fanartliste"
+
+msgctxt "#31314"
+msgid "MyFlix"
+msgstr "MyFlix"
+
+msgctxt "#31315"
+msgid "Fullscreen Wall"
+msgstr "Vollbildwand"
+
+msgctxt "#31316"
+msgid "InfoWall"
+msgstr "InfoWand"
+
+msgctxt "#31318"
+msgid "BigFan"
+msgstr "BigFan"
+
+msgctxt "#31319"
+msgid "Disable views"
+msgstr "Ansichten deaktivieren"
+
+msgctxt "#31320"
+msgid "Choose view"
+msgstr "Ansicht auswählen"
+
+msgctxt "#31321"
+msgid "Gallery"
+msgstr "Galerie"
+
+msgctxt "#31322"
+msgid "Display runtime in hours and minutes"
+msgstr "Zeige Spieldauer in Stunden und Minuten"
+
+msgctxt "#31323"
+msgid "Next episode"
+msgstr "Nächste Episode"
+
+msgctxt "#31324"
+msgid "Ends at"
+msgstr "Endet um"
+
+msgctxt "#31325"
+msgid "Landscape"
+msgstr "Querformat"
+
+msgctxt "#31326"
+msgid "Disable Overlays Info"
+msgstr "Deaktiviere Overlays"
+
+msgctxt "#31327"
+msgid "Years old"
+msgstr "Jahre alt"
+
+msgctxt "#31328"
+msgid "Budget"
+msgstr "Budget"
+
+msgctxt "#31329"
+msgid "Revenue"
+msgstr "Einkommen"
+
+msgctxt "#31330"
+msgid "Recently Added"
+msgstr "Kürzlich hinzugefügt"
+
+msgctxt "#31331"
+msgid "Revenue"
+msgstr "Einkommen"
+
+msgctxt "#31332"
+msgid "Budget"
+msgstr "Budget"
+
+msgctxt "#31333"
+msgid "This script is not available in the default Kodi repositiory. The Pellucid repo is needed to use the click to install feature, without it this script must be installed manually."
+msgstr "Skript ist im Kodi Repository nicht verfügbar. Zur Benutzung des Pellucid Repositorys müssen Sie die Installationsoption benutzen. Ohne diese Option muss das Skript manuell installiert werden."
+
+msgctxt "#31334"
+msgid "Information"
+msgstr "Information"
+
+msgctxt "#31335"
+msgid "Cases"
+msgstr "Hüllen"
+
+msgctxt "#31336"
+msgid "OpenCase mod"
+msgstr "OpenCase Mod"
+
+msgctxt "#31337"
+msgid "Mod delay"
+msgstr "Mod Verzögerung"
+
+msgctxt "#31338"
+msgid "Seconds"
+msgstr "Sekunden"
+
+msgctxt "#31339"
+msgid "These are RECOMMENDED scripts that add additional features. They are not needed for basic skin functionality. Some RECOMMENDED scripts may be unsuitable for low performance devices."
+msgstr "Dies sind EMPFOHLENE Skripte, die zusätzliche Funktionen hinzufügen. Sie sind für die Grundfunktionen des Skins nicht erforderlich. Einige EMPFOHLENE Skripte können für Geräte mit geringer Leistung ungeeignet sein."
+
+msgctxt "#31340"
+msgid "Click for more"
+msgstr "Klick für mehr"
+
+msgctxt "#31341"
+msgid "Down for more"
+msgstr "„Nach unten“ für mehr"
+
+msgctxt "#31342"
+msgid "More featuring"
+msgstr ""
+
+msgctxt "#31343"
+msgid "Crew"
+msgstr ""
+
+msgctxt "#31344"
+msgid "Image gallery"
+msgstr "Bildergalerie"
+
+msgctxt "#31345"
+msgid "YouTube"
+msgstr "YouTube"
+
+msgctxt "#31346"
+msgid "Known for"
+msgstr "Bekannt für"
+
+msgctxt "#31347"
+msgid "Similar"
+msgstr "Ähnliches"
+
+msgctxt "#31348"
+msgid "Recomend"
+msgstr "Empfehlen"
+
+msgctxt "#31349"
+msgid "Trakt Movies"
+msgstr "Trakt Filme"
+
+msgctxt "#31350"
+msgid "Trakt Series"
+msgstr "Trakt Serien"
+
+msgctxt "#31351"
+msgid "Movies DB"
+msgstr "Filme DB"
+
+msgctxt "#31352"
+msgid "Series DB"
+msgstr "Serien DB"
+
+msgctxt "#31353"
+msgid "Watching stopped in [COLOR $VAR[highlight]]$INFO[Window.Property(remaining)][/COLOR] seconds"
+msgstr "Wiedergabe wird gestoppt in [COLOR $VAR[highlight]]$INFO[Window.Property(remaining)][/COLOR] Sekunden"
+
+msgctxt "#31354"
+msgid "Next episode in [COLOR $VAR[highlight]]$INFO[Window.Property(remaining)][/COLOR] seconds"
+msgstr "Nächste Episode in [COLOR $VAR[highlight]]$INFO[Window.Property(remaining)][/COLOR] Sekunden"
+

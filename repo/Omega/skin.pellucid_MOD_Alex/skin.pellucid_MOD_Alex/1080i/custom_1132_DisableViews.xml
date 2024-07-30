@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1132" type="dialog">
+	<defaultcontrol always="true">9012</defaultcontrol>
+	<onload>ClearProperty(DisableView,1132)</onload>
+	<onunload>SetFocus(9012)</onunload>
+	<controls>
+		<control type="image">
+            <include>dimensionsFullscreen</include>
+            <texture>colors/black.png</texture>
+            <colordiffuse>d5FFFFFF</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+			<animation type="Conditional" condition="controlgroup(9000).hasfocus">
+                <effect type="fade" start="0" end="1000" time="200"/>
+            </animation>
+            <animation type="Conditional" condition="!controlgroup(9000).hasfocus">
+                <effect type="fade" start="1000" end="0" time="100"/>
+            </animation>
+            
+        </control>
+		<control type="image">
+                <visible>!window.isactive(1130) </visible>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>384</width>
+                <height>1500</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+			<!--logo-->
+			<control type="group">
+                <control type="label">
+	                <posx>70</posx>
+	                <posy>10</posy>
+	                <width>73</width>
+	                <height>73</height>
+	                <font>symbolVeryLarge</font>
+	                <aligny>center</aligny>
+	                <textcolor>$VAR[Home]</textcolor>
+	                <label>$VAR[menuLogo]</label>
+	            </control>
+               
+                
+			</control>
+        <control type="group" id="9000">
+            <animation type="windowopen">
+                <effect type="slide" start="-1084" end="0" tween="sine" delay="500" time="400"/>
+            </animation>
+			<animation type="windowclose">
+                <effect type="fade" start="100" end="0" time="0"/>
+            </animation>
+            
+            <animation type="Conditional" condition="!controlgroup(9000).hasfocus">
+                <effect type="slide" start="0" end="-1084" tween="sine" time="400"/>
+            </animation>
+            
+            <control type="image">
+                <posx>-200</posx>
+                <posy>-200</posy>
+                <width>584</width>
+                <height>1500</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+		</control>
+		<control type="button" id="8999">
+			<left>0</left>
+			<top>0</top>
+			<width>64</width>
+			<height>48</height>
+			<label></label>
+			<font>symbolLarge</font>
+			<textcolor>black</textcolor>
+			<focusedcolor>$VAR[highlight]</focusedcolor>
+			<onclick>Dialog.Close(1132)</onclick>
+			<texturefocus />
+			<texturenofocus />
+			
+		</control>
+		
+		<control type="group">
+			<include>WindowSettingsFadeAnimation</include>
+			<control type="label">
+				<top>80</top>
+				<width>400</width>
+				<height>48</height>
+				<textoffsetx>15</textoffsetx>
+				<font>buttonTitle</font>
+				<label>$LOCALIZE[31319]</label>
+				<textcolor>$VAR[selected]</textcolor>
+			</control>
+			<control type="grouplist" id="9012">
+				<top>128</top>
+				<width>400</width>
+				<height>900</height>
+				<onleft>Dialog.Close(1132)</onleft>
+				<onright>Dialog.Close(1132)</onright>
+				<ondown>9012</ondown>
+				<onup>9012</onup>
+				
+				<control type="radiobutton" id="1615">
+					<description>Disable SongList</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31309]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.SongListView)</onclick>
+					<selected>!Skin.HasSetting(Disable.SongListView)</selected>
+				</control>
+				
+				
+				<control type="radiobutton" id="1612">
+					<description>Disable FanartList</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31311]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.FanartListView)</onclick>
+					<selected>!Skin.HasSetting(Disable.FanartListView)</selected>
+				</control>
+				
+				
+				
+				
+				
+				
+				<control type="radiobutton" id="1635">
+					<description>Disable Myflix</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31314]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.MyFlixView)</onclick>
+					<selected>!Skin.HasSetting(Disable.MyFlixView)</selected>
+				</control>
+				
+				
+				
+				
+				<control type="radiobutton" id="1636">
+					<description>Disable Episode</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>[CAPITALIZE]$LOCALIZE[36906][/CAPITALIZE]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.EpisodeView)</onclick>
+					<selected>!Skin.HasSetting(Disable.EpisodeView)</selected>
+				</control>
+				<control type="radiobutton" id="1629">
+					<description>Disable ShowCase</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31305]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.ShowCaseView)</onclick>
+					<selected>!Skin.HasSetting(Disable.ShowCaseView)</selected>
+				</control>
+				<control type="radiobutton" id="1619">
+					<description>Disable Wall</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31304]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.WallView)</onclick>
+					<selected>!Skin.HasSetting(Disable.WallView)</selected>
+				</control>
+				<control type="radiobutton" id="1620">
+					<description>Disable Fullscreen Wall</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31315]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.FullscreenWallView)</onclick>
+					<selected>!Skin.HasSetting(Disable.FullscreenWallView)</selected>
+				</control>
+				
+				<control type="radiobutton" id="1621">
+					<description>Disable InfoWall</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31316]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.InfoWallView)</onclick>
+					<selected>!Skin.HasSetting(Disable.InfoWallView)</selected>
+				</control>
+				<control type="radiobutton" id="1628">
+					<description>Disable Landscape</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31325]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.LandscapeView)</onclick>
+					<selected>!Skin.HasSetting(Disable.LandscapeView)</selected>
+				</control>
+				<control type="radiobutton" id="1630">
+					<description>Disable BigFan</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31318]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.BigFanView)</onclick>
+					<selected>!Skin.HasSetting(Disable.BigFanView)</selected>
+				</control>
+				
+				
+				<control type="radiobutton" id="1632">
+					<description>Disable Gallery</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31321]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.GalleryView)</onclick>
+					<selected>!Skin.HasSetting(Disable.GalleryView)</selected>
+				</control>
+				<control type="radiobutton" id="1633">
+					<description>Disable Panel</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31303]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>SetProperty(DisableView,True,1132)</onclick>
+					<onclick>Skin.ToggleSetting(Disable.PanelView)</onclick>
+					<selected>!Skin.HasSetting(Disable.PanelView)</selected>
+				</control>
+				
+				<control type="radiobutton" id="1634">
+					<description>Disable overlay</description>
+					<width>383</width>
+					<textwidth>383</textwidth>
+					<radiowidth>110</radiowidth>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31326]</label>
+					<textureradioonfocus colordiffuse="$VAR[selected]">buttons/radio-button-on.png</textureradioonfocus>
+        			<textureradioonnofocus colordiffuse="$VAR[Home]">buttons/radio-button-on.png</textureradioonnofocus>
+        			<textureradioofffocus colordiffuse="$VAR[selected]">buttons/radio-button-off.png</textureradioofffocus>
+        			<textureradiooffnofocus colordiffuse="$VAR[Home]">buttons/radio-button-off.png</textureradiooffnofocus>
+					<onclick>Skin.toggleSetting(Disable.overlays)</onclick>
+					<selected>Skin.HasSetting(Disable.overlays)</selected>
+				</control>
+				<control type="togglebutton" id="9013">
+				<visible>!Skin.HasSetting(KioskMode.Enabled)</visible>
+				<top>1022</top>
+				<width>384</width>
+				<align>center</align>
+				<textoffsetx>30</textoffsetx>
+				<textcolor>$VAR[Home]</textcolor>
+				<focusedcolor>$VAR[selected]</focusedcolor>
+				<texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+
+				<label>$LOCALIZE[31043]</label>
+				
+				<onclick>ReloadSkin()</onclick>
+			</control>
+			</control>
+		</control>
+		<control type="button" id="3002">
+                <posx>384</posx>
+                <posy>500</posy>
+                <textwidth>60</textwidth>
+                <font>symbolLarge</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>60</width>
+                <label></label>
+                <label2></label2>
+                <textcolor>$VAR[selected]</textcolor>
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturenofocus>
+                <textoffsetx>2</textoffsetx>
+				<onclick>Dialog.Close(1132)</onclick>
+				<visible>skin.hassetting(Touch) + window.isactive(1132)</visible>
+        </control>
+		<include content="keyboard select">
+                    <param name="posx">87%</param>
+					<param name="posy">35%</param>
+                    <param name="focus">9012</param>
+                    <param name="up">up</param>
+                    <param name="down">down</param>
+                    <param name="left">left</param>
+                    <param name="right">right</param>
+                    <param name="select">select</param>
+                    <param name="back">back</param>
+					<param name="visible">skin.hassetting(Touch) + window.isactive(1132)</param>
+                    <param name="upview">true</param>
+					<param name="downview">true</param>
+					<param name="leftview">true</param>
+					<param name="rightview">true</param>
+					<param name="selectview">true</param>
+                    <param name="color">keyboardInactive</param>
+                </include>
+	</controls>
+</window>

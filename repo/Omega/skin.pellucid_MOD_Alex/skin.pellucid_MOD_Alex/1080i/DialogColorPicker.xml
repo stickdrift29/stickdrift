@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">6</defaultcontrol>
+	<include>DialogOpenCloseAnimation</include>
+	<onunload>ClearProperty(Reset.Color,1112)</onunload>
+	<controls>
+		<!--background-->
+        <include>globalBackground</include>
+        <control type="multiimage">
+			<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+			<include>dimensionsFullscreen</include>
+			<imagepath>$VAR[homeBackgroundLocation]</imagepath>
+			<timeperimage>45000</timeperimage>
+			<fadetime>200</fadetime>
+			<pauseatend>10000</pauseatend>
+			<randomize>true</randomize>
+			<loop>yes</loop>
+			<aspectratio>scale</aspectratio>
+			<colordiffuse>99ffffff</colordiffuse>
+		</control>
+
+        <!--Battery level-->
+        <include>Battery</include>
+         <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture colordiffuse="overlay">colors/black.png</texture>
+			<animation effect="fade" time="300">WindowOpen</animation>
+			<animation effect="fade" time="300">WindowClose</animation>
+		</control>
+		
+		<control type="label" id="1">
+			<left>360</left>
+			<width>1200</width>
+			<height>80</height>
+			<align>center</align>
+			<font>buttonTitle</font>
+			<label />
+			<shadowcolor>black</shadowcolor>
+		</control>
+		<control type="image">
+			<left>5</left>
+			<top>77</top>
+			<width>1910</width>
+			<height>1</height>
+			<texture colordiffuse="white">separator_horizontal.png</texture>
+		</control>
+		<control type="image">
+			<left>5</left>
+			<top>882</top>
+			<width>1910</width>
+			<height>1</height>
+			<texture colordiffuse="white">separator_horizontal.png</texture>
+		</control>
+		<control type="panel" id="6">
+			
+			<top>80</top>
+			<left>10</left>
+			<width>1900</width>
+			<height>800</height>
+			<onleft>9001</onleft>
+			<onright>9001</onright>
+			<ondown>9001</ondown>
+			<preloaditems>4</preloaditems>
+			<itemlayout width="100" height="80">
+				<control type="image">
+						<width>100</width>
+						<height>80</height>
+						<texture>masks/discsurface.png</texture>
+						<bordersize>1</bordersize>
+						<bordertexture border="1" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+						<colordiffuse>$INFO[ListItem.Label2]</colordiffuse>
+					</control>
+				<control type="image">
+						<width>100</width>
+						<height>80</height>
+						<texture>masks/discsurface.png</texture>
+						<bordersize>1</bordersize>
+						<bordertexture border="1" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+						<colordiffuse>$INFO[ListItem.Label2]</colordiffuse>
+					</control>
+			</itemlayout>
+			<focusedlayout width="100" height="80">
+				<control type="group">
+					<animation effect="zoom" time="300" tween="sine" easing="inout" start="100" end="125" center="50,40">Focus</animation>
+					<control type="image">
+						<width>100</width>
+						<height>80</height>
+						<texture>masks/discsurface.png</texture>
+						<bordersize>1</bordersize>
+						<bordertexture border="1" infill="false" colordiffuse="black">Colors/border_frame.png</bordertexture>
+						<colordiffuse>$INFO[ListItem.Label2]</colordiffuse>
+					</control>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="image">
+			<top>886</top>
+			<left>15</left>
+			<width>300</width>
+			<height>184</height>
+			<texture colordiffuse="$INFO[ListItem.Label2]">masks/discsurface.png</texture>
+			<animation effect="fade" start="100" end="0" condition="!Control.HasFocus(6)">Conditional</animation>
+		</control>
+		<control type="image">
+			<top>884</top>
+			<left>13</left>
+			<width>304</width>
+			<height>188</height>
+			<bordersize>1</bordersize>
+			<texture colordiffuse="black" border="1" infill="false">Colors/border_frame.png</texture>
+		</control>
+		
+		<control type="panel" id="9001">
+                <left>30%</left>
+				<top>925</top>
+                <width>975</width>
+                <height>12-row</height>
+                <itemgap>0</itemgap>
+                <onleft>6</onleft>
+				<onright>6</onright>
+				<onup>6</onup>
+				<ondown>6</ondown>
+                <itemlayout width="325" height="2-row">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>2-row</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>masks/discsurface.png</texture>
+                        <colordiffuse>$VAR[highlight]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>1-col</posx>
+                        <posy>0</posy>
+                        <width>240</width>
+                        <height>2-row</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture colordiffuse="textDisabled">masks/discsurface.png</texture>
+                        
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>2-row</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>symbolLarge</font>
+                        <textcolor>$VAR[Home]</textcolor>
+                        <label>$INFO[ListItem.label2]</label>
+                        <shadowcolor></shadowcolor>
+                    </control>
+                    <control type="label">
+                        <posx>1-col-indent</posx>
+                        <posy>0</posy>
+                        <width>224</width>
+                        <height>2-row</height>
+                        <aligny>center</aligny>
+                        <font>itemSubTitle</font>
+                        <textcolor>textActive</textcolor>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="325" height="2-row">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>2-row</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>masks/discsurface.png</texture>
+                        <colordiffuse>$VAR[highlight]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>1-col</posx>
+                        <posy>0</posy>
+                        <width>240</width>
+                        <height>2-row</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture colordiffuse="$VAR[selected_box]">masks/discsurface.png</texture>
+                        <colordiffuse>eeffffff</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>2-row</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>symbolLarge</font>
+                        <textcolor>$VAR[Home]</textcolor>
+                        <label>$INFO[ListItem.label2]</label>
+                        <shadowcolor></shadowcolor>
+                    </control>
+                    <control type="label">
+                        <posx>1-col-indent</posx>
+                        <posy>0</posy>
+                        <width>224</width>
+                        <height>2-row</height>
+                        <aligny>center</aligny>
+                        <font>itemSubTitle</font>
+                        <textcolor>black</textcolor>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                </focusedlayout>
+                <content>
+					<item>
+                        <description>Manual Input</description>
+                        <label>$LOCALIZE[31291]</label>
+                        <label2></label2>
+						<onclick>Dialog.Close(dialogcolorpicker)</onclick>
+						<onclick>Skin.SetString($INFO[Window(1112).Property(Reset.Color)])</onclick>
+						<visible>!String.IsEmpty(Window(1112).Property(Reset.Color))</visible> 
+                    </item>
+					<item>
+                        <description>Reset Colors</description>
+                        <label>$LOCALIZE[13007]</label>
+                        <label2></label2>
+						<onclick>Skin.Reset($INFO[Window(1112).Property(Reset.Color)])</onclick>
+						<onclick>SendClick(7)</onclick>
+						<visible>!String.IsEmpty(Window(1112).Property(Reset.Color))</visible>
+                    </item>
+                    <item>
+						<description>Cancel</description>
+                        <label>222</label>
+                        <label2></label2>
+                        <thumb></thumb>
+                        <onclick>action(close)</onclick>
+                    </item>
+                </content>
+            </control>
+		<control type="label" id="3010">
+			<visible>!control.hasfocus(9001)</visible>
+			<top>1000</top>
+			<left>325</left>
+			<width>1000</width>
+			<height>60</height>
+			<font>regular</font>
+			<label>[UPPERCASE]$INFO[ListItem.Label][CR]$INFO[ListItem.Label2,#][/UPPERCASE]</label>
+			<shadowcolor>ff8a795d</shadowcolor>
+			<animation effect="slide" end="0,-60" condition="String.IsEmpty(Window(1140).Property(Reset.Color))">Conditional</animation>
+		</control>
+		<!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>DialogColorPicker.xml</label>
+        </control>
+	</controls>
+</window>

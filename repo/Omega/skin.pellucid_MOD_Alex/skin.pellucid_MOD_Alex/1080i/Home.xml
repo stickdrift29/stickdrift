@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="0">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<include>fadeInOut</include>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9001&amp;group=mainmenu|videosubmenu|musicsubmenu|picturessubmenu|gamesubmenu|extrashortcutmain)</onload>
+	<onload condition="Skin.hassetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
+	<onload>AlarmClock(hidemenu,setfocus(9999),01:00,true)</onload>
+	<onunload>CancelAlarm(hidemenu,true)</onunload>
+	<controls>
+		<include>globalBackground</include>
+		<control type="group">
+			<animation type="conditional" condition="control.hasfocus(8001) | control.hasfocus(8002)">
+				<effect type="slide" start="0,0" end="0,-80" tween="sine" time="400"/>
+			</animation>
+			<control type="button" id="999">
+				<visible>Skin.HasSetting(Touch)</visible>
+            	<posx>0</posx>
+            	<posy>0</posy>
+            	<width>2000</width>
+            	<height>1500</height>
+				<colordiffuse>00FFFFFF</colordiffuse>
+				<onleft>setfocus(9000,0)</onleft>
+				<onright>setfocus(9000,0)</onright>
+				<onup>setfocus(9000,0)</onup>
+				<ondown>setfocus(9000,0)</ondown>
+				<onclick>setfocus(8001,0)</onclick>
+        	</control>
+			<!--player controls and options-->
+			<control type="group">
+				<posx>0</posx>
+				<posy>1080</posy>
+				<control type="image">
+	                <posx></posx>
+	                <posy>0</posy>
+	                <width>fullscreenWidth</width>
+	                <height>3-row</height>
+	                <texture>colors/black.png</texture>
+	                <colordiffuse>ffffffff</colordiffuse>
+	                <aspectratio>stretch</aspectratio>
+	            </control>
+				<!--player controls-->
+				<control type="panel" id="8001">
+					<posx>col-1-begin</posx>
+	                <posy>6</posy>
+	                <width>9-col</width>
+	                <height>2-row</height>
+	                <itemgap>0</itemgap>
+	                <onleft>setfocus(8002,2)</onleft>
+					<onright>setfocus(8002,0)</onright>
+	                <onup>setfocus(9001,0)</onup>
+	                <orientation>horizontal</orientation>
+	                <itemlayout width="1-col" height="2-row">
+	                    <control type="label">
+	                        <posx>0</posx>
+	                        <posy>0</posy>
+	                        <width>1-col</width>
+	                        <height>2-row</height>
+	                        <align>center</align>
+	                        <aligny>center</aligny>
+	                        <font>symbol</font>
+	                        <textcolor>textActive</textcolor>
+	                        <label>$INFO[ListItem.label2]</label>
+	                    </control>
+	                </itemlayout>
+	                <focusedlayout width="1-col" height="2-row">
+	                    <control type="image">
+	                        <posx>0</posx>
+	                        <posy>0</posy>
+	                        <width>1-col</width>
+	                        <height>69</height>
+	                        <aspectratio>stretch</aspectratio>
+	                        <texture>masks/discsurface.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+	                    </control>
+	                    <control type="label">
+	                        <posx>0</posx>
+	                        <posy>0</posy>
+	                        <width>1-col</width>
+	                        <height>2-row</height>
+	                        <align>center</align>
+	                        <aligny>center</aligny>
+	                        <font>symbol</font>
+	                        <textcolor>$VAR[Home]</textcolor>
+	                        <label>$INFO[ListItem.label2]</label>
+	                        <shadowcolor></shadowcolor>
+	                    </control>
+	                </focusedlayout>
+	                <content>
+	                    <item>
+	                        <description>Playlist</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>activateWindow(FavouritesBrowser,return)</onclick>
+	                    </item>
+						<item>
+							<visible>!player.hasvideo + !player.hasaudio + !VideoPlayer.Content(LiveTV)</visible>
+	                        <description>Playlist</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>activateWindow(videoplaylist)</onclick>
+	                    </item>
+						<item>
+							<visible>player.hasvideo + !VideoPlayer.Content(LiveTV)</visible>
+	                        <description>Playlist</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>activateWindow(videoplaylist)</onclick>
+	                    </item>
+						<item>
+							<visible>player.hasaudio + !player.hasvideo</visible>
+	                        <description>Playlist</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>activateWindow(musicplaylist)</onclick>
+	                    </item>
+						<item>
+                        	<description>TV channel</description>
+                        	<visible>player.hasvideo + VideoPlayer.Content(LiveTV)</visible>
+                        	<label2></label2>
+                        	<thumb></thumb>
+                        	<onclick>activateWindow(10700),return</onclick> 
+                    	</item>
+	                    <item>
+	                        <description>Previous</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>PlayerControl(previous)</onclick>
+	                    </item>
+						<item>
+                        <description>Rewind</description>
+                        <label2></label2>
+                        <thumb></thumb>
+                        <onclick>PlayerControl(rewind)</onclick>
+                    	</item>
+	                    <item>
+	                        <description>Stop</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>PlayerControl(stop)</onclick>
+	                        <onclick>Dialog.Close(1103)</onclick>
+	                    </item>
+	                    <item>
+	                        <visible>Player.Playing + !player.rewinding + !Player.Forwarding</visible>
+	                        <description>Play/Pause</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>PlayerControl(play)</onclick>
+	                    </item>
+	                    <item>
+	                        <visible>Player.Paused</visible>
+	                        <description>Pause</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>PlayerControl(play)</onclick>
+	                    </item>
+						<item>
+	                        <visible>player.rewinding | player.forwarding</visible>
+	                        <description>Pause</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>PlayerControl(play)</onclick>
+	                    </item>
+						<item>
+                        <description>Fast forward</description>
+                        <label2></label2>
+                        <thumb></thumb>
+                        <onclick>PlayerControl(forward)</onclick>
+                    	</item>
+	                    <item>
+	                        <description>Next Chapter</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>PlayerControl(next)</onclick>
+	                    </item>
+	                </content>
+	            </control>   
+				<control type="panel" id="8002">
+					<posx>1685</posx>
+	                <posy>6</posy>
+	                <width>9-col</width>
+	                <height>2-row</height>
+	                <itemgap>0</itemgap>
+	                <onleft>setfocus(8001,11)</onleft>
+					<onright>setfocus(8001,0)</onright>
+	                <onup>setfocus(9001,0)</onup>
+	                <orientation>horizontal</orientation>
+	                <itemlayout width="1-col" height="2-row">
+	                    <control type="label">
+	                        <posx>0</posx>
+	                        <posy>0</posy>
+	                        <width>1-col</width>
+	                        <height>2-row</height>
+	                        <align>center</align>
+	                        <aligny>center</aligny>
+	                        <font>symbolLarge</font>
+	                        <textcolor>textActive</textcolor>
+	                        <label>$INFO[ListItem.label2]</label>
+	                    </control>
+	                </itemlayout>
+	                <focusedlayout width="1-col" height="2-row">
+	                    <control type="image">
+	                        <posx>0</posx>
+	                        <posy>0</posy>
+	                        <width>1-col</width>
+	                        <height>69</height>
+	                        <aspectratio>stretch</aspectratio>
+	                        <texture>masks/discsurface.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+	                    </control>
+	                    <control type="label">
+	                        <posx>0</posx>
+	                        <posy>0</posy>
+	                        <width>1-col</width>
+	                        <height>2-row</height>
+	                        <align>center</align>
+	                        <aligny>center</aligny>
+	                        <font>symbolLarge</font>
+	                        <textcolor>$VAR[Home]</textcolor>
+	                        <label>$INFO[ListItem.label2]</label>
+	                        <shadowcolor></shadowcolor>
+	                    </control>
+	                </focusedlayout>
+	                <content>
+						<item>
+							<visible>$EXP[hasWeather]</visible>
+	                    	<description>weather</description>
+	                    	<label2></label2>
+	                    	<thumb></thumb>
+	                    	<onclick>ActivateWindow(Weather,return)</onclick>
+	                	</item>
+						<item>
+							<visible>!$EXP[hasWeather]</visible>
+	                    	<description>weather</description>
+	                    	<label2></label2>
+	                    	<thumb></thumb>
+	                    	<onclick>ActivateWindow(ServiceSettings,weather)</onclick>
+	                	</item>
+						<item>
+	                        <description>change Color</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>activatewindow(1110)</onclick>
+	                    </item>
+	                    <item>
+	                        <description>change Language</description>
+	                        <label2></label2>
+	                        <thumb></thumb>
+	                        <onclick>activatewindow(1109)</onclick>
+	                    </item>
+						
+	                </content>
+	            </control>                     
+			</control>
+			<control type="group">
+				<control type="image">
+				   <include>dimensionsFullscreen</include>
+		           <texture>colors/black.png</texture>
+		           <colordiffuse>ffFFFFFF</colordiffuse>
+		           <aspectratio>stretch</aspectratio>
+		       </control>
+				<control type="multiimage">
+					<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+					<include>dimensionsFullscreen</include>
+					<imagepath>$VAR[homeBackgroundLocation]</imagepath>
+					<timeperimage>45000</timeperimage>
+					<fadetime>200</fadetime>
+					<pauseatend>10000</pauseatend>
+					<randomize>true</randomize>
+					<loop>yes</loop>
+					<aspectratio>scale</aspectratio>
+					<colordiffuse>99ffffff</colordiffuse>
+				</control>
+				<control type="image">
+					<include>dimensionsFullscreen</include>
+					<texture>vignette.png</texture>
+					<colordiffuse>ffffffff</colordiffuse>
+					<aspectratio>stretch</aspectratio>
+				</control>
+			</control>
+			
+			<!--mini window-->
+			<include>miniVideoPlayer</include>
+			<!--main menu-->
+			<control type="image">
+				<animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+					<effect type="fade" start="100" end="0" time="500" delay="0"/>
+				</animation>
+				<animation condition="string.isEqual(Container(9000).NumItems,1)" effect="slide" end="432,0" time="0">conditional</animation>
+				<animation condition="string.isEqual(Container(9000).NumItems,2)" effect="slide" end="288,0" time="0">conditional</animation>
+				<animation condition="string.isEqual(Container(9000).NumItems,3)" effect="slide" end="144,0" time="0">conditional</animation>
+						<visible>Skin.HasSetting(homemenuslide)</visible>
+						<width>fullscreenWidth</width>
+						<posy>50%</posy>
+						<height>105</height>
+						<texture>masks/discsurface.png</texture>
+						<colordiffuse>77000000</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+					<effect type="fade" start="100" end="0" time="500" delay="0"/>
+				</animation>
+				<animation condition="string.isEqual(Container(9000).NumItems,1)" effect="slide" end="432,0" time="0">conditional</animation>
+				<animation condition="string.isEqual(Container(9000).NumItems,2)" effect="slide" end="288,0" time="0">conditional</animation>
+				<animation condition="string.isEqual(Container(9000).NumItems,3)" effect="slide" end="144,0" time="0">conditional</animation>
+						<visible>Skin.HasSetting(homemenuside)</visible>
+						<width>4-col-textbox</width>
+						<posy>0</posy>
+						<height>fullscreenHeight</height>
+						<texture>masks/discsurface.png</texture>
+						<colordiffuse>77000000</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="panel" id="9000">
+				<animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+					<effect type="fade" start="100" end="0" time="500" delay="0"/>
+				</animation>
+				<animation condition="string.isEqual(Container(9000).NumItems,1)" effect="slide" end="432,0" time="0">conditional</animation>
+				<animation condition="string.isEqual(Container(9000).NumItems,2)" effect="slide" end="288,0" time="0">conditional</animation>
+				<animation condition="string.isEqual(Container(9000).NumItems,3)" effect="slide" end="144,0" time="0">conditional</animation>
+				<include>homemenuslide</include>
+				<itemlayout width="4-col" height="3-row">
+					
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>4-col-textbox</width>
+						<height>105</height>
+						<texture>masks/discsurface.png</texture>
+						<include>homemenuslidecolor</include>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="textbox">
+						<posx>12</posx>
+						<posy>0</posy>
+						<width>252</width>
+						<height>3-row</height>
+						<font>dialogTitle</font>
+						<wrapmultiline>true</wrapmultiline>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>textActive</textcolor>
+						<shadowcolor></shadowcolor>
+						<label>[CAPITALIZE]$INFO[ListItem.label][/CAPITALIZE]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="4-col" height="3-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>4-col-textbox</width>
+						<height>105</height>
+						<texture>masks/discsurface30%.png</texture>
+						<colordiffuse>$VAR[highlight_Shadow]</colordiffuse>
+					</control>
+					<control type="textbox">
+						<posx>12</posx>
+						<posy>0</posy>
+						<width>252</width>
+						<height>3-row</height>
+						<font>dialogTitle</font>
+						<wrapmultiline>true</wrapmultiline>
+						<aligny>center</aligny>
+						<align>center</align>
+						<textcolor>$VAR[Home]</textcolor>
+						<shadowcolor></shadowcolor>
+						<label>[CAPITALIZE]$INFO[ListItem.label][/CAPITALIZE]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<include>skinshortcuts-mainmenu</include>
+				</content>
+			</control>
+			<!--
+			<control type="group">
+				<control type="panel" id="7001">
+					<visible>Skin.HasSetting(widget) + Skin.HasSetting(homemenuside)</visible>
+					<animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+						<effect type="fade" start="100" end="0" time="500" delay="0"/>
+					</animation>
+					<posx>col-5-begin</posx>
+					<animation condition="string.isEqual(Container(7000).NumItems,1)" effect="slide" end="432,0" time="0">conditional</animation>
+					<animation condition="string.isEqual(Container(7000).NumItems,2)" effect="slide" end="288,0" time="0">conditional</animation>
+					<animation condition="string.isEqual(Container(7000).NumItems,3)" effect="slide" end="144,0" time="0">conditional</animation>			
+					<posy>row-14-begin</posy>
+					<width>18-col</width>
+					<height>12-row</height>
+					<onleft>9000</onleft>
+					<onup>9005</onup>
+					<ondown>setfocus(9001,0)</ondown>
+					<orientation>vertical</orientation>
+					<itemlayout width="4-col" height="3-row">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>4-col-textbox</width>
+							<height>105</height>
+							<texture>masks/discsurface.png</texture>
+							<colordiffuse>77000000</colordiffuse>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>-90</posy>
+							<width>4-col</width>
+							<height>4-col</height>
+							<font>symbolVeryLarge</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>textActive</textcolor>
+							<shadowcolor></shadowcolor>
+							<label></label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="4-col" height="3-row">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>4-col-textbox</width>
+							<height>105</height>
+							<texture>masks/discsurface30%.png</texture>
+							<colordiffuse>$VAR[highlight_Shadow]</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>-90</posy>
+							<width>4-col</width>
+							<height>4-col</height>
+							<font>symbolVeryLarge</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>$VAR[Home]</textcolor>
+							<shadowcolor></shadowcolor>
+							<label></label>
+						</control>
+					</focusedlayout>
+					<content>
+						<include>skinshortcuts-group-extrashortcutmain</include>
+					</content>
+				</control>
+			</control>
+			-->
+				<include content="WidgetListPoster5" condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(widget)">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trending_day&amp;tmdb_type=movie"/>
+							<param name="widget_header5" value="Filme im Trend:"/>
+							<param name="widget_label5" value="$INFO[Container(5200).ListItem.Label]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5200"/>
+						</include>
+				 <include content="WidgetListPoster6" condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(widget)">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trending_day&amp;tmdb_type=tv"/>
+							<param name="widget_header6" value="Serien im Trend:"/>
+							<param name="widget_label6" value="$INFO[Container(5300).ListItem.Label]"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5300"/>
+						</include>
+						
+					<control type="label">
+							<animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+								<effect type="fade" start="100" end="0" time="500" delay="0"/>
+							</animation>
+	                        <posx>1500</posx>
+	                        <posy>460</posy>
+	                        <width>1-col</width>
+	                        <height>2-row</height>
+	                        <align>center</align>
+	                        <aligny>center</aligny>
+	                        <font>symbolLarge</font>
+	                        <textcolor>textActive</textcolor>
+	                        <label></label>
+	                        <shadowcolor></shadowcolor>
+							<visible>Skin.HasSetting(homemenuside) + !Skin.HasSetting(widget) + !Container(5200).IsUpdating</visible>
+	                    </control>
+						<control type="label">
+							<animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+								<effect type="fade" start="100" end="0" time="500" delay="0"/>
+							</animation>
+	                        <posx>1500</posx>
+	                        <posy>760</posy>
+	                        <width>1-col</width>
+	                        <height>2-row</height>
+	                        <align>center</align>
+	                        <aligny>center</aligny>
+	                        <font>symbolLarge</font>
+	                        <textcolor>textActive</textcolor>
+	                        <label></label>
+	                        <shadowcolor></shadowcolor>
+							<visible>Skin.HasSetting(homemenuside) + !Skin.HasSetting(widget) + !Container(5300).IsUpdating</visible>
+	                    </control>
+						
+						
+
+
+			<!--Android Apps-->
+			<control type="group">
+				<animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+					<effect type="fade" start="100" end="0" time="500" delay="0"/>
+				</animation>
+				<posx>710</posx>
+				<posy>25</posy>
+				<include>slidebuttons_Android</include>
+				<visible>System.Platform.Android + Skin.HasSetting(Show Android Apps)</visible>
+				<control type="panel" id="9005">
+					<posx>38</posx>
+					<posy>18</posy>
+					<width>1000</width>
+					<height>1-col</height>
+					<orientation>horizontal</orientation>
+					<include>homemenukeycontrolandroid</include>
+					<itemlayout width='2-col' height='1-col' condition='Skin.HasSetting(Further_apart)'>
+						<visible>Skin.HasSetting(Further_apart)</visible>
+						<control type="label">
+							<posx>0.4</posx>
+							<posy>-1</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>textActive</textcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.label]</label>
+						</control>
+					</itemlayout>
+					<itemlayout width='1-col' height='1-col' condition='!Skin.HasSetting(Further_apart)'>
+						<visible>!Skin.HasSetting(Further_apart)</visible>
+						<control type="label">
+							<posx>0.4</posx>
+							<posy>-1</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>textActive</textcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="1-col" height="1-col">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<aspectratio>stretch</aspectratio>
+							<texture diffuse="masks/circle.png">masks/discsurface30%.png</texture>
+							<colordiffuse>$VAR[highlight_Shadow]</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>0.4</posx>
+							<posy>-1</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>$VAR[Home]</textcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.label]</label>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label></label>
+							<onclick>STARTANDROIDACTIVITY("com.amazon.firebat")</onclick>
+						</item>
+						<item>
+							<label></label>
+							<onclick>STARTANDROIDACTIVITY("com.netflix.ninja")</onclick>
+						</item>
+						<item>
+							<label></label>
+							<onclick>STARTANDROIDACTIVITY("com.disney.disneyplus")</onclick>
+						</item>
+						<item>
+							<label></label>
+							<onclick>STARTANDROIDACTIVITY("com.apple.atve.amazon.appletv")</onclick>
+						</item>
+						<item>
+							<visible>Skin.HasSetting(SmartTube)</visible>
+							<label></label>
+							<onclick>STARTANDROIDACTIVITY("com.teamsmart.videomanager.tv")</onclick>
+						</item>
+						<item>
+							<visible>Skin.HasSetting(Youtube)</visible>
+							<label></label>
+							<onclick>STARTANDROIDACTIVITY("com.amazon.firetv.youtube")</onclick>
+						</item>
+						<item>
+							<label></label>
+							<onclick>ActivateWindow(programs,androidapp://sources/apps/,return)</onclick>
+						</item>
+					</content>
+				</control>
+			</control>			
+
+			<!--power / settings-->
+			<control type="group">
+				<posx>812</posx>
+				<posy>row-26-begin</posy>
+				<include>slidebuttons</include>
+				<control type="panel" id="9001">
+					<posx>38</posx>
+					<posy>18</posy>
+					<width>700</width>
+					<height>1-col</height>
+					<orientation>horizontal</orientation>
+					<include>homemenukeycontrol</include>
+					<itemlayout width='2-col' height='1-col' condition='Skin.HasSetting(Further_apart)'>
+						<visible>Skin.HasSetting(Further_apart)</visible>
+						<control type="label">
+							<posx>0.4</posx>
+							<posy>-1</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>textActive</textcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.label]</label>
+						</control>
+						<control type="label">
+							<posx>25</posx>
+							<posy>-20</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge2</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>textActive</textcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.label2]</label>
+						</control>
+					</itemlayout>
+					<itemlayout width='1-col' height='1-col' condition='!Skin.HasSetting(Further_apart)'>
+						<visible>!Skin.HasSetting(Further_apart)</visible>
+						<control type="label">
+							<posx>0.4</posx>
+							<posy>-1</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>textActive</textcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.label]</label>
+						</control>
+						<control type="label">
+							<posx>25</posx>
+							<posy>-20</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge2</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>textActive</textcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.label2]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="1-col" height="1-col">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<aspectratio>stretch</aspectratio>
+							<texture diffuse="masks/circle.png">masks/discsurface30%.png</texture>
+							<colordiffuse>$VAR[highlight_Shadow]</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>0.4</posx>
+							<posy>-1</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>$VAR[Home]</textcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.label]</label>
+						</control>
+						<control type="label">
+							<posx>22</posx>
+							<posy>-20</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge2</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>$VAR[Home]</textcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.label2]</label>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<visible>Player.HasMedia</visible>
+							<label></label>
+							<onclick>action(FullScreen)</onclick>
+						</item>
+						<item>
+							<visible>!Skin.HasSetting(settings) + System.CanPowerDown</visible>
+							<label></label>
+							<onclick>ActivateWindow(shutdownmenu)</onclick>
+						</item>
+						<item>
+							<visible>!Skin.HasSetting(settings) + !System.CanPowerDown</visible>
+							<label></label>
+							<onclick>Quit</onclick>
+						</item>
+						<item>
+							<visible>Skin.HasSetting(settings)</visible>
+							<label></label>
+							<onclick>Quit</onclick>
+						</item>
+						<item>
+							<visible>Skin.HasSetting(settings)</visible>
+							<description>Settings Disabled</description>
+							<label></label>
+							<onclick>ActivateWindow(1105)</onclick>
+						</item>
+						<item>
+							<visible>!Skin.HasSetting(settings) + Skin.HasSetting(set_short_settings)</visible>
+							<description>Settings Disabled</description>
+							<label></label>
+							<onclick>ActivateWindow(1105)</onclick>
+						</item>
+						<item>
+							<visible>!Skin.HasSetting(settings) + !Skin.HasSetting(set_short_settings)</visible>
+							<label></label>
+							<onclick>ActivateWindow(Settings)</onclick>
+						</item>		
+						<item>
+							<visible>Skin.HasSetting(settings)</visible>
+							<label></label>
+							<onclick>ActivateWindow(10011)</onclick>
+						</item>			
+						<item>
+							<visible>Integer.IsGreater(System.AddonUpdateCount,0)</visible>
+							<label2>$INFO[System.AddonUpdateCount]</label2>
+							<label></label>
+							<onclick>ActivateWindow(addonbrowser,addons://outdated/,return)</onclick>
+						</item>
+					</content>
+				</control>
+			</control>
+			<!--Date / time and weather-->
+			<control type="group">
+				<posx>col-1-begin</posx>
+				<posy>row-8-begin</posy>
+				<animation type="conditional" condition="control.hasfocus(9999) + !player.playing + !player.paused" reversible="true">
+					<effect type="slide" start="0,0" end="0,534" time="200" delay="0"/>
+				</animation>
+				<animation type="conditional" condition="control.hasfocus(9999) + [player.playing | player.paused]" reversible="true">
+					<effect type="slide" start="0,0" end="0,484" time="200" delay="0"/>
+				</animation>
+				<control type="label">
+					<posx>0</posx>
+					<posy>-48</posy>
+					<width>24-col</width>
+					<height>2-row</height>
+					<align>center</align>
+					<font>veryLarge</font>
+					<textcolor>textActive</textcolor>
+					<shadowcolor>44000000</shadowcolor>
+					<label>$INFO[System.Time]</label>
+				</control>
+				<control type="label">
+					<visible>$EXP[hasWeather]</visible>
+					<posx>0</posx>
+					<posy>1-row</posy>
+					<width>24-col</width>
+					<height>2-row</height>
+					<font>regular</font>
+					<align>center</align>
+					<textcolor>textActive</textcolor>
+					<shadowcolor>44000000</shadowcolor>
+					<label>$INFO[System.Date(ddd)]  [B]$INFO[System.Date(dd)][/B]  $INFO[System.Date(MMM)]   [B]$INFO[weather.temperature][/B]  [CAPITALIZE]$INFO[weather.Conditions][/CAPITALIZE]</label>
+				</control>
+				<control type="label">
+					<visible>!$EXP[hasWeather]</visible>
+					<posx>0</posx>
+					<posy>1-row</posy>
+					<width>24-col</width>
+					<height>2-row</height>
+					<font>regular</font>
+					<align>center</align>
+					<textcolor>textActive</textcolor>
+					<shadowcolor>44000000</shadowcolor>
+					<label>$INFO[System.Date(DDD)]  [B]$INFO[System.Date(dd)][/B]  $INFO[System.Date(MMM)]</label>
+				</control>
+				<control type="multiimage">
+            		<visible>$EXP[hasWeather] + Skin.HasSetting(Weather icons)</visible>
+					<posx>1000</posx>
+            		<posy>-200</posy>
+            		<width>200</width>
+            		<height>200</height>
+					<imagepath>$VAR[WeatherIconsPathVar]$INFO[Weather.FanartCode]$VAR[WeatherIconsExtVar]</imagepath>
+					<timeperimage>70</timeperimage>
+					<fadetime>1</fadetime>
+					<pauseatend></pauseatend>
+					<randomize>false</randomize>
+					<loop>yes</loop>
+					<aspectratio>scale</aspectratio>
+        		</control>
+			</control>
+			<!--now playing music-->
+			<control type="group">
+				<visible>player.hasaudio</visible>
+				<posx>75</posx>
+				<posy>row-24-begin</posy>
+				<control type="grouplist">
+					<posx>0</posx>
+					<posy>8</posy>
+					<width>24-col</width>
+					<align>center</align>
+					<itemgap>18</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="image">
+						<visible>!player.paused + !Skin.HasSetting(lowPowerMode)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>1-col-gutter</height>
+						<texture>special://skin/extras/audio-8777_128.gif</texture>
+					</control>
+					<control type="label">
+						<visible>!player.paused + Skin.HasSetting(lowPowerMode)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>2-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>textActive</textcolor>
+						<shadowcolor></shadowcolor>
+						<label></label>
+					</control>
+					<control type="label">
+						<visible>player.paused</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>2-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>textActive</textcolor>
+						<shadowcolor></shadowcolor>
+						<label></label>
+						<animation type="conditional" condition="true" loop="true">
+                    		<effect type="fade" start="0" end="100" time="1000"/>
+                    		<effect type="fade" start="100" end="0" time="1000" delay="1000"/>
+                		</animation>
+					</control>
+					<control type="label">
+						<description>Artist</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<font>small</font>
+						<width>auto</width>
+						<height>2-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[MusicPlayer.TimeRemaining,, ][B]$INFO[musicplayer.Artist,, ][/B]$INFO[MusicPlayer.Title]</label>
+						<scroll>true</scroll>
+						<textcolor>textActive</textcolor>
+						<wrapmultiline>false</wrapmultiline>
+					</control>
+				</control>
+			</control>
+			<!--now playing Video-->
+			<control type="group">
+				<visible>player.hasvideo</visible>
+				<posx>75</posx>
+				<posy>row-24-begin</posy>
+				<control type="grouplist">
+					<posx>0</posx>
+					<posy>8</posy>
+					<width>24-col</width>
+					<align>center</align>
+					<itemgap>18</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label">
+						<visible>!player.paused + !Skin.HasSetting(lowPowerMode)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>2-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>textActive</textcolor>
+						<shadowcolor></shadowcolor>
+						<label></label>
+					</control>
+					<control type="label">
+						<visible>!player.paused + Skin.HasSetting(lowPowerMode)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>2-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>textActive</textcolor>
+						<shadowcolor></shadowcolor>
+						<label></label>
+					</control>
+					<control type="label">
+						<visible>player.paused</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>2-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>textActive</textcolor>
+						<shadowcolor></shadowcolor>
+						<label></label>
+						<animation type="conditional" condition="true" loop="true">
+                    		<effect type="fade" start="0" end="100" time="1000"/>
+                    		<effect type="fade" start="100" end="0" time="1000" delay="1000"/>
+                		</animation>
+					</control>
+					<control type="label">
+						<visible>!Pvr.IsPlayingTv + !String.IsEmpty(Videoplayer.TVShowTitle)</visible>
+						<description>Artist</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<font>small</font>
+						<width>auto</width>
+						<height>2-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[VideoPlayer.TVShowTitle] : $INFO[Player.title]</label>
+						<scroll>true</scroll>
+						<textcolor>textActive</textcolor>
+						<wrapmultiline>false</wrapmultiline>
+					</control>
+					<control type="label">
+						<visible>!Pvr.IsPlayingTv + String.IsEmpty(Videoplayer.TVShowTitle)</visible>
+						<description>Artist</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<font>small</font>
+						<width>auto</width>
+						<height>2-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$INFO[videoplayer.Title]</label>
+						<scroll>true</scroll>
+						<textcolor>textActive</textcolor>
+						<wrapmultiline>false</wrapmultiline>
+					</control>
+					<control type="label">
+						<visible>Pvr.IsPlayingTv</visible>
+						<description>Artist</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<font>small</font>
+						<width>auto</width>
+						<height>2-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[CAPITALIZE][LOWERCASE]$INFO[videoplayer.Title][/LOWERCASE][/CAPITALIZE] : $INFO[Player.title]</label>
+						<scroll>true</scroll>
+						<textcolor>textActive</textcolor>
+						<wrapmultiline>false</wrapmultiline>
+					</control>
+				</control>
+			</control>
+		</control>	
+		<control type="button" id="9999">
+            <posx>-500</posx>
+            <posy>0</posy>
+            <width>1-col</width>
+            <height>2-row</height>
+			<onleft>setfocus(9000,0)</onleft>
+			<onright>setfocus(9000,0)</onright>
+			<onup>setfocus(9000,0)</onup>
+			<ondown>setfocus(9000,0)</ondown>
+			<onclick>setfocus(9000,0)</onclick>
+        </control>
+		<!--Settings visible Button-->
+		<control type="group">
+				<posx>790</posx>
+				<posy>244</posy>
+				<visible>Skin.HasSetting(settings)</visible>
+				<control type="panel" id="7000">
+					<posx>38</posx>
+					<posy>18</posy>
+					<width>4-col</width>
+					<height>1-col</height>
+					<orientation>horizontal</orientation>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<itemlayout width="1-col" height="1-col">
+						<control type="label">
+							<posx>0.4</posx>
+							<posy>-1</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>textActive</textcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout width="1-col" height="1-col">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<aspectratio>stretch</aspectratio>
+							<texture diffuse="masks/circle.png">masks/discsurface.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>0.4</posx>
+							<posy>-1</posy>
+							<width>1-col</width>
+							<height>1-col</height>
+							<font>symbolLarge</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>$VAR[Home]</textcolor>
+							<shadowcolor></shadowcolor>
+							<label></label>
+						</control>
+					</focusedlayout>
+					<content>			
+						<item>
+							<onclick>ActivateWindow(Settings)</onclick>
+						</item>
+					</content>
+				</control>
+				
+		</control>
+		<!--Battery-->
+		<include>Battery</include>
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>WindowID</include>
+			<label>Home.xml</label>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="2.1.0">
+	    <extension point="xbmc.addon.repository" name="Stickdrift repo">
+            <dir>
+                <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Nexus/addons.xml</info>
+                <checksum>https://stickdrift29.github.io/stickdrift/repo/Nexus/addons.xml.md5</checksum>
+                <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Nexus/</datadir>
+            </dir>
+            <dir>
+				<info compressed="false">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml</info>
+				<checksum>https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml.md5</checksum>
+				<datadir zip="true">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/_zips</datadir>
+				<hashes>false</hashes>
+			</dir>
+            <dir>
+			    <info compressed="false">https://michaz1988.github.io/repo/addons.xml</info>
+			    <checksum>https://michaz1988.github.io/repo/addons.xml.md5</checksum>
+			    <datadir zip="true">https://michaz1988.github.io/repo/</datadir>
+		    </dir>
+            <dir minversion="20.9.1">
+                <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/nexusrepo/zips/addons.xml</info>
+                <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/nexusrepo/zips/addons.xml.md5</checksum>
+                <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/nexusrepo/zips/</datadir>
+            </dir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Kodi</summary>
+            <description lang="de">Addons von stickdrift</description>
+            <disclaimer></disclaimer>
+            <platform>all</platform>
+            <assets>
+			    <icon>icon.png</icon>
+		    </assets>
+        </extension>
+</addon>

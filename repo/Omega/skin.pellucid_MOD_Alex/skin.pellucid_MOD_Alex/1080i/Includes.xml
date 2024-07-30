@@ -1,0 +1,3072 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <include file="Defaults.xml"/>
+    <include file="Includes_grid.xml"/>
+    <include file="Includes_variables.xml"/>
+    <include file="Includes_ViewSettings.xml"/>
+    <include file="Includes_animations.xml"/>
+    <include file="Includes_hubMenu.xml"/>
+    <include file="Includes_hubOptionsItems.xml"/>
+    <include file="View_LiveTVChannels.xml"/>
+    <include file="Variables.xml" />
+    <include file="View_50_List.xml"/>
+    <include file="View_51_InfoWall.xml"/>
+    <include file="View_52_Landscape.xml"/>
+    <include file="View_53_ShowCase.xml"/>
+    <include file="View_54_ShowCase.xml"/>
+    <include file="View_502_Episode.xml"/>
+    <include file="View_503_Wall.xml"/>
+    <include file="View_504_Gallery.xml"/>
+    <include file="View_505_Panel.xml"/>
+    <include file="View_508_SongList.xml"/>
+    <include file="View_509_MyFlix.xml"/>
+    <include file="View_591_BigFan.xml"/>
+    <include file="View_602_FanartList.xml"/>
+    <include file="View_609_Fullscreen_Wall.xml"/>
+    <include file="View_TVShows.xml"/>
+    <include file="View_MusicGenres.xml"/>
+    <include file="View_VideoFiles.xml"/>
+    <include file="View_Photos.xml"/>
+    <include file="View_Artists.xml"/>
+    <include file="View_Albums.xml"/>
+    <include file="View_Songs.xml"/>
+    <include file="View_MusicFiles.xml"/> 
+    <include file="View_MusicPlaylist.xml"/>
+    <include file="View_ArtistAlbums.xml"/>
+    <include file="View_MusicVideos.xml"/>
+	<include file="View_Games.xml"/>
+	<include file="View_SpotifyAlbums.xml"/>
+	<include file="View_SpotifyArtists.xml"/>
+    <include file="script-skinshortcuts-includes.xml"/>
+    <include file="Includes_mediaShowcase.xml"/>
+    <constant name="DepthOSD">0.40</constant>
+	<constant name="DepthOSD+">0.44</constant>
+    <include file="MyVideoNav"/>
+
+    
+
+    <!--view type conditions-->
+    <expression name="isVideoList">!String.Contains(container.folderpath,special://profile/playlists/video) + !String.Contains(container.folderpath,videodb://) + !String.Contains(container.folderpath,plugin://) | container.content(files) | String.IsEmpty(container.content) | container.content(addons) | container.content(videos) | container.content(episodes)</expression>
+    <expression name="isMovie">container.content(movies) + [String.Contains(container.folderpath,videodb://) | String.Contains(container.folderpath,special://profile/playlists/video)]</expression>
+    <expression name="isAddonMovieOrTVshow">!String.Contains(container.folderpath,videodb://) + String.Contains(container.folderpath,plugin://) + [container.content(movies) | container.content(tvshows) | container.content(seasons)]</expression>
+
+    <expression name="isTVShow">container.content(tvshows) + [String.Contains(container.folderpath,videodb://) | String.Contains(container.folderpath,special://profile/playlists/video)]</expression>
+    <expression name="isSeason">container.content(seasons) + String.Contains(container.folderpath,videodb://)</expression>
+    <expression name="isEpisode">container.content(episodes)</expression>
+    <expression name="isMusicVideo">container.content(musicvideos) + !String.Contains(Container.folderpath,plugin)</expression>
+
+	<expression name="isMusicSpotifyArtist">container.content(artists) + String.Contains(container.folderpath,spotify)</expression>
+	<expression name="isMusicSpotifyAlbum">container.content(albums) + String.Contains(container.folderpath,spotify)</expression>
+
+	<expression name="isMusicList">!String.Contains(container.folderpath,musicdb://) | String.Contains(container.foldername,Files) | container.content(files) | container.content(addons) | [container.content(playlists) + !String.Contains(Container.folderpath,special://profile/playlists)] | String.Contains(Container.folderpath,plugin://)</expression>
+	<expression name="isMusicArtist">container.content(artists) + [String.Contains(container.folderpath,musicdb://) | String.Contains(Container.folderpath,special://profile/playlists)]</expression>
+	<expression name="isMusicArtistCatalogue">container.content(albums) + String.Contains(container.folderpath,albumartistsonly)</expression>
+	<expression name="isMusicAlbum">container.content(albums) + [String.Contains(container.folderpath,musicdb://) | String.Contains(Container.folderpath,special://profile/playlists)]</expression>
+	<expression name="isMusicGenre">container.content(genres) + String.Contains(container.folderpath,musicdb://)</expression>
+	<expression name="isMusicSong">container.content(songs) + [String.Contains(Container.folderpath,musicdb://) | String.Contains(Container.folderpath,spotify)]</expression>
+	<expression name="isMusicPlaylist">container.content(songs) + [String.Contains(Container.folderpath,.xsp) | String.Contains(Container.foldername,PartyMode) | String.Contains(Container.folderpath,playlistmusic://)]</expression>
+
+	<!--photos-->
+	<expression name="isPhotoAlbum">container.content(images)</expression>
+	
+	<!--games-->
+	<expression name="isGame">container.content(games)</expression>
+
+	<!--weather-->
+	<expression name="hasWeather">!String.IsEmpty(Window(Weather).Property(WeatherProvider)) + !String.String.IsEmpty(weather.temperature) + !String.String.IsEmpty(weather.conditions)</expression>
+
+	<!--item fanart-->
+    <include name="itemFanart">
+        <control type="wraplist" id="99999">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>1000</width>
+            <height>1000</height>
+            <enable>false</enable>
+            <preloaditems>2</preloaditems>
+            <scrolltime>15000</scrolltime>
+            <autoscroll>true</autoscroll>
+            <itemlayout />
+            <focusedlayout />
+            <content>$VAR[extraFanartLocation]</content>
+        </control>
+		<control type="image">
+            <include>dimensionsFullscreen</include>
+            <texture>masks/discsurface.png</texture>
+            <colordiffuse>background</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+        </control>
+        <control type="image">
+            <visible>Integer.IsGreater(container(99999).numitems,0) + !Skin.HasSetting(disableExtendedFanart)</visible>
+            <include>dimensionsFullscreen</include>
+            <texture>$INFO[container(99999).listitem.filenameandpath,,]</texture>
+            <colordiffuse>66ffffff</colordiffuse>
+            <fadetime>500</fadetime>
+            <aspectratio>stretch</aspectratio>
+			<include>kenBurnsey</include>
+        </control>
+        <control type="image">
+            <visible>!Integer.IsGreater(container(99999).numitems,0) | Skin.HasSetting(disableExtendedFanart) | ListItem.IsParentFolder</visible>
+            <posx>0</posx>
+            <posy>0</posy>
+            <include>dimensionsFullscreen</include>
+            <texture>$INFO[container.Art(fanart)]</texture>
+            <colordiffuse>66ffffff</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+			<include>kenBurnsey</include>
+        </control>
+    </include>
+
+    <!--keyboard autocomplete-->
+    <include name="AutoComplete">
+        <control type="group">
+            <visible>!String.String.IsEmpty(Control.GetLabel(312).index(1)) + !Control.IsVisible(313) + !Skin.HasSetting(Touch)</visible>
+            <posx>0</posx>
+            <posy>0</posy>
+            <control type="group">
+                <animation effect="fade" time="300" tween="cubic" start="0" end="100" reversible="false" condition="!String.String.IsEmpty(Container(5000).ListItem.Label)">Conditional</animation>
+                <animation effect="fade" time="150" tween="cubic" start="100" end="0" reversible="false" condition="String.String.IsEmpty(Container(5000).ListItem.Label)">Conditional</animation>
+            </control>
+            <control type="panel" id="5000">
+                <posx>col-5-begin</posx>
+                <posy>-36</posy>
+                <width>16-col</width>
+                <height>2-row</height>
+                <onleft>5000</onleft>
+                <onright>5000</onright>
+                <ondown>312</ondown>
+                <onback>noop</onback>
+                <orientation>horizontal</orientation>
+                <itemlayout height="2-row" width="4-col">
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>4-col-gutter</width>
+                        <height>2-row</height>
+                        <align>center</align>
+                        <textcolor>textDisabled</textcolor>
+                        <font>itemTitle</font>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="2-row" width="4-col">
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>4-col-gutter</width>
+                        <height>2-row</height>
+                        <align>center</align>
+                        <textcolor>$VAR[highlight]</textcolor>
+                        <font>itemTitle</font>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </focusedlayout>
+                <content>plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=8</content>
+            </control>
+        </control>
+        <control type="group">
+            <visible>!String.String.IsEmpty(Control.GetLabel(312).index(1)) + !Control.IsVisible(313) + Skin.HasSetting(Touch)</visible>
+            <posx>0</posx>
+            <posy>-150</posy>
+            <control type="group">
+                <animation effect="fade" time="300" tween="cubic" start="0" end="100" reversible="false" condition="!String.String.IsEmpty(Container(5000).ListItem.Label)">Conditional</animation>
+                <animation effect="fade" time="150" tween="cubic" start="100" end="0" reversible="false" condition="String.String.IsEmpty(Container(5000).ListItem.Label)">Conditional</animation>
+            </control>
+            <control type="panel" id="5000">
+                <posx>col-5-begin</posx>
+                <posy>-36</posy>
+                <width>16-col</width>
+                <height>2-row</height>
+                <onleft>5000</onleft>
+                <onright>5000</onright>
+                <ondown>312</ondown>
+                <onback>noop</onback>
+                <orientation>horizontal</orientation>
+                <itemlayout height="2-row" width="4-col">
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>4-col-gutter</width>
+                        <height>2-row</height>
+                        <align>center</align>
+                        <textcolor>textDisabled</textcolor>
+                        <font>itemTitle</font>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="2-row" width="4-col">
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>4-col-gutter</width>
+                        <height>2-row</height>
+                        <align>center</align>
+                        <textcolor>$VAR[highlight]</textcolor>
+                        <font>itemTitle</font>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </focusedlayout>
+                <content>plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=8</content>
+            </control>
+        </control>
+    </include>
+    <!--modal dialogs-->
+    <include name="modalDialog">
+        <control type="image">
+            <include>dimensionsFullscreen</include>
+            <texture>colors/black.png</texture>
+            <colordiffuse>e9FFFFFF</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+        </control>
+        <control type="image">
+            <include>dimensionsFullscreen</include>
+            <texture>vignette.png</texture>
+            <colordiffuse>ffffffff</colordiffuse>
+            <aspectratio>stretch</aspectratio>
+        </control>
+    </include>
+    <!--Global background-->
+    <include name="globalBackground">
+		<control type="image">
+		   <include>dimensionsFullscreen</include>
+           <texture>colors/black.png</texture>
+           <colordiffuse>ffFFFFFF</colordiffuse>
+           <aspectratio>stretch</aspectratio>
+       </control> 
+       <control type="image">
+           <include>dimensionsFullscreen</include>
+           <texture>masks/discsurface.png</texture>
+           <colordiffuse>background</colordiffuse>
+           <aspectratio>stretch</aspectratio>
+       </control>
+    </include>
+    <include name="Screensaver">
+		<control type="image">
+		   <include>dimensionsFullscreen</include>
+           <texture>colors/black.png</texture>
+           <colordiffuse>ffFFFFFF</colordiffuse>
+           <aspectratio>stretch</aspectratio>
+       </control> 
+    </include>
+	<!--page header-->
+	<include name="pageHeader">
+        
+		<control type="group">
+        <visible>Control.IsVisible(50) + !window.isactive(1130) | Control.IsVisible(502) + !window.isactive(1130) | Control.IsVisible(509) + !window.isactive(1130) | Control.IsVisible(504) + !window.isactive(1130) | Control.IsVisible(602) + !window.isactive(1130)</visible>
+			<posx>col-1-begin</posx>
+            <posy>row-2-begin</posy>
+			<!--title-->
+			<control type="label">
+                <visible>!Control.IsVisible(509)</visible>
+	            <posx>0</posx>
+	            <posy>0</posy>
+	            <width>18-col</width>
+	            <font>sectionTitle</font>
+	            <label>$VAR[listTitle]</label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+	        <!--subtitle-->
+	        <control type="label">
+                <visible>!Control.IsVisible(509)</visible>
+	            <posx>0</posx>
+	            <posy>26</posy>
+	            <width>12-col</width>
+				<height>2-row</height>
+	            <font>menuTitle2</font>
+	            <label>$VAR[listSubTitle]</label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+			<!--time-->
+			<control type="label">
+	            <posx>24-col</posx>
+	            <posy>0</posy>
+	            <width>12-col</width>
+	            <align>right</align>
+	            <font>sectionTitle</font>
+	            <label>[B]$INFO[System.Time][/B]</label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+			<!--date-->
+	        <control type="label">
+	            <posx>24-col</posx>
+	            <posy>26</posy>
+	            <width>12-col</width>
+				<height>2-row</height>
+				<align>right</align>
+	            <font>menuTitle2</font>
+	            <label>$INFO[System.Date(DDD)], $INFO[system.Date(mmm d)]</label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+		</control>
+	</include>
+    <include name="pageHeadervideonav">
+        
+		<control type="group">
+			<visible>!Control.IsVisible(50) + !window.isactive(1130) + !controlgroup(9000).hasfocus + !Control.IsVisible(504) + !Control.IsVisible(502) + !Control.IsVisible(509) + !Control.IsVisible(602)</visible>
+			<posx>col-1-begin</posx>
+            <posy>960</posy>
+			<!--title-->
+			<control type="label">
+	            <posx>-80</posx>
+	            <posy>0</posy>
+	            <width>3-col</width>
+	            <font>sectionTitle</font>
+	            <label>$VAR[listTitle]</label>
+	            <textcolor>$VAR[Home]</textcolor>
+	        </control>
+	        <!--subtitle-->
+	        <control type="label">
+	            <posx>-80</posx>
+	            <posy>26</posy>
+	            <width>12-col</width>
+				<height>2-row</height>
+	            <font>menuTitle2</font>
+	            <label>$VAR[listSubTitle]</label>
+	            <textcolor>$VAR[Home]</textcolor>
+	        </control>
+			<!--time-->
+			<control type="label">
+	            <posx>1808</posx>
+	            <posy>0</posy>
+	            <width>12-col</width>
+	            <align>right</align>
+	            <font>sectionTitle</font>
+	            <label>[B]$INFO[System.Time][/B]</label>
+	            <textcolor>$VAR[Home]</textcolor>
+	        </control>
+			<!--date-->
+	        <control type="label">
+	            <posx>1808</posx>
+	            <posy>26</posy>
+	            <width>12-col</width>
+				<height>2-row</height>
+				<align>right</align>
+	            <font>menuTitle2</font>
+	            <label>$INFO[System.Date(DDD)], $INFO[system.Date(mmm d)]</label>
+	            <textcolor>$VAR[Home]</textcolor>
+	        </control>
+		</control>
+	</include>
+
+    <include name="videolabel">
+            <control type="group">
+					<visible>!Control.IsVisible(50) + !window.isactive(1130) + !controlgroup(9000).hasfocus + !Control.IsVisible(504) + !Control.IsVisible(502) + !Control.IsVisible(509) + !Control.IsVisible(602)</visible>
+					<include>ViewAnimation</include>
+					
+					<!-- SETS -->
+					<control type="group">
+						<animation effect="fade" time="140" delay="100">Visible</animation>
+						<animation effect="fade" time="140" delay="600">WindowOpen</animation>
+						<left>450</left>
+						<top>960</top>
+						<control type="group">
+							
+							<animation effect="slide" end="0,-12">Conditional</animation>
+							<animation effect="slide" end="0,22">Conditional</animation>
+							<control type="image">
+                    			<posx>-450</posx>
+                    			<posy>-3</posy>
+                    			<width>fullscreenwidth</width>
+                    			<height>136</height>
+                    			<texture>masks/discsurface30%.png</texture>
+                    			<colordiffuse>$VAR[highlight_Shadow]</colordiffuse>
+                    			<aspectratio>stretch</aspectratio>
+                			</control>
+							
+							<control type="label">
+								<visible>!Control.IsVisible(51)</visible>
+								<width>1020</width>
+								<height>46</height>
+								<align>center</align>
+								<font>sectionTitle</font>
+								<scroll>true</scroll>
+								<textcolor>$VAR[Home]</textcolor>
+								<label>[B]$INFO[ListItem.label][/B]</label>
+							</control>
+							<control type="label">
+								<visible>!String.IsEmpty(ListItem.Duration)</visible>
+								<width>1020</width>
+								<height>46</height>
+								<posy>45</posy>
+								<align>center</align>
+								<font>menuTitle2</font>
+								<scroll>true</scroll>
+								<textcolor>$VAR[Home]</textcolor>
+								<label>$LOCALIZE[180]: $VAR[MinsToHourDurationVar]       $LOCALIZE[31160]: $INFO[ListItem.EndTimeResume]       $LOCALIZE[20473]: $INFO[ListItem.Premiered]</label>
+							</control>
+							<control type="label">
+								<visible>!Control.IsVisible(51)</visible>
+								<width>1020</width>
+								<height>46</height>
+								<posy>80</posy>
+								<align>center</align>
+								<font>menuTitle2</font>
+								<scroll>true</scroll>
+								<textcolor>$VAR[Home]</textcolor>
+								<label>$INFO[ListItem.Genre]</label>
+							</control>
+							<control type="button">
+						<visible>Skin.hassetting(Touch) + !Skin.HasSetting(crosskey)</visible>
+                    			<posx>-450</posx>
+                    			<posy>-3</posy>
+                    			<width>fullscreenwidth</width>
+                    			<height>136</height>
+                    			<focusedcolor></focusedcolor>
+            					<texturefocus></texturefocus>
+            					<colordiffuse></colordiffuse>
+								<onclick>Back</onclick>
+                		</control>							
+							
+						</control>
+					</control>
+				</control>
+    </include>
+
+
+    <!--busy indicator-->
+    <include name="loadingIndicator">
+        <control type="group">
+            <animation type="Visible" reversible="false">
+                <effect type="zoom" start="80" end="100" center="960,540" tween="back" time="240" />
+                <effect type="fade" end="100" time="240" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="240" />
+                <effect type="fade" start="100" end="0" time="240" />
+            </animation>
+            <visible>!Window.IsActive(startup) + !String.IsEmpty(container.foldername) + !Integer.IsGreater(container.numitems,0) + !ListItem.IsParentFolder | window.isactive(busydialog)</visible>
+            <control type="image">
+                <texture>colors/black.png</texture>
+                <include>dimensionsFullscreen</include>
+                <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="240" condition="Window.IsVisible(fullscreenvideo)">Conditional</animation>
+                <animation effect="fade" end="100" time="560">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="240">WindowClose</animation>
+            </control>
+            <control type="image">
+                <depth>DepthMax</depth>
+                <left>920</left>
+                <top>513</top>
+                <width>80</width>
+                <height>80</height>
+                <aspectratio>keep</aspectratio>
+                <animation effect="rotate" end="-45" center="auto" time="280" delay="0" loop="true" reversible="false" condition="true">Conditional</animation>
+                <texture colordiffuse="$VAR[highlight]">spinner.png</texture>
+                <animation effect="fade" end="100" time="300" delay="200">WindowOpen</animation>
+            </control>
+            <control type="image">
+                <depth>DepthMax</depth>
+                <left>935</left>
+                <top>528</top>
+                <width>50</width>
+                <height>50</height>
+                <aspectratio>keep</aspectratio>
+                <animation effect="rotate" end="45" center="auto" time="280" delay="0" loop="true" reversible="false" condition="true">Conditional</animation>
+                <texture flipx="true" colordiffuse="$VAR[highlight_Shadow]">spinner.png</texture>
+                <animation effect="fade" end="100" time="300" delay="200">WindowOpen</animation>
+            </control>
+        </control>
+    </include>
+     <!--conditional positioning for progress dialogs (avoid overlaps)-->
+    <include name="progressPosition1"><posy>row-2-begin</posy></include>
+    <include name="progressPosition2"><posy>row-6-begin</posy></include>
+     
+	<!--mini player window-->
+    <include name="miniVideoPlayer">
+        <control type="group">
+            <visible>!Skin.hassetting(stopVideoOnMenu) + Player.HasVideo + !VideoPlayer.IsFullscreen + !SlideShow.IsActive</visible>
+            <posx>col-20-begin</posx>
+            <posy>12</posy>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>444</width>
+                <height>255</height>
+                <aspectratio>stretch</aspectratio>
+                <texture>colors/black.png</texture>
+                <bordertexture border="6" colordiffuse="overlay">colors/black.png</bordertexture>
+                <bordersize>6</bordersize>
+            </control>
+            <control type="videowindow">
+                <posx>6</posx>
+                <posy>6</posy>
+                <width>6-col</width>
+                <height>243</height>
+            </control>
+        </control>
+    </include>
+
+	<!--touchscreen screen edge controls-->
+	<include name="touchscreenControls">
+		
+	</include>
+
+    <!--Battery-->
+	<include name="Battery">
+        <control type="group">
+				<visible>Skin.HasSetting(show_battery)</visible>
+				<posx>950</posx>
+				<posy>0</posy>
+                <animation type="conditional" condition="player.hasvideo + !VideoPlayer.IsFullscreen" reversible="true">
+		    		<effect type="slide" start="0" end="-450" time="200" delay="0"/>
+		        </animation>
+				<control type="grouplist">
+					<posx>0</posx>
+					<posy>8</posy>
+					<width>24-col</width>
+                    <height>1-row</height>
+					<align>center</align>
+					<itemgap>-20</itemgap>
+					<orientation>horizontal</orientation>
+					<control type="label">
+                        <visible>Integer.IsLessorEqual(System.BatteryLevel,100)</visible>
+                        <visible>Integer.IsGreaterorEqual(System.BatteryLevel,85)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>1-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>ff7fff00</textcolor>
+						<shadowcolor></shadowcolor>
+						<label></label>
+					</control>
+                    <control type="label">
+                        <visible>Integer.IsLessorEqual(System.BatteryLevel,84)</visible>
+                        <visible>Integer.IsGreaterorEqual(System.BatteryLevel,71)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>1-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>ff7FFF00</textcolor>
+						<shadowcolor></shadowcolor>
+						<label></label>
+					</control>
+                    <control type="label">
+                        <visible>Integer.IsLessorEqual(System.BatteryLevel,70)</visible>
+                        <visible>Integer.IsGreaterorEqual(System.BatteryLevel,51)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>1-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>ff7FFF00</textcolor>
+						<shadowcolor></shadowcolor>
+						<label></label>
+					</control>
+                    <control type="label">
+                        <visible>Integer.IsLessorEqual(System.BatteryLevel,50)</visible>
+                        <visible>Integer.IsGreaterorEqual(System.BatteryLevel,41)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>1-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>ffFFFF00</textcolor>
+						<shadowcolor></shadowcolor>
+						<label></label>
+					</control>
+                    <control type="label">
+                        <visible>Integer.IsLessorEqual(System.BatteryLevel,40)</visible>
+                        <visible>Integer.IsGreaterorEqual(System.BatteryLevel,11)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>1-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>ffFF4500</textcolor>
+						<shadowcolor></shadowcolor>
+						<label></label>
+					</control>
+                    <control type="label">
+                        <visible>Integer.IsLessorEqual(System.BatteryLevel,10)</visible>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-col-gutter</width>
+						<height>1-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolLarge</font>
+						<textcolor>ffFF0000</textcolor>
+						<shadowcolor></shadowcolor>
+                        <animation type="conditional" condition="true" loop="true">
+                            <effect type="fade" start="0" end="100" time="1000"/>
+                            <effect type="fade" start="100" end="0" time="1000" delay="1000"/>
+                        </animation>
+						<label></label>
+					</control>
+					<control type="label">
+						<posx></posx>
+						<posy>0</posy>
+						<width>110</width>
+						<height>1-row</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>buttonTitle</font>
+						<textcolor>textActive</textcolor>
+						<shadowcolor></shadowcolor>
+						<label>$INFO[System.BatteryLevel]</label>
+					</control>
+			    </control>
+		</control>
+    </include>
+    <include name="slidebuttons">
+                <animation type="conditional" condition="!player.hasmedia + Integer.IsEqual(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart) + Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="0" time="0" delay="0"/>
+		    	</animation>
+		   	 	<animation type="conditional" condition="player.hasmedia + Integer.IsEqual(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart) + Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0,0" end="-38" time="0" delay="0"/>
+        		</animation>
+				<animation type="conditional" condition="player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart) + Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="-76" time="0" delay="0"/>
+        		</animation>
+				<animation type="conditional" condition="!player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart) + Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="-38" time="0" delay="0"/>
+        		</animation>
+                
+				<animation type="conditional" condition="!player.hasmedia + Integer.IsEqual(System.AddonUpdateCount,0) + Skin.HasSetting(Further_apart) + Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="-70" time="0" delay="0"/>
+		    	</animation>
+		   	 	<animation type="conditional" condition="player.hasmedia + Integer.IsEqual(System.AddonUpdateCount,0) + Skin.HasSetting(Further_apart) + Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0,0" end="-145" time="0" delay="0"/>
+        		</animation>
+				<animation type="conditional" condition="player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + Skin.HasSetting(Further_apart) + Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="-215" time="0" delay="0"/>
+        		</animation>
+				<animation type="conditional" condition="!player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + Skin.HasSetting(Further_apart) + Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="-145" time="0" delay="0"/>
+        		</animation>
+
+                <animation type="conditional" condition="!player.hasmedia + Integer.IsEqual(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart) + !Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="38" time="0" delay="0"/>
+		    	</animation>
+		   	 	<animation type="conditional" condition="player.hasmedia + Integer.IsEqual(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart) + !Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0,0" end="0" time="0" delay="0"/>
+        		</animation>
+				<animation type="conditional" condition="player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart) + !Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="-38" time="0" delay="0"/>
+        		</animation>
+				<animation type="conditional" condition="!player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + !Skin.HasSetting(Further_apart + !Skin.HasSetting(Settings))" reversible="true">
+		    		<effect type="slide" start="0" end="0" time="0" delay="0"/>
+        		</animation>
+                
+				<animation type="conditional" condition="!player.hasmedia + Integer.IsEqual(System.AddonUpdateCount,0) + Skin.HasSetting(Further_apart) + !Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="-0" time="0" delay="0"/>
+		    	</animation>
+		   	 	<animation type="conditional" condition="player.hasmedia + Integer.IsEqual(System.AddonUpdateCount,0) + Skin.HasSetting(Further_apart) + !Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0,0" end="-70" time="0" delay="0"/>
+        		</animation>
+				<animation type="conditional" condition="player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + Skin.HasSetting(Further_apart) + !Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="-145" time="0" delay="0"/>
+        		</animation>
+				<animation type="conditional" condition="!player.hasmedia + Integer.IsGreater(System.AddonUpdateCount,0) + Skin.HasSetting(Further_apart) + !Skin.HasSetting(Settings)" reversible="true">
+		    		<effect type="slide" start="0" end="-70" time="0" delay="0"/>
+        		</animation>
+                
+    </include>
+
+    <include name="slidebuttons_Android">
+				<animation type="conditional" condition="System.Platform.Android + Skin.HasSetting(Further_apart) + !Skin.HasSetting(Youtube) + Skin.HasSetting(SmartTube)" reversible="true">
+		    		<effect type="slide" start="0" end="-186" time="0" delay="0"/>
+        		</animation>
+                <animation type="conditional" condition="System.Platform.Android + Skin.HasSetting(Further_apart) + Skin.HasSetting(Youtube) + !Skin.HasSetting(SmartTube)" reversible="true">
+		    		<effect type="slide" start="0" end="-186" time="0" delay="0"/>
+        		</animation>
+                <animation type="conditional" condition="System.Platform.Android + !Skin.HasSetting(Further_apart) + Skin.HasSetting(Youtube) + Skin.HasSetting(SmartTube)" reversible="true">
+		    		<effect type="slide" start="0" end="0" time="0" delay="0"/>
+        		</animation>
+                <animation type="conditional" condition="System.Platform.Android + Skin.HasSetting(Further_apart) + !Skin.HasSetting(Youtube) + !Skin.HasSetting(SmartTube)" reversible="true">
+		    		<effect type="slide" start="0" end="-110" time="0" delay="0"/>
+        		</animation>
+                <animation type="conditional" condition="System.Platform.Android + !Skin.HasSetting(Further_apart) + !Skin.HasSetting(Youtube) + !Skin.HasSetting(SmartTube)" reversible="true">
+		    		<effect type="slide" start="0" end="30" time="0" delay="0"/>
+        		</animation>
+                <animation type="conditional" condition="System.Platform.Android + !Skin.HasSetting(Further_apart) + Skin.HasSetting(Youtube) + Skin.HasSetting(SmartTube)" reversible="true">
+		    		<effect type="slide" start="0" end="-40" time="0" delay="0"/>
+        		</animation>
+                <animation type="conditional" condition="System.Platform.Android + Skin.HasSetting(Further_apart) + Skin.HasSetting(Youtube) + Skin.HasSetting(SmartTube)" reversible="true">
+		    		<effect type="slide" start="0" end="-260" time="0" delay="0"/>
+        		</animation>
+    </include>
+
+    <!-- not in use old
+    <include name= "weather">
+        <control type="multiimage">
+            <visible>$EXP[hasWeather] + Skin.HasSetting(Weather icons) + Skin.HasSetting(weather icons animated)</visible>
+			<posx>1000</posx>
+            <posy>-200</posy>
+            <width>200</width>
+            <height>200</height>
+			<imagepath>resource://resource.images.weathericons.hd.animated/resources/$INFO[weather.FanartCode]</imagepath>
+			<timeperimage>100</timeperimage>
+			<fadetime></fadetime>
+			<pauseatend></pauseatend>
+			<randomize>false</randomize>
+			<loop>yes</loop>
+			<aspectratio>scale</aspectratio>
+        </control>
+        <control type="image">
+            <visible>$EXP[hasWeather] + Skin.HasSetting(Weather icons) + !Skin.HasSetting(weather icons animated)</visible>
+            <posx>1000</posx>
+            <posy>-200</posy>
+            <width>200</width>
+            <height>200</height>
+            <texture>Weathericons/$INFO[weather.FanartCode].png</texture>
+			<colordiffuse></colordiffuse>
+        </control>
+    </include>
+    -->
+
+
+    <include name="keyboard select">
+        <control type="group">
+                <visible>$PARAM[visible]</visible>
+                <posx>$PARAM[posx]</posx>
+                <posy>$PARAM[posy]</posy>
+                <!--invisible button for background-->
+                <control type="button">
+                    <posx>-127</posx>
+                    <posy>-2</posy>
+                    <width>5-col</width>
+                    <height>7-col</height>
+                    <focusedcolor>00FFFFFF</focusedcolor>
+                    <texturefocus colordiffuse="00FFFFFF">masks/discsurface.png</texturefocus>
+                    <texturenofocus>00FFFFFF</texturenofocus>
+                    <aspectratio>stretch</aspectratio>
+                    <visible>Skin.HasSetting(crosskey)</visible>
+                </control>
+                <!--row 1-->
+                <control type="button">
+                    <description>1 button</description>
+                    <label></label>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <onclick>setfocus($PARAM[focus])</onclick>
+                    <onclick>$PARAM[up]</onclick>
+                    <font>symbol</font>
+                    <texturenofocus colordiffuse="$PARAM[color]">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <visible>Skin.HasSetting(crosskey) + $PARAM[upview]</visible>
+                </control>
+                <control type="button">
+                    <description>1 button</description>
+                    <label></label>
+                    <posx>-125</posx>
+                    <posy>125</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <onclick>setfocus($PARAM[focus])</onclick>
+                    <onclick>$PARAM[left]</onclick>
+                    <font>symbol</font>
+                    <texturenofocus colordiffuse="$PARAM[color]">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <visible>Skin.HasSetting(crosskey) + $PARAM[leftview]</visible>
+                </control>
+                
+                <control type="button">
+                    <description>3 button</description>
+                    <label></label>
+                    <posx>0</posx>
+                    <posy>265</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <onclick>setfocus($PARAM[focus])</onclick>
+                    <onclick>$PARAM[down]</onclick>
+                    <font>symbol</font>
+                    <texturenofocus colordiffuse="$PARAM[color]">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <visible>Skin.HasSetting(crosskey) + $PARAM[downview]</visible>
+                </control>
+                <control type="button">
+                    <description>4 button</description>
+                    <label></label>
+                    <posx>125</posx>
+                    <posy>125</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <onclick>setfocus($PARAM[focus])</onclick>
+                    <onclick>$PARAM[right]</onclick>
+                    <font>symbol</font>
+                    <texturenofocus colordiffuse="$PARAM[color]">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <visible>Skin.HasSetting(crosskey) + $PARAM[rightview]</visible>
+                </control>
+
+                <control type="button">
+                    <description>4 button</description>
+                    <label>✓</label>
+                    <posx>0</posx>
+                    <posy>125</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <texturenofocus colordiffuse="$PARAM[color]">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <onclick>setfocus($PARAM[focus])</onclick>
+                    <onclick>$PARAM[select]</onclick>
+                    
+                    <font>symbol</font>
+                    <texturenofocus colordiffuse="$PARAM[color]">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <visible>Skin.HasSetting(crosskey) + $PARAM[selectview]</visible>
+                </control>
+
+                <control type="button">
+                    <description>Backspace button</description>
+                    <label>31253</label>
+                    <posx>-60</posx>
+                    <posy>400</posy>
+                    <width>3-col</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <textwidth>180</textwidth>
+                    <onclick>$PARAM[back]</onclick>
+                    <texturenofocus colordiffuse="$PARAM[color]">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <font>buttonTitle</font>
+                    <visible>Skin.HasSetting(crosskey)</visible>
+                </control>
+            </control>
+    </include>
+
+
+
+
+    <include name="keyboard select osd">
+        <control type="group">
+                <visible>$PARAM[visible]</visible>
+                <posx>-100%</posx>
+                <posy>25%</posy>
+                <!--row 1-->
+                <control type="button">
+                    <description>1 button</description>
+                    <label></label>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <onclick>setfocus($PARAM[focus])</onclick>
+                    <onclick>$PARAM[up]</onclick>
+                    <font>symbol</font>
+                    <texturenofocus colordiffuse="keyboardInactive">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <visible>Skin.HasSetting(crosskey)</visible>
+                </control>
+                <control type="button">
+                    <description>1 button</description>
+                    <label></label>
+                    <posx>-125</posx>
+                    <posy>125</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <onclick>setfocus($PARAM[focus])</onclick>
+                    <onclick>$PARAM[left]</onclick>
+                    <font>symbol</font>
+                    <texturenofocus colordiffuse="keyboardInactive">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <visible>Skin.HasSetting(crosskey)</visible>
+                </control>
+                
+                <control type="button">
+                    <description>3 button</description>
+                    <label></label>
+                    <posx>0</posx>
+                    <posy>265</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <onclick>setfocus($PARAM[focus])</onclick>
+                    <onclick>$PARAM[down]</onclick>
+                    <font>symbol</font>
+                    <texturenofocus colordiffuse="keyboardInactive">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <visible>Skin.HasSetting(crosskey)</visible>
+                </control>
+                <control type="button">
+                    <description>4 button</description>
+                    <label></label>
+                    <posx>125</posx>
+                    <posy>125</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <onclick>setfocus($PARAM[focus])</onclick>
+                    <onclick>$PARAM[right]</onclick>
+                    <font>symbol</font>
+                    <texturenofocus colordiffuse="keyboardInactive">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <visible>Skin.HasSetting(crosskey)</visible>
+                </control>
+
+                <control type="button">
+                    <description>4 button</description>
+                    <label>✓</label>
+                    <posx>0</posx>
+                    <posy>125</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <onclick>setfocus($PARAM[focus])</onclick>
+                    <onclick>$PARAM[select]</onclick>
+                    <font>symbol</font>
+                    <texturenofocus colordiffuse="keyboardInactive">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <visible>Skin.HasSetting(crosskey) + !window.isactive(12901)</visible>
+                </control>
+
+                <control type="button">
+                    <description>Backspace button</description>
+                    <label>31253</label>
+                    <posx>-60</posx>
+                    <posy>400</posy>
+                    <width>3-col</width>
+                    <height>100</height>
+                    <align>center</align>
+                    <textwidth>180</textwidth>
+                    <onclick>back</onclick>
+                    <texturenofocus colordiffuse="keyboardInactive">masks/discsurface.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                    <focusedcolor>$VAR[Home]</focusedcolor>
+                    <textcolor>textActive</textcolor>
+                    <font>buttonTitle</font>
+                    <visible>Skin.HasSetting(crosskey)</visible>
+                </control>  
+            </control>
+    </include>
+
+
+    
+    <!--Backbutton-->
+    <include name="Backbutton">
+        <control type="button" id="80000">
+			<visible>Skin.HasSetting(Touch)</visible>
+			<posx>0</posx>
+            <posy>0</posy>
+            <width>100%</width>
+            <height>100%</height>
+			<align>center</align>
+            <textcolor>00FFFFFF</textcolor>
+        		<focusedcolor>00FFFFFF</focusedcolor>
+        		<texturefocus>00FFFFFF</texturefocus>
+        		<texturenofocus>00FFFFFF</texturenofocus>
+        		<textoffsetx>24</textoffsetx>
+        		<disabledcolor>00FFFFFF</disabledcolor>
+        		<invalidcolor>00FFFFFF</invalidcolor>
+			<onclick>Back</onclick>
+		</control>
+    </include>
+
+    <include name="Backbuttoncross">
+        <control type="button" id="80000">
+			<visible>Skin.HasSetting(Touch) + !Skin.HasSetting(crosskey)</visible>
+			<posx>0</posx>
+            <posy>0</posy>
+            <width>100%</width>
+            <height>100%</height>
+			<align>center</align>
+            <textcolor>00FFFFFF</textcolor>
+        		<focusedcolor>00FFFFFF</focusedcolor>
+        		<texturefocus>00FFFFFF</texturefocus>
+        		<texturenofocus>00FFFFFF</texturenofocus>
+        		<textoffsetx>24</textoffsetx>
+        		<disabledcolor>00FFFFFF</disabledcolor>
+        		<invalidcolor>00FFFFFF</invalidcolor>
+			<onclick>Back</onclick>
+		</control>
+    </include>
+
+    <include name="HiddenList">
+		<left>-100</left>
+		<top>-100</top>
+		<width>100</width>
+		<height>100</height>
+		<itemlayout height="100" width="100" />
+		<focusedlayout height="100" width="100" />
+	</include>
+
+    <include name="ButtonInfoDialogsCommonValues">
+		<height>60</height>
+		<width>254</width>
+		<textoffsetx>0</textoffsetx>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>buttonTitle</font>
+		<textcolor>grey</textcolor>
+		<focusedcolor>black</focusedcolor>
+    </include>
+    <include name="pvrguidewidth">
+        <include  condition="Skin.HasSetting(Touch)">pvrguidewidth1</include>
+        <include  condition="!Skin.HasSetting(Touch)">pvrguidewidth2</include>
+    </include>
+    <include name="pvrguidewidth1">
+        <width>20-col</width>
+    </include>
+    <include name="pvrguidewidth2">
+        <width>24-col</width>
+    </include>
+
+    <include name="view_503_posx">
+        <include  condition="Skin.HasSetting(Touch)">view_503_posx1</include>
+        <include  condition="!Skin.HasSetting(Touch)">view_503_posx2</include>
+    </include>
+    <include name="view_503_posx1">
+        <width>1008</width>
+    </include>
+    <include name="view_503_posx2">
+        <width>fullscreenWidth</width>
+    </include>
+
+    <include name="scrollbarwidth">
+        <include  condition="Skin.HasSetting(Touch)">scrollbarwidth1</include>
+        <include  condition="!Skin.HasSetting(Touch)">scrollbarwidth2</include>
+    </include>
+    <include name="scrollbarwidth1">
+        <width>850</width>
+    </include>
+    <include name="scrollbarwidth2">
+        <width>12</width>
+    </include>
+    <include name="scrollbarposx">
+        <include  condition="Skin.HasSetting(Touch)">scrollbarposx1</include>
+        <include  condition="!Skin.HasSetting(Touch)">scrollbarposx2</include>
+    </include>
+    <include name="scrollbarposx1">
+        <posx>0</posx>
+    </include>
+    <include name="scrollbarposx2">
+        <posx>-36</posx>
+    </include>
+    <include name="scrollbarcolor">
+        <include  condition="Skin.HasSetting(Touch)">scrollbarcolor1</include>
+        <include  condition="!Skin.HasSetting(Touch)">scrollbarcolor2</include>
+    </include> 
+    <include name="scrollbarcolor1">
+        <texturesliderbackground colordiffuse="77black">masks/discsurface.png</texturesliderbackground>
+        <texturesliderbarfocus colordiffuse="77overlay">masks/discsurface.png</texturesliderbarfocus>
+    </include>
+    <include name="scrollbarcolor2">
+        <texturesliderbar colordiffuse="textDisabled">masks/discsurface.png</texturesliderbar>
+        <texturesliderbackground colordiffuse="black">masks/discsurface.png</texturesliderbackground>
+        <texturesliderbarfocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturesliderbarfocus>
+    </include>
+
+    <include name="scrollbarposxosd">
+        <include  condition="Skin.HasSetting(Touch)">scrollbarposx1osd</include>
+        <include  condition="!Skin.HasSetting(Touch)">scrollbarposx2osd</include>
+    </include>
+    <include name="scrollbarposx1osd">
+        <posx>0</posx>
+    </include>
+    <include name="scrollbarposx2osd">
+        <posx>12r</posx>
+    </include>
+
+    <include name="scrollbarposxpvrchannels">
+        <include  condition="Skin.HasSetting(Touch)">scrollbarposx1pvrchannels</include>
+        <include  condition="!Skin.HasSetting(Touch)">scrollbarposx2pvrchannels</include>
+    </include>
+    <include name="scrollbarposx1pvrchannels">
+        <posx>1%</posx>
+    </include>
+    <include name="scrollbarposx2pvrchannels">
+        <posx>90%</posx>
+    </include>
+
+    <include name="scrollbarwidthfanartlist">
+        <include  condition="Skin.HasSetting(Touch)">scrollbarwidthfanartlist1</include>
+        <include  condition="!Skin.HasSetting(Touch)">scrollbarwidthfanartlist2</include>
+    </include>
+    <include name="scrollbarwidthfanartlist1">
+        <width>620</width>
+    </include>
+    <include name="scrollbarwidthfanartlist2">
+        <width>12</width>
+    </include>
+    <include name="scrollbarposxfanartlist">
+        <include  condition="Skin.HasSetting(Touch)">scrollbarposxfanartlist1</include>
+        <include  condition="!Skin.HasSetting(Touch)">scrollbarposxfanartlist2</include>
+    </include>
+    <include name="scrollbarposxfanartlist1">
+        <posx>1250</posx>
+    </include>
+    <include name="scrollbarposxfanartlist2">
+        <posx>1880</posx>
+    </include>
+    <include name="scrollbarcolorfanartlist">
+        <include  condition="Skin.HasSetting(Touch)">scrollbarcolorfanartlist1</include>
+        <include  condition="!Skin.HasSetting(Touch)">scrollbarcolorfanartlist2</include>
+    </include>
+    <include name="scrollbarcolorfanartlist1">
+        <texturesliderbackground colordiffuse="77black">masks/discsurface.png</texturesliderbackground>
+        <texturesliderbarfocus colordiffuse="77overlay">masks/discsurface.png</texturesliderbarfocus>
+    </include>
+    <include name="scrollbarcolorfanartlist2">
+        <texturesliderbackground colordiffuse="overlay">colors/black.png</texturesliderbackground>
+        <texturesliderbarfocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturesliderbarfocus>
+    </include>
+
+    <include name="pvrchannelsonupondown">
+        <include  condition="!player.hasvideo + !VideoPlayer.IsFullscreen">pvrchannelsonupondown1</include>
+        <include  condition="player.hasvideo + !VideoPlayer.IsFullscreen">pvrchannelsonupondown2</include>
+    </include>
+    <include name="pvrchannelsonupondown1">
+        <ondown>50</ondown>
+        <onup>8000</onup>
+    </include>
+    <include name="pvrchannelsonupondown2">
+        <ondown>50</ondown>
+        <onup>11</onup>
+    </include>
+    <include name="pvrchannelsonupondown20">
+        <include  condition="!player.hasvideo + !VideoPlayer.IsFullscreen">pvrchannelsonupondown21</include>
+        <include  condition="player.hasvideo + !VideoPlayer.IsFullscreen">pvrchannelsonupondown22</include>
+    </include>
+    <include name="pvrchannelsonupondown21">
+        <ondown>50</ondown>
+        <onup>11</onup>
+    </include>
+    <include name="pvrchannelsonupondown22">
+        <ondown>11</ondown>
+        <onup>50</onup>
+    </include>
+    <include name="pvrchannelsonupondown3">
+        <include  condition="!player.hasvideo + !VideoPlayer.IsFullscreen">pvrchannelsonupondown31</include>
+        <include  condition="player.hasvideo + !VideoPlayer.IsFullscreen">pvrchannelsonupondown32</include>
+    </include>
+    <include name="pvrchannelsonupondown31">
+        <ondown>8000</ondown>
+        <onup>50</onup>
+    </include>
+    <include name="pvrchannelsonupondown32">
+        <ondown>50</ondown>
+        <onup>8000</onup>
+    </include>
+    <include name="pvrguidesonupondown">
+        <include  condition="!player.hasvideo + !VideoPlayer.IsFullscreen">pvrguidesonupondown1</include>
+        <include  condition="player.hasvideo + !VideoPlayer.IsFullscreen">pvrguidesonupondown2</include>
+    </include>
+    <include name="pvrguidesonupondown1">
+        <ondown>10</ondown>
+        <onup>8000</onup>
+    </include>
+    <include name="pvrguidesonupondown2">
+        <ondown>10</ondown>
+        <onup>11</onup>
+    </include>
+    <include name="pvrguidesonupondown20">
+        <include  condition="!player.hasvideo + !VideoPlayer.IsFullscreen">pvrguidesonupondown21</include>
+        <include  condition="player.hasvideo + !VideoPlayer.IsFullscreen">pvrguidesonupondown22</include>
+    </include>
+    <include name="pvrguidesonupondown21">
+        <ondown>10</ondown>
+        <onup>11</onup>
+    </include>
+    <include name="pvrguidesonupondown22">
+        <ondown>11</ondown>
+        <onup>10</onup>
+    </include>
+    <include name="pvrguidesonupondown3">
+        <include  condition="!player.hasvideo + !VideoPlayer.IsFullscreen">pvrguidesonupondown31</include>
+        <include  condition="player.hasvideo + !VideoPlayer.IsFullscreen">pvrguidesonupondown32</include>
+    </include>
+    <include name="pvrguidesonupondown31">
+        <ondown>8000</ondown>
+        <onup>10</onup>
+    </include>
+    <include name="pvrguidesonupondown32">
+        <ondown>10</ondown>
+        <onup>8000</onup>
+    </include>
+
+    <include name="pvrprogresstexture">
+        <include condition="Skin.Hassetting(Touch)">pvrprogresstexture1</include>
+        <include condition="!Skin.Hassetting(Touch)">pvrprogresstexture2</include>
+    </include>
+    <include name="pvrprogresstexture1">
+        <progresstexture colordiffuse="$VAR[highlight]" border="0,40,18,14">epg_progress_vertical.png</progresstexture>
+    </include>
+    <include name="pvrprogresstexture2">
+        <progresstexture colordiffuse="$VAR[highlight]" border="0,44,18,14">epg_progress_vertical.png</progresstexture>
+    </include>
+    <!--homemenu slide or grid-->
+   <include name="homemenuslide">
+        <include  condition="Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuside)">homemenuslide1</include>
+        <include  condition="Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenuside)">homemenuslide2</include>
+        <include  condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenuslide3</include>
+        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenuslide2</include>
+    </include>
+    <include name="homemenuslide1">
+        <width>fullscreenWidth</width>
+	    <orientation>horizontal</orientation>
+	    <height>3-row</height>
+	    <posx>0</posx>
+	    <posy>50%</posy>
+        <colordiffuse>ffffff</colordiffuse>
+        <onup>9005</onup>
+		<ondown>setfocus(9001,0)</ondown>
+        </include>
+    <include name="homemenuslide2">
+    	<width>18-col</width>
+	    <orientation>vertical</orientation>
+	    <height>12-row</height>
+	    <posx>col-5-begin</posx>
+	    <posy>row-12-begin</posy>
+        <colordiffuse>77000000</colordiffuse>
+        <onup>9005</onup>
+		<ondown>setfocus(9001,0)</ondown>
+    </include>
+    <include name="homemenuslide3">
+    	<width>4-col-textbox</width>
+	    <orientation>vertical</orientation>
+	    <height>fullscreenHeight</height>
+	    <posx>0</posx>
+	    <posy>0</posy>
+        <colordiffuse>ffffff</colordiffuse>
+        <onup>9000</onup>
+        <ondown>9000</ondown>
+        <onright condition="!Skin.HasSetting(widget) + string.isempty(Control.GetLabel(5200))">9001</onright>
+        <onright condition="!Skin.HasSetting(widget)">5200</onright>
+        <onright condition="Skin.HasSetting(widget)">setfocus(9001,0)</onright>
+        <onleft condition="!Skin.HasSetting(widget) + System.Platform.Android">5200</onleft>
+        <onleft condition="!Skin.HasSetting(widget) + !System.Platform.Android">5200</onleft>
+        <onleft condition="Skin.HasSetting(widget) + System.Platform.Android">9005</onleft>
+        <onleft condition="Skin.HasSetting(widget) + !System.Platform.Android">setfocus(9001,0)</onleft>
+    </include>
+
+    <include name="homemenuslidecolor">
+        <include  condition="Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuside)">homemenuslide1color</include>
+        <include  condition="Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenuside)">homemenuslide2color</include>
+        <include  condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenuslide3color</include>
+        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenuslide2color</include>
+    </include>
+    <include name="homemenuslide1color">
+        
+        <colordiffuse>ffffff</colordiffuse>
+    </include>
+    <include name="homemenuslide2color">
+    	
+        <colordiffuse>80000000</colordiffuse>
+    </include>
+    <include name="homemenuslide3color">
+    	
+        <colordiffuse>ffffff</colordiffuse>
+    </include>
+    
+    <include name="homemenukeycontrol">
+        <include  condition="Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuside)">homemenukeycontrol1</include>
+        <include  condition="Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenuside)">homemenukeycontrol2</include>
+        <include  condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenukeycontrol3</include>
+        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenukeycontrol2</include>
+    </include>
+    <include name="homemenukeycontrol1">
+        <onup>9000</onup>
+		<ondown>8001</ondown>
+        </include>
+    <include name="homemenukeycontrol2">
+        <onup>9000</onup>
+		<ondown>8001</ondown>
+    </include>
+    <include name="homemenukeycontrol3">
+        <onup condition="!Skin.HasSetting(widget) + !string.isempty(Control.GetLabel(7001))">5200</onup>
+        <onup condition="!Skin.HasSetting(widget) + !System.Platform.Android">5300</onup><!-- + string.isempty(Control.GetLabel(7001))-->
+        <onup condition="!Skin.HasSetting(widget) + System.Platform.Android">5300</onup><!-- + string.isempty(Control.GetLabel(7001))-->
+        <onup condition="Skin.HasSetting(widget) + System.Platform.Android">9005</onup>
+        <onup condition="Skin.HasSetting(widget) + !System.Platform.Android">9000</onup>
+        <ondown>8001</ondown>
+		<onright>9000</onright>
+        <onleft>9000</onleft>
+    </include>
+
+    <include name="homemenukeycontrolandroid">
+        <include  condition="Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuside)">homemenukeycontrol1android</include>
+        <include  condition="Skin.HasSetting(homemenugrid) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenuside)">homemenukeycontrol2android</include>
+        <include  condition="Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenukeycontrol3android</include>
+        <include  condition="!Skin.HasSetting(homemenuside) + !Skin.HasSetting(homemenuslide) + !Skin.HasSetting(homemenugrid)">homemenukeycontrol2android</include>
+    </include>
+    <include name="homemenukeycontrol1android">
+        <onup>9000</onup>
+		<ondown>9000</ondown>
+        </include>
+    <include name="homemenukeycontrol2android">
+        <onup>9000</onup>
+		<ondown>9000</ondown>
+    </include>
+    <include name="homemenukeycontrol3android">
+        <onup>9001</onup>
+        <ondown>5200</ondown>
+		<onright>9000</onright>
+        <onleft>9000</onleft>
+    </include>
+
+	<include name="Widget_Touch_width">
+        <include  condition="Skin.HasSetting(Touch)">Widget_Touch_width1</include>
+        <include  condition="!Skin.HasSetting(Touch)">Widget_Touch_width2</include>
+    </include>
+    <include name="Widget_Touch_width1">
+        <width>918</width>
+    </include>
+    <include name="Widget_Touch_width2">
+        <width>fullscreenWidth</width>
+    </include>
+
+
+
+
+
+
+
+    <include name="ButtonCommonValues">
+		<width>375</width>
+		<height>60</height>
+		<textoffsetx>15</textoffsetx>
+		<textcolor>$VAR[Home]</textcolor>
+		<focusedcolor>$VAR[selected]</focusedcolor>
+        <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+		<textwidth>300</textwidth>
+		<aligny>center</aligny>
+		<font>buttonTitle</font>
+		<radioposx>300</radioposx>
+	</include>
+
+    <include name="ShowCaseInfoPanelButtonsValues">
+		<height>85</height>
+		<width>501</width>
+		<textoffsetx>15</textoffsetx>
+		<aligny>top</aligny>
+		<font>buttonTitle</font>
+		<textcolor>textActive</textcolor>
+		<focusedcolor>$VAR[Home]</focusedcolor>
+	</include>
+
+    <include name="MediaMenuTop">
+		<top>80</top>
+		<width>400</width>
+		<height>1080</height>
+		<onleft>9000</onleft>
+		<onright>ClearProperty(MediaMenu,Home)</onright>
+		<onright>50</onright>
+		<onup>9000</onup>
+		<ondown>9957</ondown>
+		<onback>ClearProperty(MediaMenu,Home)</onback>
+		<onback>50</onback>
+		<include condition="Skin.HasSetting(KioskMode.Enabled)">KioskModeButton</include>
+		<animation effect="fade" start="100" end="0" time="200" condition="Window.IsVisible(1128) | Window.IsVisible(1130) | Window.IsVisible(1131) | Window.IsVisible(1132)" reversible="true">Conditional</animation>
+		
+	</include>
+
+    <include name="DefaultButtonsValues">
+		<height>90</height>
+		<width>501</width>
+		<textoffsetx>15</textoffsetx>
+		<aligny>top</aligny>
+		<font>buttonTitle</font>
+		<textcolor>white</textcolor>
+		<shadowcolor>ff8a795d</shadowcolor>
+		<focusedcolor>white</focusedcolor>
+	</include>
+
+
+
+
+
+
+
+   <!--debugging-->
+    <include name="DialogID">
+        <animation type="conditional" condition="!player.playing" reversible="true">
+		    <effect type="slide" start="0,0" end="0,0" time="200" delay="0"/>
+		    </animation>
+		    <animation type="conditional" condition="!Window.isActive(home) + player.playing" reversible="true">
+		    <effect type="slide" start="0,0" end="0,45" time="200" delay="0"/>
+        </animation>
+        <posx>15</posx>
+        <posy>15</posy>
+        <width>1395</width>
+        <height>1-row</height>
+        <font>smallStrong</font>
+        <textcolor>textActive</textcolor>
+        <align>left</align>
+        <visible>Skin.HasSetting(DebugInfo)</visible>
+    </include>
+    <include name="WindowID">
+        <animation type="conditional" condition="!player.playing" reversible="true">
+		    <effect type="slide" start="0,0" end="0,0" time="200" delay="0"/>
+		    </animation>
+		    <animation type="conditional" condition="!Window.isActive(home) + player.playing" reversible="true">
+		    <effect type="slide" start="0,0" end="0,45" time="200" delay="0"/>
+        </animation>
+        <posx>15</posx>
+        <posy>15</posy>
+        <width>1395</width> 
+        <height>1-row</height>
+        <font>smallStrong</font>
+        <scroll>true</scroll>
+        <textcolor>textActive</textcolor>
+        <align>left</align>
+        <label2></label2>
+        <visible>Skin.HasSetting(DebugInfo)</visible>
+    </include>
+    <include name="DebugGrid">
+        <control type="image">
+            <include>dimensionsFullscreen</include>
+            <texture>debuggrid1080.png</texture>
+            <colordiffuse>77FFFFFF</colordiffuse>
+            <visible>Skin.HasSetting(DebugGrid)</visible>
+        </control>
+    </include>
+
+
+
+
+
+
+
+    <!--aeonocsilvio-->
+    <include name="InfoMPAA">
+		<control type="image">
+			<width>135</width>
+			<height>90</height>
+			<include>MediaFlagValues</include>
+			<texture fallback="flags/default/mpaa/NR.png">$VAR[MediaFlagsPathVar]/mpaa/$VAR[RatingFlagVar]</texture>
+		</control>
+	</include>
+    <!-- Media Flags -->
+	<include name="MediaFlagValues">
+		<width>170</width>
+		<height>78</height>
+		<aspectratio>keep</aspectratio>
+		<fadetime>250</fadetime>
+		<colordiffuse>white</colordiffuse>
+		<animation effect="fade" time="200">VisibleChange</animation>
+	</include>
+
+
+
+
+   
+				
+
+
+
+
+    <include name="WidgetListPoster1">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel1">
+				<param name="label">$PARAM[widget_header1]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<posy>-115</posy>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9013</onup>
+                <ondown>9014</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200" condition="!Skin.Hassetting(Touch)">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200" condition="!Skin.Hassetting(Touch)">
+					
+						
+				
+				
+                    
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+				</focusedlayout>
+				
+
+
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+            
+		</definition>
+	</include>
+    <include name="WidgetListPoster2">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel2">
+				<param name="label">$PARAM[widget_header2]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>150</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9014</onup>
+                <ondown>9015</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+            
+		</definition>
+	</include>
+    <include name="WidgetListPoster3">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel3">
+				<param name="label">$PARAM[widget_header3]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>400</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9015</onup>
+                <ondown>9016</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+                
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+    <include name="WidgetListPoster4">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel4">
+				<param name="label">$PARAM[widget_header4]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9017</onup>
+                <ondown>9018</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image"> 
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+
+
+
+    <include name="WidgetListPoster5">
+    
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel5">
+				<param name="label">$PARAM[widget_header5]</param>
+				<param name="label2">$PARAM[widget_label5]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="410"/>
+                <param name="posy2" value="425"/>
+				<param name="posx" value="925"/>
+				<param name="posx2" value="940"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+                    <animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+						<effect type="fade" start="100" end="0" time="500" delay="0"/>
+					</animation>
+				<left>420</left>
+				<top>400</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<right>0</right>
+				<height>200</height>
+                <width>1080</width>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onleft>9000</onleft>
+				<onup>9005</onup>
+                <ondown>5300</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					<left>15</left>
+					<top>-10</top>
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					<left>15</left>
+					<top>-10</top>
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					<left>24</left>
+					<top>-1</top>
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+				<control type="image">
+                    <animation type="Focus">
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="230,130" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="230,130" />
+						</animation>
+					<left>15</left>
+					<top>-10</top>
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				<control type="image">
+                		<animation type="Focus">
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="125,130" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="125,130" />
+						</animation>
+					<left>24</left>
+					<top>-1</top>
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+
+    <include name="WidgetListPoster6">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel6">
+				<param name="label">$PARAM[widget_header6]</param>
+				<param name="label2">$PARAM[widget_label6]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="700"/> 
+                <param name="posy2" value="715"/>
+				<param name="posx" value="925"/>
+				<param name="posx2" value="940"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+                    <animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+						<effect type="fade" start="100" end="0" time="500" delay="0"/>
+					</animation>
+				<left>420</left>
+				<top>700</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<right>0</right>
+				<height>200</height>
+                <width>1080</width>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onleft>9000</onleft>
+				<onup>5200</onup>
+                <ondown>setfocus(9001,0)</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					<left>15</left>
+					<top>-10</top>
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					<left>15</left>
+					<top>-10</top>
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					<left>24</left>
+					<top>-1</top>
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+                    <animation type="Focus">
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="230,130" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="230,130" />
+						</animation>
+					<left>15</left>
+					<top>-10</top>
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+                <animation type="Focus">
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="125,130" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="125,130" />
+						</animation>
+					<left>24</left>
+					<top>-1</top>
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+                
+					
+				</focusedlayout>
+				
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+
+	<include name="WidgetListPoster7">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel7">
+				<param name="label">$PARAM[widget_header7]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9017</onup>
+                <ondown>9018</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListPoster8">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel8">
+				<param name="label">$PARAM[widget_header8]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9018</onup>
+                <ondown>9019</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListPoster9">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel9">
+				<param name="label">$PARAM[widget_header9]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9019</onup>
+                <ondown>9020</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListPoster10">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel10">
+				<param name="label">$PARAM[widget_header10]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9020</onup>
+                <ondown>9021</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListPoster11">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel11">
+				<param name="label">$PARAM[widget_header11]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9021</onup>
+                <ondown>9022</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListPoster12">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel12">
+				<param name="label">$PARAM[widget_header12]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9022</onup>
+                <ondown>9023</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListPoster13">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel13">
+				<param name="label">$PARAM[widget_header13]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9023</onup>
+                <ondown>9024</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListPoster14">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel14">
+				<param name="label">$PARAM[widget_header14]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9024</onup>
+                <ondown>9025</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+
+	<include name="WidgetListPoster15">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel15">
+				<param name="label">$PARAM[widget_header15]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9025</onup>
+                <ondown>9026</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+
+	<include name="WidgetListPoster16">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel16">
+				<param name="label">$PARAM[widget_header16]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9026</onup>
+                <ondown>9027</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+
+	<include name="WidgetListPoster17">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel17">
+				<param name="label">$PARAM[widget_header17]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9027</onup>
+                <ondown>9028</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+
+	<include name="WidgetListPoster18">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel18">
+				<param name="label">$PARAM[widget_header18]</param>
+				<param name="list_id" value="$PARAM[list_id]"/>
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]"/>
+				<param name="posy" value="70"/>
+                <param name="posy2" value="85"/>
+				<param name="posx" value="45"/>
+				<param name="posx2" value="60"/>
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				
+				<top>650</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				
+				<height>230</height>
+                <include>Widget_Touch_width</include>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+                <onup>9028</onup>
+                <ondown>9013</ondown>
+				<orientation>horizontal</orientation>
+				<itemlayout width="150" height="200">
+					<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture colordiffuse="button_focus">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+              
+				</itemlayout>
+				<focusedlayout width="150" height="200">
+					
+						
+				
+				<control type="image">
+					
+					<width>142</width>
+					<height>225</height>
+					<texture border="6" fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>6</bordersize>
+					<bordertexture border="6" infill="false" colordiffuse="$VAR[highlight]">Colors/border_frame.png</bordertexture>
+				</control>
+					
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="25" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+
+	<!--	
+    <include name="CategoryLabel1">
+		<param name="visible">true</param>
+		<param name="item_treshold">0</param>
+		<definition>
+			<control type="label" id="$PARAM[list_id]666">
+				<left>-450</left>
+				<top>-170</top>
+				<width>900</width>
+				<height>90</height>
+				<label>$PARAM[label]</label>
+				<shadowcolor>text_shadow</shadowcolor>
+				<visible>$PARAM[visible]</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+			</control>
+		</definition>
+	</include>
+    <include name="CategoryLabel2">
+		<param name="visible">true</param>
+		<param name="item_treshold">0</param>
+		<definition>
+			<control type="label" id="$PARAM[list_id]666">
+				<posx>-450</posx>
+				<top>100</top>
+				<width>900</width>
+				<height>90</height>
+				<label>$PARAM[label]</label>
+				<shadowcolor>text_shadow</shadowcolor>
+				<visible>$PARAM[visible]</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+			</control>
+		</definition>
+	</include>
+    <include name="CategoryLabel3">
+		<param name="visible">true</param>
+		<param name="item_treshold">0</param>
+		<definition>
+			<control type="label" id="$PARAM[list_id]666">
+				<left>-450</left>
+				<top>350</top>
+				<width>900</width>
+				<height>90</height>
+				<label>$PARAM[label]</label>
+				<shadowcolor>text_shadow</shadowcolor>
+				<visible>$PARAM[visible]</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+			</control>
+		</definition>
+	</include>
+    <include name="CategoryLabel4">
+		<param name="visible">true</param>
+		<param name="item_treshold">0</param>
+		<definition>
+			<control type="label" id="$PARAM[list_id]666">
+				<posx>-450</posx>
+				<top>600</top>
+				<width>900</width>
+				<height>90</height>
+				<label>$PARAM[label]</label>
+				<shadowcolor>text_shadow</shadowcolor>
+				<visible>$PARAM[visible]</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+			</control>
+		</definition>
+	</include>
+    -->
+
+
+    <include name="CategoryLabel5">
+		<param name="visible">!Container(5200).IsUpdating</param>
+		<param name="item_treshold">0</param>
+		<definition>
+			<control type="label" id="$PARAM[list_id]666">
+                <animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+						<effect type="fade" start="100" end="0" time="500" delay="0"/>
+					</animation>
+				<left>460</left>
+				<top>580</top>
+				<width>900</width>
+				<height>90</height>
+				<font>dialogTitle</font>
+				<label>$PARAM[label]</label>
+				<shadowcolor>text_shadow</shadowcolor>
+				<visible>$PARAM[visible]</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+			</control>
+			<control type="label" id="$PARAM[list_id]666">
+                <animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+						<effect type="fade" start="100" end="0" time="500" delay="0"/>
+					</animation>
+				<left>750</left>
+				<top>610</top>
+				<width>550</width>
+				<height>90</height>
+				<font>dialogTitle</font>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>[B]$PARAM[label2][/B]</label>
+				<shadowcolor>textDisabled</shadowcolor>
+				<visible>control.Hasfocus(5200)</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+			</control>
+		</definition>
+	</include>
+    <include name="CategoryLabel6">
+		<param name="visible">!Container(5300).IsUpdating</param>
+		<param name="item_treshold">0</param>
+		<definition>
+			<control type="label" id="$PARAM[list_id]666">
+                <animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+						<effect type="fade" start="100" end="0" time="500" delay="0"/>
+					</animation>
+				<left>460</left>
+				<top>640</top>
+				<width>900</width>
+				<height>90</height>
+				<font>dialogTitle</font>
+				<label>$PARAM[label]</label>
+				<shadowcolor>text_shadow</shadowcolor>
+				<visible>$PARAM[visible]</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+			</control>
+			<control type="label" id="$PARAM[list_id]666">
+                <animation type="conditional" condition="control.hasfocus(9999)" reversible="true">
+						<effect type="fade" start="100" end="0" time="500" delay="0"/>
+					</animation>
+				<left>750</left>
+				<top>610</top>
+				<width>550</width>
+				<height>90</height>
+				<font>dialogTitle</font>
+				<scroll>true</scroll>
+				<align>center</align>
+				<label>[B]$PARAM[label2][/B]</label>
+				<shadowcolor>textDisabled</shadowcolor>
+				<visible>control.Hasfocus(5300)</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+			</control>
+		</definition>
+	</include>
+        <include name="BusyListSpinner">
+		<param name="posy">160</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="group" id="$PARAM[list_id]599">
+				<height>160</height>
+				
+                <top>70</top>
+				<visible>Container($PARAM[list_id]).IsUpdating + !Integer.IsGreater(Container($PARAM[list_id]).NumItems,0)</visible>
+				<visible>$PARAM[visible]</visible>
+				<control type="image">
+					<top>$PARAM[posy]</top>
+					<left>$PARAM[posx]</left>
+					<width>80</width>
+                <height>80</height>
+                <aspectratio>keep</aspectratio>
+                <animation effect="rotate" end="-45" center="auto" time="280" delay="0" loop="true" reversible="false" condition="true">Conditional</animation>
+                <texture colordiffuse="$VAR[highlight]">spinner.png</texture>
+				</control>
+				<control type="image">
+					<top>$PARAM[posy2]</top>
+                    <left>$PARAM[posx2]</left>
+					<width>50</width>
+                <height>50</height>
+                <aspectratio>keep</aspectratio>
+                <animation effect="rotate" end="45" center="auto" time="280" delay="0" loop="true" reversible="false" condition="true">Conditional</animation>
+                <texture flipx="true" colordiffuse="$VAR[highlight_Shadow]">spinner.png</texture>
+				</control>
+			</control>
+		</definition>
+	</include>
+</includes>

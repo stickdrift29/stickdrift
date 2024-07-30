@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <onload>PlayerControl(Randomoff)</onload>
+	<onload>PlayerControl(Repeatoff)</onload>
+    <onload>Dialog.Close(1103)</onload>
+    <defaultcontrol></defaultcontrol>
+    <controls>
+        <control type="image">
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>fullscreenWidth</width>
+            <height>8-row</height>
+            <texture>colors/black.png</texture>
+            <colordiffuse>textboxInactive</colordiffuse>
+        </control>
+        <!--video codec info label-->
+        <control type="group">
+            <posx>col-1-begin</posx>
+            <posy>1-row</posy>
+            <control type="label" id="1">
+                <posx>0</posx>
+                <posy>0</posy>
+                <font>smallMedium</font>
+                <textcolor>textActive</textcolor>
+                <width>24-col</width>
+                <height>1-row</height>
+                <label>$INFO[Player.SeekNumeric]</label>
+                <shadowcolor></shadowcolor>
+            </control>
+            <control type="label" id="10">
+                <posx>0</posx>
+                <posy>2-row</posy>
+                <font>smallMedium</font>
+                <textcolor>textActive</textcolor>
+                <width>24-col</width>
+                <height>1-row</height>
+                <label></label>
+                <shadowcolor></shadowcolor>
+            </control>
+            <control type="label" id="11">
+                <posx>0</posx>
+                <posy>3-row</posy>
+                <font>smallMedium</font>
+                <textcolor>textActive</textcolor>
+                <width>24-col</width>
+                <height>1-row</height>
+                <label></label>
+                <shadowcolor></shadowcolor>
+            </control>
+            <control type="label" id="12">
+                <posx>0</posx>
+                <posy>4-row</posy>
+                <font>smallMedium</font>
+                <textcolor>textActive</textcolor>
+                <width>24-col</width>
+                <height>1-row</height>
+                <label></label>
+                <shadowcolor></shadowcolor>
+            </control>
+        </control>
+        <!--buffering label-->
+        <control type="group" id="1">
+            <posx>0</posx>
+            <posy>row-2-begin</posy>
+            <depth>DepthOSD+</depth>
+			<visible>Player.Caching + Integer.IsGreater(Player.CacheLevel,0)</visible>
+            <control type="image" id="22">
+                <posx>0</posx>
+                <posy>-12</posy>
+                <width>8-col</width>
+                <height>102</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>eeFFFFFF</colordiffuse>
+            </control>
+            <control type="label" id="23">
+                <description>heading</description>
+                <posx>24</posx>
+                <posy>-12</posy>
+                <font>smallStrong</font>
+                <width>468</width>
+                <height>1-row</height>
+                <label>20186</label>
+                <textcolor>black</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+            <control type="label" id="24">
+                <description>buffering label</description>
+                <posx>24</posx>
+                <posy>30</posy>
+                <font>dialogTitle</font>
+                <textcolor>black</textcolor>
+                <width>468</width>
+                <height>1-row</height>
+                <label>$LOCALIZE[15107] $INFO[Player.CacheLevel]%</label>
+                <shadowcolor></shadowcolor>
+            </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>WindowID</include>
+            <label>VideoFullScreen.xml</label>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.pellucid_MOD_Alex" version="2.0.55" name="Pellucid MOD Blatorone" provider-name="Blatorone">
+    <requires>
+        <import addon="xbmc.gui" version="5.15.0"/>
+        <import addon="script.skinshortcuts" version="1.1.4"/>
+        <import addon="script.embuary.info" version="0.0.1"/>
+        <import addon="script.embuary.helper" version="1.2.14"/>
+        <import addon="plugin.video.themoviedb.helper" version="0.0.1"/>
+        <import addon="service.upnext" version="1.0.0"/>
+        <import addon="plugin.program.autocompletion" version="1.0.0"/>
+    </requires>
+    <extension point="xbmc.gui.skin" debugging="false">
+        <res width="1920" height="1080" aspect="16:9" default="ture" folder="1080i" />
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">A skin for Kodi by Alex</summary>
+        <summary lang="de_de">Ein skin für Kodi von Alex</summary>
+        <description lang="en_GB">Built for the living room, Pellucid is a clean and carefully designed Kodi experience designed for maximum usability and minimum fuss. Skin Shortcuts addon support is available for full menu customisation.</description>
+        <description lang="de_de">Hergestellt fürs Wohnzimmer,Pellucid ist ein sauberes und angenehme design. Kodi design erfahrungen für maximale benutzung und minimalem Aufwand. Skin Kurzbefehl addon support ist verfügbar für volle Menü anpassungen.</description>
+        <platform>all</platform>
+        <license>Creative Commons Attribution-Noncommercial-Share Alike 4.0</license>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+            <screenshot>resources/screenshot-01.jpg</screenshot>
+            <screenshot>resources/screenshot-02.jpg</screenshot>
+            <screenshot>resources/screenshot-03.jpg</screenshot>
+            <screenshot>resources/screenshot-04.jpg</screenshot>
+            <screenshot>resources/screenshot-05.jpg</screenshot>
+            <screenshot>resources/screenshot-06.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>
+

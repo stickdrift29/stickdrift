@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1109" type="window">
+    <defaultcontrol always="true">200</defaultcontrol>
+    <controls>
+        <!--background-->
+        <include>globalBackground</include>
+        <control type="multiimage">
+			<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+			<include>dimensionsFullscreen</include>
+			<imagepath>$VAR[homeBackgroundLocation]</imagepath>
+			<timeperimage>45000</timeperimage>
+			<fadetime>200</fadetime>
+			<pauseatend>10000</pauseatend>
+			<randomize>true</randomize>
+			<loop>yes</loop>
+			<aspectratio>scale</aspectratio>
+			<colordiffuse>99ffffff</colordiffuse>
+		</control>
+        <!--Battery level-->
+        <include>Battery</include>
+         <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <control type="group">
+            <posx>490</posx>
+            <posy>row-5-begin</posy>
+            <!--animations-->
+            <include>modalDialogInOutVertical</include>
+            <control type="image">
+                <posx>-12</posx>
+                <posy>-12</posy>
+                <width>1030</width>
+                <height>720</height>
+                <texture>colors/black.png</texture>
+                <colordiffuse>overlay</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>14-col</width>
+                <height>2-row</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <!--title-->
+            <control type="label">
+                <posx>24</posx>
+                <posy>0</posy>
+                <width>14-col</width>
+                <height>2-row</height>
+                <font>dialogTitle</font>
+                <label>$LOCALIZE[309]</label>
+                <textcolor>$VAR[Home]</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+            
+            <!--options-->
+            
+            <control type="grouplist" id="200">
+                <posx>0</posx>
+                <posy>84</posy>
+                <width>14-col</width>
+                <height>17-row</height>
+                <onleft>8000</onleft>
+                <itemgap>0</itemgap>
+                <orientation>vertical</orientation>
+                <control type="radiobutton" id="9">
+                    <visible>String.Contains(System.Language,English) + [String.Contains(System.Language,English (Australia)) | String.Contains(System.Language,English (US)) | String.Contains(System.Language,English (New Zealand))]</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/eng.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/United-Kingdom.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/United-Kingdom.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/United-Kingdom.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>English</label>
+                    <onclick>InstallAddon(resource.language.en_gb)</onclick>
+                    <onclick>SetGUILanguage(resource.language.en_gb)</onclick>
+                </control>
+                <control type="radiobutton" id="10">
+                    <visible>String.Contains(System.Language,English) + !String.Contains(System.Language,English (Australia)) + !String.Contains(System.Language,English (US)) + !String.Contains(System.Language,English (New Zealand))</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/United-Kingdom.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/United-Kingdom.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/United-Kingdom.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/United-Kingdom.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR yellow]English[/COLOR]</label>
+                    <onclick>InstallAddon(resource.language.en_gb)</onclick>
+                    <onclick>SetGUILanguage(resource.language.en_gb)</onclick>
+                </control>
+                <control type="radiobutton" id="17">
+                    <visible>!String.Contains(System.Language,English)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/United-Kingdom.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/United-Kingdom.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/United-Kingdom.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/United-Kingdom.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>English</label>
+                    <onclick>InstallAddon(resource.language.en_gb)</onclick>
+                    <onclick>SetGUILanguage(resource.language.en_gb)</onclick>
+                </control>
+                <control type="radiobutton" id="1">
+                    <visible>!String.Contains(System.Language,German)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Germany.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Germany.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Germany.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Germany.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>German</label>
+                    <onclick>InstallAddon(resource.language.de_de)</onclick>
+                    <onclick>SetGUILanguage(resource.language.de_de)</onclick>
+                </control>
+                <control type="radiobutton" id="2">
+                    <visible>String.Contains(System.Language,German)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Germany.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Germany.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Germany.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Germany.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR yellow]German[/COLOR]</label>
+                    <onclick>InstallAddon(resource.language.de_de)</onclick>
+                    <onclick>SetGUILanguage(resource.language.de_de)</onclick>
+                </control>
+                <control type="radiobutton" id="3">
+                    <visible>!String.Contains(System.Language,Polish)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Poland.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Poland.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Poland.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Poland.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Polish</label>
+                    <onclick>InstallAddon(resource.language.pl_pl)</onclick>
+                    <onclick>SetGUILanguage(resource.language.pl_pl)</onclick>
+                </control>
+                <control type="radiobutton" id="4">
+                    <visible>String.Contains(System.Language,Polish)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Poland.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Poland.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Poland.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Poland.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR yellow]Polish[/COLOR]</label>
+                    <onclick>InstallAddon(resource.language.pl_pl)</onclick>
+                    <onclick>SetGUILanguage(resource.language.pl_pl)</onclick>
+                </control>
+                <control type="radiobutton" id="5">
+                    <visible>!String.Contains(System.Language,Russian)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Russia.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Russia.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Russia.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Russia.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Russian</label>
+                    <onclick>InstallAddon(resource.language.ru_ru)</onclick>
+                    <onclick>SetGUILanguage(resource.language.ru_ru)</onclick>
+                </control>
+                <control type="radiobutton" id="6">
+                    <visible>String.Contains(System.Language,Russian)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Russia.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Russia.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Russia.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Russia.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR yellow]Russian[/COLOR]</label>
+                    <onclick>InstallAddon(resource.language.ru_ru)</onclick>
+                    <onclick>SetGUILanguage(resource.language.ru_ru)</onclick>
+                </control>
+                <control type="radiobutton" id="7">
+                    <visible>!String.Contains(System.Language,Turkish)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Turkey.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Turkey.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Turkey.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Turkey.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>Turkish</label>
+                    <onclick>InstallAddon(resource.language.tr_tr)</onclick>
+                    <onclick>SetGUILanguage(resource.language.tr_tr)</onclick>
+                </control>
+                <control type="radiobutton" id="8">
+                    <visible>String.Contains(System.Language,Turkish)</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Turkey.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Turkey.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Turkey.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Turkey.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR yellow]Turkish[/COLOR]</label>
+                    <onclick>InstallAddon(resource.language.tr_tr)</onclick>
+                    <onclick>SetGUILanguage(resource.language.tr_tr)</onclick>
+                </control>
+                <control type="radiobutton" id="11">
+                    <visible>!String.Contains(System.Language,English (Australia))</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Australia.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Australia.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Australia.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Australia.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>English (Australia)</label>
+                    <onclick>InstallAddon(resource.language.en_au)</onclick>
+                    <onclick>SetGUILanguage(resource.language.en_au)</onclick>
+                </control>
+                <control type="radiobutton" id="12">
+                    <visible>String.Contains(System.Language,English (Australia))</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/Australia.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/Australia.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/Australia.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/Australia.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR yellow]English (Australia)[/COLOR]</label>
+                    <onclick>InstallAddon(resource.language.en_au)</onclick>
+                    <onclick>SetGUILanguage(resource.language.au)</onclick>
+                </control>
+                <control type="radiobutton" id="13">
+                    <visible>!String.Contains(System.Language,English (New Zealand))</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/New-Zealand.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/New-Zealand.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/New-Zealand.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/New-Zealand.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>English (New Zeeland)</label>
+                    <onclick>InstallAddon(resource.language.en_nz)</onclick>
+                    <onclick>SetGUILanguage(resource.language.en_nz)</onclick>
+                </control>
+                <control type="radiobutton" id="14">
+                    <visible>String.Contains(System.Language,English (New Zealand))</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/New-Zealand.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/New-Zealand.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/New-Zealand.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/New-Zealand.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR yellow]English (New Zeeland)[/COLOR]</label>
+                    <onclick>InstallAddon(resource.language.en_nz)</onclick>
+                    <onclick>SetGUILanguage(resource.language.nz)</onclick>
+                </control>
+                <control type="radiobutton" id="15">
+                    <visible>!String.Contains(System.Language,English (US))</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/United-States.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/United-States.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/United-States.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/United-States.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>English (US)</label>
+                    <onclick>InstallAddon(resource.language.en_us)</onclick>
+                    <onclick>SetGUILanguage(resource.language.en_us)</onclick>
+                </control>
+                <control type="radiobutton" id="16">
+                    <visible>String.Contains(System.Language,English (US))</visible>
+                    <description>Grid Menu</description>
+                    <width>14-col</width>
+                    <textureradioonfocus>lang/United-States.png</textureradioonfocus>
+                    <textureradioonnofocus>lang/United-States.png</textureradioonnofocus>
+                    <textureradioofffocus>lang/United-States.png</textureradioofffocus>
+                    <textureradiooffnofocus>lang/United-States.png</textureradiooffnofocus>
+                    <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                    <label>[COLOR yellow]English (US)[/COLOR]</label>
+                    <onclick>InstallAddon(resource.language.en_us)</onclick>
+                    <onclick>SetGUILanguage(resource.language.us)</onclick>
+                </control>
+                
+                
+                
+                
+
+
+            </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>custom_Language.xml</label>
+        </control>
+    </controls>
+</window>

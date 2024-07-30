@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="window" id="1108">
+    <onload condition="!String.IsEmpty(Skin.String(StartupIntro))">SetProperty(Playing.StartupIntro,True,Home)</onload>
+	<onload condition="!String.IsEmpty(Skin.String(StartupIntro))">SetFocus(10)</onload>
+	<onload condition="String.IsEmpty(Skin.String(StartupIntro))">ReplaceWindow($INFO[System.StartupWindow])</onload>
+		 
+    <controls>
+        <control type="button" id="10">
+			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+			<onfocus>PlayMedia($ESCINFO[Skin.String(StartupIntro)])</onfocus>
+		</control>
+
+        
+    </controls>
+</window>

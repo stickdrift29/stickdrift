@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">20</defaultcontrol>
+    <onload>Dialog.Close(fullscreeninfo,true)</onload>
+    <onload>Dialog.Close(videoosd,true)</onload>
+    <controls>
+        <control type="group">
+            <animation type="WindowOpen" reversible="false" condition="String.IsEqual(Window.Property(popup_position),top)">
+                <effect type="fade" start="0" end="100" time="400" />
+                <effect type="slide" start="0,-80" end="0,0" time="400"/>
+            </animation>
+            <animation type="WindowClose" reversible="false" condition="String.IsEqual(Window.Property(popup_position),top)">
+                <effect type="fade" start="100" end="0" time="400" />
+                <effect type="slide" start="0,0" end="0,-80" time="400" />
+            </animation>
+            <animation type="WindowOpen" reversible="false" condition="String.IsEqual(Window.Property(popup_position),centre)">
+                <effect type="fade" start="0" end="100" time="400" />
+                <effect type="slide" end="0,500" time="0"/>
+            </animation>
+            <animation type="WindowClose" reversible="false" condition="String.IsEqual(Window.Property(popup_position),centre)">
+                <effect type="fade" start="100" end="0" time="400" />
+            </animation>
+            <animation type="WindowOpen" reversible="false" condition="String.IsEqual(Window.Property(popup_position),bottom)">
+                <effect type="fade" start="0" end="100" time="400" />
+                <effect type="slide" start="0,1160" end="0,1000" time="400"/>
+            </animation>
+            <animation type="WindowClose" reversible="false" condition="String.IsEqual(Window.Property(popup_position),bottom)">
+                <effect type="fade" start="100" end="0" time="400" />
+                <effect type="slide" start="0,0" end="0,80" time="400" />
+            </animation>
+            <control type="group">
+                <height>80</height>
+                <!-- Background -->
+                <control type="image">
+                    <top>0</top>
+                    <width>100%</width>
+                    <height>80</height>
+                    <texture colordiffuse="overlay">upnext/bg.png</texture>
+                </control>
+                <control type="group">
+                    <top>12</top>
+                    <left>20</left>
+                    <!-- Buttons -->
+                    <control type="grouplist" id="20">
+                        <orientation>horizontal</orientation>
+                        <height>56</height>
+                        <itemgap>10</itemgap>
+                        <control type="button" id="3012">
+                            <label>       $ADDON[service.upnext 30010]</label>
+                            <visible>Integer.IsGreater(Window.Property(remaining),25)</visible>
+                            <height>56</height>
+                            <width min="50">auto</width>
+                            <font>font20_title</font>
+                            <textoffsetx>15</textoffsetx>
+                            <textcolor>DDFFFFFF</textcolor>
+                            <shadowcolor>FF000000</shadowcolor>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <texturefocus border="10" colordiffuse="$VAR[highlight]">upnext/button.png</texturefocus>
+                            <texturenofocus border="10" colordiffuse="FF212121">upnext/button.png</texturenofocus>
+                            <pulseonselect>no</pulseonselect>
+                        </control>
+                        <control type="button" id="3013">
+                            <label>$INFO[Window.Property(stop_close_label)]</label>
+                            <height>56</height>
+                            <width min="50">auto</width>
+                            <font>font20_title</font>
+                            <textoffsetx>15</textoffsetx>
+                            <textcolor>DDFFFFFF</textcolor>
+                            <shadowcolor>FF000000</shadowcolor>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <texturefocus border="10" colordiffuse="$VAR[highlight]">upnext/button.png</texturefocus>
+                            <texturenofocus border="10" colordiffuse="FF212121">upnext/button.png</texturenofocus>
+                            <pulseonselect>no</pulseonselect>
+                        </control>
+						<control type="togglebutton" id="3015">
+							<visible>String.IsEqual(Window.Property(shuffle_enable),True)</visible>
+							<selected>String.IsEqual(Window.Property(shuffle_on),True)</selected>
+							<texturenofocus colordiffuse="DDFFFFFF">upnext/shuffle.png</texturenofocus>
+							<texturefocus colordiffuse="$VAR[highlight]">upnext/shuffle.png</texturefocus>
+							<alttexturenofocus colordiffuse="DDFFFFFF">upnext/shuffle.png</alttexturenofocus>
+							<alttexturefocus colordiffuse="$VAR[highlight]">upnext/shuffle.png</alttexturefocus>
+							<width>56</width>
+							<height>56</height>
+						</control>
+                        <!-- Label -->
+                        <control type="label">
+                            <width>auto</width>
+                            <height>56</height>
+                            <aligny>center</aligny>
+                            <font>font25_title</font>
+                            <textcolor>DDFFFFFF</textcolor>
+                            <shadowcolor>FF000000</shadowcolor>
+                            <label>[B]$ADDON[service.upnext 30024][/B]</label>
+                            <visible>true</visible>
+                        </control>
+                        <control type="label">
+                            <width>auto</width>
+                            <height>56</height>
+                            <left>290</left>
+                            <aligny>center</aligny>
+                            <font>font25_title</font>
+                            <textcolor>DDFFFFFF</textcolor>
+                            <shadowcolor>FF000000</shadowcolor>
+                            <label>$ADDON[service.upnext 30035]</label>
+                            <visible>Integer.IsLessOrEqual(Window.Property(remaining),60)</visible>
+                        </control>
+                        <control type="image">
+                        <width>46</width>
+                        <height>46</height>
+                        
+                        <aspect>keep</aspect>
+                        <texture colordiffuse="$VAR[highlight]">$INFO[Window.Property(remaining),upnext/nextupicons/,.png]</texture>
+                        <animation effect="slide" end="13,5" time="0" condition="true">Conditional</animation>
+                        <visible>true</visible>
+                    </control>
+                    </control>
+                    <control type="label">
+                        <right>20</right>
+                        <font>font12</font>
+                        <align>right</align>
+                        <label>$ADDON[service.upnext 30009]</label>
+                        <textcolor>DDFFFFFF</textcolor>
+                        <shadowcolor>FF000000</shadowcolor>
+                        <visible>!String.IsEmpty(Window.Property(endtime))</visible>
+                    </control>
+                    <control type="image">
+                        <width>46</width>
+                        <height>46</height>
+                        <aspect>keep</aspect>
+                        <texture colordiffuse="$VAR[Home]">upnext/nextupicons/30.png</texture>
+                        <animation effect="slide" end="13,5" time="0" condition="true">Conditional</animation>
+                        <visible>control.hasfocus(3012) + Integer.IsGreater(Window.Property(remaining),30)</visible>
+                    </control>
+                    <control type="image">
+                        <width>46</width>
+                        <height>46</height>
+                        <aspect>keep</aspect>
+                        <texture colordiffuse="DDFFFFFF">upnext/nextupicons/30.png</texture>
+                        <animation effect="slide" end="13,5" time="0" condition="true">Conditional</animation>
+                        <visible>!control.hasfocus(3012) + Integer.IsGreater(Window.Property(remaining),30)</visible>
+                    </control>
+                </control>
+            </control>
+        </control>
+        <control type="progress" id="3014">
+            <visible>false</visible>
+        </control>
+    </controls>
+</window>

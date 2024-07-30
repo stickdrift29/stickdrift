@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1143" type="window">
+    <defaultcontrol always="true">5100</defaultcontrol>
+
+    <controls>
+        <!--background-->
+        <control type="image">
+						
+			    		<include>ViewAnimation</include>
+	            		<include>dimensionsFullscreen</include>
+	            		<texture fallback="backgroundimage.jpg">$INFO[listitem.art(fanart)]</texture>
+	            		<colordiffuse>FF555555</colordiffuse>
+	            		<aspectratio>scale</aspectratio>
+						<fadetime>250</fadetime>
+	        </control>
+        <!--Battery level-->
+        <include>Battery</include>
+         <!--Backbutton touchscreen-->
+        <include>Backbuttoncross</include>
+        <control type="group">
+            <posx>0</posx>
+            <posy>row-5-begin</posy>
+            <!--animations-->
+            <include>modalDialogInOutVertical</include>
+           
+          
+            
+            
+           
+					
+					
+						<control type="grouplist" id="9999">
+						<posx>0</posx>
+						<posy>-120</posy>
+						<pagecontrol>2000</pagecontrol>
+						<control type="togglebutton" id="9013">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            
+                            <texturefocus></texturefocus>
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Anbieter:[/COLOR] [B]$INFO[container(5100).Listitem.label][/B]</label>
+                            <onup>5400</onup>
+				            <ondown>5100</ondown>
+							<onright>5100</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=watch_providers&amp;tmdb_type=tv&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster1">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=watch_providers&amp;tmdb_type=tv"/>
+							<param name="widget_header1" value="Anbieter"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5100"/>
+						</include>
+						
+            
+                        <control type="togglebutton" id="9014">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Meine Liste:[/COLOR] [B]$INFO[container(5200).Listitem.label][/B]</label>
+                            <onup>5100</onup>
+				            <ondown>5200</ondown>
+							<onright>5200</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_mylists&amp;tmdb_type=both&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster2">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_mylists&amp;tmdb_type=both"/>
+							<param name="widget_header2" value="Meine Liste"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5200"/>
+						</include>
+						
+						<control type="togglebutton" id="9015">
+				            <font>regular</font>
+				            <top>360</top>
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Serien im Trend:[/COLOR] [B]$INFO[container(5300).Listitem.label][/B]</label>
+                            <onup>5200</onup>
+				            <ondown>5300</ondown>
+							<onright>5300</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_trending&amp;tmdb_type=tv&quot;,return)</onclick>
+			            </control>
+                        <include content="WidgetListPoster3">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_trending&amp;tmdb_type=tv"/>
+							<param name="widget_header3" value="Serien im Trend"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5300"/>
+						</include>
+						
+						<control type="togglebutton" id="9016">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Serien Genre:[/COLOR] [B]$INFO[container(5400).Listitem.label][/B]</label>
+                            <onup>5300</onup>
+				            <ondown>5400</ondown>
+							<onright>5400</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_genres&amp;tmdb_type=tv&quot;,return)</onclick>
+			            </control>
+                        <include content="WidgetListPoster4">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_genres&amp;tmdb_type=tv"/>
+							<param name="widget_header4" value="Serien Genre"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5400"/>
+						</include>
+						<control type="togglebutton" id="9017">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Deine Begonnene Episoden:[/COLOR] [B]$INFO[container(5700).Listitem.label][/B]</label>
+                            <onup>5400</onup>
+				            <ondown>5700</ondown>
+							<onright>5700</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_ondeck&amp;tmdb_type=tv&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster7">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_ondeck&amp;tmdb_type=tv"/>
+							<param name="widget_header4" value="Deine Begonnene Episoden"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5700"/>
+						</include>
+						<control type="togglebutton" id="9018">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Nächste Episode:[/COLOR] [B]$INFO[container(5800).Listitem.label][/B]</label>
+                            <onup>5700</onup>
+				            <ondown>5800</ondown>
+							<onright>5800</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_nextepisodes&amp;tmdb_type=tv&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster8">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_nextepisodes&amp;tmdb_type=tv"/>
+							<param name="widget_header4" value="Nächste Episode"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5800"/>
+						</include>
+						<control type="togglebutton" id="9019">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Empfohlende Serien:[/COLOR] [B]$INFO[container(5900).Listitem.label][/B]</label>
+                            <onup>5800</onup>
+				            <ondown>5900</ondown>
+							<onright>5900</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_recommendations&amp;tmdb_type=tv&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster9">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_recommendations&amp;tmdb_type=tv"/>
+							<param name="widget_header4" value="Empfohlende Serien"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="5900"/>
+						</include>
+
+                        <control type="togglebutton" id="9020">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Serien noch zu Schauen:[/COLOR] [B]$INFO[container(6000).Listitem.label][/B]</label>
+                            <onup>5900</onup>
+				            <ondown>6000</ondown>
+							<onright>6000</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_towatch&amp;tmdb_type=tv&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster10">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_towatch&amp;tmdb_type=tv"/>
+							<param name="widget_header4" value="Serien noch zu Schauen"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6000"/>
+						</include>
+                        <control type="togglebutton" id="9021">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Serien Beobachtungsliste:[/COLOR] [B]$INFO[container(6100).Listitem.label][/B]</label>
+                            <onup>6000</onup>
+				            <ondown>6100</ondown>
+							<onright>6100</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin.video.themoviedb.helper/?info=trakt_watchlist&amp;list_name=Serien%20Beobachtungsliste&amp;tmdb_type=tv&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster11">
+							<param name="content_path" value="plugin.video.themoviedb.helper/?info=trakt_watchlist&amp;list_name=Serien%20Beobachtungsliste&amp;tmdb_type=tv"/>
+							<param name="widget_header4" value="Serien Beobachtungsliste"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6100"/>
+						</include>
+
+                        <control type="togglebutton" id="9022">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Staffeln Beobachtungsliste:[/COLOR] [B]$INFO[container(6200).Listitem.label][/B]</label>
+                            <onup>6100</onup>
+				            <ondown>6200</ondown>
+							<onright>6200</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_watchlist&amp;list_name=Staffeln%20Beobachtungsliste&amp;tmdb_type=season&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster12">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_watchlist&amp;list_name=Staffeln%20Beobachtungsliste&amp;tmdb_type=season"/>
+							<param name="widget_header4" value="Staffeln Bebobachtungsliste"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6200"/>
+						</include>
+
+                        <control type="togglebutton" id="9023">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Episoden Beobachtungsliste:[/COLOR] [B]$INFO[container(6300).Listitem.label][/B]</label>
+                            <onup>6200</onup>
+				            <ondown>6300</ondown>
+							<onright>6300</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_watchlist&amp;list_name=Episoden%20Beobachtungsliste&amp;tmdb_type=episode&quot;return)</onclick>
+			            </control>
+						<include content="WidgetListPoster13">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_watchlist&amp;list_name=Episoden%20Beobachtungsliste&amp;tmdb_type=episode"/>
+							<param name="widget_header4" value="Episoden Bebobachtungsliste"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6300"/>
+						</include>
+
+                        <control type="togglebutton" id="9024">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Serien Favouriten:[/COLOR] [B]$INFO[container(6400).Listitem.label][/B]</label>
+                            <onup>6300</onup>
+				            <ondown>6400</ondown>
+							<onright>6400</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_favorites&amp;list_name=Serien%20Favoriten&amp;tmdb_type=tv&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster14">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_favorites&amp;list_name=Serien%20Favoriten&amp;tmdb_type=tv"/>
+							<param name="widget_header4" value="Serien Favoriten"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6400"/>
+						</include>
+						
+						<control type="togglebutton" id="9025">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Netflix Top 10:[/COLOR] [B]$INFO[container(6500).Listitem.label][/B]</label>
+                            <onup>6400</onup>
+				            <ondown>6500</ondown>
+							<onright>6500</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=netflix-top-10&amp;list_slug=netflix-top-10&amp;plugin_category=netflix-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster15">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=netflix-top-10&amp;list_slug=netflix-top-10&amp;plugin_category=netflix-top-10&amp;user_slug=danqbudz"/>
+							<param name="widget_header12" value="Filme Favoriten"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6500"/>
+						</include>
+						<control type="togglebutton" id="9026">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Amazon Prime Top 10:[/COLOR] [B]$INFO[container(6600).Listitem.label][/B]</label>
+                            <onup>6500</onup>
+				            <ondown>6600</ondown>
+							<onright>6600</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=prime-video-top-10&amp;list_slug=prime-video-top-10&amp;plugin_category=prime-video-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster16">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=prime-video-top-10&amp;list_slug=prime-video-top-10&amp;plugin_category=prime-video-top-10&amp;user_slug=danqbudz"/>
+							<param name="widget_header13" value="Filme Favoriten"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6600"/>
+						</include>
+						<control type="togglebutton" id="9027">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Disney+ Top 10:[/COLOR] [B]$INFO[container(6700).Listitem.label][/B]</label>
+                            <onup>6600</onup>
+				            <ondown>6700</ondown>
+							<onright>6700</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=disney-plus-top-10&amp;list_slug=disney-plus-top-10&amp;plugin_category=disney-plus-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster17">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=disney-plus-top-10&amp;list_slug=disney-plus-top-10&amp;plugin_category=disney-plus-top-10&amp;user_slug=danqbudz"/>
+							<param name="widget_header14" value="Filme Favoriten"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6700"/>
+						</include>
+						<control type="togglebutton" id="9028">
+				            <font>regular</font>
+				            
+				            <width>1200</width>
+                
+				            <align>left</align>
+				            <textoffsetx>30</textoffsetx>
+				            <textcolor>textActive</textcolor>
+				            <focusedcolor>$VAR[selected]</focusedcolor>
+				            <focusedcolor></focusedcolor>
+				            <texturefocus></texturefocus>
+                            
+                            <alttexturefocus></alttexturefocus>
+                            <alttexturenofocus></alttexturenofocus>
+				            <label>[COLOR $VAR[highlight]]Apple TV Top 10:[/COLOR] [B]$INFO[container(6800).Listitem.label][/B]</label>
+                            <onup>6700</onup>
+				            <ondown>6800</ondown>
+							<onright>6800</onright>
+				            <onclick>ActivateWindow(10025,&quot;plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=apple-tv-plus-top-10&amp;list_slug=apple-tv-plus-top-10&amp;plugin_category=apple-tv-plus-top-10&amp;user_slug=danqbudz&quot;,return)</onclick>
+			            </control>
+						<include content="WidgetListPoster18">
+							<param name="content_path" value="plugin://plugin.video.themoviedb.helper/?info=trakt_userlist&amp;list_name=apple-tv-plus-top-10&amp;list_slug=apple-tv-plus-top-10&amp;plugin_category=apple-tv-plus-top-10&amp;user_slug=danqbudz"/>
+							<param name="widget_header15" value="Filme Favoriten"/>
+							<param name="widget_target" value="videos"/>
+							<param name="list_id" value="6800"/>
+						</include>
+						</control>
+						
+						<!--
+						<control type="image">
+							<posx>1000</posx>
+							<posy>100</posy>
+							<width>50</width>
+							<height>500</height>
+							<texture>colors/grey.png</texture>
+							<aspectratio>scale</aspectratio>
+							
+						</control>
+						-->
+					<!-- not in use
+					 <control type="textbox">
+					<left>750</left>
+					<top>-220</top>
+					<width>500</width>
+					<height>120</height>
+					<font>font27</font>
+					<align>center</align>
+					<aligny>center</aligny>
+                    <wrapmultiline>false</wrapmultiline>
+					<label>$INFO[ListItem.Label]</label>
+					<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
+					<visible>!Skin.Hassetting(touch)</visible>
+				</control>
+				-->
+				<control type="scrollbar" id="2000">
+                    <posx>1000</posx>
+                    <posy>100</posy>
+                    <texturesliderbar colordiffuse="textDisabled">masks/discsurface.png</texturesliderbar>
+                    <texturesliderbackground colordiffuse="black">masks/discsurface.png</texturesliderbackground>
+                    <texturesliderbarfocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturesliderbarfocus>
+                    <showonepage>true</showonepage>
+                    <height>500</height>
+                    <width>35</width>
+                    <onleft>50</onleft>
+                    <onup>8000</onup>
+                    <onright>80</onright>
+					<visible>Skin.Hassetting(touch)</visible>
+                </control>
+		</control>
+		
+		<control type="textbox">
+					<left>1100</left>
+					<top>300</top>
+					<width>800</width>
+					<height>400</height>
+					<font>veryLarge</font>
+					<align>center</align>
+					<aligny>center</aligny>
+                    <wrapmultiline>true</wrapmultiline>
+					<label>$INFO[ListItem.Label]</label>
+					
+					<visible>Skin.Hassetting(touch)</visible>
+				</control>
+				<!--Keyboard Crosskey-->
+        <include content="keyboard select">
+            <param name="posx">87%</param>
+            <param name="posy">35%</param>
+            <param name="focus">9999</param>
+            <param name="up">up</param>
+            <param name="down">down</param>
+            <param name="left">left</param>
+            <param name="right">right</param>
+            <param name="select">select</param>
+            <param name="back">back</param>
+            <param name="visible">skin.hassetting(Touch)</param>
+            <param name="upview">true</param>
+			<param name="downview">true</param>
+			<param name="leftview">true</param>
+			<param name="rightview">true</param>
+			<param name="selectview">true</param>
+            <param name="color">keyboardInactive</param>
+        </include>
+        <include>MediaMenuTop</include>
+		<include>pageHeadervideonav</include>
+		<include>pageHeader</include>
+        <!--mini window-->
+        <include>miniVideoPlayer</include>
+        <!--hub menu-->
+        <include>hubMenu</include>
+        <!--loading indicator-->
+        <include>loadingIndicator</include>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>Homemenulook.xml</label>
+        </control>
+    </controls>
+</window>

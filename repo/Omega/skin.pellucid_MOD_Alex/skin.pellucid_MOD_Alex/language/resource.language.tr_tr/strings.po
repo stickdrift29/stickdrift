@@ -1,0 +1,750 @@
+# Kodi Media Center language file
+# Addon Name: Pellucid
+# Addon id: skin.pellucid
+# Addon Provider: chrisbevan
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Skins\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-03-01 12:51+0000\n"
+"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"Language-Team: Turkish <https://kodi.weblate.cloud/projects/kodi-add-ons-skins/skin-pellucid/tr_tr/>\n"
+"Language: tr_tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.11\n"
+
+msgctxt "Addon Summary"
+msgid "A skin for Kodi from theDeadmanInYossariansTent"
+msgstr ""
+
+msgctxt "Addon Description"
+msgid "Pellucid is a lightweight, clean and simple Kodi experience designed for maximum usability and minimum fuss."
+msgstr ""
+
+msgctxt "#31008"
+msgid "Sort by"
+msgstr "Sırala"
+
+msgctxt "#31012"
+msgid "My Library"
+msgstr "Benim kutuphanem"
+
+msgctxt "#31014"
+msgid "title(s)"
+msgstr "başlık(lar)"
+
+msgctxt "#31015"
+msgid "On"
+msgstr "Açık"
+
+msgctxt "#31019"
+msgid "Open playlist"
+msgstr "Çalma listesini aç"
+
+msgctxt "#31020"
+msgid "Save playlist"
+msgstr "Çalma listesini kaydet"
+
+msgctxt "#31021"
+msgid "Clear playlist"
+msgstr "Çalma listesini temizle"
+
+msgctxt "#31022"
+msgid "Select Items"
+msgstr "Eşyaları seç"
+
+msgctxt "#31023"
+msgid "Notification"
+msgstr "Bildiri"
+
+msgctxt "#31031"
+msgid "Play Random"
+msgstr "Rastgele Oyna"
+
+msgctxt "#31034"
+msgid "Enable Debug Grid"
+msgstr "Hata Ayıklama Izgarasını Etkinleştir"
+
+msgctxt "#31035"
+msgid "Enable Debug Information"
+msgstr "Enable Debug Information"
+
+msgctxt "#31043"
+msgid "Reload Skin"
+msgstr "Dış görünümü yeniden yükle"
+
+msgctxt "#31044"
+msgid "Debugging"
+msgstr "Hata ayıklama"
+
+msgctxt "#31046"
+msgid "Field"
+msgstr "Alan"
+
+msgctxt "#31048"
+msgid "Create Folder"
+msgstr "Klasör oluşturun"
+
+msgctxt "#31051"
+msgid "Disc Menu"
+msgstr "Disk Menüsü"
+
+msgctxt "#31054"
+msgid "by"
+msgstr "yazan"
+
+msgctxt "#31056"
+msgid "Photo Library"
+msgstr "Fotoğraf kütüphanesi"
+
+msgctxt "#31057"
+msgid "Create Music Playlist"
+msgstr "Müzik Çalma Listesi Oluştur"
+
+msgctxt "#31060"
+msgid "PVR"
+msgstr "PVR"
+
+msgctxt "#31061"
+msgid "Adjust look and feel of Kodi"
+msgstr "Kodi'nin görünümünü ve tarzını ayarlayın"
+
+msgctxt "#31062"
+msgid "Memory"
+msgstr "Hafıza"
+
+msgctxt "#31063"
+msgid "Manage content playback"
+msgstr "İçerik oynatmayı yönetme"
+
+msgctxt "#31064"
+msgid "CPU"
+msgstr ""
+
+msgctxt "#31067"
+msgid "Extend Kodi's functionality"
+msgstr "Kodi'nin işlevselliğini genişletin"
+
+msgctxt "#31070"
+msgid "Screen"
+msgstr "Ekran"
+
+msgctxt "#31071"
+msgid "Communications and sharing"
+msgstr "İletişim ve paylaşım"
+
+msgctxt "#31073"
+msgid "Channel Guide"
+msgstr "Kanal Rehberi"
+
+msgctxt "#31076"
+msgid "Change Title"
+msgstr "Başlığı değiştir"
+
+msgctxt "#31078"
+msgid "Now and Next"
+msgstr "Şimdi ve Sonraki"
+
+msgctxt "#31079"
+msgid "Import your content into Kodi"
+msgstr "İçeriğinizi Kodi'ye aktarın"
+
+msgctxt "#31081"
+msgid "Digital Television Setup"
+msgstr "Dijital Televizyon Kurulumu"
+
+msgctxt "#31082"
+msgid "By"
+msgstr "İle"
+
+msgctxt "#31087"
+msgid "Timers"
+msgstr "Zamanlayıcılar"
+
+msgctxt "#31088"
+msgid "Video Addons"
+msgstr "Video Eklentileri"
+
+msgctxt "#31090"
+msgid "Music Addons"
+msgstr "Müzik Eklentileri"
+
+msgctxt "#31093"
+msgid "IP"
+msgstr "IP"
+
+msgctxt "#31095"
+msgid "Transfer and copy files"
+msgstr "Dosyaları aktarma ve kopyalama"
+
+msgctxt "#31096"
+msgid "No items found"
+msgstr "Hiçbir öğe bulunamadı"
+
+msgctxt "#31099"
+msgid "Add Group"
+msgstr "Grup Ekle"
+
+msgctxt "#31100"
+msgid "Rename Group"
+msgstr "Grubu Yeniden Adlandır"
+
+msgctxt "#31101"
+msgid "Delete Group"
+msgstr "Grubu Sil"
+
+msgctxt "#31102"
+msgid "Low CPU power mode"
+msgstr "Düşük CPU güç modu"
+
+msgctxt "#31103"
+msgid "Control how Kodi is used"
+msgstr "Kodi'nin nasıl kullanıldığını kontrol edin"
+
+msgctxt "#31104"
+msgid "Disable this addon"
+msgstr "Bu eklentiyi devre dışı bırak"
+
+msgctxt "#31105"
+msgid "Manage your Kodi system"
+msgstr "Kodi sisteminizi yönetin"
+
+msgctxt "#31107"
+msgid "Current profile"
+msgstr "Güncel profil"
+
+msgctxt "#31108"
+msgid "About this Kodi Installation"
+msgstr "Bu Kodi Kurulumu hakkında"
+
+msgctxt "#31109"
+msgid "Order: Ascending"
+msgstr "Sıralama: Artan"
+
+msgctxt "#31110"
+msgid "Order: Descending"
+msgstr "Sıralama: Azalan"
+
+msgctxt "#31111"
+msgid "Manage your program addons"
+msgstr "Program eklentilerinizi yönetin"
+
+msgctxt "#31112"
+msgid "TV Guide"
+msgstr "TV Rehberi"
+
+msgctxt "#31113"
+msgid "Kodi Addons"
+msgstr "Kodi Eklentileri"
+
+msgctxt "#31114"
+msgid "Pixel format"
+msgstr "Piksel biçimi"
+
+msgctxt "#31116"
+msgid "Set home background directory"
+msgstr "Ana arka plan dizinini ayarla"
+
+msgctxt "#31117"
+msgid "Launch addon"
+msgstr "Eklentiyi başlat"
+
+msgctxt "#31118"
+msgid "PVR not active"
+msgstr "PVR aktif değil"
+
+msgctxt "#31121"
+msgid "My Kodi"
+msgstr "Kodi'm"
+
+msgctxt "#31122"
+msgid "Reset home backgrounds to default"
+msgstr "Ana sayfa arka planlarını varsayılana sıfırla"
+
+msgctxt "#31123"
+msgid "Current Queue"
+msgstr "Mevcut Sıra"
+
+msgctxt "#31127"
+msgid "Continue Watching"
+msgstr "İzlemeye Devam Et"
+
+msgctxt "#31134"
+msgid "Manual search"
+msgstr "Manuel arama"
+
+msgctxt "#31136"
+msgid "Now Playing"
+msgstr "Şimdi Çalınıyor"
+
+msgctxt "#31138"
+msgid "Stop video playing on return to menu"
+msgstr "Menüye döndüğünüzde video oynatmayı durdurun"
+
+msgctxt "#31142"
+msgid "Prioritise exit over shutdown in power menu"
+msgstr "Güç menüsünde kapatma yerine çıkışa öncelik verin"
+
+msgctxt "#31143"
+msgid "Remaining"
+msgstr "Kalan"
+
+msgctxt "#31144"
+msgid "FPS"
+msgstr ""
+
+msgctxt "#31145"
+msgid "Item(s)"
+msgstr "Öğe(ler)"
+
+msgctxt "#31146"
+msgid "Elapsed Time"
+msgstr "Geçen zaman"
+
+msgctxt "#31149"
+msgid "Released"
+msgstr "Yayınlandı"
+
+msgctxt "#31152"
+msgid "Press OK to cancel"
+msgstr "İptal etmek için Tamam'a basın"
+
+msgctxt "#31153"
+msgid "Playlist saved"
+msgstr "Oynatma listesi kaydedildi"
+
+msgctxt "#31160"
+msgid "Ends"
+msgstr "biter"
+
+msgctxt "#31165"
+msgid "TV Recordings"
+msgstr "TV Kayıtları"
+
+msgctxt "#31169"
+msgid "Rate"
+msgstr "Oran"
+
+msgctxt "#31170"
+msgid "Menus"
+msgstr "Menüler"
+
+msgctxt "#31171"
+msgid "Edit home menu"
+msgstr "Ana menüyü düzenle"
+
+msgctxt "#31172"
+msgid "Edit video section menu"
+msgstr "Video bölümü menüsünü düzenle"
+
+msgctxt "#31173"
+msgid "Edit music section menu"
+msgstr "Müzik bölümü menüsünü düzenle"
+
+msgctxt "#31174"
+msgid "Edit picture section menu"
+msgstr "Resim bölümü menüsünü düzenle"
+
+msgctxt "#31176"
+msgid "New Movies"
+msgstr "Yeni Filmler"
+
+msgctxt "#31178"
+msgid "New TV Shows"
+msgstr "Yeni TV Programları"
+
+msgctxt "#31179"
+msgid "Options"
+msgstr "Seçenekler"
+
+msgctxt "#31180"
+msgid "New Albums"
+msgstr "Yeni Albümler"
+
+msgctxt "#31181"
+msgid "Random Albums"
+msgstr "Rastgele Albümler"
+
+msgctxt "#31187"
+msgid "Top Albums"
+msgstr "En İyi Albümler"
+
+msgctxt "#31188"
+msgid "season(s)"
+msgstr "sezon(lar)"
+
+msgctxt "#31189"
+msgid "episode(s)"
+msgstr "bölüm (ler)"
+
+msgctxt "#31190"
+msgid "All Episodes"
+msgstr "Tüm Bölümler"
+
+msgctxt "#31195"
+msgid "Show only unwatched items:"
+msgstr "Yalnızca izlenmeyen öğeleri göster:"
+
+msgctxt "#31199"
+msgid "Artists in"
+msgstr "Sanatçılar"
+
+msgctxt "#31203"
+msgid "Smart Playlist"
+msgstr "Akıllı Çalma Listesi"
+
+msgctxt "#31205"
+msgid "No further details available."
+msgstr "Daha fazla ayrıntı mevcut değil."
+
+msgctxt "#31206"
+msgid "Kodi System Information"
+msgstr "Kodi Sistem Bilgileri"
+
+msgctxt "#31209"
+msgid "<Source name>"
+msgstr "<Kaynak adı>"
+
+msgctxt "#31211"
+msgid "<Smart playlist name>"
+msgstr "<Akıllı çalma listesi adı>"
+
+msgctxt "#31212"
+msgid "From"
+msgstr "İtibaren"
+
+msgctxt "#31213"
+msgid "Showing unwatched titles only"
+msgstr "Yalnızca izlenmeyen başlıklar gösteriliyor"
+
+msgctxt "#31215"
+msgid "TV Channels"
+msgstr "TV Kanalları"
+
+msgctxt "#31216"
+msgid "TV Shows"
+msgstr "TV Programları"
+
+msgctxt "#31218"
+msgid "Enable this addon"
+msgstr "Bu eklentiyi etkinleştir"
+
+msgctxt "#31220"
+msgid "Disable extended fanart"
+msgstr "Genişletilmiş fanart'ı devre dışı bırak"
+
+msgctxt "#31221"
+msgid "Play Disc"
+msgstr "Diski Oynat"
+
+msgctxt "#31222"
+msgid "Change Channel Group"
+msgstr "Kanal Grubunu Değiştir"
+
+msgctxt "#31223"
+msgid "All Albums"
+msgstr "Tüm Albümler"
+
+msgctxt "#31224"
+msgid "All Movies"
+msgstr "Tüm Filmler"
+
+msgctxt "#31225"
+msgid "All TV Shows"
+msgstr "Tüm TV Programları"
+
+msgctxt "#31226"
+msgid "LibreElec Settings"
+msgstr "LibreElec Ayarları"
+
+msgctxt "#31228"
+msgid "Edit Menu"
+msgstr "Düzenle Menüsü"
+
+msgctxt "#31229"
+msgid "Play Music"
+msgstr "Müzik çal"
+
+msgctxt "#31230"
+msgid "Game Settings"
+msgstr "Oyun ayarları"
+
+msgctxt "#31231"
+msgid "Game related options"
+msgstr "Oyunla ilgili seçenekler"
+
+msgctxt "#31232"
+msgid "Games"
+msgstr "Oyunlar"
+
+msgctxt "#31233"
+msgid "Edit game section menu"
+msgstr "Oyun bölümü menüsünü düzenle"
+
+msgctxt "#31234"
+msgid "Game Addons"
+msgstr "Oyun Eklentileri"
+
+msgctxt "#31236"
+msgid "Radio / TV"
+msgstr "Radyo / TV"
+
+msgctxt "#31237"
+msgid "Results for"
+msgstr "Şunun için sonuçlar:"
+
+msgctxt "#31238"
+msgid "Disable recently added section for Movies"
+msgstr "Filmler için yeni eklenen bölümü devre dışı bırak"
+
+msgctxt "#31239"
+msgid "Disable recently added section for TV Shows"
+msgstr "TV Şovları için yeni eklenen bölümü devre dışı bırak"
+
+msgctxt "#31240"
+msgid "Disable recently added section for Albums"
+msgstr "Albümler için yeni eklenen bölümü devre dışı bırak"
+
+msgctxt "#31241"
+msgid "Enable Battery Level"
+msgstr "Pili göster"
+
+msgctxt "#31242"
+msgid "Enable Back Button for Touchscreen"
+msgstr "Dokunmatik ekran için geri düğmesi"
+
+msgctxt "#31243"
+msgid "Disable Settings"
+msgstr "Ayarı gizle"
+
+msgctxt "#31244"
+msgid "Enable Home Button Further apart"
+msgstr "Başlat düğmesi daha uzakta"
+
+msgctxt "#31245"
+msgid "Finishes"
+msgstr "biter"
+
+msgctxt "#31246"
+msgid "Show Android Apps"
+msgstr "Android uygulamalarını göster"
+
+msgctxt "#31248"
+msgid "Queue"
+msgstr "Sıra"
+
+msgctxt "#31249"
+msgid "Live TV"
+msgstr "Canlı TV"
+
+msgctxt "#31250"
+msgid "Radio"
+msgstr "radyo"
+
+msgctxt "#31251"
+msgid "Eject Disc"
+msgstr "Diski çıkar"
+
+msgctxt "#31252"
+msgid "Album"
+msgstr "albüm"
+
+msgctxt "#31253"
+msgid "Back"
+msgstr "Geri"
+
+msgctxt "#31254"
+msgid "Homescreen"
+msgstr "Ana ekran"
+
+msgctxt "#31255"
+msgid "Show Youtube (only on Firetv)"
+msgstr ""
+
+msgctxt "#31256"
+msgid "show SmartTube"
+msgstr ""
+
+msgctxt "#31257"
+msgid "Automatically close video OSD"
+msgstr ""
+
+msgctxt "#31258"
+msgid "Video OSD autoclose time (seconds)"
+msgstr ""
+
+msgctxt "#31259"
+msgid "Change Skin Colors"
+msgstr ""
+
+msgctxt "#31260"
+msgid "Enable Cross Key (Only Touch)"
+msgstr ""
+
+msgctxt "#31261"
+msgid "Homemenu Look"
+msgstr ""
+
+msgctxt "#31262"
+msgid "Grid"
+msgstr ""
+
+msgctxt "#31263"
+msgid "Slider"
+msgstr ""
+
+msgctxt "#31264"
+msgid "Side"
+msgstr ""
+
+msgctxt "#31265"
+msgid "Set Weather icons"
+msgstr ""
+
+msgctxt "#31266"
+msgid "Single image background"
+msgstr ""
+
+msgctxt "#31267"
+msgid "Multi-image background"
+msgstr ""
+
+msgctxt "#31268"
+msgid "Reset to default"
+msgstr ""
+
+msgctxt "#31269"
+msgid "Set Home Image/Path"
+msgstr ""
+
+msgctxt "#31270"
+msgid "Set Settings Image/Path"
+msgstr ""
+
+msgctxt "#31271"
+msgid "Set SettingsCategory Image/Path"
+msgstr ""
+
+msgctxt "#31272"
+msgid "Set Addonsettings Image/Path"
+msgstr ""
+
+msgctxt "#31273"
+msgid "Set FileBrowser Image/Path"
+msgstr ""
+
+msgctxt "#31274"
+msgid "Set FileManager Image/Path"
+msgstr ""
+
+msgctxt "#31275"
+msgid "Set Skinsettings  Image/Path"
+msgstr ""
+
+msgctxt "#31276"
+msgid "Set SettingsSystemInfo backgrounds Image/Path"
+msgstr ""
+
+msgctxt "#31277"
+msgid "Set AddonInfo Image/Path"
+msgstr ""
+
+msgctxt "#31278"
+msgid "Set AddonBrowser Image/Path"
+msgstr ""
+
+msgctxt "#31279"
+msgid "Set Programms Image/Path"
+msgstr ""
+
+msgctxt "#31280"
+msgid "Set Music Image/Path"
+msgstr ""
+
+msgctxt "#31281"
+msgid "Set Music Fullscreen Image/Path"
+msgstr ""
+
+msgctxt "#31282"
+msgid "Set Same for all Image/Path"
+msgstr ""
+
+msgctxt "#31283"
+msgid "Change Backgrounds"
+msgstr ""
+
+msgctxt "#31284"
+msgid "Backup / Restore"
+msgstr ""
+
+msgctxt "#31285"
+msgid "Restore"
+msgstr ""
+
+msgctxt "#31286"
+msgid "Highlight"
+msgstr ""
+
+msgctxt "#31287"
+msgid "Highlight Transparent"
+msgstr ""
+
+msgctxt "#31288"
+msgid "Label Color"
+msgstr ""
+
+msgctxt "#31289"
+msgid "Selected"
+msgstr ""
+
+msgctxt "#31290"
+msgid "Menu Button"
+msgstr ""
+
+msgctxt "#31291"
+msgid "Manual Input"
+msgstr ""
+
+msgctxt "#31292"
+msgid "Do You want to reset Colors ?"
+msgstr ""
+
+msgctxt "#31293"
+msgid "Disable startup intro"
+msgstr ""
+
+msgctxt "#31294"
+msgid "Extra Button on Homescreen"
+msgstr ""
+
+msgctxt "#31295"
+msgid "Extra Button on Homescreen edit"
+msgstr ""
+
+msgctxt "#31296"
+msgid "Video Files"
+msgstr ""
+
+msgctxt "#31297"
+msgid "Short Settings Menu"
+msgstr ""
+
+msgctxt "#31298"
+msgid "Advanced Settings"
+msgstr ""
+
+msgctxt "#31299"
+msgid "Gerneral Settings"
+msgstr ""
+
+msgctxt "#31300"
+msgid "App Settings"
+msgstr ""
+
+msgctxt "#31301"
+msgid "Homescreen Settings"
+msgstr ""

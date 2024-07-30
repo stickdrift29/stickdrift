@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">5</defaultcontrol>
+    <controls>
+        <!--background-->
+        <include>globalBackground</include>
+        <control type="multiimage">
+			<animation effect="fade" start="0" end="100" time="1000">WindowOpen</animation>
+			<include>dimensionsFullscreen</include>
+			<imagepath>$VAR[settingsBackgroundLocation]</imagepath>
+			<timeperimage>45000</timeperimage>
+			<fadetime>200</fadetime>
+			<pauseatend>10000</pauseatend>
+			<randomize>true</randomize>
+			<loop>yes</loop>
+			<aspectratio>scale</aspectratio>
+			<colordiffuse>99ffffff</colordiffuse>
+		</control>
+        <!--Battery Level-->
+        <include>Battery</include>
+         <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <control type="group">
+            <posx>col-9-begin</posx>
+            <posy>row-4-begin</posy>
+            <!--animations-->
+            <include>modalDialogInOutVertical</include>
+            <animation type="conditional" condition="window.isactive(profilesettings)">
+                <effect type="fade" start="100" end="0" time="300"/>
+                <effect type="rotatey" start="0" end="90" center="960" tween="cubic" easing="out" time="500"/>
+            </animation>
+			<control type="image">
+                <posx>-12</posx>
+                <posy>-12</posy>
+                <width>600</width>
+                <height>800</height>
+                <texture>colors/black.png</texture>
+                <colordiffuse>overlay</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>8-col</width>
+                <height>2-row</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <control type="label">
+                <posx>24</posx>
+                <posy>0</posy>
+                <width>8-col</width>
+                <height>2-row</height>
+                <aligny>center</aligny>
+                <font>dialogTitle</font>
+                <label>14210</label>
+                <textcolor>$VAR[Home]</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+            <control type="image">
+                <description>profile image</description>
+                <posx>0</posx>
+                <posy>84</posy>
+                <width>8-col</width>
+                <height>10-row</height>
+                <texture fallback=77 border="0">$INFO[System.ProfileThumb]</texture>
+                <aspectratio>scale</aspectratio>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>372</posy>
+                <width>8-col</width>
+                <height>73</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>black</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+             <control type="label">
+                <posx>0</posx>
+                <posy>372</posy>
+                <width>8-col</width>
+                <height>2-row</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <font>itemSubTitle</font>
+                <label>$LOCALIZE[31107]: [COLOR $VAR[highlight]]$INFO[System.ProfileName][/COLOR]</label>
+                <textcolor>textActive</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+            <!--dialog controls-->
+            <control type="radiobutton" id="4">
+                <description>Enable Login Screen</description>
+                <posx>0</posx>
+                <posy>540</posy>
+                <width>8-col</width>
+                <label>20096</label>
+                <texturenofocus></texturenofocus>
+                <align>left</align>
+                <onup>5</onup>
+                <ondown>2</ondown>
+                <onup>9000</onup>
+            </control>
+            <control type="button" id="5">
+                <textoffsetx>30</textoffsetx>
+                <posx>0</posx>
+                <posy>456</posy>
+                <width>8-col</width>
+                <align>left</align>
+                <onup>2</onup>
+                <ondown>4</ondown>
+                <font>itemSubTitle</font>
+                <texturenofocus></texturenofocus>
+                <texturefocus colordiffuse="$VAR[selected_box]">masks/discsurface.png</texturefocus>
+                <label>$LOCALIZE[33084]: [COLOR $VAR[selected]]$INFO[System.ProfileAutoLogin][/COLOR]</label>
+                <enable>!System.HasLoginScreen</enable>
+            </control>
+            <control type="panel" id="2">
+                <posx>0</posx>
+                <posy>620</posy>
+                <width>8-col</width>
+                <height>160</height>
+                <onup>4</onup>
+                <ondown>5</ondown>
+                <itemlayout width="8-col" height="84">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>69</width>
+                        <height>69</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture fallback="kodilogo.png">$INFO[listitem.icon]</texture>
+                        <colordiffuse>textActive</colordiffuse>
+                        <bordersize>0</bordersize>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>69</width>
+                        <height>69</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture fallback="kodilogo.png">$INFO[listitem.icon]</texture>
+                        <bordersize>0</bordersize>
+                    </control>
+                    <control type="label">
+                        <posx>1-col-indent</posx>
+                        <posy>0</posy>
+                        <width>7-col</width>
+                        <height>2-row</height>
+                        <aligny>center</aligny>
+                        <font>buttonTitle</font>
+                        <textcolor>textActive</textcolor>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="8-col" height="84">
+                    <control type="image">
+                        <posx>1-col</posx>
+                        <posy>0</posy>
+                        <width>7-col</width>
+                        <height>69</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture colordiffuse="$VAR[selected_box]">masks/discsurface.png</texture>
+                        <bordersize>0</bordersize>
+                        <colordiffuse>ffffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>69</height>
+                        <aspectratio>stretch</aspectratio>
+                        <colordiffuse>$VAR[highlight]</colordiffuse>
+                        <texture fallback="kodilogo.png">$INFO[listitem.icon]</texture>
+                        <bordersize>0</bordersize>
+                        <texture fallback="masks/discsurface.png" border="0">$INFO[System.ProfileThumb]</texture>
+                        <include>spinFocusIcon</include>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>69</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture fallback="white.png">$INFO[listitem.icon]</texture>
+                        <bordersize>0</bordersize>
+                        <texture fallback="masks/discsurface.png" border="0">$INFO[System.ProfileThumb]</texture>
+                        <include>spinFocusIcon</include>
+                    </control>
+                    <control type="label">
+                        <posx>1-col-indent</posx>
+                        <posy>0</posy>
+                        <width>6-col</width>
+                        <height>2-row</height>
+                        <aligny>center</aligny>
+                        <font>buttonTitle</font>
+                        <textcolor>black</textcolor>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+        <!--mini video player-->
+        <include>miniVideoPlayer</include>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>settingsProfile.xml</label>
+        </control>
+    </controls>
+</window>

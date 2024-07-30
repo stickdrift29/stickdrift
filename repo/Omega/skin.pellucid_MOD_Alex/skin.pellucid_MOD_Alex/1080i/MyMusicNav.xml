@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">9999</defaultcontrol>
+    <include>fadeInOut</include>
+    <onload>Skin.SetString(recentitems,music)</onload>
+	<views>503,50,51,52,53,54,502,504,505,508,509,591,602,609</views>
+    <controls>
+        <include>globalBackground</include>
+		<control type="image">
+						<visible>!Control.IsVisible(50) + !Control.IsVisible(609) + !control.isvisible(602)</visible>
+			    		<include>ViewAnimation</include>
+	            		<include>dimensionsFullscreen</include>
+	            		<texture fallback="backgroundimage.jpg">$INFO[listitem.thumb]</texture>
+	            		<colordiffuse>FF555555</colordiffuse>
+	            		<aspectratio>scale</aspectratio>
+						<fadetime>250</fadetime>
+	        </control>
+			<control type="image">
+						<visible>Control.IsVisible(50)</visible>
+			    		<include>ViewAnimation</include>
+	            		<include>dimensionsFullscreen</include>
+	            		<texture>backgroundimage.jpg</texture>
+	            		<colordiffuse>FF555555</colordiffuse>
+	            		<aspectratio>scale</aspectratio>
+						<fadetime>250</fadetime>
+	        </control>
+        <!--Battery Level-->
+        <include>Battery</include>
+        <!--Backbutton touchscreen-->
+        <include>Backbuttoncross</include>
+        
+        <!--page container group-->
+        <control type="group">
+            
+            <!--Main content listing-->
+            <control type="group" id="9999">
+                <include>contentOpen</include>
+                <!--source content-->
+                <control type="group" id="9500">
+                    <include>View_50_List</include>
+                    <include condition="!Skin.HasSetting(Disable.InfoWallView)">View_51_InfoWall</include>
+                    <include condition="!Skin.HasSetting(Disable.LandscapeView)">View_52_Landscape</include>
+                    <include condition="!Skin.HasSetting(Disable.ShowCaseView)">View_53_ShowCase</include>
+                    <include condition="!Skin.HasSetting(Disable.ShowCaseView)">View_54_ShowCase</include>
+                    <include>View_58_BannerWall</include>
+                    <include condition="!Skin.HasSetting(Disable.EpisodeView)">View_502_Episode</include>
+                    <include condition="!Skin.HasSetting(Disable.WallView)">View_503_Wall</include>
+                    <include condition="!Skin.HasSetting(Disable.GalleryView)">View_504_Gallery</include>
+                    <include condition="!Skin.HasSetting(Disable.PanelView)">View_505_Panel</include>
+                    <include condition="!Skin.HasSetting(Disable.SongListView)">View_508_SongList</include>
+                    <include condition="!Skin.HasSetting(Disable.MyFlixView)">View_509_MyFlix</include>
+                    <include condition="!Skin.HasSetting(Disable.BigFanView)">View_591_BigFan</include>
+                    <include condition="!Skin.HasSetting(Disable.FanartListView)">View_602_FanartList</include>
+                    <include>View_603_Music_JukeBox</include>
+                    <include condition="!Skin.HasSetting(Disable.FullscreenWallView)">View_609_Fullscreen_Wall</include>
+                </control>
+
+                <control type="group">
+			<visible>Control.IsVisible(54) | Control.IsVisible(52) | Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(57)</visible>
+			<visible>!Window.IsActive(addoninformation)</visible>
+			<include>ViewAnimation</include>
+			<top>-30</top>
+			<control type="group">
+				<visible>Control.IsVisible(54) | Control.IsVisible(52) | [Control.IsVisible(503)]</visible>
+				<control type="group">
+					<left>410</left>
+					<top>1010</top>
+                    <control type="image">
+                    			<posx>-450</posx>
+                    			<posy>-3</posy>
+                    			<width>fullscreenwidth</width>
+                    			<height>136</height>
+                    			<texture>masks/discsurface30%.png</texture>
+                    			<colordiffuse>$VAR[highlight]</colordiffuse>
+                    			<aspectratio>stretch</aspectratio>
+                			</control>
+							
+					<control type="label">
+						<width>1100</width>
+						<height>48</height>
+						<align>center</align>
+						<font>menuTitle2</font>
+						<scroll>true</scroll>
+						<label>$INFO[ListItem.Label]</label>
+						<textoffsetx>30</textoffsetx>
+                        <textcolor>$VAR[Home]</textcolor>
+					</control>
+				</control>
+				<control type="group">
+					<top>1010</top>
+					<width>100%</width>
+					<visible>[Container.Content(albums) | Container.Content(songs)]</visible>
+					<control type="group">
+						<left>120</left>
+						<control type="label">
+							<left>-10</left>
+							<width>155</width>
+							<height>90</height>
+							<align>center</align>
+							<label>$INFO[ListItem.Year]</label>
+                            <textcolor>$VAR[Home]</textcolor>
+							<font>menuTitle2</font>
+							<wrapmultiline>true</wrapmultiline>
+						</control>
+					</control>
+					<control type="image">
+						<left>1600</left>
+						<colordiffuse>white</colordiffuse>
+						<width>200</width>
+						<fadetime>50</fadetime>
+						<include>MediaFlagValues</include>
+						<texture fallback="flags/rating/empty.png">$INFO[ListItem.UserRating,flags/rating/,.png]</texture>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(500) | Control.IsVisible(57) + ![Container.Content(genres) + !Skin.HasSetting(Enable.Shift.GenreLabels)]</visible>
+				<animation effect="slide" start="0" end="40" condition="Control.IsVisible(57)">Conditional</animation>
+				<include>ViewAnimation</include>
+				<control type="grouplist">
+					<top>1000</top>
+					<width>1840</width>
+					<height>90</height>
+					<align>right</align>
+					<orientation>horizontal</orientation>
+					<visible>Container.Content(albums) | Container.Content(songs)</visible>
+					
+					<control type="label">
+						<width>198</width>
+						<height>90</height>
+						<align>center</align>
+						<label fallback="• • • •">$INFO[ListItem.Year]</label>
+						<font>regular</font>
+                        <textcolor>$VAR[Home]</textcolor>
+						<wrapmultiline>true</wrapmultiline>
+					</control>
+				</control>
+			</control>
+		</control>
+
+
+                <control type="button" id="3000">
+                <posx>0</posx>
+                <posy>500</posy>
+                <textwidth>60</textwidth>
+                <font>symbolLarge</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>60</width>
+                <textoffsetx>2</textoffsetx>
+                <label></label>
+                <label2></label2>
+                <textoffsetx>2</textoffsetx>
+                <textcolor>$VAR[selected]</textcolor>
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturenofocus>
+                <onclick>setfocus(9000)</onclick>
+                <visible>skin.hassetting(Touch)  + !window.isactive(1130)</visible>
+            </control>
+            <control type="button" id="3002">
+			<animation effect="fade" start="0" end="100" time="2145" condition="skin.hassetting(Touch) + [controlgroup(500).hasfocus | controlgroup(9000).hasfocus]" reversible="true">Conditional</animation>
+                <posx>384</posx>
+                <posy>500</posy>
+                <textwidth>60</textwidth>
+                <font>symbolLarge</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>60</width>
+                <label></label>
+                <label2></label2>
+                <textcolor>$VAR[selected]</textcolor>
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturenofocus>
+                <textoffsetx>2</textoffsetx>
+				<onclick>Dialog.Close(1132)</onclick>
+				<visible>skin.hassetting(Touch) + [controlgroup(500).hasfocus | controlgroup(9000).hasfocus]</visible>
+        </control>
+            <include content="keyboard select">
+                    <param name="posx">87%</param>
+                    <param name="posy">35%</param>
+                    <param name="focus">9999</param>
+                    <param name="up">up</param>
+                    <param name="down">down</param>
+                    <param name="left">left</param>
+                    <param name="right">right</param>
+                    <param name="select">select</param>
+                    <param name="back">back</param>
+					<param name="visible">skin.hassetting(Touch) + !controlgroup(500).hasfocus + !control.hasfocus(9001)</param>
+                    <param name="upview">true</param>
+					<param name="downview">true</param>
+					<param name="leftview">true</param>
+					<param name="rightview">true</param>
+					<param name="selectview">true</param>
+                    <param name="color">keyboardInactive</param>
+                </include>
+            </control>
+            <!--page scrollbar-->
+            <control type="group" id="8000">
+                <visible>Control.IsVisible(60)</visible>
+                <animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
+                <control type="scrollbar" id="60">
+                    <posx>54r</posx>
+                    <posy>row-8-begin</posy>
+                    <height>17-row</height>
+                    <onleft>9999</onleft>
+                    <onback>9999</onback>
+                    <onright>7000</onright>
+                    <onup>7000</onup>
+                </control>
+            </control>
+            <!--page header-->
+            <control type="group">
+				<include>pageHeader</include>    
+            </control>
+        </control>
+        <!--mini window-->
+        <include>miniVideoPlayer</include>
+        <!--hub menu-->
+        <include>hubMenu</include>
+        <!--loading indicator-->
+        <include>loadingIndicator</include>
+
+        
+                    
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>WindowID</include>
+            <label>MyMusicNav.xml path: $INFO[container.folderpath]   name: $INFO[container.foldername]   content: $INFO[container.content]    Control: $INFO[System.CurrentControl]</label>
+        </control>
+    </controls>
+</window>

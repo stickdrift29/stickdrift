@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1113">
+    <defaultcontrol always="true">200</defaultcontrol>
+    <!--<onunload>replacewindow(SkinSettings.xml)</onunload>
+    <onunload>activatewindow(Home)</onunload>-->
+    <controls>
+         <!--Backbutton touchscreen-->
+        <include>Backbutton</include>
+        <control type="group">
+            <posx>col-4-begin</posx>
+            <posy>row-9-begin</posy>
+            <!--animations-->
+            <include>modalDialogInOutVertical</include>
+            <control type="image">
+                <posx>390</posx>
+                <posy>-12</posy>
+                <width>520</width>
+                <height>360</height>
+                <texture>colors/black.png</texture>
+                <colordiffuse>black</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            
+            <control type="image">
+                <posx>400</posx>
+                <posy>0</posy>
+                <width>500</width>
+                <height>2-row</height>
+                <texture>masks/discsurface.png</texture>
+                <colordiffuse>$VAR[highlight]</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <!--title-->
+            <control type="label">
+                <posx>425</posx>
+                <posy>0</posy>
+                <width>18-col-gutter</width>
+                <height>2-row</height>
+                <font>dialogTitle</font>
+                <label>$LOCALIZE[5]</label>
+                <textcolor>$VAR[Home]</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+                
+            <!--options-->
+            <control type="label">
+                <posx>400</posx>
+                <posy>120</posy>
+                <width>500</width>
+                <height>2-row</height>
+                <align>center</align>
+                <font>dialogTitle</font>
+                <wrapmultiline>true</wrapmultiline>
+                <label>31292</label>
+                <textcolor>textActive</textcolor>
+                <shadowcolor></shadowcolor>
+            </control>
+    
+            <control type="panel" id="200">
+                <left>460</left>
+				<top>250</top>
+                <width>12-col</width>
+                <height>12-row</height>
+                <itemgap>0</itemgap>
+                <onleft>6</onleft>
+				<onright>6</onright>
+				<onup>6</onup>
+				<ondown>6</ondown>
+                <itemlayout width="200" height="2-row">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>2-row</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>masks/discsurface.png</texture>
+                        <colordiffuse>$VAR[highlight]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>1-col</posx>
+                        <posy>0</posy>
+                        <width>100</width>
+                        <height>2-row</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>masks/discsurface.png</texture>
+
+                        <colordiffuse>textDisabled</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>2-row</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>symbolLarge</font>
+                        <textcolor>textActive</textcolor>
+                        <label>$INFO[ListItem.label2]</label>
+                    </control>
+                    <control type="label">
+                        <posx>1-col-indent</posx>
+                        <posy>0</posy>
+                        <width>224</width>
+                        <height>2-row</height>
+                        <aligny>center</aligny>
+                        <font>itemSubTitle</font>
+                        <textcolor>textActive</textcolor>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="200" height="2-row">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>2-row</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture>masks/discsurface.png</texture>
+                        <colordiffuse>$VAR[highlight]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>1-col</posx>
+                        <posy>0</posy>
+                        <width>100</width>
+                        <height>2-row</height>
+                        <aspectratio>stretch</aspectratio>
+                        <texture colordiffuse="$VAR[selected_box]">masks/discsurface.png</texture>
+                        <colordiffuse>eeffffff</colordiffuse>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1-col</width>
+                        <height>2-row</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>symbolLarge</font>
+                        <textcolor>$VAR[Home]</textcolor>
+                        <label>$INFO[ListItem.label2]</label>
+                        <shadowcolor></shadowcolor>
+                    </control>
+                    <control type="label">
+                        <posx>1-col-indent</posx>
+                        <posy>0</posy>
+                        <width>224</width>
+                        <height>2-row</height>
+                        <aligny>center</aligny>
+                        <font>itemSubTitle</font>
+                        <textcolor>black</textcolor>
+                        <label>$INFO[ListItem.label]</label>
+                    </control>
+                </focusedlayout>
+                <content>
+					<item>
+                        <description>Reset Colors</description>
+                        <label>107</label>
+                        <label2></label2>
+                        <onclick>Skin.SetString(highlight_color,ffad1e4e)</onclick>
+						<onclick>Skin.SetString(highlight_Shadow_color,ffad1e4e)</onclick>
+                        <onclick>Skin.SetString(Home_color,fff0f0f0)</onclick>
+                        <onclick>Skin.SetString(Selected_color,yellow)</onclick>
+                        <onclick>Skin.SetString(Selected_box_color,white)</onclick>
+						<onclick>action(close)</onclick>
+                    </item>
+                    <item>
+						<description>Cancel</description>
+                        <label>106</label>
+                        <label2></label2>
+                        <thumb></thumb>
+                        <onclick>action(close)</onclick>
+                    </item>
+                </content>
+            </control>
+        </control>
+        <!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>Custom_ResetColors.xml</label>
+        </control>
+    </controls>
+    
+</window>
+
+
+

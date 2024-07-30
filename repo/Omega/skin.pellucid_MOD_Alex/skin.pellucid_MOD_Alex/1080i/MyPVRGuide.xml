@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<views>10</views>
+	<defaultcontrol always="true">9999</defaultcontrol>
+	<onload condition="Skin.hassetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
+	<onload>Skin.SetString(recentitems,video)</onload>
+	<animation type="windowClose">
+		<effect type="fade" start="100" end="0" time="300"/>
+	</animation>
+	<controls>
+		<include>globalBackground</include>
+		<!--page container group-->
+		<!--Battery Level-->
+        <include>Battery</include>
+		<!--page header-->
+		<control type="group">
+			<posx>col-1-begin</posx>
+            <posy>row-2-begin</posy>
+			<!--title-->
+			<control type="label">
+	            <posx>0</posx>
+	            <posy>0</posy>
+	            <width>18-col</width>
+	            <font>sectionTitle</font>
+	            <label>$VAR[listTitle]</label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+	        <!--subtitle-->
+	        <control type="label" id="30">
+	            <posx>0</posx>
+	            <posy>26</posy>
+	            <width>12-col</width>
+				<height>2-row</height>
+	            <font>menuTitle2</font>
+	            <label></label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+			<control type="label">
+	            <posx>0</posx>
+	            <posy>56</posy>
+	            <width>12-col</width>
+				<height>2-row</height>
+	            <font>menuTitle2</font>
+	            <label>$LOCALIZE[253]: $INFO[Container.NumItems]</label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+		</control>
+		<!--Backbutton touchscreen-->
+       	<include>Backbutton</include>
+		<control type="group">
+			<!--shift page for certain modal dialogs-->
+			<include>modalDialogContentShift</include>
+			<!--Main content listing-->
+			<control type="group" id="9999">
+				<!--initial animation-->
+				<include>contentOpen</include>
+				
+				<control type="epggrid" id="10">
+					<description>EPG Grid</description>
+					<posx>col-1-begin</posx>
+					<posy>row-4-begin</posy>
+					<include>pvrguidewidth</include>
+					<height>24-row</height>
+					<timeblocks>30</timeblocks>
+					<include>pvrprogresstexture</include>					
+					<rulerunit>6</rulerunit>
+					<onleft>9000</onleft>
+					<include>pvrguidesonupondown</include>	
+					<rulerlayout height="2-row" width="216" condition='!Skin.HasSetting(touch)'>
+						<control type="label" id="2">
+							<posx>0</posx>
+							<posy>12</posy>
+							<width>216</width>
+							<height>2-row</height>
+							<font>itemTitle</font>
+							<textcolor>66FFFFFF</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</rulerlayout>
+					<rulerlayout height="4-row" width="216" condition='Skin.HasSetting(touch)'>
+						<control type="label" id="2">
+							<posx>0</posx>
+							<posy>50</posy>
+							<width>216</width>
+							<height>3-row</height>
+							<font>itemTitle</font>
+							<textcolor>66FFFFFF</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</rulerlayout>
+					<rulerdatelayout height="2-row" width="24-col" condition='!Skin.HasSetting(touch)'>
+						
+						<control type="label">
+						
+		                <animation type="conditional" condition="player.playing" reversible="true">
+		                    <effect type="slide" start="0,0" end="0,50" time="200" delay="0"/>
+                        </animation>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>24-col</width>
+							<align>center</align>
+							<height>2-row</height>
+							<font>menuTitle2</font>
+							<textcolor>textActive</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</rulerdatelayout>
+					<rulerdatelayout height="115" width="24-col" condition='Skin.HasSetting(touch)'>
+						<control type="label">
+							<animation type="conditional" condition="player.playing" reversible="true">
+		                    	<effect type="slide" start="0,0" end="0,50" time="200" delay="0"/>
+                       	 	</animation>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>24-col</width>
+							<align>center</align>
+							<height>3-row</height>
+							<font>menuTitle2</font>
+							<textcolor>textActive</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</rulerdatelayout>
+					<channellayout height="2-row" width="288" condition='!Skin.HasSetting(touch)'>
+						<control type="image">
+							<posx>0</posx>
+							<posy>3</posy>
+							<width>66</width>
+							<height>66</height>
+							<aspectratio>keep</aspectratio>
+							<texture fallback="Kodilogo.png" diffuse="masks/discsurface.png" border="0">$INFO[Listitem.thumb]</texture>
+							<colordiffuse>overlay</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>1-col-indent</posx>
+							<width>198</width>
+							<height>2-row</height>
+							<font>itemTitle</font>
+							<textcolor>textActive</textcolor>
+							<selectedcolor>yellow</selectedcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.ChannelName]</label>
+						</control>
+					</channellayout>
+					<channellayout height="115" width="288" condition='Skin.HasSetting(touch)'>
+						<control type="image">
+							<posx>0</posx>
+							<posy>3</posy>
+							<width>100</width>
+							<height>100</height>
+							<aspectratio>keep</aspectratio>
+							<texture fallback="Kodilogo.png" diffuse="masks/discsurface.png" border="0">$INFO[Listitem.thumb]</texture>
+							<colordiffuse>overlay</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>2-col-indent</posx>
+							<width>198</width>
+							<height>3-row</height>
+							<font>itemTitle</font>
+							<textcolor>textActive</textcolor>
+							<selectedcolor>yellow</selectedcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.ChannelName]</label>
+						</control>
+					</channellayout>
+					<focusedchannellayout height="2-row" width="288" condition='!Skin.HasSetting(touch)'>
+						<control type="image">
+							<posx>1-col</posx>
+							<width>216</width>
+							<height>2-row</height>
+							<texture>masks/discsurface.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>3</posy>
+							<width>66</width>
+							<height>66</height>
+							<aspectratio>keep</aspectratio>
+							<texture fallback="Kodilogo.png" diffuse="masks/discsurface.png" border="0">$INFO[Listitem.thumb]</texture>
+							<animation type="focus" loop="false" reversible="false">
+								<effect type="fade" time="500"/>
+								<effect type="rotatey" end="360" center="33" tween="back" easing="out" time="1000"/>
+							</animation>
+						</control>
+						<control type="label">
+							<posx>1-col-indent</posx>
+							<width>198</width>
+							<height>2-row</height>
+							<font>itemTitle</font>
+							<textcolor>$VAR[Home]</textcolor>
+							<selectedcolor>$VAR[selected]</selectedcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.ChannelName]</label>
+							<scroll>true</scroll>
+						</control>
+					</focusedchannellayout>
+					<focusedchannellayout height="115" width="288" condition='Skin.HasSetting(touch)'>
+						<control type="image">
+							<posx>2-col</posx>
+							<width>216</width>
+							<height>3-row</height>
+							<texture>masks/discsurface.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>3</posy>
+							<width>100</width>
+							<height>100</height>
+							<aspectratio>keep</aspectratio>
+							<texture fallback="Kodilogo.png" diffuse="masks/discsurface.png" border="0">$INFO[Listitem.thumb]</texture>
+							<animation type="focus" loop="false" reversible="false">
+								<effect type="fade" time="500"/>
+								<effect type="rotatey" end="360" center="50" tween="back" easing="out" time="1000"/>
+							</animation> 
+						</control>
+						<control type="label">
+							<posx>2-col-indent</posx>
+							<width>198</width>
+							<height>3-row</height>
+							<font>itemTitle</font>
+							<textcolor>$VAR[Home]</textcolor>
+							<selectedcolor>$VAR[selected]</selectedcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.ChannelName]</label>
+							<scroll>true</scroll>
+						</control>
+					</focusedchannellayout>
+					<itemlayout height="2-row" width="210" condition='!Skin.HasSetting(touch)'>
+						<control type="image" id="2">
+							<width>213</width>
+							<height>69</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="0">masks/discsurface.png</texture>
+							<bordertexture colordiffuse="">colors/black.png</bordertexture>
+							<bordersize>3,0,0,0</bordersize>
+							<colordiffuse>textDisabled</colordiffuse>
+						</control>
+						<control type="label" id="1">
+							<width>204</width>
+							<height>2-row</height>
+							<font>itemTitle</font>
+							<textoffsetx>12</textoffsetx>
+							<textcolor>textActive</textcolor>
+							<selectedcolor>textActive</selectedcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<visible>ListItem.HasTimer</visible>
+							<posx>12</posx>
+							<posy>6</posy>
+							<width>12</width>
+							<height>12</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="0" diffuse="masks/circle.png">masks/discsurface.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+							<animation effect="fade" start="30" end="100" time="1000" condition="true" pulse="true">conditional</animation>
+						</control>
+					</itemlayout>
+					<itemlayout height="111" width="210" condition='Skin.HasSetting(touch)'>
+						<control type="image" id="2">
+							<width>213</width>
+							<height>3-row</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="0">masks/discsurface.png</texture>
+							<bordertexture colordiffuse="">colors/black.png</bordertexture>
+							<bordersize>3,0,0,0</bordersize>
+							<colordiffuse>textDisabled</colordiffuse>
+						</control>
+						<control type="label" id="1">
+							<width>204</width>
+							<height>3-row</height>
+							<font>itemTitle</font>
+							<textoffsetx>12</textoffsetx>
+							<textcolor>textActive</textcolor>
+							<selectedcolor>textActive</selectedcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<visible>ListItem.HasTimer</visible>
+							<posx>12</posx>
+							<posy>6</posy>
+							<width>12</width>
+							<height>12</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="0" diffuse="masks/circle.png">masks/discsurface.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+							<animation effect="fade" start="30" end="100" time="1000" condition="true" pulse="true">conditional</animation>
+						</control>
+					</itemlayout>
+					<focusedlayout height="2-row" width="210" condition='!Skin.HasSetting(touch)'>
+						<control type="image" id="14">
+							<width>210</width>
+							<height>69</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="0">masks/discsurface.png</texture>
+							<bordertexture colordiffuse="">colors/black.png</bordertexture>
+							<bordersize>3,0,0,0</bordersize>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="label" id="1">
+							<width>204</width>
+							<height>2-row</height>
+							<font>itemTitle</font>
+							<textoffsetx>12</textoffsetx>
+							<textcolor>$VAR[Home]</textcolor>
+							<selectedcolor>textActive</selectedcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<visible>ListItem.HasTimer</visible>
+							<posx>12</posx>
+							<posy>6</posy>
+							<width>12</width>
+							<height>12</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="0" diffuse="masks/circle.png">colors/black.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+							<animation effect="fade" start="30" end="100" time="1000" condition="true" pulse="true">conditional</animation>
+						</control>
+					</focusedlayout>
+					<focusedlayout height="111" width="210" condition='Skin.HasSetting(touch)'>
+						<control type="image" id="14">
+							<width>210</width>
+							<height>3-row</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="0">masks/discsurface.png</texture>
+							<bordertexture colordiffuse="">colors/black.png</bordertexture>
+							<bordersize>3,0,0,0</bordersize>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+						</control>
+						<control type="label" id="1">
+							<width>204</width>
+							<height>3-row</height>
+							<font>itemTitle</font>
+							<textoffsetx>12</textoffsetx>
+							<textcolor>$VAR[Home]</textcolor>
+							<selectedcolor>textActive</selectedcolor>
+							<shadowcolor></shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<visible>ListItem.HasTimer</visible>
+							<posx>12</posx>
+							<posy>6</posy>
+							<width>12</width>
+							<height>12</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="0" diffuse="masks/circle.png">colors/black.png</texture>
+							<colordiffuse>$VAR[highlight]</colordiffuse>
+							<animation effect="fade" start="30" end="100" time="1000" condition="true" pulse="true">conditional</animation>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="list" id="11">
+						
+		                <animation type="conditional" condition="player.playing" reversible="true">
+		                    <effect type="slide" start="0,0" end="0,180" time="200" delay="0"/>
+                        </animation>
+						<top>0</top>
+						<left>210</left>
+						<height>2-col</height>
+						<right>210</right>
+						<onleft>noop</onleft>
+						<onright>noop</onright>
+						<include>pvrguidesonupondown3</include>
+						<orientation>horizontal</orientation>
+						<scrolltime>200</scrolltime>
+						<visible></visible>
+						<itemlayout height="50" width="300">
+							<control type="button">
+								<left>1</left>
+								<top>0</top>
+								<width>298</width>
+								<height>49</height>
+								<texturenofocus colordiffuse="textDisabled">masks/discsurface.png</texturenofocus>
+							</control>
+							<control type="label">
+								<left>5</left>
+								<width>298</width>
+								<height>48</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>itemTitle</font>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>lightgrey</textcolor>
+							</control>
+						</itemlayout>
+						<focusedlayout height="50" width="300">
+							<control type="button">
+								<left>1</left>
+								<top>0</top>
+								<width>298</width>
+								<height>50</height>
+								<texturenofocus colordiffuse="$VAR[selected]">masks/discsurface.png</texturenofocus>
+								<animation effect="fade" end="30" condition="true">Conditional</animation>
+								<visible>!Control.HasFocus(11)</visible>
+							</control>
+							<control type="button">
+								<left>1</left>
+								<top>0</top>
+								<width>298</width>
+								<height>50</height>
+								<texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                                <texturenofocus colordiffuse="textDisabled">masks/discsurface.png</texturenofocus>
+								<animation effect="fade" end="30" condition="true">Conditional</animation>
+								<visible>Control.HasFocus(11)</visible>
+							</control>
+							<control type="label">
+								<left>5</left>
+								<width>288</width>
+								<height>48</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<scroll>true</scroll>
+								<font>itemTitle</font>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
+						</focusedlayout>
+					</control>
+			<control type="Panel" id="8000">
+                    <posx>585</posx>
+                    <posy>100</posy>
+                    <width>15-col</width>
+                    <height>2-row</height>
+                    
+					<onright>8001</onright>
+					<include>pvrguidesonupondown20</include>
+                    <orientation>horizontal</orientation>
+                    <itemlayout width="6-col" height="2-row">
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>400</width>
+                            <height>2-row</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>masks/discsurface.png</texture>
+							<colordiffuse>textDisabled</colordiffuse>
+                        </control>
+						<control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col-textbox</width>
+                            <height>2-row</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>masks/discsurface50%.png</texture>
+                            <colordiffuse>$VAR[highlight]</colordiffuse>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <font>symbolLarge</font>
+                            <textcolor>$VAR[Home]</textcolor>
+                            <label>$INFO[ListItem.label2]</label>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                        <control type="label">
+                            <posx>1-col-indent</posx>
+                            <posy>0</posy>
+                            <width>300</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <font>buttonTitle</font>
+                            <textcolor>textActive</textcolor>
+                            <label>$INFO[ListItem.label]</label>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="5-col" height="2-row">
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col-textbox</width>
+                            <height>2-row</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>masks/discsurface.png</texture>
+                            <colordiffuse>$VAR[highlight]</colordiffuse>
+                            <include>spinFocusIcon</include>
+                        </control>
+                        <control type="image">
+                            <posx>1-col</posx>
+                            <posy>0</posy>
+                            <width>325</width>
+                            <height>2-row</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>masks/discsurface.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <font>symbolLarge</font>
+                            <textcolor>$VAR[Home]</textcolor>
+                            <label>$INFO[ListItem.label2]</label>
+							<include>spinFocusIcon</include>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                        <control type="label">
+                            <posx>1-col-indent</posx>
+                            <posy>0</posy>
+                            <width>400</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <font>buttonTitle</font>
+                            <textcolor>black</textcolor>
+                            <label>$INFO[ListItem.label]</label>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <item id="1">
+                            <label>10700</label>
+                            <label2></label2>
+                            <thumb></thumb>
+                            <onclick>ActivateWindow(10700)</onclick>
+                        </item>
+						<item id="2">
+                            <label>10603</label>
+                            <label2></label2>
+                            <thumb></thumb>
+                            <onclick>activateWindow(10603)</onclick>
+                        </item>
+                    </content>
+            </control>
+			
+			<control type="label" id="29">
+				<visible>false</visible>
+			</control>
+		</control>
+		<!--mini window-->
+		<include>miniVideoPlayer</include>
+		<!--hub menu-->
+		<include>hubMenu</include>
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DialogID</include>
+			<label>MyPVRGuide.xml</label>
+		</control>
+	</controls>
+</window>

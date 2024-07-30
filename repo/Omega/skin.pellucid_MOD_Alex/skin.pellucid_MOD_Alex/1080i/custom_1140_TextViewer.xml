@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1140" type="dialog">
+	<defaultcontrol always="true">64</defaultcontrol>
+	<onunload>ClearProperty(TextViewerHeader,Home)</onunload>
+	<onunload>ClearProperty(TextViewerSubHeader,Home)</onunload>
+	<onunload>ClearProperty(TextViewerContent,Home)</onunload>
+	<onunload>ClearProperty(AddonNews,Home)</onunload>
+	<onunload>ClearProperty(FAQ,skinsettings)</onunload>
+	<controls>
+	<include>Backbuttoncross</include>
+		<control type="button" id="64">
+			<oninfo>Dialog.Close(1140)</oninfo>
+			<onclick>Dialog.Close(1140)</onclick>
+			<onleft>Dialog.Close(1140)</onleft>
+			<onright>Dialog.Close(1140)</onright>
+			<onup>PageUp(61)</onup>
+			<ondown>PageDown(61)</ondown>
+			<textcolor>00FFFFFF</textcolor>
+        		<focusedcolor>00FFFFFF</focusedcolor>
+        		<texturefocus>00FFFFFF</texturefocus>
+        		<texturenofocus>00FFFFFF</texturenofocus>
+        		<textoffsetx>24</textoffsetx>
+        		<disabledcolor>00FFFFFF</disabledcolor>
+        		<invalidcolor>00FFFFFF</invalidcolor>
+			<include>HiddenObject</include>
+		</control>
+		<include content="DimBackground">
+			<param name="timeopen">100</param>
+			<param name="timeclose">50</param>
+			<param name="visible">!Window.IsActive(addoninformation)</param>
+		</include>
+		<control type="group">
+			<animation effect="slide" end="166,0" condition="Window.IsActive(addoninformation)">Conditional</animation>
+			<include condition="String.IsEmpty(Window(Home).Property(AddonNews))">DialogOpenCloseAnimation</include>
+			<animation effect="fade" time="100" delay="200" condition="!String.IsEmpty(Window(Home).Property(AddonNews))">WindowOpen</animation>
+			<animation effect="fade" time="50" condition="!String.IsEmpty(Window(Home).Property(AddonNews))">WindowClose</animation>
+			<left>270</left>
+			<top>72.5</top>
+			<control type="image">
+				<left>20</left>
+				<width>1342</width>
+				<height>935</height>
+				<texture>colors/black.png</texture>
+				<bordersize>1</bordersize>
+				<bordertexture border="1" infill="false" colordiffuse="$VAR[highlight]">colors/border_frame.png</bordertexture>
+				<visible>String.IsEmpty(Window(Home).Property(AddonNews))</visible>
+			</control>
+			<control type="label">
+				<left>62</left>
+				<top>40</top>
+				<width>1256</width>
+				<height>40</height>
+				<font>font30_title</font>
+				<align>center</align>
+				<textcolor>dialogheader</textcolor>
+				<label>$INFO[Window(Home).Property(TextViewerHeader)]</label>
+			</control>
+			<control type="label">
+				<left>62</left>
+				<top>90</top>
+				<width>1256</width>
+				<height>40</height>
+				<font>font15</font>
+				<align>center</align>
+				<textcolor>$VAR[highlight]</textcolor>
+				<label>$INFO[Window(Home).Property(TextViewerSubHeader)]</label>
+			</control>
+			<control type="textbox">
+				<left>62</left>
+				<top>145</top>
+				<width>1256</width>
+				<height>750</height>
+				<align>justify</align>
+				<font>font16_textbox</font>
+				<textcolor>grey</textcolor>
+				<pagecontrol>61</pagecontrol>
+				<label>$VAR[CustomTextViewerContentVar]</label>
+			</control>
+			<control type="scrollbar" id="61">
+				<left>1341</left>
+				<top>145</top>
+				<width>20</width>
+				<height>750</height>
+				<ondown>61</ondown>
+				<onup>61</onup>
+				<showonepage>false</showonepage>
+				<texturesliderbackground>colors/black.png</texturesliderbackground>
+				<texturesliderbar colordiffuse="$VAR[highlight]" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+			</control>
+		</control>
+		<include content="keyboard select">
+                        <param name="posx">47%</param>
+                        <param name="posy">35%</param>
+                        <param name="focus">9001</param>
+                        <param name="up">up</param>
+                        <param name="down">down</param>
+                        <param name="left">left</param>
+                        <param name="right">right</param>
+                        <param name="select">select</param>
+                        <param name="visible">skin.hassetting(Touch)</param>
+                        <param name="back">back</param>
+                        <param name="upview">false</param>
+					    <param name="downview">false</param>
+					    <param name="leftview">false</param>
+					    <param name="rightview">false</param>
+					    <param name="selectview">false</param>
+                        <param name="color">keyboardInactive</param>
+            </include>
+	</controls>
+</window>

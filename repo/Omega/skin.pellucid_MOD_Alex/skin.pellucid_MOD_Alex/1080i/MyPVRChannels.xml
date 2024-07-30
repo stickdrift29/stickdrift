@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">9999</defaultcontrol>
+    <onload condition="Skin.hassetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
+    <onload condition="window.isactive(radiochannels)">Skin.SetString(recentitems,music)</onload>
+    <onload condition="window.isactive(tvchannels)">Skin.SetString(recentitems,video)</onload>
+    <animation type="windowClose">
+        <effect type="fade" start="100" end="0" time="300"/>
+    </animation>
+	<views>50</views>
+    <controls>
+        <include>globalBackground</include>
+        <!--Battery Level-->
+        <include>Battery</include>
+        <!--Backbutton touchscreen-->
+        <include>Backbuttoncross</include>
+        <!--page container group--> 
+        <control type="group">
+            <!--window fader-->
+            <animation type="conditional" condition="window.next(0) | window.next(1)">
+                <effect type="fade" start="100" end="0" time="300"/>
+            </animation>
+            <!--shift page for certain modal dialogs-->
+            <include>modalDialogContentShift</include>
+            <!--Main content listing-->
+
+            <control type="list" id="11">
+                        
+		                <animation type="conditional" condition="player.playing" reversible="true">
+		                    <effect type="slide" start="0,0" end="0,180" time="200" delay="0"/>
+                        </animation>
+						<top>0</top>
+						<left>210</left>
+						<right>210</right>
+						<onleft>noop</onleft>
+						<onright>noop</onright>
+						<include>pvrchannelsonupondown3</include>
+						<orientation>horizontal</orientation>
+						<scrolltime>200</scrolltime>
+						<visible></visible>
+						<itemlayout height="50" width="300">
+							<control type="button">
+								<left>1</left>
+								<top>0</top>
+								<width>298</width>
+								<height>49</height>
+								<texturenofocus colordiffuse="textDisabled">masks/discsurface.png</texturenofocus>
+							</control>
+							<control type="label">
+								<left>5</left>
+								<width>298</width>
+								<height>48</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>itemTitle</font>
+								<label>$INFO[ListItem.Label]</label>
+								<textcolor>lightgrey</textcolor>
+							</control>
+						</itemlayout>
+						<focusedlayout height="50" width="300">
+							<control type="button">
+								<left>1</left>
+								<top>0</top>
+								<width>298</width>
+								<height>50</height>
+								<texturenofocus colordiffuse="$VAR[selected]">masks/discsurface.png</texturenofocus>
+								<animation effect="fade" end="30" condition="true">Conditional</animation>
+								<visible>!Control.HasFocus(11)</visible>
+							</control>
+							<control type="button">
+								<left>1</left>
+								<top>0</top>
+								<width>298</width>
+								<height>50</height>
+								<texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                                <texturenofocus colordiffuse="textDisabled">masks/discsurface.png</texturenofocus>
+								<animation effect="fade" end="30" condition="true">Conditional</animation>
+								<visible>Control.HasFocus(11)</visible>
+							</control>
+							<control type="label">
+								<left>5</left>
+								<width>288</width>
+								<height>48</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<scroll>true</scroll>
+								<font>itemTitle</font>
+								<label>$INFO[ListItem.Label]</label>
+                                <textcolor>$VAR[Home]</textcolor>
+							</control>
+						</focusedlayout>
+					</control>
+            <control type="group" id="9999">
+                <!--initial animation-->
+                <include>contentOpen</include>
+                <include>liveTVChannels</include>
+            </control>
+            
+            <!--page scrollbar-->
+            <control type="group" id="9400">
+                <visible>Control.IsVisible(60) + !control.isvisible(10) + String.IsEqual(Container.Viewmode,Live TV)</visible>
+                
+                <control type="scrollbar" id="60">
+                    <posx>50%</posx>
+                    <posy>row-6-begin</posy>
+                    <texturesliderbar colordiffuse="textDisabled">masks/discsurface.png</texturesliderbar>
+                    <texturesliderbackground colordiffuse="black">masks/discsurface.png</texturesliderbackground>
+                    <texturesliderbarfocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturesliderbarfocus>
+                    <showonepage>true</showonepage>
+                    <height>23-row</height>
+                    <width>35</width>
+                    <onleft>50</onleft>
+                    <onup>8000</onup>
+                    <onright>80</onright>
+                </control>
+                
+            </control>
+            <control type="Panel" id="8000">
+                    <posx>585</posx>
+                    <posy>100</posy>
+                    <width>15-col</width>
+                    <height>2-row</height>
+                    <include>pvrchannelsonupondown20</include>
+                    
+                    
+                    <orientation>horizontal</orientation>
+                    <itemlayout width="6-col" height="2-row">
+                        
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>400</width>
+                            <height>2-row</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>masks/discsurface.png</texture>
+                            <colordiffuse>textDisabled</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col-textbox</width>
+                            <height>2-row</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>masks/discsurface50%.png</texture>
+                            <colordiffuse>$VAR[highlight]</colordiffuse>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <font>symbolLarge</font>
+                            <textcolor>$VAR[Home]</textcolor>
+                            <label>$INFO[ListItem.label2]</label>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                        <control type="label">
+                            <posx>1-col-indent</posx>
+                            <posy>0</posy>
+                            <width>300</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <font>buttonTitle</font>
+                            <textcolor>textActive</textcolor>
+                            <label>$INFO[ListItem.label]</label>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout width="5-col" height="2-row">
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col-textbox</width>
+                            <height>2-row</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>masks/discsurface.png</texture>
+                            <colordiffuse>$VAR[highlight]</colordiffuse>
+                            <include>spinFocusIcon</include>
+                        </control>
+                        <control type="image">
+                            <posx>1-col</posx>
+                            <posy>0</posy>
+                            <width>325</width>
+                            <height>2-row</height>
+                            <aspectratio>stretch</aspectratio>
+                            <texture>masks/discsurface.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1-col</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <align>center</align>
+                            <font>symbolLarge</font>
+                            <textcolor>$VAR[Home]</textcolor>
+                            <label>$INFO[ListItem.label2]</label>
+                            <include>spinFocusIcon</include>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                        <control type="label">
+                            <posx>1-col-indent</posx>
+                            <posy>0</posy>
+                            <width>400</width>
+                            <height>2-row</height>
+                            <aligny>center</aligny>
+                            <font>buttonTitle</font>
+                            <textcolor>black</textcolor>
+                            <label>$INFO[ListItem.label]</label>
+                            <shadowcolor></shadowcolor>
+                        </control>
+                    </focusedlayout>
+                    <content>
+                        <item id="1">
+                            <label>10702</label>
+                            <label2></label2>
+                            <thumb></thumb>
+                            <onclick>ActivateWindow(10702)</onclick>
+                        </item>
+						<item id="2">
+                            <label>10603</label>
+                            <label2></label2>
+                            <thumb></thumb>
+                            <onclick>activateWindow(10603)</onclick>
+                        </item>
+                    </content>
+            </control>
+              
+        <!--page header-->
+		<control type="group">
+			<posx>col-1-begin</posx>
+            <posy>row-2-begin</posy>
+			<!--title-->
+			<control type="label">
+	            <posx>0</posx>
+	            <posy>0</posy>
+	            <width>18-col</width>
+	            <font>sectionTitle</font>
+	            <label>$VAR[listTitle]</label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+	        <!--subtitle-->
+	        <control type="label" id="29">
+	            <posx>0</posx>
+	            <posy>26</posy>
+	            <width>12-col</width>
+				<height>2-row</height>
+	            <font>menuTitle2</font>
+	            <label></label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+			<control type="label">
+	            <posx>0</posx>
+	            <posy>56</posy>
+	            <width>12-col</width>
+				<height>2-row</height>
+	            <font>menuTitle2</font>
+	            <label>$LOCALIZE[253]: $INFO[Container.NumItems]</label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+           
+			<!--date-->
+	        <control type="label">
+	            <posx>14-col</posx>
+	            <posy>-64</posy>
+	            <width>12-col</width>
+				<height>2-row</height>
+				<align>right</align>
+	            <font>menuTitle2</font>
+	            <label>$INFO[System.Date(DDD)], $INFO[system.Date(d MMM YYY)]</label>
+	            <textcolor>textActive</textcolor>
+	        </control>
+        </control>
+			<control type="label" id="29">
+			     <visible>false</visible>
+            </control>
+        </control>
+        <control type="button" id="3000">
+                <posx>0</posx>
+                <posy>500</posy>
+                <textwidth>60</textwidth>
+                <font>symbolLarge</font>
+                <align>center</align>
+                <aligny>center</aligny>
+                <width>60</width>
+                <textoffsetx>2</textoffsetx>
+                <label></label>
+                <label2></label2>
+                <textoffsetx>2</textoffsetx>
+                <textcolor>$VAR[selected]</textcolor>
+                <focusedcolor>$VAR[selected]</focusedcolor>
+                <texturefocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturefocus>
+                <texturenofocus colordiffuse="$VAR[highlight]">masks/discsurface.png</texturenofocus>
+                <onclick>setfocus(9000)</onclick>
+                <visible>skin.hassetting(Touch)  + !window.isactive(1130)</visible>
+            </control>
+        <!--Keyboard Crosskey-->
+        <include content="keyboard select">
+            <param name="posx">87%</param>
+            <param name="posy">35%</param>
+            <param name="focus">9999</param>
+            <param name="up">up</param>
+            <param name="down">down</param>
+            <param name="left">left</param>
+            <param name="right">right</param>
+            <param name="select">select</param>
+            <param name="back">back</param>
+            <param name="visible">skin.hassetting(Touch)</param>
+            <param name="upview">true</param>
+			<param name="downview">true</param>
+			<param name="leftview">true</param>
+			<param name="rightview">true</param>
+			<param name="selectview">true</param>
+            <param name="color">keyboardInactive</param>
+        </include>
+        <!--mini window-->
+        <include>miniVideoPlayer</include>
+        <!--hub menu-->
+        <include>hubMenu</include>
+		<!--debugging-->
+        <include>DebugGrid</include>
+        <control type="label">
+            <include>DialogID</include>
+            <label>MyPVRChannels.xml path: $INFO[container.folderpath] folder: $INFO[container.foldername] content: $INFO[container.content]</label>
+        </control>
+    </controls>
+</window>
