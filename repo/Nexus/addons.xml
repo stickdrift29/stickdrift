@@ -1,37 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-    <addon id="skin.pellucid_MOD_Alex" version="2.0.55" name="Pellucid MOD Blatorone" provider-name="Blatorone">
-        <requires>
-            <import addon="xbmc.gui" version="5.15.0"/>
-            <import addon="script.skinshortcuts" version="1.1.4"/>
-            <import addon="script.embuary.info" version="0.0.1"/>
-            <import addon="script.embuary.helper" version="1.2.14"/>
-            <import addon="plugin.video.themoviedb.helper" version="0.0.1"/>
-            <import addon="service.upnext" version="1.0.0"/>
-            <import addon="plugin.program.autocompletion" version="1.0.0"/>
-        </requires>
-        <extension point="xbmc.gui.skin" debugging="false">
-            <res width="1920" height="1080" aspect="16:9" default="ture" folder="1080i" />
-        </extension>
-        <extension point="xbmc.addon.metadata">
-            <summary lang="en_GB">A skin for Kodi by Alex</summary>
-            <summary lang="de_de">Ein skin für Kodi von Alex</summary>
-            <description lang="en_GB">Built for the living room, Pellucid is a clean and carefully designed Kodi experience designed for maximum usability and minimum fuss. Skin Shortcuts addon support is available for full menu customisation.</description>
-            <description lang="de_de">Hergestellt fürs Wohnzimmer,Pellucid ist ein sauberes und angenehme design. Kodi design erfahrungen für maximale benutzung und minimalem Aufwand. Skin Kurzbefehl addon support ist verfügbar für volle Menü anpassungen.</description>
-            <platform>all</platform>
-            <license>Creative Commons Attribution-Noncommercial-Share Alike 4.0</license>
-            <assets>
-                <icon>resources/icon.png</icon>
-                <fanart>resources/fanart.jpg</fanart>
-                <screenshot>resources/screenshot-01.jpg</screenshot>
-                <screenshot>resources/screenshot-02.jpg</screenshot>
-                <screenshot>resources/screenshot-03.jpg</screenshot>
-                <screenshot>resources/screenshot-04.jpg</screenshot>
-                <screenshot>resources/screenshot-05.jpg</screenshot>
-                <screenshot>resources/screenshot-06.jpg</screenshot>
-            </assets>
-        </extension>
-    </addon>
         <addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="2.1.0">
 	        <extension point="xbmc.addon.repository" name="Blatorone Repository">
                 <dir>
@@ -50,11 +18,57 @@
 			        <checksum>https://michaz1988.github.io/repo/addons.xml.md5</checksum>
 			        <datadir zip="true">https://michaz1988.github.io/repo/</datadir>
 		        </dir>
-                <dir minversion="20.9.1">
-                    <info compressed="false">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/nexusrepo/zips/addons.xml</info>
-                    <checksum>https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/nexusrepo/zips/addons.xml.md5</checksum>
-                    <datadir zip="true">https://raw.githubusercontent.com/jurialmunkey/repository.jurialmunkey/master/nexusrepo/zips/</datadir>
-                </dir>
+                <dir minversion="17.9.910" maxversion="18.9.700">
+			        <info compressed="false">https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/leia/addons.xml</info>
+			        <checksum>https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/leia/addons.xml.md5</checksum>
+			        <datadir zip="true">https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/leia/</datadir>
+		        </dir>
+		        <dir minversion="18.9.701" maxversion="19.9.700">
+			        <info compressed="false">https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/matrix/addons.xml</info>
+			        <checksum>https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/matrix/addons.xml.md5</checksum>
+			        <datadir zip="true">https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/matrix/</datadir>
+		        </dir>
+		        <dir minversion="19.9.701">
+			        <info compressed="false">https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/nexus/addons.xml</info>
+			        <checksum>https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/nexus/addons.xml.md5</checksum>
+			        <datadir zip="true">https://raw.githubusercontent.com/streamxstream/xStreamRepo/master/nexus/</datadir>
+		        </dir>
+                <dir>
+			        <info compressed="true">https://repo.kodinerds.net/addons/addons.xml</info>
+			        <checksum>https://repo.kodinerds.net/addons/addons.xml.md5</checksum>
+			        <datadir zip="true">https://repo.kodinerds.net/addons</datadir>
+			        <hashes>false</hashes>
+		        </dir>
+		        <dir minversion="20.9.9" maxversion="21.9.0">
+			        <info compressed="true">https://repo.kodinerds.net/addons/omega/addons.xml</info>
+			        <checksum>https://repo.kodinerds.net/addons/omega/addons.xml.md5</checksum>
+			        <datadir zip="true">https://repo.kodinerds.net/addons/omega/zip/</datadir>
+			        <hashes>false</hashes>
+		        </dir>
+		        <dir minversion="20.0.0" maxversion="21.9.0">
+			        <info compressed="true">https://repo.kodinerds.net/addons/nexus/addons.xml</info>
+			        <checksum>https://repo.kodinerds.net/addons/nexus/addons.xml.md5</checksum>
+			        <datadir zip="true">https://repo.kodinerds.net/addons/nexus/zip/</datadir>
+			        <hashes>false</hashes>
+		        </dir>
+		        <dir minversion="19.0.0" maxversion="21.9.0">
+			        <info compressed="true">https://repo.kodinerds.net/addons/matrix/addons.xml</info>
+			        <checksum>https://repo.kodinerds.net/addons/matrix/addons.xml.md5</checksum>
+			        <datadir zip="true">https://repo.kodinerds.net/addons/matrix/zip/</datadir>
+			        <hashes>false</hashes>
+		        </dir>
+		        <dir minversion="18.0.0" maxversion="18.9.0">
+			        <info compressed="true">https://repo.kodinerds.net/addons/leia/addons.xml</info>
+			        <checksum>https://repo.kodinerds.net/addons/leia/addons.xml.md5</checksum>
+			        <datadir zip="true">https://repo.kodinerds.net/addons/leia/zip/</datadir>
+			        <hashes>false</hashes>
+		        </dir>
+		        <dir minversion="17.0.0" maxversion="18.9.0">
+			        <info compressed="true">https://repo.kodinerds.net/addons/krypton/addons.xml</info>
+			        <checksum>https://repo.kodinerds.net/addons/krypton/addons.xml.md5</checksum>
+			        <datadir zip="true">https://repo.kodinerds.net/addons/krypton/zip/</datadir>
+			        <hashes>false</hashes>
+		        </dir>
             </extension>
             <extension point="xbmc.addon.metadata">
                 <summary>Kodi</summary>
