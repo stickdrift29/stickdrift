@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="1.0.6">
+<addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="1.0.2">
 	        <extension point="xbmc.addon.repository" name="Stickdrift Repository">
                 <dir minversion="21.0.0">
                     <info compressed="false">https://blatorone.github.io/blatorone/repo/repository.stickdrift/addons.xml</info>
