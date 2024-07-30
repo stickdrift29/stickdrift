@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-        <addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="1.0.2">
-	        <extension point="xbmc.addon.repository" name="Stickdrift Repository">
-                <dir>
-                    <info compressed="false">https://stickdrift29.github.io/repository.stickdrift/repo/Omega/addons.xml</info>
-                    <checksum>https://stickdrift29.github.io/repository.stickdrift/repo/Omega/addons.xml.md5</checksum>
-                    <datadir zip="true">https://stickdrift29.github.io/repository.stickdrift/repo/Omega/</datadir>
+        <addon id="repository.stickdrift" name="stickdrift Repository" provider-name="stickdrift29" version="1.0.3">
+	        <extension point="xbmc.addon.repository" name="stickdrift Repository">
+                <dir minversion="21.0.0">
+                    <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Omega/addons.xml</info>
+                    <checksum>https://stickdrift29.github.io/stickdrift/repo/Omega/addons.xml.md5</checksum>
+                    <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Omega/</datadir>
                 </dir>
                 <dir>
 				    <info compressed="false">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml</info>
@@ -26,7 +26,7 @@
             </extension>
             <extension point="xbmc.addon.metadata">
                 <summary>Kodi</summary>
-                <description lang="de">Addons von stickdrift29</description>
+                <description lang="de">Addons von blatorone</description>
                 <disclaimer></disclaimer>
                 <platform>all</platform>
                 <assets>
@@ -34,6 +34,25 @@
 		        </assets>
             </extension>
         </addon>
+        <addon id="repository.blatorone" name="Blatorone Repository" provider-name="blatorone" version="1.0.8">
+	        <extension point="xbmc.addon.repository" name="Blatorone Repository">
+                <dir minversion="19.9.701" maxversion="20.9.700">
+                    <info compressed="false">https://blatorone.github.io/blatorone/repo/Nexus/addons.xml</info>
+                    <checksum>https://blatorone.github.io/blatorone/repo/Nexus/addons.xml.md5</checksum>
+                    <datadir zip="true">https://blatorone.github.io/blatorone/repo/Nexus/</datadir>
+                </dir>
+            </extension>
+            <extension point="xbmc.addon.metadata">
+                <summary>Kodi</summary>
+                <description lang="de">Addons von blatorone</description>
+                <disclaimer></disclaimer>
+                <platform>all</platform>
+                <assets>
+			        <icon>icon.png</icon>
+		        </assets>
+            </extension>
+        </addon>
+
         <addon id="plugin.audio.ilovemusic" name="I Love Music" version="3.0.2" provider-name="adiko01">
             <requires>
 		        <import addon="xbmc.python" version="3.0.0"/>
