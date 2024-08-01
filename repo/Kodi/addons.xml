@@ -28,7 +28,7 @@
 			        <checksum verify="sha256">https://raw.githubusercontent.com/streamxstream/xStreamRepo/repo/nexus/addons.xml.sha256</checksum>
                     <datadir zip="true">https://raw.githubusercontent.com/streamxstream/xStreamRepo/repo/nexus/</datadir>
                 </dir>
-		        <dir minversion="20.9.910" maxversion="21.9.700">
+		        <dir minversion="21.0.0" maxversion="21.9.700">
                     <info compressed="false">https://raw.githubusercontent.com/streamxstream/xStreamRepo/repo/omega/addons.xml</info>
 			        <checksum verify="sha256">https://raw.githubusercontent.com/streamxstream/xStreamRepo/repo/omega/addons.xml.sha256</checksum>
                     <datadir zip="true">https://raw.githubusercontent.com/streamxstream/xStreamRepo/repo/omega/</datadir>
