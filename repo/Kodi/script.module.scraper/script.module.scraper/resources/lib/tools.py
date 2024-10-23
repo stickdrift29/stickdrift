@@ -62,11 +62,12 @@ def repair():
 				k.write(newcommon)
 			with open(update_sha, "w") as k:
 				k.write(upd2)
-	if firststart:
-		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
-		xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
-		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
-		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
+	
+	#	if firststart:
+	#		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
+	#		xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
+	#		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
+	#		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
 
 def handle():
 	return int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else -1
