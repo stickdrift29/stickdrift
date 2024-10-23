@@ -83,7 +83,7 @@
 		        </assets>
             </extension>
         </addon>
-        <addon id="script.module.scraper" name="Scraper" provider-name="michaz1988" version="0.2.9-2">
+        <addon id="script.module.scraper" name="Scraper" provider-name="michaz1988" version="0.3.0">
 	<requires>
 		<import addon="plugin.video.vavooto"/>
         <import addon="script.module.requests"/>
