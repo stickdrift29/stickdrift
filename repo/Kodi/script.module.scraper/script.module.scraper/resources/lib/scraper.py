@@ -12,7 +12,7 @@ urllib3.disable_warnings()
 
 def showFailedNotification(msg="Keine Streams gefunden"):
 	tools.logger.info(msg)
-	xbmc.executebuiltin("Notification(%s,%s,%s,%s)" % ("Scraper",msg,5000,tools.addonInfo("icon")))
+	xbmc.executebuiltin("Notification(%s,%s,%s,%s)" % (" Scraper",msg,5000,tools.addonInfo("icon")))
 	o = xbmcgui.ListItem(xbmc.getInfoLabel("ListItem.Label"))
 	xbmcplugin.setResolvedUrl(int(sys.argv[1]), False, o)
 
@@ -74,8 +74,9 @@ def get_hosters(sources, isSerie, season, episode):
 def _pluginSearch(pluginEntry, sSearchText, isSerie, oGui):
 	try:
 		plugin = __import__(pluginEntry["id"], globals(), locals())
-		if "vod" in pluginEntry["id"]: searchfunction = "_searchSeries" if isSerie else "_searchMovies"
-		else: searchfunction = "_search"
+		#if "vod" in pluginEntry["id"]: searchfunction = "_searchSeries" if isSerie else "_searchMovies"
+		#else: searchfunction = "_search"
+		searchfunction = "_search"
 		function = getattr(plugin, searchfunction)(oGui, sSearchText)
 	except Exception as e:
 		tools.logger.error(pluginEntry["name"] + ": search failed, Error = %s" % e)
@@ -102,10 +103,12 @@ def plugin(source, force = False):
 def searchGlobal(sSearchText, searchtitles, isSerie, _type, _id, season, episode, searchYear):
 	multi = 25 if isSerie else 50
 	sources = []; aPlugins = []; threads = []; oGui = cGui(); settings.collectMode = True; ntitle =""
-	for w in [str(filename[:-3]) for filename in os.listdir(sourcesFolder) if not filename.startswith('__') and filename.endswith('.py')]:
-		if bool(xbmcaddon.Addon().getSetting("plugin_%s"%w) or True):
-			aPlugins.append({'id': w, 'name': w.capitalize()})
-	dialog.create("Scraper Suche gestartet ...", "Suche ...")
+	for w in [str(filename[:-3]) for filename in os.listdir(sourcesFolder) if not " vod" in filename and not filename.startswith('__') and filename.endswith('.py')]:
+		if xbmcaddon.Addon().getSetting(w) == "true" :
+			if isSerie: aPlugins.append({'id': w, 'name': w.capitalize()})
+			else:
+				if w != "serienstream": aPlugins.append({'id': w, 'name': w.capitalize()})
+	dialog.create(" Scraper Suche gestartet ...", "Suche ...")
 	for count, pluginEntry in enumerate(aPlugins):
 		t = threading.Thread(target=_pluginSearch, args=(pluginEntry, sSearchText, isSerie, oGui), name=pluginEntry["name"])
 		threads += [t]
@@ -162,7 +165,7 @@ def searchGlobal(sSearchText, searchtitles, isSerie, _type, _id, season, episode
 def callApi(action, params, method="GET", headers=None, **kwargs):
 	tools.logger.debug("Action:%s params: %s" % (action,json.dumps(params)))
 	if not headers: headers = dict()
-	headers["auth-token"] = vavoosigner.getAuthSignature()
+	headers["auth-token"] = tools.getAuthSignature()
 	resp = session.request(method, ("https://www2.vavoo.to/ccapi/" + action), params=params, headers=headers, **kwargs)
 	resp.raise_for_status()
 	data = resp.json()

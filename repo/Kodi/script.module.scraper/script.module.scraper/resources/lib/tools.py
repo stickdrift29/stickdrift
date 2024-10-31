@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import xbmc, xbmcaddon, xbmcgui, os, sys, hashlib, re, time, json, six, xbmcvfs
+import xbmc, xbmcaddon, xbmcgui, os, sys, hashlib, re, time, json, six, xbmcvfs, requests, base64, zlib
 from datetime import datetime,date,timedelta
 from resources.lib import common, pyaes, settings
 from six.moves.urllib.parse import quote, unquote, quote_plus, unquote_plus, urlparse, urlencode
@@ -35,39 +35,96 @@ def translate_path(*args):
 
 addonPath = common.addonPath
 profilePath = common.profilePath
-
+settingsxml = translate_path(addonInfo("path"), "resources", "settings.xml")
 
 if not os.path.exists(profilePath):
 	os.makedirs(profilePath)
 
-def repair():
+def getAuthSignature():
+	_headers={"user-agent": "okhttp/4.11.0", "accept": "application/json", "content-type": "application/json; charset=utf-8", "content-length": "1106", "accept-encoding": "gzip"}
+	_data = {"token":"8Us2TfjeOFrzqFFTEjL3E5KfdAWGa5PV3wQe60uK4BmzlkJRMYFu0ufaM_eeDXKS2U04XUuhbDTgGRJrJARUwzDyCcRToXhW5AcDekfFMfwNUjuieeQ1uzeDB9YWyBL2cn5Al3L3gTnF8Vk1t7rPwkBob0swvxA","reason":"player.enter","locale":"de","theme":"dark","metadata":{"device":{"type":"Handset","brand":"google","model":"Nexus 5","name":"21081111RG","uniqueId":"d10e5d99ab665233"},"os":{"name":"android","version":"7.1.2","abis":["arm64-v8a","armeabi-v7a","armeabi"],"host":"android"},"app":{"platform":"android","version":"3.0.2","buildId":"288045000","engine":"jsc","signatures":["09f4e07040149486e541a1cb34000b6e12527265252fa2178dfe2bd1af6b815a"],"installer":"com.android.secex"},"version":{"package":"tv.vavoo.app","binary":"3.0.2","js":"3.1.4"}},"appFocusTime":27229,"playerActive":True,"playDuration":0,"devMode":False,"hasAddon":True,"castConnected":False,"package":"tv.vavoo.app","version":"3.1.4","process":"app","firstAppStart":1728674705639,"lastAppStart":1728674705639,"ipLocation":"","adblockEnabled":True,"proxy":{"supported":["ss"],"engine":"ss","enabled":False,"autoServer":True,"id":"ca-bhs"},"iap":{"supported":False}}
+	req = requests.post('https://www.vavoo.tv/api/app/ping', json=_data, headers=_headers).json()
+	return req.get("addonSig")
+
+def decrypt():
+	for root, dir, files in os.walk(addonPath):
+		for file in files:
+			if file.endswith(".py"):
+				name = os.path.join(root, file)
+				try:
+					i = 0
+					while i < 51:
+						with open(name) as k: a = k.read()
+						decoded = a.replace("_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));exec((_)(b", "").replace("))", "").strip("exec((_)(b")
+						b = zlib.decompress(base64.b64decode(decoded[::-1]))
+						with open(name, "wb") as k: k.write(b)
+						i+=1
+				except:
+					pass
+
+def repair(force=False):
+	new_xml = [
+		'<settings>',
+		' <category label="Einrichten">',
+		'  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.scraper/?action=true)"/>',
+		#'  <setting label="xStream reparieren" type="action" action="RunPlugin(plugin://script.module.scraper/?repair=true)"/>',
+		' </category>',
+		' <category label="VIDEO">',
+		'  <setting default="1" id="stream_select" label="Stream Auswahl" type="enum" values="Hoster|Automatisch"/>',
+		'  <setting default="true" id="auto_try_next_stream" type="bool" subsetting="true" visible="eq(-1,0)" label="Automatisch nächsten ähnlichen Stream versuchen"/>',
+		' </category>',
+		' <category label="VAVOO">',
+		'  <setting default="true" id="vavoo" label="Vavoo" type="bool"/>',
+		' </category>',
+		' <category label="Scraper">']
 	firststart = False
 	profilepath = translate_path(addonInfo('profile'))
-	if not os.path.exists(profilepath):
-		os.makedirs(profilepath)
+	if not os.path.exists(profilepath): os.makedirs(profilepath)
 	update_sha = translate_path(profilepath, "update_sha")
 	xstream_update_sha = translate_path(profilePath, "update_sha")
-	newcommon = "import sys, os, xbmc, xbmcaddon\nPY3 = sys.version_info[0] == 3\nif PY3:\n\timport xbmcvfs\n\ndef starter2():\n\tpass\n\ndef translatePath(*args):\n\tif PY3: return xbmcvfs.translatePath(*args)\n\telse: return xbmc.translatePath(*args).decode('utf-8')\n\naddon = xbmcaddon.Addon()\naddonInfo = addon.getAddonInfo\naddonID = addonInfo('id')\nprofilePath = translatePath(addonInfo('profile'))\naddonPath = translatePath(addonInfo('path'))"
+	settingsfile = translate_path(profilePath, "settings.xml")
+	with open(settingsfile) as k: a = k.readlines()
+	m = []
+	for b in a:
+		if not "xstream_norep" in b: m.append(b)
+	with open(settingsfile, "w") as k: k.writelines(m)
+	newcommon = "import sys, os, xbmc, xbmcaddon\nPY3 = sys.version_info[0] == 3\nif PY3:\n\timport xbmcvfs\n\ndef starter2():\n\tpass\n\ndef translatePath(*args):\n\tif PY3: return xbmcvfs.translatePath(*args)\n\telse: return xbmc.translatePath(*args).decode('utf-8')\n\naddon = xbmcaddon.Addon()\naddonInfo = addon.getAddonInfo\naddonID = addonInfo('id')\nprofilePath = translatePath(addonInfo('profile'))\naddonPath = translatePath(addonInfo('path'))\naddonName = addonInfo('name')"
 	if not os.path.exists(update_sha):
-		with open(update_sha, "w") as k:
-			k.write("")
+		with open(update_sha, "w") as k: k.write("")
 		firststart = True
 	if os.path.exists(xstream_update_sha):
-		with open(update_sha) as k:
-			upd1 = k.read()
-		with open(xstream_update_sha) as k:
-			upd2 = k.read()
-		if upd1 != upd2:
-			with open(translate_path(addonPath, "resources", "lib", "common.py"), "w") as k:
-				k.write(newcommon)
-			with open(update_sha, "w") as k:
-				k.write(upd2)
-	
-	#	if firststart:
-	#		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
-	#		xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
-	#		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
-	#		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
+		with open(update_sha) as k: upd1 = k.read()
+		with open(xstream_update_sha) as k: upd2 = k.read()
+		if (upd1 != upd2) or force:
+			with open(translate_path(addonPath, "resources", "lib", "common.py"), "w") as k: k.write(newcommon)
+			xstream = translate_path(addonPath, "xstream.py")
+			with open(xstream) as k: a = k.readlines()
+			m = []
+			for b in a:
+				if "exec(zlib.decompress(base64.b64decode('eJzVm11v2zYUhu/7K4IAhm2gpu2sy9oCAextGDYUAwY03cWGIaCkY4sRRWr8kO3++h1Jji07bWPRi6jcBDCll+/DI4o8JBX7m4FU3/x9mTAhTR7I9WzJ8pQyTkKZXr6+zEYp3YAaTd+9nc5WEJAIsDRZ0YRxYGK2UAACTFVs6BqUnE6mk1lIlWbJtpJERiywjEd6VlZd1YGFK+BmJq3hUiZVqWAh3NtoCdfXsw1eKe83yeU/r+wvbMuqYso5qFkszUN1eHl+cHm2v8IWF+sgDWkUSUHmxd/BkCzBfARjmFgO+hoUA6GNApoSi7/6QyYubBma96++INbfFL/u94eNVBnVulI9ibrgLE1BaWMDqKFWoXmS9bH6FNYDVQNWis+SSxvVOOencR4qT2HcKfZ8TytWUvFmHpWiWQxqLg1jcD5fG3GOYHGhLN6ITcJ4hHEy6GfcLpkgmZJLhR38UxZRAx9wiLnNf5Tr/vDmZop3X+iNJrBmZoC+wL8i3g8ezXXEVVjpyIp9pipy9nXWV/Lz1KOz5I6y81p8lti5vcUk5PCI3WSFyr1bnaUuxOdoTwuwDhXLDEllZDmQdTXFuWimLqIrF9F3LqI3LqLvXUTXLqIfXERvXUTvnB7uxEWFhTQr5tHm0tFp2qOujznxvdXmjQDVdBbRFt2EiyalRrGGk2SlFLC2TpgyhSU9TZizCCQpk8Gc5lI+oVKQSc2MVJv6WDApBN/ONLZ33wmJVWCmEcvliiqjixzlwCvDlQZ8UnxQpSKFq6ApFOmIAmOVKI2KrOwnKaI/mWYB48xsBv2PG42pGPmV6gqgp4f9XqnFJpWVaaAqjO8ipsr0Rklp7jJq4hujqNAck5o/8NdAalKUknvJBPa/DEJG+fvxOMa4jssm6jE2oYfwCFwW3GFGRBvXVeRphXC8r6NWMcb8QY3B0UYPdsC9vsYVHqGA0RZyTTTjucRXRBnKcYBPA4pz2f/4UMoO0Azm9w++CTzFIcTOuKfwHIQCpnUEzpZx+3HXhipUay/GxI8zmnoxPh54qGISLRNov7N9CSXXvmFSpCCRSNpHCBRlIgIate9sOmBOfLkvFPxrQYTtP3F0pgnxZB6wIgn3YPoXsFsvxuQzMEOupq2bx8C5JCsA0f5EU46tmGZDm9a1xQaXiU2JVDFttfE1gv3Wkjf77U6eX/9Wk40aQH0xTapFmFeS0ZRM2gT46nq9PYRyzzKUaQoiUrknZ2F8tVmsjaA+vbPMo3vg0Tv06J20O+Qfu29E4tFeen3Z0N16tLdZqznekbu38RW9V7TVPO/QXbea4hx5+2z3wqO31xdd+33RMZ+78uju60XPn+OR45h9WhK9Oz16rrYzvWAcBkenM73+eHueWKxrdSyVCa3R40cbWCSmOu4a3W6PqXt0j05/iiNJXCcZBs+4TjsftLZ13Xni3aZyV0kf9uU6zIcLaOBd5Ts8OuwgZbUJMdp+bTB69HUa+Xl+OyfrlHcd+KXxvjDch/4wmrwE5NrXcC8Ft6O0CqLy8L9zYOX5gck7x5WzrPrfgc6RhRyoAPUsXP8BSHOmCQ==')))" in b:
+					m.append("def run():\n\tparseUrl()")
+				else: 
+					if not "search_dir()" in b: m.append(b)
+			with open(xstream, "w") as k: k.writelines(m)
+			with open(update_sha, "w") as k: k.write(upd2)
+			decrypt()
+			pluginDB = translate_path(profilePath, "pluginDB")
+			if os.path.exists(pluginDB):
+				with open(pluginDB) as k: plugins = json.load(k)
+				for key , value in plugins.items():
+					if not "vod_" in value.get("identifier"): new_xml.append('  <setting default="%s" id="%s" label="%s" type="bool"/>' % (value.get("globalsearch"), value.get("identifier"), value.get("name")))
+				new_xml.append(' </category>')
+				new_xml.append('</settings>')
+				new_xml = six.ensure_text('\n'.join(new_xml))
+				if six.PY3: 
+					with open(settingsxml, 'w', encoding='utf-8') as f: f.write(new_xml)
+				else:
+					with open(settingsxml, 'w') as f: f.write(new_xml.encode('utf8'))
+	#if firststart:
+	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
+	#	xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
+	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
+	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
 
 def handle():
 	return int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else -1
