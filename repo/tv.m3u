@@ -26,7 +26,7 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=CARTOON+NETWOR
 #EXTINF:-1 tvg-id="DE: Comedy Central" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1073.png",Comedy Central
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=VIVA
 #EXTINF:-1 tvg-id="DE: Crime+Investigation" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/945.png",Crime + Investigation
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=A%26E
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=CRIME+%2B+INVESTIGATION
 #EXTINF:-1 tvg-id="DE: Das Erste" group-title="Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1016.png",Das Erste
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=ARD+-+DAS+ERSTE
 #EXTINF:-1 tvg-id="DE: Deluxe Music" group-title="Musik" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1034.png",DELUXE MUSIC
