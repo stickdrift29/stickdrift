@@ -72,7 +72,7 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MDR
 #EXTINF:-1 tvg-id="DE: MTV" group-title="Musik" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1395.png",MTV
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MTV
 #EXTINF:-1 tvg-id="DE: N-TV" group-title="Dokumentation" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1004.png",N-TV
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=N%2DTV
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=NTV
 #EXTINF:-1 tvg-id="DE: N24 Doku" group-title="Dokumentation" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1012.png",N24 Doku
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=N24+DOKU
 #EXTINF:-1 tvg-id="DE: NDR Hamburg" group-title="Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1040.png",NDR
@@ -287,11 +287,13 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SPORTDIGITALL+
 
 #EXTINF:-1 tvg-id="DE: DAZN 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F7c93cbccfa99c23171441af6ba8f35cd22d9cf28.png&out=webp",DAZN 1
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DAZN+1
-#EXTINF:-1 tvg-id="DE: DAZN 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F7c93cbccfa99c23171441af6ba8f35cd22d9cf28.png&out=webp",DAZN 1 Nur Live
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DAZN+1+%5BLIVE+DURING+EVENTS+ONLY%5D
+#EXTINF:-1 tvg-id="DE: DAZN Sport 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F7c93cbccfa99c23171441af6ba8f35cd22d9cf28.png&out=webp",DAZN Sport 1
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DAZN+SPORT+1
 
 #EXTINF:-1 tvg-id="DE: DAZN 2" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F141a3d65b2f92f7e2a52c93d30a0a29f2184466d.png&out=webp",DAZN 2
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DAZN+2
+#EXTINF:-1 tvg-id="DE: DAZN Sport 2" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F141a3d65b2f92f7e2a52c93d30a0a29f2184466d.png&out=webp",DAZN Sport 2
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DAZN+SPORT+2
 
 #EXTINF:-1 tvg-id="DE: Amazon Prime Sports" group-title="Sport" tvg-logo="https://yt3.googleusercontent.com/sAk0re2sCyp0i4wlTbhA8baCQyM9_9VOZ3gJHEAW60zJ3mj88Uyfjosac9wy-yjN8G6HurDy4_4=s160-c-k-c0x00ffffff-no-rj",Amazon Prime Sports Nur Live
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=AMAZON+PRIME+SPORT+%5BNUR+LIVE+STTEAMING%5D
@@ -333,43 +335,6 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+SPORT+
 #EXTINF:-1 tvg-id="DE: Magenta Sport 18" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fe22b515f131270766c92da7eff2b3290933e6c04.png&out=webp",Magenta Sport 18
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+SPORT+18
 
-#EXTINF:-1 tvg-id="DE: FUSSBALL.TV 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 1
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+1
-#EXTINF:-1 tvg-id="DE: FUSSBALL.TVl 2" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F56c747d4ff3b94929a766910b6742e0cb44b5ccf.png&out=webp",Fussball.TV 2
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+2
-#EXTINF:-1 tvg-id="DE: FUSSBALL.TV 3" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F90c5d7bed96a72b8a1b1a6a1ca8cad2a228820de.png&out=webp",Fussball.TV 3
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+3
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 4" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 4
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+4
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 5" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 5
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+5
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 6" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 6
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+6
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 7" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 7
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+7
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 8" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 8
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+8
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 9" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 9
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+9
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 10" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 10
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+10
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 11" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 11
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+11
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 12" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 12
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+12
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 13" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 13
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+13
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 14" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 14
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+14
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 15" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 15
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+15
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 16" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 16
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+16
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 17" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 17
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+17
-#EXTINF:-1 tvg-id="DE: FUßBALL.TV 18" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 18
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+18
-
 
 
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/531_sky_logo_sky-sport-buli-uhd_tvguide.png",Sky Bundesliga
@@ -396,6 +361,31 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA+9
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga 10" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/998_sky_logo_sky-sport-buli-10-hd_tvguide.png",Sky Bundesliga 10
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA+10
+
+
+
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 1" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",DB LIGA 1 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+1
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 2" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",DB LIGA 2 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+2
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 2" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",DB LIGA 2 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA+2+%5BLIVE+DURING+EVENTS+ONLY%5D
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 3" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",DB LIGA 3 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+3
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 4" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",DB LIGA 4 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+4
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 5" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/123_sky_logo_skybundesligahd6_tvguide.png",DB LIGA 5 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+5
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 6" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/124_sky_logo_skybundesligahd7_tvguide.png",DB LIGA 6 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+6
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 7" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/125_sky_logo_skybundesligahd8_tvguide.png",DB LIGA 7 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+7
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 8" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/126_sky_logo_skybundesligahd9_tvguide.png",DB LIGA 8 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+8
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 9" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/127_sky_logo_skybundesligahd10_tvguide.png",DB LIGA 9 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+9
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 10" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/998_sky_logo_sky-sport-buli-10-hd_tvguide.png",DB LIGA 10 Achtung nur Test!
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+10
 
 
 #EXTINF:-1 tvg-id="DE: Sky Sport Top Event" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1014_sky_logo_sky-sport-top-event-hd_tvguide.png",Sky Sport Top Event
