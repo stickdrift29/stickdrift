@@ -364,7 +364,7 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA
 
 
 
-#EXTINF:-1 tvg-id="DE: Sky Bundesliga 1" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",DB LIGA 1 Achtung nur Test!
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 1" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",DB LIGA 1 [COLOR red]Achtung nur Test![/Color]
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+1
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga 2" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",DB LIGA 2 Achtung nur Test!
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DB+LIGA+2
