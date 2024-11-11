@@ -177,7 +177,7 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+CINEMA+ACT
 #EXTINF:-1 tvg-id="DE: Sky Cinema Classics" group-title="Filme" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1043_sky_logo_cinema-classics_hd_tvguide.png",Sky Cinema Classics
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+CINEMA+CLASSICS
 #EXTINF:-1 tvg-id="DE: Sky Cinema Family" group-title="Filme" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1206_sky_logo_cinema_family-hd_tvguide.png",Sky Cinema Family
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+CINEMA+Family
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+CINEMA+FAMILY
 #EXTINF:-1 tvg-id="DE: Sky Cinema Premiere" group-title="Filme" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/788_sky_logo_cinema-premieren-hd_tvguide.png",Sky Cinema Premieren
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+CINEMA+PREMIEREN
 #EXTINF:-1 tvg-id="DE: Sky Crime" group-title="Filme" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/855_sky_logo_crime-hd_tvguide.png",Sky Crime
