@@ -176,6 +176,8 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+ATLANTIC
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+CINEMA+ACTION
 #EXTINF:-1 tvg-id="DE: Sky Cinema Classics" group-title="Filme" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1043_sky_logo_cinema-classics_hd_tvguide.png",Sky Cinema Classics
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+CINEMA+CLASSICS
+#EXTINF:-1 tvg-id="DE: Sky Cinema Family" group-title="Filme" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1206_sky_logo_cinema_family-hd_tvguide.png",Sky Cinema Family
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+CINEMA+Family
 #EXTINF:-1 tvg-id="DE: Sky Cinema Premiere" group-title="Filme" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/788_sky_logo_cinema-premieren-hd_tvguide.png",Sky Cinema Premieren
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+CINEMA+PREMIEREN
 #EXTINF:-1 tvg-id="DE: Sky Crime" group-title="Filme" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/855_sky_logo_crime-hd_tvguide.png",Sky Crime
@@ -191,16 +193,8 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+1
 #EXTINF:-1 tvg-id="DE: Sky Replay" group-title="Sky" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/888_sky_logo_sky-replay-hd_tvguide.png",Sky Replay
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+REPLAY
 
-#EXTINF:-1 tvg-id="DE: Sky Popcorn Select 1" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Popcorn_Time_logo.png/180px-Popcorn_Time_logo.png",Sky Popcorn Select 1
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+POPCORN+SELECT+1
-#EXTINF:-1 tvg-id="DE: Sky Popcorn Select 2" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Popcorn_Time_logo.png/180px-Popcorn_Time_logo.png",Sky Popcorn Select 2
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+POPCORN+SELECT+2
-#EXTINF:-1 tvg-id="DE: Sky Popcorn Select 3" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Popcorn_Time_logo.png/180px-Popcorn_Time_logo.png",Sky Popcorn Select 3
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+POPCORN+SELECT+3
-#EXTINF:-1 tvg-id="DE: Sky Popcorn Select 4" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Popcorn_Time_logo.png/180px-Popcorn_Time_logo.png",Sky Popcorn Select 4
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+POPCORN+SELECT+4
-#EXTINF:-1 tvg-id="DE: Sky Popcorn Select 5" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Popcorn_Time_logo.png/180px-Popcorn_Time_logo.png",Sky Popcorn Select 5
-plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+POPCORN+SELECT+5
+#EXTINF:-1 tvg-id="DE: Sky Box Thriller" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/68/Sky_Cinema_Thriller_HD_2020_DE_Logo.png",Sky Box Thriller
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SELECT
 #EXTINF:-1 tvg-id="DE: Sky Select" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sky_Select_-_Logo_2016.svg/768px-Sky_Select_-_Logo_2016.svg.png",Sky Select
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SELECT
 #EXTINF:-1 tvg-id="DE: Sky Select 1" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sky_Select_-_Logo_2016.svg/768px-Sky_Select_-_Logo_2016.svg.png",Sky Select 1
@@ -223,6 +217,17 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SELECT+8
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SELECT+9
 #EXTINF:-1 tvg-id="DE: Sky Select 10" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sky_Select_-_Logo_2016.svg/768px-Sky_Select_-_Logo_2016.svg.png",Sky Select 10
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SELECT+10
+#EXTINF:-1 tvg-id="DE: Sky Popcorn Select 1" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Popcorn_Time_logo.png/180px-Popcorn_Time_logo.png",Sky Popcorn Select 1
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+POPCORN+SELECT+1
+#EXTINF:-1 tvg-id="DE: Sky Popcorn Select 2" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Popcorn_Time_logo.png/180px-Popcorn_Time_logo.png",Sky Popcorn Select 2
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+POPCORN+SELECT+2
+#EXTINF:-1 tvg-id="DE: Sky Popcorn Select 3" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Popcorn_Time_logo.png/180px-Popcorn_Time_logo.png",Sky Popcorn Select 3
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+POPCORN+SELECT+3
+#EXTINF:-1 tvg-id="DE: Sky Popcorn Select 4" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Popcorn_Time_logo.png/180px-Popcorn_Time_logo.png",Sky Popcorn Select 4
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+POPCORN+SELECT+4
+#EXTINF:-1 tvg-id="DE: Sky Popcorn Select 5" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Popcorn_Time_logo.png/180px-Popcorn_Time_logo.png",Sky Popcorn Select 5
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+POPCORN+SELECT+5
+
 #EXTINF:-1 tvg-id="DE: Stern Filme 1" group-title="Filme" tvg-logo="",Stern Filme 1
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=STERN+FILME+1
 #EXTINF:-1 tvg-id="DE: Stern Filme 2" group-title="Filme" tvg-logo="",Stern Filme 2
@@ -270,7 +275,7 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RAKUTEN+Spotli
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SONY+CHANNEL
 #EXTINF:-1 tvg-id="DE: Spiegel Geschichte" group-title="Dokumentation" tvg-logo="http://epggw.a1.net/img/station/lightbg/100x100/486.png",Spiegel Geschichte
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SPIEGEL+GESCHICHTE
-#EXTINF:-1 tvg-id="DE: Spiegel TV Wissen" group-title="Dokumentation" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1246.png",Spiegel TV Wissen
+#EXTINF:-1 tvg-id="DE: Curiosity" group-title="Dokumentation" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1246.png",Curiosity
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SPIEGEL+WISSEN
 
 #EXTINF:-1 tvg-id="DE: ESPORTS1" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/ea/Esports1_ox2_W1000xh0.png",ESports 1
@@ -334,6 +339,25 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+SPORT+
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+SPORT+17
 #EXTINF:-1 tvg-id="DE: Magenta Sport 18" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fe22b515f131270766c92da7eff2b3290933e6c04.png&out=webp",Magenta Sport 18
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+SPORT+18
+
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 1" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 1
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+1
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 2" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 2
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+2
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 3" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 3
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+3
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 4" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 4
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+4
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 5" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 5
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+5
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 6" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 6
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+6
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 7" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 7
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+7
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 8" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 8
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+8
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 9" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 9
+plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+9
 
 
 
