@@ -1,0 +1,44 @@
+{
+    "name": "RTL+",
+    "plugin": "plugin.video.rtlgroup.de",
+    "priority": 200,
+    "language": "de",
+    "is_resolvable": "true",
+    "assert": {
+        "play_movie": [
+            "title",
+            "year"
+        ],
+        "play_episode": [
+            "showname",
+            "season",
+            "episode"
+        ],
+        "search_movie": [
+            "title"
+        ],
+        "search_episode": [
+            "showname"
+        ]
+    },
+    "play_movie": [
+        "plugin://plugin.video.rtlgroup.de/?mode=listSearch&TERM={title}",
+        {
+            "title": "{title}",
+            "year": "{year}"
+        }
+    ],
+    "play_episode": [
+        "plugin://plugin.video.rtlgroup.de/?mode=listSearch&TERM={showname}",
+        {
+            "title": "{showname}"
+        },
+        {
+            "position": "{season}"
+        },
+        {
+            "position": "{episode}"
+        }
+    ],
+    "make_playlist": "true"
+}

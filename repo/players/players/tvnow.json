@@ -1,0 +1,33 @@
+{
+    "name"              : "TVNOW",
+    "plugin"            : "plugin.video.tvnow.de",
+    "assert"            :{
+      "play_movie":       ["title", "year"],
+      "play_episode":     ["originaltitle", "season", "episode"],
+      "search_movie":     ["title"],
+      "search_episode":   ["originaltitle"]  
+    },
+    "play_episode"  :[
+      "plugin://plugin.video.tvnow.de/?action=search",
+      {"keyboard": "{clearname}"},
+      {"label": "{clearname}"},
+      {"label": "(?i).*Staffel {season}.*"},
+      {"label": "(?i).*Folge {episode}.*"}
+    ],
+    "play_movie"  :[
+      "plugin://plugin.video.tvnow.de/?action=search",
+      {"keyboard": "{clearname}"},
+      {"label": "{clearname}"},
+      {"year": "{year}"}
+    ],
+    "search_episode"	: [
+      "plugin://plugin.video.tvnow.de/?action=search",
+      {"keyboard": "{clearname}"},
+      {"dialog": "Auto"}
+       ],
+    "search_movie"		: [
+      "plugin://plugin.video.tvnow.de/?action=search",
+      {"keyboard": "{clearname}"},
+      {"dialog": "Auto"}
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "name" : "Scraper",
+    "plugin" : "script.module.scraper",
+    "priority" : 1,
+    "is_resolvable" : "true",
+    "assert": {"play_movie":["tmdb"], "play_episode": ["tmdb", "season", "episode"]},
+    "play_movie" : "plugin://script.module.scraper/?id={tmdb}",
+	"play_episode" : "plugin://script.module.scraper/?id={tmdb}&season={season}&episode={episode}",
+	"make_playlist": "true"
+}

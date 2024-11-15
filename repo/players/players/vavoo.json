@@ -1,0 +1,11 @@
+{
+    "name" : "VAVOO.TO",
+    "api_language"      : "de-DE",
+    "plugin" : "plugin.video.vavooto",
+    "priority" : 201,
+    "is_resolvable" : "true",
+    "assert": {"play_movie":["tmdb"], "play_episode": ["tmdb", "season", "episode"]},
+    "play_movie" : "plugin://plugin.video.vavooto/?action=get&id=movie.{tmdb}",
+	"play_episode" : "plugin://plugin.video.vavooto/?action=get&id=series.{tmdb}&season={season}&episode={episode}",
+	"make_playlist": "true"
+}
