@@ -12,7 +12,7 @@ urllib3.disable_warnings()
 
 def showFailedNotification(msg="Keine Streams gefunden"):
 	tools.logger.info(msg)
-	xbmc.executebuiltin("Notification(%s,%s,%s,%s)" % (" Scraper",msg,5000,tools.addonInfo("icon")))
+	xbmc.executebuiltin("Notification(%s,%s,%s,%s)" % ("Scraper",msg,5000,tools.addonInfo("icon")))
 	o = xbmcgui.ListItem(xbmc.getInfoLabel("ListItem.Label"))
 	xbmcplugin.setResolvedUrl(int(sys.argv[1]), False, o)
 
@@ -108,7 +108,7 @@ def searchGlobal(sSearchText, searchtitles, isSerie, _type, _id, season, episode
 			if isSerie: aPlugins.append({'id': w, 'name': w.capitalize()})
 			else:
 				if w != "serienstream": aPlugins.append({'id': w, 'name': w.capitalize()})
-	dialog.create(" Scraper Suche gestartet ...", "Suche ...")
+	dialog.create("Scraper Suche gestartet ...", "Suche ...")
 	for count, pluginEntry in enumerate(aPlugins):
 		t = threading.Thread(target=_pluginSearch, args=(pluginEntry, sSearchText, isSerie, oGui), name=pluginEntry["name"])
 		threads += [t]

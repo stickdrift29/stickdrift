@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-import sys, xbmcaddon
+import sys, xbmcaddon, xbmcplugin
+from xbmcgui import ListItem
 from resources.lib import tools
 
 def main():
@@ -25,7 +26,11 @@ def main():
 		xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
 		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
 		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
-	else: xbmcaddon.Addon().openSettings()
+	else: 
+		xbmcplugin.setContent(int(sys.argv[1]), "files")
+		xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?action=true" %sys.argv[0], ListItem("TMDB-HELPER einrichten"), False)
+		#xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?repair=true" %sys.argv[0], ListItem("xStream reparieren"), False)
+		xbmcplugin.endOfDirectory(int(sys.argv[1]), succeeded=True, cacheToDisc=True)
 
 if __name__ == '__main__':
     sys.exit(main())

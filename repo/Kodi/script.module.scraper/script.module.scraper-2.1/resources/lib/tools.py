@@ -17,7 +17,7 @@ tmdburl = "https://api.themoviedb.org/3/"
 tmdbimg = "https://image.tmdb.org/t/p/%s%s"
 translatePath = xbmc.translatePath if six.PY2 else xbmcvfs.translatePath
 
-def validater():
+class validater():
 	pass
 
 def py2dec(msg):
@@ -74,7 +74,7 @@ def repair(force=False):
 		'  <setting default="true" id="auto_try_next_stream" type="bool" subsetting="true" visible="eq(-1,0)" label="Automatisch nächsten ähnlichen Stream versuchen"/>',
 		' </category>',
 		' <category label="VAVOO">',
-		'  <setting default="true" id="vavoo" label="Vavoo" type="bool"/>',
+		'  <setting default="false" id="vavoo" label="Vavoo" type="bool"/>',
 		' </category>',
 		' <category label="Scraper">']
 	firststart = False
@@ -101,7 +101,7 @@ def repair(force=False):
 			with open(xstream) as k: a = k.readlines()
 			m = []
 			for b in a:
-				if "exec(zlib.decompress(base64.b64decode('eJzVm11v2zYUhu/7K4IAhm2gpu2sy9oCAextGDYUAwY03cWGIaCkY4sRRWr8kO3++h1Jji07bWPRi6jcBDCll+/DI4o8JBX7m4FU3/x9mTAhTR7I9WzJ8pQyTkKZXr6+zEYp3YAaTd+9nc5WEJAIsDRZ0YRxYGK2UAACTFVs6BqUnE6mk1lIlWbJtpJERiywjEd6VlZd1YGFK+BmJq3hUiZVqWAh3NtoCdfXsw1eKe83yeU/r+wvbMuqYso5qFkszUN1eHl+cHm2v8IWF+sgDWkUSUHmxd/BkCzBfARjmFgO+hoUA6GNApoSi7/6QyYubBma96++INbfFL/u94eNVBnVulI9ibrgLE1BaWMDqKFWoXmS9bH6FNYDVQNWis+SSxvVOOencR4qT2HcKfZ8TytWUvFmHpWiWQxqLg1jcD5fG3GOYHGhLN6ITcJ4hHEy6GfcLpkgmZJLhR38UxZRAx9wiLnNf5Tr/vDmZop3X+iNJrBmZoC+wL8i3g8ezXXEVVjpyIp9pipy9nXWV/Lz1KOz5I6y81p8lti5vcUk5PCI3WSFyr1bnaUuxOdoTwuwDhXLDEllZDmQdTXFuWimLqIrF9F3LqI3LqLvXUTXLqIfXERvXUTvnB7uxEWFhTQr5tHm0tFp2qOujznxvdXmjQDVdBbRFt2EiyalRrGGk2SlFLC2TpgyhSU9TZizCCQpk8Gc5lI+oVKQSc2MVJv6WDApBN/ONLZ33wmJVWCmEcvliiqjixzlwCvDlQZ8UnxQpSKFq6ApFOmIAmOVKI2KrOwnKaI/mWYB48xsBv2PG42pGPmV6gqgp4f9XqnFJpWVaaAqjO8ipsr0Rklp7jJq4hujqNAck5o/8NdAalKUknvJBPa/DEJG+fvxOMa4jssm6jE2oYfwCFwW3GFGRBvXVeRphXC8r6NWMcb8QY3B0UYPdsC9vsYVHqGA0RZyTTTjucRXRBnKcYBPA4pz2f/4UMoO0Azm9w++CTzFIcTOuKfwHIQCpnUEzpZx+3HXhipUay/GxI8zmnoxPh54qGISLRNov7N9CSXXvmFSpCCRSNpHCBRlIgIate9sOmBOfLkvFPxrQYTtP3F0pgnxZB6wIgn3YPoXsFsvxuQzMEOupq2bx8C5JCsA0f5EU46tmGZDm9a1xQaXiU2JVDFttfE1gv3Wkjf77U6eX/9Wk40aQH0xTapFmFeS0ZRM2gT46nq9PYRyzzKUaQoiUrknZ2F8tVmsjaA+vbPMo3vg0Tv06J20O+Qfu29E4tFeen3Z0N16tLdZqznekbu38RW9V7TVPO/QXbea4hx5+2z3wqO31xdd+33RMZ+78uju60XPn+OR45h9WhK9Oz16rrYzvWAcBkenM73+eHueWKxrdSyVCa3R40cbWCSmOu4a3W6PqXt0j05/iiNJXCcZBs+4TjsftLZ13Xni3aZyV0kf9uU6zIcLaOBd5Ts8OuwgZbUJMdp+bTB69HUa+Xl+OyfrlHcd+KXxvjDch/4wmrwE5NrXcC8Ft6O0CqLy8L9zYOX5gck7x5WzrPrfgc6RhRyoAPUsXP8BSHOmCQ==')))" in b:
+				if "exec(zlib.decompress" in b:
 					m.append("def run():\n\tparseUrl()")
 				else: 
 					if not "search_dir()" in b: m.append(b)
@@ -120,11 +120,11 @@ def repair(force=False):
 					with open(settingsxml, 'w', encoding='utf-8') as f: f.write(new_xml)
 				else:
 					with open(settingsxml, 'w') as f: f.write(new_xml.encode('utf8'))
-	#if firststart:
-	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
-	#	xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
-	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
-	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
+	if firststart:
+		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
+		xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
+		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
+		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
 
 def handle():
 	return int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else -1
@@ -283,7 +283,7 @@ class cParser:
 	def parseSingleResult(sHtmlContent, pattern):
 		aMatches = None
 		if sHtmlContent:
-			aMatches = re.compile(pattern).findall(sHtmlContent)
+			aMatches = re.findall(pattern, sHtmlContent, flags=re.S | re.M)
 			if len(aMatches) == 1:
 				aMatches[0] = cParser.replaceSpecialCharacters(aMatches[0])
 				return True, aMatches[0]
@@ -291,6 +291,7 @@ class cParser:
 
 	@staticmethod
 	def replaceSpecialCharacters(s):
+		# Umlaute Unicode konvertieren
 		for t in (('\\/', '/'), ('&amp;', '&'), ('\\u00c4', 'Ä'), ('\\u00e4', 'ä'),
 			('\\u00d6', 'Ö'), ('\\u00f6', 'ö'), ('\\u00dc', 'Ü'), ('\\u00fc', 'ü'),
 			('\\u00df', 'ß'), ('\\u2013', '-'), ('\\u00b2', '²'), ('\\u00b3', '³'),
@@ -298,9 +299,20 @@ class cParser:
 			('\\u00c9', 'É'), ('\\u2026', '...'), ('\\u202fh', 'h'), ('\\u2019', '’'),
 			('\\u0308', '̈'), ('\\u00e8', 'è'), ('#038;', ''), ('\\u00f8', 'ø'),
 			('／', '/'), ('\\u00e1', 'á'), ('&#8211;', '-'), ('&#8220;', '“'), ('&#8222;', '„'),
-			('&#8217;', '’'), ('&#8230;', '…'), ('&#039;', "'")):
+			('&#8217;', '’'), ('&#8230;', '…'), ('\\u00bc', '¼'), ('\\u00bd', '½'), ('\\u00be', '¾'),
+			('\\u2153', '⅓'), ('\\u002A', '*')):
 			try:
 				s = s.replace(*t)
+			except:
+				pass
+		# Umlaute HTML konvertieren
+		for h in (('\\/', '/'), ('&#x26;', '&'), ('&#039;', "'"), ("&#39;", "'"),
+			('&#xC4;', 'Ä'), ('&#xE4;', 'ä'), ('&#xD6;', 'Ö'), ('&#xF6;', 'ö'),
+			('&#xDC;', 'Ü'), ('&#xFC;', 'ü'), ('&#xDF;', 'ß') , ('&#xB2;', '²'),
+			('&#xDC;', '³'), ('&#xBC;', '¼'), ('&#xBD;', '½'), ('&#xBE;', '¾'),
+			('&#8531;', '⅓'), ('&#8727;', '*')):
+			try:
+				s = s.replace(*h)
 			except:
 				pass
 		try:
@@ -359,6 +371,10 @@ class cParser:
 		return quote(sUrl, safe)
 
 	@staticmethod
+	def quote(sUrl):
+		return quote(sUrl)
+
+	@staticmethod
 	def unquotePlus(sUrl):
 		return unquote_plus(sUrl)
 
@@ -371,7 +387,6 @@ class cParser:
 		import base64
 		b = base64.b64decode(text).decode('utf-8')
 		return b
-
 
 class logger:
 	@staticmethod
@@ -431,7 +446,7 @@ class cUtil:
 		return p.sub(sReplace, sValue)
 
 	@staticmethod
-	def unescape(text):
+	def unescape(text): #Todo hier werden Fehler angezeigt
 		def fixup(m):
 			text = m.group(0)
 			if not text.endswith(';'): text += ';'
@@ -489,3 +504,13 @@ class cUtil:
 		key = fd[0:key_size]
 		iv = fd[key_size:key_size + iv_size]
 		return key, iv
+
+def valid_email(email): #ToDo: Funktion in Settings / Konten aktivieren
+	# Email Muster
+	pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+
+	# Überprüfen der EMail-Adresse mit dem Muster
+	if re.match(pattern, email):
+		return True
+	else:
+		return False

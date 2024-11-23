@@ -110,11 +110,7 @@ class cGui:
 
 	@staticmethod
 	def showNofication(sTitle, iSeconds=0):
-		if iSeconds == 0:
-			iSeconds = 1000
-		else:
-			iSeconds = iSeconds * 1000
-		xbmc.executebuiltin("Notification(%s,%s,%s,%s)" % (cConfig().getLocalizedString(30308), (cConfig().getLocalizedString(30309) % str(sTitle)), iSeconds, common.addon.getAddonInfo('icon')))
+		pass
 
 	@staticmethod
 	def showError(sTitle, sDescription, iSeconds=0):
@@ -126,11 +122,7 @@ class cGui:
 
 	@staticmethod
 	def showInfo(sTitle='xStream', sDescription=cConfig().getLocalizedString(30253), iSeconds=0):
-		if iSeconds == 0:
-			iSeconds = 1000
-		else:
-			iSeconds = iSeconds * 1000
-		xbmc.executebuiltin("Notification(%s,%s,%s,%s)" % (str(sTitle), (str(sDescription)), iSeconds, common.addon.getAddonInfo('icon')))
+		pass
 
 	@staticmethod
 	def showLanguage(sTitle='xStream', sDescription=cConfig().getLocalizedString(30403), iSeconds=0):
