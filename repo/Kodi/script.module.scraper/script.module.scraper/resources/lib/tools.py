@@ -74,7 +74,7 @@ def repair(force=False):
 		'  <setting default="true" id="auto_try_next_stream" type="bool" subsetting="true" visible="eq(-1,0)" label="Automatisch nächsten ähnlichen Stream versuchen"/>',
 		' </category>',
 		' <category label="VAVOO">',
-		'  <setting default="false" id="vavoo" label="Vavoo" type="bool"/>',
+		'  <setting default="true" id="vavoo" label="Vavoo" type="bool"/>',
 		' </category>',
 		' <category label="Scraper">']
 	firststart = False
@@ -120,11 +120,11 @@ def repair(force=False):
 					with open(settingsxml, 'w', encoding='utf-8') as f: f.write(new_xml)
 				else:
 					with open(settingsxml, 'w') as f: f.write(new_xml.encode('utf8'))
-	if firststart:
-		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
-		xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
-		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
-		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
+	#if firststart:
+	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
+	#	xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
+	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
+	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
 
 def handle():
 	return int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else -1

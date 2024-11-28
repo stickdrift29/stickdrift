@@ -31,15 +31,4 @@ class cConfig:
 		return self.__aLanguage(sCode)
 		
 	def isBlockedHoster(self, domain, checkResolver=True ):
-		domain = urlparse(domain).path if urlparse(domain).hostname == None else urlparse(domain).hostname
-		hostblockDict = ['flashx','streamlare','evoload', 'hd-stream', 'vivo', 'Vidoza', 'VOE']  # permanenter Block
-		blockedHoster = cConfig().getSetting('blockedHoster').split(',')  # aus setting.xml blockieren
-		if len(blockedHoster) <= 1: blockedHoster = cConfig().getSetting('blockedHoster').split()
-		for i in blockedHoster: hostblockDict.append(i.lower())
-		for i in hostblockDict:
-			if i in domain.lower() or i.split('.')[0] in domain.lower(): return True, domain
-		if checkResolver:   # Überprüfung in resolveUrl
-			if resolver.relevant_resolvers(domain=domain) == []:
-				log('[xStream] -> [isblockedHoster]: In resolveUrl no domain for url: %s' % domain, LOGWARNING)
-				return True, domain	# Domain nicht in resolveUrl gefunden
 		return False, domain
