@@ -128,44 +128,31 @@ class EncryptedLoader(types.ModuleType):
 		secureexec = createsecureexec()
 		secureexec(decryptedcode)
 		
+def ok(heading, line1, line2="", line3=""):
+	if six.PY3:return xbmcgui.Dialog().ok(heading, line1+"\n"+line2+"\n"+line3)
+	else:return xbmcgui.Dialog().ok(heading, line1,line2,line3)
 
 def decrypt():
 	for root, dir, files in os.walk(addonPath):
-		try:
-			for file in files:
-				if file.endswith(".py"):
-					name = os.path.join(root, file)
-					with open(name) as k: a = k.read().split("'")[1]
-					b = zlib.decompress(base64.b64decode(zlib.decompress(base64.b64decode(a))))
-					with open(name, "wb") as k: k.write(b)
-		except: pass
-	for root, dir, files in os.walk(addonPath):
-		try:
-			for file in files:
-				if file.endswith(".py"):
-					name = os.path.join(root, file)
-					with open(name) as k: a = k.readlines()
-					for x in a:
-						if "encryptedcode =" in x:
-							p = x.strip("encryptedcode = ").strip("\n")
-							with open(name, "w") as k: k.write(p)
-		except: pass
-	for root, dir, files in os.walk(addonPath):
-		try:
-			for file in files:
-				if file.endswith(".py"):
-					name = os.path.join(root, file)
-					with open(name) as k: encryptedcode = k.read()
-					h = part5(encryptedcode)
-					with open(name, "w") as k: 
-						k.write(h)
-		except: pass
+		for file in files:
+			if file.endswith(".py"):
+				name = os.path.join(root, file)
+				try:
+					i = 0
+					while i < 51:
+						with open(name) as k: a = k.read()
+						decoded = a.replace("_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));exec((_)(b", "").replace("))", "").strip("exec((_)(b")
+						b = zlib.decompress(base64.b64decode(decoded[::-1]))
+						with open(name, "wb") as k: k.write(b)
+						i+=1
+				except:
+					pass
 
 def repair(force=False):
 	new_xml = [
 		'<settings>',
 		' <category label="Einrichten">',
-		'  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.scraper/?action=true)"/>',
+		'  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.xstreamscraper/?action=true)"/>',
 		#'  <setting label="xStream reparieren" type="action" action="RunPlugin(plugin://script.module.scraper/?repair=true)"/>',
 		' </category>',
 		' <category label="VIDEO">',
@@ -211,10 +198,10 @@ def repair(force=False):
 				else:
 					with open(settingsxml, 'w') as f: f.write(new_xml.encode('utf8'))
 	#if firststart:
-	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
-	#	xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
-	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
-	#	xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
+		#xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
+		#xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
+		#xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
+		#xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
 
 def handle():
 	return int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else -1
@@ -228,10 +215,6 @@ def selectDialog(list, heading=None, multiselect = False):
 def yesno(heading, line1, line2="", line3="", nolabel="", yeslabel=""):
 	if six.PY3:return xbmcgui.Dialog().yesno(heading, line1+"\n"+line2+"\n"+line3, nolabel, yeslabel)
 	else:return xbmcgui.Dialog().yesno(heading, line1,line2,line3, nolabel, yeslabel)
-	
-def ok(heading, line1, line2="", line3=""):
-	if six.PY3:return xbmcgui.Dialog().ok(heading, line1+"\n"+line2+"\n"+line3)
-	else:return xbmcgui.Dialog().ok(heading, line1,line2,line3)
 
 def get_data(params):
 	from resources.lib.handler.requestHandler import cRequestHandler
