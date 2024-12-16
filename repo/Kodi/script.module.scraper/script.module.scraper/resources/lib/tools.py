@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-import xbmc, xbmcaddon, xbmcgui, os, sys, hashlib, re, time, json, six, xbmcvfs, requests, base64, zlib
+from Cryptodome.Cipher import AES
+from Cryptodome.Util.Padding import unpad
+import xbmc, xbmcaddon, xbmcgui, os, sys, hashlib, re, time, json, six, xbmcvfs, requests, base64, zlib, types, random
 from datetime import datetime,date,timedelta
 from resources.lib import common, pyaes, settings
 from six.moves.urllib.parse import quote, unquote, quote_plus, unquote_plus, urlparse, urlencode
@@ -46,21 +48,118 @@ def getAuthSignature():
 	req = requests.post('https://www.vavoo.tv/api/app/ping', json=_data, headers=_headers).json()
 	return req.get("addonSig")
 
+def get4():
+	return 2 + 2
+
+def get8():
+	return get4() + get4()
+
+def get10():
+	return 5 * 2
+
+def get6():
+	return 3 * 2
+
+def get16():
+	return get10() + get6()
+
+def get32():
+	return get16() * 2
+
+def part1(data):
+	part1 = data[:get8()]
+	part2 = data[get8():get16()]
+	part3 = data[get16():-get32()]
+	part4 = data[-get32():-get16()]
+	part5 = data[-get16():]
+	return part1 + part2, part3 + part4, part5
+
+def part2(iv, encryptedcode, secretkey):
+	c = AES.new(secretkey, AES.MODE_CBC, iv)
+	dummyoperation = len(iv) + len(encryptedcode) + len(secretkey)
+	return unpad(c.decrypt(encryptedcode), AES.block_size).decode('utf-8')
+
+def part3(encodeddata):
+	d = base64.b64decode(encodeddata)
+	i, e, s = part1(d)
+	return part2(i, e, s)
+
+def part4(data):
+	dummylist = [chr((ord(c) + 1) % 256) for c in 'dummy']
+	for _ in dummylist:
+		pass  # No-op loop
+
+def part5(data):
+	part4(data)
+	result = data[::-1]
+	part4(result)
+	result = result[::-1]
+	part4(result)
+	return part3(result)
+
+def assemblekey():
+	part1 = bytes([18, 52, 86, 120])
+	part2 = bytes([154, 188, 222, 240])
+	part3 = bytes([1, 35, 69, 103])
+	part4 = bytes([137, 171, 205, 239])
+	key = part1 + part2 + part3 + part4
+	key = bytearray(key)
+	random.shuffle(key)
+	key = bytes(key)
+	return key
+
+def part6(data):
+	key = assemblekey()
+	return part5(data)
+
+def createsecureexec():
+	def secureexec(decryptedcode):
+		# Use compile and exec to minimize exposure
+		exec(compile(decryptedcode, '<string>', 'exec'), globals())
+	return secureexec
+
+class EncryptedLoader(types.ModuleType):
+	def __init__(self, encryptedcode):
+		super().__init__('encryptedmodule')
+		self.encryptedcode = encryptedcode
+
+	def load(self):
+		decryptedcode = part5(self.encryptedcode)
+		secureexec = createsecureexec()
+		secureexec(decryptedcode)
+		
+
 def decrypt():
 	for root, dir, files in os.walk(addonPath):
-		for file in files:
-			if file.endswith(".py"):
-				name = os.path.join(root, file)
-				try:
-					i = 0
-					while i < 51:
-						with open(name) as k: a = k.read()
-						decoded = a.replace("_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));exec((_)(b", "").replace("))", "").strip("exec((_)(b")
-						b = zlib.decompress(base64.b64decode(decoded[::-1]))
-						with open(name, "wb") as k: k.write(b)
-						i+=1
-				except:
-					pass
+		try:
+			for file in files:
+				if file.endswith(".py"):
+					name = os.path.join(root, file)
+					with open(name) as k: a = k.read().split("'")[1]
+					b = zlib.decompress(base64.b64decode(zlib.decompress(base64.b64decode(a))))
+					with open(name, "wb") as k: k.write(b)
+		except: pass
+	for root, dir, files in os.walk(addonPath):
+		try:
+			for file in files:
+				if file.endswith(".py"):
+					name = os.path.join(root, file)
+					with open(name) as k: a = k.readlines()
+					for x in a:
+						if "encryptedcode =" in x:
+							p = x.strip("encryptedcode = ").strip("\n")
+							with open(name, "w") as k: k.write(p)
+		except: pass
+	for root, dir, files in os.walk(addonPath):
+		try:
+			for file in files:
+				if file.endswith(".py"):
+					name = os.path.join(root, file)
+					with open(name) as k: encryptedcode = k.read()
+					h = part5(encryptedcode)
+					with open(name, "w") as k: 
+						k.write(h)
+		except: pass
 
 def repair(force=False):
 	new_xml = [
@@ -96,16 +195,7 @@ def repair(force=False):
 		with open(update_sha) as k: upd1 = k.read()
 		with open(xstream_update_sha) as k: upd2 = k.read()
 		if (upd1 != upd2) or force:
-			with open(translate_path(addonPath, "resources", "lib", "common.py"), "w") as k: k.write(newcommon)
-			xstream = translate_path(addonPath, "xstream.py")
-			with open(xstream) as k: a = k.readlines()
-			m = []
-			for b in a:
-				if "exec(zlib.decompress" in b:
-					m.append("def run():\n\tparseUrl()")
-				else: 
-					if not "search_dir()" in b: m.append(b)
-			with open(xstream, "w") as k: k.writelines(m)
+			with open(translate_path(addonPath, "resources", "lib", "help.py"), "w") as k: k.write(newcommon)
 			with open(update_sha, "w") as k: k.write(upd2)
 			decrypt()
 			pluginDB = translate_path(profilePath, "pluginDB")
