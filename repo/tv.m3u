@@ -295,16 +295,31 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DAZN+1
 #EXTINF:-1 tvg-id="DE: DAZN 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F7c93cbccfa99c23171441af6ba8f35cd22d9cf28.png&out=webp",DAZN Sport 1
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DAZN+SPORT+1
 
+#EXTINF:-1 tvg-id="DE: DAZN 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F7c93cbccfa99c23171441af6ba8f35cd22d9cf28.png&out=webp",DAZN 1 Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22DAZN1+DE%22%2C+%22channel_id%22%3A+%22426%22%7D%5D%7D
+#EXTINF:-1 tvg-id="DE: DAZN 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F7c93cbccfa99c23171441af6ba8f35cd22d9cf28.png&out=webp",DAZN1 Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-426.php
+
+
 #EXTINF:-1 tvg-id="DE: DAZN 2" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F141a3d65b2f92f7e2a52c93d30a0a29f2184466d.png&out=webp",DAZN 2
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DAZN+2
 #EXTINF:-1 tvg-id="DE: DAZN 2" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F141a3d65b2f92f7e2a52c93d30a0a29f2184466d.png&out=webp",DAZN Sport 2
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=DAZN+SPORT+2
+
+#EXTINF:-1 tvg-id="DE: DAZN 2" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F141a3d65b2f92f7e2a52c93d30a0a29f2184466d.png&out=webp",DAZN 2 Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22DAZN2+DE%22%2C+%22channel_id%22%3A+%22427%22%7D%5D%7D
+#EXTINF:-1 tvg-id="DE: DAZN 2" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F141a3d65b2f92f7e2a52c93d30a0a29f2184466d.png&out=webp",DAZN 2 Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-427.php
 
 #EXTINF:-1 tvg-id="DE: Amazon Prime Sports" group-title="Sport" tvg-logo="https://yt3.googleusercontent.com/sAk0re2sCyp0i4wlTbhA8baCQyM9_9VOZ3gJHEAW60zJ3mj88Uyfjosac9wy-yjN8G6HurDy4_4=s160-c-k-c0x00ffffff-no-rj",Amazon Prime Sports Nur Live
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=AMAZON+PRIME+SPORT+%5BNUR+LIVE+STTEAMING%5D
 
 #EXTINF:-1 tvg-id="DE: Magenta Sport 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F98154b022b1cd559da555d70d6343b5d8cfb13ce.png&out=webp",Magenta Sport 1
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+SPORT+1
+
+#EXTINF:-1 tvg-id="DE: Magenta Sport 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F98154b022b1cd559da555d70d6343b5d8cfb13ce.png&out=webp",Magenta Sport 1 Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22Magenta+Sport%22%2C+%22channel_id%22%3A+%2211%22%7D%5D%7D
+
 #EXTINF:-1 tvg-id="DE: Magenta Sport 2" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F379fa8f587a3c004919330145893257962381e58.png&out=webp",Magenta Sport 2
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=MAGENTA+SPORT+2
 #EXTINF:-1 tvg-id="DE: Magenta Sport 3" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F18dcf61dc1f328e6383f3d01817a18aa22948d5c.png&out=webp",Magenta Sport 3
@@ -359,20 +374,37 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+E
 #EXTINF:-1 tvg-id="DE: RTL+ Sport Event 9" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 9
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+9
 
-
+#EXTINF:-1 tvg-id="" group-title="Sport" tvg-logo="https://www.sky.at/static/img/senderlogos_dark/492_sky_logo_skysportaustria-hd_tvguide.png",Sky Sport Austria 1 Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-559.php
 
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/531_sky_logo_sky-sport-buli-uhd_tvguide.png",Sky Bundesliga
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga 1" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",Sky Bundesliga 1
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA+1
+
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 1" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",Sky Bundesliga 1 Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-558.php
+
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga 2" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA+2
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga 2" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2 nur live
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA+2+%5BLIVE+DURING+EVENTS+ONLY%5D
+
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 2" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2 Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22Sky+Sport+Bundesliga+2%22%2C+%22channel_id%22%3A+%229%22%7D%5D%7D
+
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga 3" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",Sky Bundesliga 3
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA+3
+
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 3" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",Sky Bundesliga 3 Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22Sky+Sport+Bundesliga+3%22%2C+%22channel_id%22%3A+%228%22%7D%5D%7D
+
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga 4" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Bundesliga 4
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA+4
+
+#EXTINF:-1 tvg-id="DE: Sky Bundesliga 4" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Bundesliga 4 Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22Sky+Sport+Bundesliga+4%22%2C+%22channel_id%22%3A+%2210%22%7D%5D%7D
+
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga 5" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/123_sky_logo_skybundesligahd6_tvguide.png",Sky Bundesliga 5
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+BUNDESLIGA+5
 #EXTINF:-1 tvg-id="DE: Sky Bundesliga 6" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/124_sky_logo_skybundesligahd7_tvguide.png",Sky Bundesliga 6
@@ -418,6 +450,9 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SPORT+TOP+
 #EXTINF:-1 tvg-id="DE: Sky Sport Top Event" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1014_sky_logo_sky-sport-top-event-hd_tvguide.png",Sky Sport Top Event Nur Live
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SPORT+TOP+EVENT+%5BLIVE+DURING+EVENTS+ONLY%5D
 
+#EXTINF:-1 tvg-id="DE: Sky Sport Top Event" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Sport top event Daddylive Bitte ausprobieren!
+plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-556.php
+
 #EXTINF:-1 tvg-id="DE: Sky Sport 1" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/130_sky_logo_skysporthd3_tvguide.png",Sky Sport 1
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SPORT+1
 #EXTINF:-1 tvg-id="DE: Sky Sport 2" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/131_sky_logo_skysporthd4_tvguide.png",Sky Sport 2
@@ -446,6 +481,10 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SPORT+GOLF
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SPORT+TENNIS
 #EXTINF:-1 tvg-id="DE: Sky Sport Mix" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1005_sky_logo_sky-sport-mix-hd_tvguide.png",Sky Sport Mix
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY+SPORT+MIX
+
+#EXTINF:-1 tvg-id="DE: Sky Sport Mix" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Sport mix Daddylive
+plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-557.php
+
 #EXTINF:-1 tvg-id="DE: Sky Sport Premier League" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1000_sky_logo_sky-sport-pl-hd_tvguide.png",Sky Sport Premier League
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SKY SPORT PREMIER LEAGUE
 #EXTINF:-1 tvg-id="DE: Sky Sport News" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/17_sky_logo_skysportnewshd_tvguide.png",Sky Sport News
