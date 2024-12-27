@@ -135,24 +135,41 @@ def ok(heading, line1, line2="", line3=""):
 def decrypt():
 	for root, dir, files in os.walk(addonPath):
 		for file in files:
-			if file.endswith(".py"):
-				name = os.path.join(root, file)
-				try:
-					i = 0
-					while i < 51:
-						with open(name) as k: a = k.read()
-						decoded = a.replace("_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));exec((_)(b", "").replace("))", "").strip("exec((_)(b")
-						b = zlib.decompress(base64.b64decode(decoded[::-1]))
-						with open(name, "wb") as k: k.write(b)
-						i+=1
-				except:
-					pass
+			try:
+				if file.endswith(".py"):
+					name = os.path.join(root, file)
+					with open(name) as k: a = k.read().split("'")[1]
+					b = zlib.decompress(base64.b64decode(zlib.decompress(base64.b64decode(a))))
+					with open(name, "wb") as k: k.write(b)
+			except: continue
+	for root, dir, files in os.walk(addonPath):
+		for file in files:
+			try:
+				if file.endswith(".py"):
+					name = os.path.join(root, file)
+					with open(name) as k: a = k.readlines()
+					for x in a:
+						if "encryptedcode =" in x:
+							p = x.strip("encryptedcode = ").strip("\n")
+							with open(name, "w") as k: k.write(p)
+			except: continue
+	for root, dir, files in os.walk(addonPath):
+		for file in files:
+			try:
+				if file.endswith(".py"):
+					name = os.path.join(root, file)
+					with open(name) as k: encryptedcode = k.read()
+					h = part5(encryptedcode)
+					with open(name, "w") as k: 
+						k.write(h)
+			except: continue
+	ok(addonName, "XStream fertig repariert")
 
 def repair(force=False):
 	new_xml = [
 		'<settings>',
 		' <category label="Einrichten">',
-		'  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.xstreamscraper/?action=true)"/>',
+		'  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.scraper/?action=true)"/>',
 		#'  <setting label="xStream reparieren" type="action" action="RunPlugin(plugin://script.module.scraper/?repair=true)"/>',
 		' </category>',
 		' <category label="VIDEO">',
@@ -182,9 +199,12 @@ def repair(force=False):
 		with open(update_sha) as k: upd1 = k.read()
 		with open(xstream_update_sha) as k: upd2 = k.read()
 		if (upd1 != upd2) or force:
-			with open(translate_path(addonPath, "resources", "lib", "help.py"), "w") as k: k.write(newcommon)
-			with open(update_sha, "w") as k: k.write(upd2)
 			decrypt()
+			with open(translate_path(addonPath, "resources", "lib", "help.py"), "w") as k: k.write(newcommon)
+			with open(translate_path(addonInfo("path"), "resources","utils.py")) as b:
+				utils = b.read()
+			with open(translate_path(addonPath, "resources", "lib", "utils.py"), "w") as k: k.write(utils)
+			with open(update_sha, "w") as k: k.write(upd2)
 			pluginDB = translate_path(profilePath, "pluginDB")
 			if os.path.exists(pluginDB):
 				with open(pluginDB) as k: plugins = json.load(k)
