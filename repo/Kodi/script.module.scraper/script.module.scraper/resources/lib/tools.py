@@ -132,38 +132,38 @@ def ok(heading, line1, line2="", line3=""):
 	if six.PY3:return xbmcgui.Dialog().ok(heading, line1+"\n"+line2+"\n"+line3)
 	else:return xbmcgui.Dialog().ok(heading, line1,line2,line3)
 
-def decrypt():
-	for root, dir, files in os.walk(addonPath):
-		for file in files:
-			try:
-				if file.endswith(".py"):
-					name = os.path.join(root, file)
-					with open(name) as k: a = k.read().split("'")[1]
-					b = zlib.decompress(base64.b64decode(zlib.decompress(base64.b64decode(a))))
-					with open(name, "wb") as k: k.write(b)
-			except: continue
-	for root, dir, files in os.walk(addonPath):
-		for file in files:
-			try:
-				if file.endswith(".py"):
-					name = os.path.join(root, file)
-					with open(name) as k: a = k.readlines()
-					for x in a:
-						if "encryptedcode =" in x:
-							p = x.strip("encryptedcode = ").strip("\n")
-							with open(name, "w") as k: k.write(p)
-			except: continue
-	for root, dir, files in os.walk(addonPath):
-		for file in files:
-			try:
-				if file.endswith(".py"):
-					name = os.path.join(root, file)
-					with open(name) as k: encryptedcode = k.read()
-					h = part5(encryptedcode)
-					with open(name, "w") as k: 
-						k.write(h)
-			except: continue
-	ok(addonName, "XStream fertig repariert")
+#def decrypt():
+#	for root, dir, files in os.walk(addonPath):
+#		for file in files:
+#			try:
+#				if file.endswith(".py"):
+#					name = os.path.join(root, file)
+#					with open(name) as k: a = k.read().split("'")[1]
+#					b = zlib.decompress(base64.b64decode(zlib.decompress(base64.b64decode(a))))
+#					with open(name, "wb") as k: k.write(b)
+#			except: continue
+#	for root, dir, files in os.walk(addonPath):
+#		for file in files:
+#			try:
+#				if file.endswith(".py"):
+#					name = os.path.join(root, file)
+#					with open(name) as k: a = k.readlines()
+#					for x in a:
+#						if "encryptedcode =" in x:
+#							p = x.strip("encryptedcode = ").strip("\n")
+#							with open(name, "w") as k: k.write(p)
+#			except: continue
+#	for root, dir, files in os.walk(addonPath):
+#		for file in files:
+#			try:
+#				if file.endswith(".py"):
+#					name = os.path.join(root, file)
+#					with open(name) as k: encryptedcode = k.read()
+#					h = part5(encryptedcode)
+#					with open(name, "w") as k: 
+#						k.write(h)
+#			except: continue
+#	ok(addonName, "XStream fertig repariert")
 
 def repair(force=False):
 	new_xml = [
