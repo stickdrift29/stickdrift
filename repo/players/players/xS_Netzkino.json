@@ -1,7 +1,7 @@
 {
     "name"              : "[COLORred]Netzino[/COLOR]",
 	"plugin" 			: "plugin.video.xstream",
-	"priority"          : 70,
+	"priority"          : 160,
 	"language"          : "de",
 	"is_resolvable"     : "true",
 	"assert"            :{

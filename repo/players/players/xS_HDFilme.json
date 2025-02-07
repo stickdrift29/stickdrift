@@ -1,5 +1,5 @@
 {
-    "name"              : "[COLORdarkred]HDFilme[/COLOR]",
+    "name"              : "[COLORdarkred]HD Filme[/COLOR]",
 	"plugin" 			: "plugin.video.xstream",
 	"priority"          : 60,
 	"language"          : "de",

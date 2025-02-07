@@ -1,7 +1,7 @@
 {
     "name"              : "[COLORpink]Topstreamfilm[/COLOR]",
 	"plugin" 			: "plugin.video.xstream",
-	"priority"          : 175,
+	"priority"          : 185,
 	"language"          : "de",
 	"is_resolvable"     : "true",
 	"assert"            :{
