@@ -1,0 +1,1 @@
+Decompressed delete tmdb helper link fixed and open addon fixed
