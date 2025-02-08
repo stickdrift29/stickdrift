@@ -60,7 +60,7 @@
             </extension>
             <extension point="xbmc.addon.metadata">
                 <summary>Kodi</summary>
-                <description lang="de">Addons von stickdrift29</description>
+                <description lang="de">Ansammlungen von Verschiedenen Addons welche teilweise Modifiziert wurden. Dieses Repository verweist auch unteranderem zu Anderen Repositorys, somit mist das eintragen verschiedener Quellen nicht nötig.</description>
                 <disclaimer></disclaimer>
                 <platform>all</platform>
                 <assets>
@@ -68,7 +68,7 @@
 		        </assets>
             </extension>
         </addon>
-        <addon id="script.module.scraper" name="Scraper" provider-name="michaz1988" version="2.7.3">
+        <addon id="script.module.scraper" name="Scraper" provider-name="michaz1988" version="2.7.4">
 	<requires>
 		<import addon="plugin.video.vavooto"/>
         <import addon="script.module.requests"/>
