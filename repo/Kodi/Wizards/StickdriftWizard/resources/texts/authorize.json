@@ -1,0 +1,92 @@
+{
+    "Step 1-Install The Supported Addons You Use Here": {
+        "icon": "https://kodiapps.com/sharex/dllhost_2020-02-05_12-07-32.jpg",
+        "items": [
+            {
+                "name": "Install FEN Light (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.fenlight)"
+            },			
+            {
+                "name": "Install Seren (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.seren)"
+            },
+            {
+                "name": "Install Umbrella (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.umbrella)"
+            },
+            {
+                "name": "Install POV (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.pov)"
+            },
+            {
+                "name": "Install The Coalition (DEBRID ONLY)",
+                "url": "installaddon(plugin.video.coalition)"
+            },
+            {
+                "name": "Install Asgard (FREE AND DEBRID)",
+                "url": "installaddon(plugin.video.asgard)"
+            },			
+            {
+                "name": "Install Diggz Free99 (FREE)",
+                "url": "installaddon(plugin.video.free99)"
+            },						
+            {
+                "name": "Install The Crew (FREE AND DEBRID)",
+                "url": "installaddon(plugin.video.thecrew)"
+            },
+            {
+                "name": "Install Elementum (Free Torrents- VPN Required!!)",
+                "url": "installaddon(plugin.video.elementum)"
+            }			
+        ]
+    },
+    "Trakt And Debrid Account Manager": {
+        "icon": "https://techwiser.com/wp-content/uploads/2020/09/trakt-logo.png",
+        "items": [
+            {
+                "name": "[COLOR orangered]Authenticate Real Debrid[/COLOR]",
+                "url": "RunScript(script.module.accountmgr, action=realdebridAuth)"
+            },
+            {
+                "name": "[COLOR chartreuse]View Real Debrid logins[/COLOR]",
+                "url": "ActivateWindow(10001,plugin://script.module.acctview/?mode=realdebrid,return)"
+            },			
+            {
+                "name": "[COLOR orangered]Authenticate TRAKT[/COLOR]",
+                "url": "RunScript(script.module.accountmgr, action=traktAuth)"
+            },
+            {
+                "name": "[COLOR chartreuse]View Trakt Logins[/COLOR]",
+                "url": "ActivateWindow(10001,plugin://script.module.acctview/?mode=trakt,return)"
+            },						
+            {
+                "name": "[COLOR orangered]Authenticate Premiumize[/COLOR]",
+                "url": "RunScript(script.module.accountmgr, action=premiumizeAuth)"
+            },
+            {
+                "name": "[COLOR chartreuse]View Premiumize logins[/COLOR]",
+                "url": "ActivateWindow(10001,plugin://script.module.acctview/?mode=premiumize,return)"
+            },			
+            {
+                "name": "[COLOR orangered]Authenticate All-Debrid[/COLOR]",
+                "url": "RunScript(script.module.accountmgr, action=alldebridAuth)"
+            },
+            {
+                "name": "[COLOR chartreuse]View All-Debrid Logins[/COLOR]",
+                "url": "ActivateWindow(10001,plugin://script.module.acctview/?mode=alldebrid,return)"
+            },			
+            {
+                "name": "Re-Sync Debrid Accounts",
+                "url": "RunScript(script.module.accountmgr, action=ReSyncAll)"
+            },
+            {
+                "name": "Re-Sync TRAKT Accounts",
+                "url": "RunScript(script.module.accountmgr, action=traktReSync)"
+            },
+            {
+                "name": "Open Account Manager",
+                "url": "addon.opensettings(script.module.accountmgr)"
+            }			
+        ]
+    }
+}
