@@ -29,7 +29,6 @@ def main():
 	else: 
 		xbmcplugin.setContent(int(sys.argv[1]), "files")
 		xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?action=true" %sys.argv[0], ListItem("TMDB-HELPER einrichten"), False)
-		#xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?repair=true" %sys.argv[0], ListItem("xStream reparieren"), False)
 		xbmcplugin.endOfDirectory(int(sys.argv[1]), succeeded=True, cacheToDisc=True)
 
 if __name__ == '__main__':

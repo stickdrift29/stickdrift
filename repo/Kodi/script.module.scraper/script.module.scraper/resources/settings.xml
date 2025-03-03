@@ -1,7 +1,6 @@
 <settings>
  <category label="Einrichten">
   <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.scraper/?action=true)"/>
-  <!--<setting label="xStream reparieren" type="action" action="RunPlugin(plugin://script.module.scraper/?repair=true)"/>-->
  </category>
  <category label="VIDEO">
   <setting default="1" id="stream_select" label="Stream Auswahl" type="enum" values="Hoster|Automatisch"/>
@@ -11,7 +10,7 @@
   <setting default="false" id="vavoo" label="Vavoo" type="bool"/>
  </category>
  <category label="Scraper">
-  <setting default="true" id="aniworld" label="AniWorld" type="bool"/>
+ <setting default="true" id="aniworld" label="AniWorld" type="bool"/>
   <setting default="true" id="einschalten" label="Einschalten" type="bool"/>
   <setting default="true" id="filmpalast" label="FilmPalast" type="bool"/>
   <setting default="true" id="flimmerstube" label="Flimmerstube" type="bool"/>
