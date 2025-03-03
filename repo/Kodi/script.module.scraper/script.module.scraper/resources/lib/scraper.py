@@ -315,35 +315,25 @@ def play(_type, _id, season, episode):
 			res = session.get(newurl, headers=headers, params=params, stream=True)
 			if not res.ok: raise Exception("Kann Seite nicht erreichen")
 			if "text" in res.headers.get("Content-Type","text"): raise Exception("Keine Videodatei")
+			else:
+				tools.logger.info("Spiele :%s" % url)
+				return _play(url)
 		except Exception as e:
 			tools.logger.error(e)
 			import traceback
 			tools.logger.debug(traceback.format_exc())
-			continue
-		else:
-			tools.logger.info("Spiele :%s" % url)
-			del resolver
-			dialog.close()
-			return _play(url)
-	del resolver
+		finally: del resolver
 	dialog.close()
 	return showFailedNotification()
 
 def _play(url):
+	try:dialog.close()
+	except: pass
 	o = xbmcgui.ListItem(xbmc.getInfoLabel("ListItem.Label"))
+	o.setPath(url)
 	o.setProperty("IsPlayable", "true")
 	if ".m3u8" in url:
-		if six.PY2: 
-			o.setProperty("inputstreamaddon", "inputstream.adaptive")
-			o.setProperty("inputstream.adaptive.manifest_type", "hls")
+		if six.PY2: o.setProperty("inputstreamaddon", "inputstream.adaptive")
 		else: o.setProperty("inputstream", "inputstream.adaptive")
-		if "|" in url:
-			url, headers = url.split("|")
-			o.setProperty('inputstream.adaptive.common_headers', headers)
-			o.setProperty('inputstream.adaptive.stream_headers', headers)
-		#if "?" in url:
-			#url, params = url.split("?")
-			#o.setProperty('inputstream.adaptive.stream_params', params)
-	o.setPath(url)
-	o.setProperty('inputstream.adaptive.config', '{"ssl_verify_peer":false}')
+		o.setProperty("inputstream.adaptive.manifest_type", "hls")
 	xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, o)
