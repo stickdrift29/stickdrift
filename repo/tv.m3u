@@ -25,8 +25,14 @@ plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=BR
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=CARTOON+NETWORK
 #EXTINF:-1 tvg-id="COMEDY.CENTRAL.de" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1073.png",Comedy Central
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=COMEDY+CENTRAL
+
+#EXTINF:-1 tvg-id="Crime.+.Investigation.de" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/945.png",Crime + Investigation HD+
+plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=CRIME+%2B+INVESTIGATION+HD%2B
 #EXTINF:-1 tvg-id="Crime.+.Investigation.de" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/945.png",Crime + Investigation
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=CRIME+%2B+INVESTIGATION
+plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=CRIME+INVESTIGATION
+#EXTINF:-1 tvg-id="Crime.+.Investigation.de" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/945.png",Crime + Investigation
+plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=CRIME%2B+INVESTIGATION
+
 #EXTINF:-1 tvg-id="Das.Erste.de" group-title="Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1016.png",Das Erste
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=ARD+-+DAS+ERSTE
 #EXTINF:-1 tvg-id="DELUXE.MUSIC.de" group-title="Musik" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1034.png",DELUXE MUSIC
