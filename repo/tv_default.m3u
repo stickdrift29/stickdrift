@@ -9,9 +9,9 @@ plugin://plugin.video.vavooto/?action=channels&group=Germany&name=ARD+ALPHA
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=AXN
 #EXTINF:-1 tvg-id="SONY.AXN.de" group-title="Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/AXN_Black_logo_%282015%29.svg/240px-AXN_Black_logo_%282015%29.svg.png",AXN Black
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=AXN+BLACK
-#EXTINF:-1 tvg-id="SONY.AXN.de" group-title="Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/AXN_White_logo_%282015%29.svg/1920px-AXN_White_logo_%282015%29.svg.png",AXN White
+#EXTINF:-1 tvg-id="Sony.Channel.de" group-title="Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/AXN_White_logo_%282015%29.svg/1920px-AXN_White_logo_%282015%29.svg.png",AXN White
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=SONY+AXN
-#EXTINF:-1 tvg-id="SONY.AXN.de" group-title="Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/AXN_White_logo_%282015%29.svg/1920px-AXN_White_logo_%282015%29.svg.png",AXN White
+#EXTINF:-1 tvg-id="Sony.Channel.de" group-title="Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/AXN_White_logo_%282015%29.svg/1920px-AXN_White_logo_%282015%29.svg.png",AXN White
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=AXN+WHITE
 #EXTINF:-1 tvg-id="ANIXE.de" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1008.png",Anixe Serie
 plugin://plugin.video.vavooto/?action=channels&group=Germany&name=ANIXE+SERIE
