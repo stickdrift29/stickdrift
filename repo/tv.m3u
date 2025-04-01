@@ -504,3 +504,162 @@ plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY SPORT 
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+NEWS
 
 
+
+
+
+
+
+
+----------------------------------BEE Liste-------------------------------------------------------------
+
+#EXTINF:-1 tvg-id="13TH.STREET.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/lightbg/100x100/442.png",13TH Street
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2857&extension=ts
+#EXTINF:-1 tvg-id="3sat.DE" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1006.png",3 Sat
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2858&extension=ts
+
+#EXTINF:-1 tvg-id="SONY.AXN.de" group-title="BEE Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/AXN_Black_logo_%282015%29.svg/240px-AXN_Black_logo_%282015%29.svg.png",AXN Black
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2860&extension=ts
+#EXTINF:-1 tvg-id="Sony.Channel.de" group-title="BEE Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/AXN_White_logo_%282015%29.svg/1920px-AXN_White_logo_%282015%29.svg.png",AXN White
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115168&extension=ts
+
+
+#EXTINF:-1 tvg-id="ANIXE.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1008.png",Anixe Serie
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=186499&extension=ts
+#EXTINF:-1 tvg-id="ARTE.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1009.png",Arte
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2834&extension=ts
+
+
+#EXTINF:-1 tvg-id="Cartoon.Network.de" group-title="BEE Kinder" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1032.png",Cartoon Network
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2862&extension=ts
+#EXTINF:-1 tvg-id="COMEDY.CENTRAL.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1073.png",Comedy Central
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=186498&extension=ts
+#EXTINF:-1 tvg-id="Crime.+.Investigation.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/945.png",Crime + Investigation
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2859&extension=ts
+#EXTINF:-1 tvg-id="Das.Erste.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1016.png",Das Erste
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2822&extension=ts
+#EXTINF:-1 tvg-id="DELUXE.MUSIC.de" group-title="BEE Musik" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1034.png",DELUXE MUSIC
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2939&extension=ts
+
+#EXTINF:-1 tvg-id="DMAX.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/969.png",DMAX
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2853&extension=ts
+#EXTINF:-1 tvg-id="Discovery.HD.de" group-title="BEE Dokumentation" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/543.png",Discovery
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2864&extension=ts
+#EXTINF:-1 tvg-id="Disney.Channel.de" group-title="BEE Kinder" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1035.png",Disney Channel
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2865&extension=ts
+
+
+#EXTINF:-1 tvg-id="DE: Heimatkanal.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/498.png",Heimatkanal
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2877&extension=ts
+#EXTINF:-1 tvg-id="HISTORY.HD.de" group-title="BEE Dokumentation" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/542.png",History
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2873&extension=ts
+
+
+
+#EXTINF:-1 tvg-id="kabel.eins.de" group-title="BEE Standard" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kabel_eins_Logo_2015.svg/1280px-Kabel_eins_Logo_2015.svg.png",Kabel 1
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2881&extension=ts
+#EXTINF:-1 tvg-id="kabel.eins.CLASSICS.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1037.png",Kabel 1 Classics
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2880&extension=ts
+#EXTINF:-1 tvg-id="kabel.eins.Doku.de" group-title="BEE Dokumentation" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1142.png",Kabel 1 Doku
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2879&extension=ts
+
+
+#EXTINF:-1 tvg-id="KinoweltTV.de" group-title="BEE Filme" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1039.png",Kinowelt
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2869&extension=ts
+
+
+#EXTINF:-1 tvg-id="Nicktoons.de" group-title="BEE Kinder" tvg-logo="http://epggw.a1.net/img/station/lightbg/100x100/1408.png",Nicktoons
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=186629&extension=ts
+
+
+#EXTINF:-1 tvg-id="nick/MTV+.de" group-title="BEE Kinder" tvg-logo="http://epggw.a1.net/img/station/lightbg/100x100/1088.png",Nickelodeon
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=186497&extension=ts
+
+
+#EXTINF:-1 tvg-id="ProSieben.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/936.png",ProSieben
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2847&extension=ts
+#EXTINF:-1 tvg-id="ProSieben.Fun.de" group-title="BEE Standard" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F1f0e9026087e023f7464640bcbe4eaed6cce4055.png&out=webp",ProSieben Fun
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2846&extension=ts
+#EXTINF:-1 tvg-id="ProSieben.MAXX.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/955.png",Pro 7 MAXX
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2849&extension=ts
+
+
+#EXTINF:-1 tvg-id="RTL.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/999.png",RTL
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2827&extension=ts
+#EXTINF:-1 tvg-id="RTL.II.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1108.png",RTL 2
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2828&extension=ts
+#EXTINF:-1 tvg-id="RTL.Crime.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1444.png",RTL Crime
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2829&extension=ts
+#EXTINF:-1 tvg-id="RTL.Living.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1446.png",RTL Living
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2830&extension=ts
+#EXTINF:-1 tvg-id="NITRO.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1059.png",RTL Nitro
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2831&extension=ts
+#EXTINF:-1 tvg-id="RTL.Passion.de" group-title="BEE Standard" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/23/RTL_Passion_Logo_2015.png",RTL Passion
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2832&extension=ts
+#EXTINF:-1 tvg-id="RTLup.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1187.png",RTL up
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2826&extension=ts
+
+
+#EXTINF:-1 tvg-id="SAT.1.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/937.png",Sat 1
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2843&extension=ts
+#EXTINF:-1 tvg-id="SAT.1.emotions.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1042.png",Sat 1 Emotions
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2842&extension=ts
+#EXTINF:-1 tvg-id="SAT.1.Gold.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/956.png",Sat 1 Gold
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2844&extension=ts
+
+#EXTINF:-1 tvg-id="sixx.de" group-title="BEE Standard" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sixx.svg/300px-Sixx.svg.png",Sixx
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2855&extension=ts
+
+
+#EXTINF:-1 tvg-id="Syfy.de" group-title="BEE Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/88/Syfy_HD_Logo_2017.png",Syfy
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2930&extension=ts
+#EXTINF:-1 tvg-id="TLC.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/944.png",TLC
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2904&extension=ts
+
+
+#EXTINF:-1 tvg-id="TELE.5.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1018.png",Tele 5
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2942&extension=ts
+#EXTINF:-1 tvg-id="TOGGO.plus.de" group-title="BEE Kinder" tvg-logo="https://images.waipu.tv/api/channels/TOGGOPLUS/logosd.png?width=100&height=100",Toggo Plus
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2943&extension=ts
+#EXTINF:-1 tvg-id="Universal.Channel.HD.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/438.png",Universal Channel
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2944&extension=ts
+
+#EXTINF:-1 tvg-id="VOX.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1057.png",Vox
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2836&extension=ts
+#EXTINF:-1 tvg-id="VOXup.de" group-title="BEE Standard" tvg-logo="https://images.waipu.tv/api/channels/VOXUP/logosd.png?width=100&height=100",Vox UP
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=200655&extension=ts
+
+#EXTINF:-1 tvg-id="Warner.TV.Comedy.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/lightbg/100x100/889.png",WarnerTV Comedy
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=275652&extension=ts
+#EXTINF:-1 tvg-id="Warner.TV.Film.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/lightbg/100x100/914.png",WarnerTV Film
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=275653&extension=ts
+#EXTINF:-1 tvg-id="Warner.TV.Serie.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/lightbg/100x100/479.png",WarnerTV Serie
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=275654&extension=ts
+
+
+
+#EXTINF:-1 tvg-id="Sky.Atlantic.HD.de" group-title="BEE Sky" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/2_Sky_logo_Skyatlantichd_tvguide.png",Sky Atlantic
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2887&extension=ts
+
+#EXTINF:-1 tvg-id="Sky.Action.de" group-title="BEE Filme" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/60_Sky_logo_Skyactionhd_tvguide.png",Sky Cinema Action
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27186&extension=ts
+#EXTINF:-1 tvg-id="Sky.Cinema.Classics.de" group-title="BEE Filme" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/1043_Sky_logo_cinema-classics_hd_tvguide.png",Sky Cinema Classics
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115384&extension=ts
+#EXTINF:-1 tvg-id="Sky.Family.de" group-title="BEE Filme" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/1206_Sky_logo_cinema_family-hd_tvguide.png",Sky Cinema Family
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:06:6F:10&stream=115385&extension=ts
+#EXTINF:-1 tvg-id="Sky.Cinema.Premieren.de" group-title="BEE Filme" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/788_Sky_logo_cinema-premieren-hd_tvguide.png",Sky Cinema Premieren
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:A6:53:57&stream=115391&extension=ts
+#EXTINF:-1 tvg-id="Sky.Crime.de" group-title="BEE Filme" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/855_Sky_logo_crime-hd_tvguide.png",Sky Crime
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=209878&extension=ts
+#EXTINF:-1 tvg-id="Sky.Documentaries.de" group-title="BEE Dokumentation" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/876_Sky_logo_Sky-cinema-documentaries-hd_tvguide.png",Sky Documentaries
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=209876&extension=ts
+
+#EXTINF:-1 tvg-id="Sky.Krimi.de" group-title="BEE Sky" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/753_Sky_logo_Skykrimi_hd_tvguide.png",Sky Krimi
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2894&extension=ts
+
+#EXTINF:-1 tvg-id="Sky.Nature.de" group-title="BEE Dokumentation" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/875_Sky_logo_Sky-nature-hd_tvguide.png",Sky Nature
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=209877&extension=ts
+
+#EXTINF:-1 tvg-id="Sky.One.de" group-title="BEE Sky" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/535_Sky_logo_Sky1-hd_tvguide.png",Sky One
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27182&extension=ts
+#EXTINF:-1 tvg-id="Sky.Replay.de" group-title="BEE Sky" tvg-logo="https://www.Sky.de/static/img/senderlogos_dark/888_Sky_logo_Sky-replay-hd_tvguide.png",Sky Replay
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=415388&extension=ts
