@@ -522,7 +522,7 @@ http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=184228&ext
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115168&extension=ts
 
 #EXTINF:-1 tvg-id="Sony.Channel.de" group-title="BEE Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/AXN_White_logo_%282015%29.svg/1920px-AXN_White_logo_%282015%29.svg.png",AXN White
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2936&extension=ts
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115168&extension=ts
 
 #EXTINF:-1 tvg-id="ANIXE.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1008.png",Anixe Serie
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=186499&extension=ts
