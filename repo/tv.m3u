@@ -715,7 +715,7 @@ http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=302168&ext
 #EXTINF:-1 tvg-id="SPORT1+.de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/766.png",Sport 1 +
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=123585&extension=ts
 #EXTINF:-1 tvg-id="sportdigital.de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1045.png",Sport digital
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SPORTDIGITALL+FUSSBALL
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115179&extension=ts
 
 
 #EXTINF:-1 tvg-id="DAZN.1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN 1
