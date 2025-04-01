@@ -17,7 +17,7 @@ plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=AXN+WHITE
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=ANIXE+SERIE
 #EXTINF:-1 tvg-id="ARTE.de" group-title="Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1009.png",Arte
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=ARTE
-#EXTINF:-1 tvg-id="Auto.Motor.Sport.Ch..de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1031.png",Auto Motor Sport
+#EXTINF:-1 tvg-id="Auto.Motor.Sport.Ch..de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1031.png",Auto Motor Sport
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=AUTO+MOTOR+SPORT
 #EXTINF:-1 tvg-id="BR.de" group-title="Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/959.png",BR
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=BR
@@ -47,13 +47,13 @@ plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DISCOVERY
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DISNEY+CHANNEL
 #EXTINF:-1 tvg-id="E! Entertainment" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/547.png",E! ENTERTAINMENT
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=E!+ENTERTAINMENT
-#EXTINF:-1 tvg-id="Eurosport.1.de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/890.png",Eurosport 1
+#EXTINF:-1 tvg-id="Eurosport.1.de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/890.png",Eurosport 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=EUROSPORT+1
-#EXTINF:-1 tvg-id="Eurosport.2.de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/450.png",Eurosport 2
+#EXTINF:-1 tvg-id="Eurosport.2.de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/450.png",Eurosport 2
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=EUROSPORT+2
 #EXTINF:-1 tvg-id="GEO.Television.de" group-title="Dokumentation" tvg-logo="http://epggw.a1.net/img/station/lightbg/60x60/1448.png",Geo HD
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=GEO+TV
-#EXTINF:-1 tvg-id="Motorvision.TV.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/52_sky_logo_motorvision_b.png",Motorvision
+#EXTINF:-1 tvg-id="Motorvision.TV.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/52_sky_logo_motorvision_b.png",Motorvision
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MOTORVISION
 #EXTINF:-1 tvg-id="DE: Heimatkanal.de" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/498.png",Heimatkanal
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=HEIMATKANAL
@@ -284,223 +284,223 @@ plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SPIEGEL+GE
 #EXTINF:-1 tvg-id="Curiosity.Channel.de" group-title="Dokumentation" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1246.png",Curiosity
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SPIEGEL+WISSEN
 
-#EXTINF:-1 tvg-id="eSports1.de" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/ea/Esports1_ox2_W1000xh0.png",ESports 1
+#EXTINF:-1 tvg-id="eSports1.de" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/ea/Esports1_ox2_W1000xh0.png",ESports 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=ESPORTS+1
-#EXTINF:-1 tvg-id="eSports1.de" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/ea/Esports1_ox2_W1000xh0.png",ESports 1 Nur live
+#EXTINF:-1 tvg-id="eSports1.de" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/ea/Esports1_ox2_W1000xh0.png",ESports 1 Nur live
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=ESPORTS+1+%5BLIVE+DURING+EVENTS+ONLY%5D
-#EXTINF:-1 tvg-id="SPORT1.de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1014.png",Sport 1
+#EXTINF:-1 tvg-id="SPORT1.de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1014.png",Sport 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SPORT1
-#EXTINF:-1 tvg-id="SPORT1+.de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/766.png",Sport 1 +
+#EXTINF:-1 tvg-id="SPORT1+.de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/766.png",Sport 1 +
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SPORT+1%2B
-#EXTINF:-1 tvg-id="sportdigital.de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1045.png",Sport digital
+#EXTINF:-1 tvg-id="sportdigital.de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1045.png",Sport digital
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SPORTDIGITALL+FUSSBALL
 
 
-#EXTINF:-1 tvg-id="DAZN.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN 1
+#EXTINF:-1 tvg-id="DAZN.1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DAZN+1
-#EXTINF:-1 tvg-id="DAZN.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN Sport 1
+#EXTINF:-1 tvg-id="DAZN.1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN Sport 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DAZN+SPORT+1
 
-#EXTINF:-1 tvg-id="DAZN.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN 1 Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="DAZN.1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN 1 Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22DAZN1+DE%22%2C+%22channel_id%22%3A+%22426%22%7D%5D%7D
-#EXTINF:-1 tvg-id="DAZN.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN1 Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="DAZN.1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN1 Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-426.php
 
 
-#EXTINF:-1 tvg-id="DAZN.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN 2
+#EXTINF:-1 tvg-id="DAZN.2.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN 2
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DAZN+2
-#EXTINF:-1 tvg-id="DAZN.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN Sport 2
+#EXTINF:-1 tvg-id="DAZN.2.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN Sport 2
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DAZN+SPORT+2
 
-#EXTINF:-1 tvg-id="DAZN.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN 2 Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="DAZN.2.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN 2 Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22DAZN2+DE%22%2C+%22channel_id%22%3A+%22427%22%7D%5D%7D
-#EXTINF:-1 tvg-id="DAZN.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN 2 Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="DAZN.2.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN 2 Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-427.php
 
-#EXTINF:-1 tvg-id="DE: Amazon Prime Sports" group-title="Sport" tvg-logo="https://yt3.googleusercontent.com/sAk0re2sCyp0i4wlTbhA8baCQyM9_9VOZ3gJHEAW60zJ3mj88Uyfjosac9wy-yjN8G6HurDy4_4=s160-c-k-c0x00ffffff-no-rj",Amazon Prime Sports Nur Live
+#EXTINF:-1 tvg-id="DE: Amazon Prime Sports" group-title="BEE Sport" tvg-logo="https://yt3.googleusercontent.com/sAk0re2sCyp0i4wlTbhA8baCQyM9_9VOZ3gJHEAW60zJ3mj88Uyfjosac9wy-yjN8G6HurDy4_4=s160-c-k-c0x00ffffff-no-rj",Amazon Prime Sports Nur Live
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=AMAZON+PRIME+SPORT+%5BNUR+LIVE+STTEAMING%5D
 
-#EXTINF:-1 tvg-id="DE: Magenta Sport 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F98154b022b1cd559da555d70d6343b5d8cfb13ce.png&out=webp",Magenta Sport 1
+#EXTINF:-1 tvg-id="DE: Magenta Sport 1" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F98154b022b1cd559da555d70d6343b5d8cfb13ce.png&out=webp",Magenta Sport 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+1
 
-#EXTINF:-1 tvg-id="DE: Magenta Sport 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F98154b022b1cd559da555d70d6343b5d8cfb13ce.png&out=webp",Magenta Sport 1 Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="DE: Magenta Sport 1" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F98154b022b1cd559da555d70d6343b5d8cfb13ce.png&out=webp",Magenta Sport 1 Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22Magenta+Sport%22%2C+%22channel_id%22%3A+%2211%22%7D%5D%7D
 
-#EXTINF:-1 tvg-id="DE: Magenta Sport 2" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F379fa8f587a3c004919330145893257962381e58.png&out=webp",Magenta Sport 2
+#EXTINF:-1 tvg-id="DE: Magenta Sport 2" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F379fa8f587a3c004919330145893257962381e58.png&out=webp",Magenta Sport 2
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+2
-#EXTINF:-1 tvg-id="DE: Magenta Sport 3" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F18dcf61dc1f328e6383f3d01817a18aa22948d5c.png&out=webp",Magenta Sport 3
+#EXTINF:-1 tvg-id="DE: Magenta Sport 3" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F18dcf61dc1f328e6383f3d01817a18aa22948d5c.png&out=webp",Magenta Sport 3
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+3
-#EXTINF:-1 tvg-id="DE: Magenta Sport 4" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F01b90821d515b6f4a4a6609828032688d14980fa.png&out=webp",Magenta Sport 4
+#EXTINF:-1 tvg-id="DE: Magenta Sport 4" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F01b90821d515b6f4a4a6609828032688d14980fa.png&out=webp",Magenta Sport 4
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+4
-#EXTINF:-1 tvg-id="DE: Magenta Sport 5" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F3aebb06486ea85ba805e71c19685e834c4c7c473.png&out=webp",Magenta Sport 5
+#EXTINF:-1 tvg-id="DE: Magenta Sport 5" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F3aebb06486ea85ba805e71c19685e834c4c7c473.png&out=webp",Magenta Sport 5
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+5
-#EXTINF:-1 tvg-id="DE: Magenta Sport 6" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fc8d20e1b13a5d61c2113dd254e74529e7616db94.png&out=webp",Magenta Sport 6
+#EXTINF:-1 tvg-id="DE: Magenta Sport 6" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fc8d20e1b13a5d61c2113dd254e74529e7616db94.png&out=webp",Magenta Sport 6
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+6
-#EXTINF:-1 tvg-id="DE: Magenta Sport 7" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F0da93c45d664432b070d2babc8f735eae2c9a333.png&out=webp",Magenta Sport 7
+#EXTINF:-1 tvg-id="DE: Magenta Sport 7" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F0da93c45d664432b070d2babc8f735eae2c9a333.png&out=webp",Magenta Sport 7
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+7
-#EXTINF:-1 tvg-id="DE: Magenta Sport 8" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F0490136b6aec492e6052152eae65fc38f2bec25a.png&out=webp",Magenta Sport 8
+#EXTINF:-1 tvg-id="DE: Magenta Sport 8" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F0490136b6aec492e6052152eae65fc38f2bec25a.png&out=webp",Magenta Sport 8
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+8
-#EXTINF:-1 tvg-id="DE: Magenta Sport 9" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F080c8f791925e531ea2fbcae7f72423c0f88245a.png&out=webp",Magenta Sport 9
+#EXTINF:-1 tvg-id="DE: Magenta Sport 9" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F080c8f791925e531ea2fbcae7f72423c0f88245a.png&out=webp",Magenta Sport 9
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+9
-#EXTINF:-1 tvg-id="DE: Magenta Sport 10" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F2b05377ff812334314c79b11b52d35f41b7715d9.png&out=webp",Magenta Sport 10
+#EXTINF:-1 tvg-id="DE: Magenta Sport 10" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F2b05377ff812334314c79b11b52d35f41b7715d9.png&out=webp",Magenta Sport 10
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+10
-#EXTINF:-1 tvg-id="DE: Magenta Sport 11" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fba33b056349080653c20bf96dbae50c57075c45b.png&out=webp",Magenta Sport 11
+#EXTINF:-1 tvg-id="DE: Magenta Sport 11" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fba33b056349080653c20bf96dbae50c57075c45b.png&out=webp",Magenta Sport 11
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+11
-#EXTINF:-1 tvg-id="DE: Magenta Sport 12" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fe62482bc0be3a94a34d5f38541b744f9b5995f99.png&out=webp",Magenta Sport 12
+#EXTINF:-1 tvg-id="DE: Magenta Sport 12" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fe62482bc0be3a94a34d5f38541b744f9b5995f99.png&out=webp",Magenta Sport 12
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+12
-#EXTINF:-1 tvg-id="DE: Magenta Sport 13" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F2dba72f05a107e48163784976bc9ea05414af69c.png&out=webp",Magenta Sport 13
+#EXTINF:-1 tvg-id="DE: Magenta Sport 13" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F2dba72f05a107e48163784976bc9ea05414af69c.png&out=webp",Magenta Sport 13
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+13
-#EXTINF:-1 tvg-id="DE: Magenta Sport 14" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F960f16d6ffb3c1691cfa757fe51c91ac5a48ade6.png&out=webp",Magenta Sport 14
+#EXTINF:-1 tvg-id="DE: Magenta Sport 14" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F960f16d6ffb3c1691cfa757fe51c91ac5a48ade6.png&out=webp",Magenta Sport 14
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+14
-#EXTINF:-1 tvg-id="DE: Magenta Sport 15" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F75a55a072b6c0258604e61b919f77bd4a4342db6.png&out=webp",Magenta Sport 15
+#EXTINF:-1 tvg-id="DE: Magenta Sport 15" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F75a55a072b6c0258604e61b919f77bd4a4342db6.png&out=webp",Magenta Sport 15
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+15
-#EXTINF:-1 tvg-id="DE: Magenta Sport 16" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fb7db62e4c6d7cf393b120eb59fbfc8e4214084ea.png&out=webp",Magenta Sport 16
+#EXTINF:-1 tvg-id="DE: Magenta Sport 16" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fb7db62e4c6d7cf393b120eb59fbfc8e4214084ea.png&out=webp",Magenta Sport 16
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+16
-#EXTINF:-1 tvg-id="DE: Magenta Sport 17" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Ff0a4b1f6b7ff11498ef0031cb318ed517998234b.png&out=webp",Magenta Sport 17
+#EXTINF:-1 tvg-id="DE: Magenta Sport 17" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Ff0a4b1f6b7ff11498ef0031cb318ed517998234b.png&out=webp",Magenta Sport 17
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+17
-#EXTINF:-1 tvg-id="DE: Magenta Sport 18" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fe22b515f131270766c92da7eff2b3290933e6c04.png&out=webp",Magenta Sport 18
+#EXTINF:-1 tvg-id="DE: Magenta Sport 18" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fe22b515f131270766c92da7eff2b3290933e6c04.png&out=webp",Magenta Sport 18
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+SPORT+18
 
-#EXTINF:-1 tvg-id="FUSSBALL.TV.1.de" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 1
+#EXTINF:-1 tvg-id="FUSSBALL.TV.1.de" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F5ae13706ac56f102d8ee35cfd37b63cbbe1ca063.png&out=webp",Fussball.TV 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+1
-#EXTINF:-1 tvg-id="FUSSBALL.TV.2.de" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F56c747d4ff3b94929a766910b6742e0cb44b5ccf.png&out=webp",Fussball.TV 2
+#EXTINF:-1 tvg-id="FUSSBALL.TV.2.de" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F56c747d4ff3b94929a766910b6742e0cb44b5ccf.png&out=webp",Fussball.TV 2
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+2
-#EXTINF:-1 tvg-id="FUSSBALL.TV.3.de" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F90c5d7bed96a72b8a1b1a6a1ca8cad2a228820de.png&out=webp",Fussball.TV 3
+#EXTINF:-1 tvg-id="FUSSBALL.TV.3.de" group-title="BEE Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F90c5d7bed96a72b8a1b1a6a1ca8cad2a228820de.png&out=webp",Fussball.TV 3
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MAGENTA+FUSSBALL+3
 
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 1" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 1
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 1" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+1
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 2" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 2
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 2" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 2
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+2
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 3" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 3
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 3" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 3
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+3
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 4" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 4
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 4" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 4
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+4
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 5" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 5
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 5" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 5
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+5
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 6" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 6
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 6" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 6
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+6
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 7" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 7
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 7" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 7
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+7
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 8" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 8
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 8" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 8
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+8
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 9" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 9
+#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 9" group-title="BEE Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 9
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=RTL%2B+SPORT+EVENT+9
 
-#EXTINF:-1 tvg-id="Sky.Sport.Austria.1.HD.de" group-title="Sport" tvg-logo="https://www.sky.at/static/img/senderlogos_dark/492_sky_logo_skysportaustria-hd_tvguide.png",Sky Sport Austria 1 Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="Sky.Sport.Austria.1.HD.de" group-title="BEE Sport" tvg-logo="https://www.sky.at/static/img/senderlogos_dark/492_sky_logo_skysportaustria-hd_tvguide.png",Sky Sport Austria 1 Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-559.php
 
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/531_sky_logo_sky-sport-buli-uhd_tvguide.png",Sky Bundesliga
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/531_sky_logo_sky-sport-buli-uhd_tvguide.png",Sky Bundesliga
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",Sky Bundesliga 1
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",Sky Bundesliga 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+1
 
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",Sky Bundesliga 1 Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",Sky Bundesliga 1 Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-558.php
 
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+2
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2 nur live
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.2.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2 nur live
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+2+%5BLIVE+DURING+EVENTS+ONLY%5D
 
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2 Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.2.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2 Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22Sky+Sport+Bundesliga+2%22%2C+%22channel_id%22%3A+%229%22%7D%5D%7D
 
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.3.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",Sky Bundesliga 3
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.3.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",Sky Bundesliga 3
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+3
 
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.3.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",Sky Bundesliga 3 Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.3.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",Sky Bundesliga 3 Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22Sky+Sport+Bundesliga+3%22%2C+%22channel_id%22%3A+%228%22%7D%5D%7D
 
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.4.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Bundesliga 4
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.4.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Bundesliga 4
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+4
 
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.4.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Bundesliga 4 Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.4.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Bundesliga 4 Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=trLinks&trData=%7B%22channels%22%3A+%5B%7B%22channel_name%22%3A+%22Sky+Sport+Bundesliga+4%22%2C+%22channel_id%22%3A+%2210%22%7D%5D%7D
 
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.5.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/123_sky_logo_skybundesligahd6_tvguide.png",Sky Bundesliga 5
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.5.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/123_sky_logo_skybundesligahd6_tvguide.png",Sky Bundesliga 5
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+5
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.6.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/124_sky_logo_skybundesligahd7_tvguide.png",Sky Bundesliga 6
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.6.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/124_sky_logo_skybundesligahd7_tvguide.png",Sky Bundesliga 6
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+6
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.7.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/125_sky_logo_skybundesligahd8_tvguide.png",Sky Bundesliga 7
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.7.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/125_sky_logo_skybundesligahd8_tvguide.png",Sky Bundesliga 7
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+7
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.8.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/126_sky_logo_skybundesligahd9_tvguide.png",Sky Bundesliga 8
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.8.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/126_sky_logo_skybundesligahd9_tvguide.png",Sky Bundesliga 8
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+8
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.9.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/127_sky_logo_skybundesligahd10_tvguide.png",Sky Bundesliga 9
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.9.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/127_sky_logo_skybundesligahd10_tvguide.png",Sky Bundesliga 9
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+9
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.10.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/998_sky_logo_sky-sport-buli-10-hd_tvguide.png",Sky Bundesliga 10
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.10.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/998_sky_logo_sky-sport-buli-10-hd_tvguide.png",Sky Bundesliga 10
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+10
 
 
 
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",DB LIGA 1 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",DB LIGA 1 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DB+LIGA+1
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",DB LIGA 2 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.2.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",DB LIGA 2 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DB+LIGA+2
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",DB LIGA 2 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.2.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",DB LIGA 2 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+BUNDESLIGA+2+%5BLIVE+DURING+EVENTS+ONLY%5D
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.3.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",DB LIGA 3 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.3.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",DB LIGA 3 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DB+LIGA+3
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.4.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",DB LIGA 4 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.4.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",DB LIGA 4 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DB+LIGA+4
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.5.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/123_sky_logo_skybundesligahd6_tvguide.png",DB LIGA 5 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.5.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/123_sky_logo_skybundesligahd6_tvguide.png",DB LIGA 5 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DB+LIGA+5
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.6.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/124_sky_logo_skybundesligahd7_tvguide.png",DB LIGA 6 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.6.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/124_sky_logo_skybundesligahd7_tvguide.png",DB LIGA 6 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DB+LIGA+6
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.7.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/125_sky_logo_skybundesligahd8_tvguide.png",DB LIGA 7 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.7.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/125_sky_logo_skybundesligahd8_tvguide.png",DB LIGA 7 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DB+LIGA+7
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.8.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/126_sky_logo_skybundesligahd9_tvguide.png",DB LIGA 8 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.8.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/126_sky_logo_skybundesligahd9_tvguide.png",DB LIGA 8 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DB+LIGA+8
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.9.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/127_sky_logo_skybundesligahd10_tvguide.png",DB LIGA 9 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.9.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/127_sky_logo_skybundesligahd10_tvguide.png",DB LIGA 9 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DB+LIGA+9
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.10.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/998_sky_logo_sky-sport-buli-10-hd_tvguide.png",DB LIGA 10 Achtung nur Test!
+#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.10.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/998_sky_logo_sky-sport-buli-10-hd_tvguide.png",DB LIGA 10 Achtung nur Test!
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=DB+LIGA+10
 
 
-#EXTINF:-1 tvg-id="Sky.Sport.Top.Event.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1014_sky_logo_sky-sport-top-event-hd_tvguide.png",Sky Sport Top Event
+#EXTINF:-1 tvg-id="Sky.Sport.Top.Event.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1014_sky_logo_sky-sport-top-event-hd_tvguide.png",Sky Sport Top Event
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+TOP+EVENT
 
-#EXTINF:-1 tvg-id="Sky.Sport.Top.Event.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1014_sky_logo_sky-sport-top-event-hd_tvguide.png",Sky Sport Top Event Nur Live
+#EXTINF:-1 tvg-id="Sky.Sport.Top.Event.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1014_sky_logo_sky-sport-top-event-hd_tvguide.png",Sky Sport Top Event Nur Live
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+TOP+EVENT+%5BLIVE+DURING+EVENTS+ONLY%5D
 
-#EXTINF:-1 tvg-id="Sky.Sport.Top.Event.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Sport top event Daddylive Bitte ausprobieren!
+#EXTINF:-1 tvg-id="Sky.Sport.Top.Event.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Sport top event Daddylive Bitte ausprobieren!
 plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fdlhd.so%2F%2Fstream%2Fstream-556.php
 
-#EXTINF:-1 tvg-id="Sky.Sport.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/130_sky_logo_skysporthd3_tvguide.png",Sky Sport 1
+#EXTINF:-1 tvg-id="Sky.Sport.1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/130_sky_logo_skysporthd3_tvguide.png",Sky Sport 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+1
-#EXTINF:-1 tvg-id="Sky.Sport.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/131_sky_logo_skysporthd4_tvguide.png",Sky Sport 2
+#EXTINF:-1 tvg-id="Sky.Sport.2.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/131_sky_logo_skysporthd4_tvguide.png",Sky Sport 2
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+2
-#EXTINF:-1 tvg-id="Sky.Sport.3.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/132_sky_logo_skysporthd5_tvguide2.png",Sky Sport 3
+#EXTINF:-1 tvg-id="Sky.Sport.3.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/132_sky_logo_skysporthd5_tvguide2.png",Sky Sport 3
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+3
-#EXTINF:-1 tvg-id="Sky.Sport.4.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/133_sky_logo_skysporthd6_tvguide.png",Sky Sport 4
+#EXTINF:-1 tvg-id="Sky.Sport.4.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/133_sky_logo_skysporthd6_tvguide.png",Sky Sport 4
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+4
-#EXTINF:-1 tvg-id="Sky.Sport.5.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/134_sky_logo_skysporthd7_tvguide.png",Sky Sport 5
+#EXTINF:-1 tvg-id="Sky.Sport.5.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/134_sky_logo_skysporthd7_tvguide.png",Sky Sport 5
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+5
-#EXTINF:-1 tvg-id="Sky.Sport.6.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/135_sky_logo_skysporthd8_tvguide.png",Sky Sport 6
+#EXTINF:-1 tvg-id="Sky.Sport.6.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/135_sky_logo_skysporthd8_tvguide.png",Sky Sport 6
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+6
-#EXTINF:-1 tvg-id="Sky.Sport.7.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/136_sky_logo_skysporthd9_tvguide.png",Sky Sport 7
+#EXTINF:-1 tvg-id="Sky.Sport.7.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/136_sky_logo_skysporthd9_tvguide.png",Sky Sport 7
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+7
-#EXTINF:-1 tvg-id="Sky.Sport.8.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/137_sky_logo_skysporthd10_tvguide.png",Sky Sport 8
+#EXTINF:-1 tvg-id="Sky.Sport.8.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/137_sky_logo_skysporthd10_tvguide.png",Sky Sport 8
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+8
-#EXTINF:-1 tvg-id="Sky.Sport.9.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/138_sky_logo_skysporthd11_tvguide.png",Sky Sport 9
+#EXTINF:-1 tvg-id="Sky.Sport.9.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/138_sky_logo_skysporthd11_tvguide.png",Sky Sport 9
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+9
-#EXTINF:-1 tvg-id="Sky.Sport.10.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/999_sky_logo_sky-sport-pl-hd_tvguide.png",Sky Sport 10
+#EXTINF:-1 tvg-id="Sky.Sport.10.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/999_sky_logo_sky-sport-pl-hd_tvguide.png",Sky Sport 10
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+10
-#EXTINF:-1 tvg-id="SKY.Sport.F1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/853_sky_logo_sport-f1-hd_tvguide.png",Sky Sport Formel 1
+#EXTINF:-1 tvg-id="SKY.Sport.F1.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/853_sky_logo_sport-f1-hd_tvguide.png",Sky Sport Formel 1
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+F1
-#EXTINF:-1 tvg-id="Sky.Sport.Golf.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1002_sky_logo_sky-sport-golf-hd_tvguide.png",Sky Sport Golf
+#EXTINF:-1 tvg-id="Sky.Sport.Golf.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1002_sky_logo_sky-sport-golf-hd_tvguide.png",Sky Sport Golf
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+GOLF
-#EXTINF:-1 tvg-id="Sky.Sport.Tennis.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1012_sky_logo_sky-sport-tennis-hd_tvguide.png",Sky Sport Tennis
+#EXTINF:-1 tvg-id="Sky.Sport.Tennis.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1012_sky_logo_sky-sport-tennis-hd_tvguide.png",Sky Sport Tennis
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+TENNIS
-#EXTINF:-1 tvg-id="Sky.Sport.Mix.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1005_sky_logo_sky-sport-mix-hd_tvguide.png",Sky Sport Mix
+#EXTINF:-1 tvg-id="Sky.Sport.Mix.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1005_sky_logo_sky-sport-mix-hd_tvguide.png",Sky Sport Mix
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+MIX
 
-#EXTINF:-1 tvg-id="Sky.Sport.Mix.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Sport mix Daddylive
+#EXTINF:-1 tvg-id="Sky.Sport.Mix.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Sport mix Daddylive
 plugin://plugin.video.daddylive/?mode=play&url=https%3A%2F%2Fthedaddy.to%2F%2Fstream%2Fstream-557.php
 
-#EXTINF:-1 tvg-id="Sky.Sport.Premier.Leaque.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1000_sky_logo_sky-sport-pl-hd_tvguide.png",Sky Sport Premier League
+#EXTINF:-1 tvg-id="Sky.Sport.Premier.Leaque.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1000_sky_logo_sky-sport-pl-hd_tvguide.png",Sky Sport Premier League
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY SPORT PREMIER LEAGUE
-#EXTINF:-1 tvg-id="Sky.Sport.News.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/17_sky_logo_skysportnewshd_tvguide.png",Sky Sport News
+#EXTINF:-1 tvg-id="Sky.Sport.News.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/17_sky_logo_skysportnewshd_tvguide.png",Sky Sport News
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+NEWS
 
 
@@ -530,7 +530,7 @@ plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=AXN+WHITE
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=ANIXE+SERIE
 #EXTINF:-1 tvg-id="ARTE.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1009.png",Arte
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2834&extension=ts
-#EXTINF:-1 tvg-id="Auto.Motor.Sport.Ch..de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1031.png",Auto Motor Sport
+#EXTINF:-1 tvg-id="Auto.Motor.Sport.Ch..de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1031.png",Auto Motor Sport
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115180&extension=ts
 #EXTINF:-1 tvg-id="BR.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/959.png",BR
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2883&extension=ts
@@ -553,11 +553,11 @@ http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2864&exten
 #EXTINF:-1 tvg-id="Disney.Channel.de" group-title="BEE Kinder" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1035.png",Disney Channel
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2865&extension=ts
 
-#EXTINF:-1 tvg-id="Eurosport.1.de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/890.png",Eurosport 1
+#EXTINF:-1 tvg-id="Eurosport.1.de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/890.png",Eurosport 1
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27152&extension=ts
-#EXTINF:-1 tvg-id="Eurosport.2.de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/450.png",Eurosport 2
+#EXTINF:-1 tvg-id="Eurosport.2.de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/450.png",Eurosport 2
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27153&extension=ts
-#EXTINF:-1 tvg-id="Motorvision.TV.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/52_sky_logo_motorvision_b.png",Motorvision
+#EXTINF:-1 tvg-id="Motorvision.TV.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/52_sky_logo_motorvision_b.png",Motorvision
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MOTORVISION
 
 #EXTINF:-1 tvg-id="DE: Heimatkanal.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/498.png",Heimatkanal
@@ -708,154 +708,3 @@ http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115155&ext
 
 
 
-#EXTINF:-1 tvg-id="eSports1.de" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/ea/Esports1_ox2_W1000xh0.png",ESports 1
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=302169&extension=ts
-
-
-#EXTINF:-1 tvg-id="SPORT1.de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1014.png",Sport 1
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=302168&extension=ts
-#EXTINF:-1 tvg-id="SPORT1+.de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/766.png",Sport 1 +
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=123585&extension=ts
-#EXTINF:-1 tvg-id="sportdigital.de" group-title="Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1045.png",Sport digital
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SPORTDIGITALL+FUSSBALL
-
-
-#EXTINF:-1 tvg-id="DAZN.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN 1
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27140&extension=ts
-#EXTINF:-1 tvg-id="DAZN.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN 2
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27141&extension=ts
-
-
-#EXTINF:-1 tvg-id="DE: Amazon Prime Sports" group-title="Sport" tvg-logo="https://yt3.googleusercontent.com/sAk0re2sCyp0i4wlTbhA8baCQyM9_9VOZ3gJHEAW60zJ3mj88Uyfjosac9wy-yjN8G6HurDy4_4=s160-c-k-c0x00ffffff-no-rj",Amazon Prime Sports Nur Live
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:06:6F:10&stream=192323&extension=ts
-#EXTINF:-1 tvg-id="DE: Amazon Prime Sports" group-title="Sport" tvg-logo="https://yt3.googleusercontent.com/sAk0re2sCyp0i4wlTbhA8baCQyM9_9VOZ3gJHEAW60zJ3mj88Uyfjosac9wy-yjN8G6HurDy4_4=s160-c-k-c0x00ffffff-no-rj",Amazon Prime Sports Nur Live
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=192323&extension=ts
-#EXTINF:-1 tvg-id="DE: Amazon Prime Sports" group-title="Sport" tvg-logo="https://yt3.googleusercontent.com/sAk0re2sCyp0i4wlTbhA8baCQyM9_9VOZ3gJHEAW60zJ3mj88Uyfjosac9wy-yjN8G6HurDy4_4=s160-c-k-c0x00ffffff-no-rj",Amazon Prime Sports Nur Live
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:A6:53:57&stream=192323&extension=ts
-
-#EXTINF:-1 tvg-id="DE: Magenta Sport 1" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F98154b022b1cd559da555d70d6343b5d8cfb13ce.png&out=webp",Magenta Sport 1
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399259&extension=ts
-
-
-#EXTINF:-1 tvg-id="DE: Magenta Sport 2" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F379fa8f587a3c004919330145893257962381e58.png&out=webp",Magenta Sport 2
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399249&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 3" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F18dcf61dc1f328e6383f3d01817a18aa22948d5c.png&out=webp",Magenta Sport 3
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399248&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 4" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F01b90821d515b6f4a4a6609828032688d14980fa.png&out=webp",Magenta Sport 4
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399247&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 5" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F3aebb06486ea85ba805e71c19685e834c4c7c473.png&out=webp",Magenta Sport 5
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399246&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 6" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fc8d20e1b13a5d61c2113dd254e74529e7616db94.png&out=webp",Magenta Sport 6
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399245&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 7" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F0da93c45d664432b070d2babc8f735eae2c9a333.png&out=webp",Magenta Sport 7
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399244&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 8" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F0490136b6aec492e6052152eae65fc38f2bec25a.png&out=webp",Magenta Sport 8
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399243&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 9" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F080c8f791925e531ea2fbcae7f72423c0f88245a.png&out=webp",Magenta Sport 9
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399242&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 10" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F2b05377ff812334314c79b11b52d35f41b7715d9.png&out=webp",Magenta Sport 10
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399258&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 11" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fba33b056349080653c20bf96dbae50c57075c45b.png&out=webp",Magenta Sport 11
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399257&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 12" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fe62482bc0be3a94a34d5f38541b744f9b5995f99.png&out=webp",Magenta Sport 12
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399256&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 13" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F2dba72f05a107e48163784976bc9ea05414af69c.png&out=webp",Magenta Sport 13
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399255&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 14" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F960f16d6ffb3c1691cfa757fe51c91ac5a48ade6.png&out=webp",Magenta Sport 14
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399254&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 15" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2F75a55a072b6c0258604e61b919f77bd4a4342db6.png&out=webp",Magenta Sport 15
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399253&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 16" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fb7db62e4c6d7cf393b120eb59fbfc8e4214084ea.png&out=webp",Magenta Sport 16
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399252&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 17" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Ff0a4b1f6b7ff11498ef0031cb318ed517998234b.png&out=webp",Magenta Sport 17
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399251&extension=ts
-#EXTINF:-1 tvg-id="DE: Magenta Sport 18" group-title="Sport" tvg-logo="https://ngiss.t-online.de/iss?client=ngtv&ar=keep&x=150&y=60&src=http%3A%2F%2Fngiss.t-online.de%2Fcm1s%2Fmedia%2Fe22b515f131270766c92da7eff2b3290933e6c04.png&out=webp",Magenta Sport 18
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=399250&extension=ts
-
-
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 1" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 1
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=218362&extension=ts
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 2" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 2
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=218363&extension=ts
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 3" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 3
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=218364&extension=ts
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 4" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 4
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=218365&extension=ts
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 5" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 5
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=218366&extension=ts
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 6" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 6
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=218367&extension=ts
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 7" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 7
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=218368&extension=ts
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 8" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 8
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=218369&extension=ts
-#EXTINF:-1 tvg-id="DE: RTL+ Sport Event 9" group-title="Sport" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/RTL%2B_Logo_2021.svg/1920px-RTL%2B_Logo_2021.svg.png",RTL+ Sport Event 9
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=218370&extension=ts
-
-
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/531_sky_logo_sky-sport-buli-uhd_tvguide.png",Sky Bundesliga
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=123582&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",Sky Bundesliga 1
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27142&extension=ts
-
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2 nur live
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=175966&extension=ts
-
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.3.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",Sky Bundesliga 3
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27144&extension=ts
-
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.4.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Bundesliga 4
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27145&extension=ts
-
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.5.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/123_sky_logo_skybundesligahd6_tvguide.png",Sky Bundesliga 5
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27146&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.6.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/124_sky_logo_skybundesligahd7_tvguide.png",Sky Bundesliga 6
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27147&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.7.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/125_sky_logo_skybundesligahd8_tvguide.png",Sky Bundesliga 7
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27148&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.8.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/126_sky_logo_skybundesligahd9_tvguide.png",Sky Bundesliga 8
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27149&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.9.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/127_sky_logo_skybundesligahd10_tvguide.png",Sky Bundesliga 9
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27150&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.10.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/998_sky_logo_sky-sport-buli-10-hd_tvguide.png",Sky Bundesliga 10
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27151&extension=ts
-
-
-#EXTINF:-1 tvg-id="Sky.Sport.Top.Event.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1014_sky_logo_sky-sport-top-event-hd_tvguide.png",Sky Sport Top Event
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=255365&extension=ts
-
-#EXTINF:-1 tvg-id="Sky.Sport.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/129_sky_logo_skysporthd3_tvguide.png",Sky Sport 
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=135126&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/130_sky_logo_skysporthd3_tvguide.png",Sky Sport 1
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27131&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/131_sky_logo_skysporthd4_tvguide.png",Sky Sport 2
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27132&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.3.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/132_sky_logo_skysporthd5_tvguide2.png",Sky Sport 3
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27133&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.4.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/133_sky_logo_skysporthd6_tvguide.png",Sky Sport 4
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27134&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.5.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/134_sky_logo_skysporthd7_tvguide.png",Sky Sport 5
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27135&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.6.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/135_sky_logo_skysporthd8_tvguide.png",Sky Sport 6
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27136&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.7.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/136_sky_logo_skysporthd9_tvguide.png",Sky Sport 7
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27137&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.8.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/137_sky_logo_skysporthd10_tvguide.png",Sky Sport 8
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27138&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.9.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/138_sky_logo_skysporthd11_tvguide.png",Sky Sport 9
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115394&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.10.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/999_sky_logo_sky-sport-pl-hd_tvguide.png",Sky Sport 10
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=302186&extension=ts
-#EXTINF:-1 tvg-id="SKY.Sport.F1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/853_sky_logo_sport-f1-hd_tvguide.png",Sky Sport Formel 1
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=170987&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.Golf.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1002_sky_logo_sky-sport-golf-hd_tvguide.png",Sky Sport Golf
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=255367&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.Tennis.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1012_sky_logo_sky-sport-tennis-hd_tvguide.png",Sky Sport Tennis
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=255364&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.Mix.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1005_sky_logo_sky-sport-mix-hd_tvguide.png",Sky Sport Mix
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=255366&extension=ts
-
-#EXTINF:-1 tvg-id="Sky.Sport.Premier.Leaque.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/1000_sky_logo_sky-sport-pl-hd_tvguide.png",Sky Sport Premier League
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=302175&extension=ts
-#EXTINF:-1 tvg-id="Sky.Sport.News.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/17_sky_logo_skysportnewshd_tvguide.png",Sky Sport News
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27130&extension=ts
