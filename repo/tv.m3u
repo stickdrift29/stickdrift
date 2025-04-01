@@ -1,3 +1,4 @@
+
 #EXTM3U
 #EXTINF:-1 tvg-id="13TH.STREET.de" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/lightbg/100x100/442.png",13TH Street
 plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=13TH+STREET
@@ -511,7 +512,6 @@ plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SKY+SPORT+
 
 
 
-
 #EXTINF:-1 tvg-id="13TH.STREET.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/lightbg/100x100/442.png",13TH Street
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2857&extension=ts
 #EXTINF:-1 tvg-id="3sat.DE" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1006.png",3 Sat
@@ -519,15 +519,13 @@ http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2858&exten
 #EXTINF:-1 tvg-id="ARD-alpha.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1007.png",ARD alpha
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=184228&extension=ts
 #EXTINF:-1 tvg-id="SONY.AXN.de" group-title="BEE Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/AXN_Black_logo_%282015%29.svg/240px-AXN_Black_logo_%282015%29.svg.png",AXN Black
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=AXN
-#EXTINF:-1 tvg-id="SONY.AXN.de" group-title="BEE Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/AXN_Black_logo_%282015%29.svg/240px-AXN_Black_logo_%282015%29.svg.png",AXN Black
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=AXN+BLACK
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2860&extension=ts
+
 #EXTINF:-1 tvg-id="Sony.Channel.de" group-title="BEE Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/AXN_White_logo_%282015%29.svg/1920px-AXN_White_logo_%282015%29.svg.png",AXN White
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SONY+AXN
-#EXTINF:-1 tvg-id="Sony.Channel.de" group-title="BEE Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/AXN_White_logo_%282015%29.svg/1920px-AXN_White_logo_%282015%29.svg.png",AXN White
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=AXN+WHITE
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2936&extension=ts
+
 #EXTINF:-1 tvg-id="ANIXE.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1008.png",Anixe Serie
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=ANIXE+SERIE
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=186499&extension=ts
 #EXTINF:-1 tvg-id="ARTE.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1009.png",Arte
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2834&extension=ts
 #EXTINF:-1 tvg-id="Auto.Motor.Sport.Ch..de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1031.png",Auto Motor Sport
@@ -558,7 +556,7 @@ http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27152&exte
 #EXTINF:-1 tvg-id="Eurosport.2.de" group-title="BEE Sport" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/450.png",Eurosport 2
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27153&extension=ts
 #EXTINF:-1 tvg-id="Motorvision.TV.de" group-title="BEE Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/52_sky_logo_motorvision_b.png",Motorvision
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=MOTORVISION
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27155&extension=ts
 
 #EXTINF:-1 tvg-id="DE: Heimatkanal.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/498.png",Heimatkanal
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2877&extension=ts
@@ -643,8 +641,7 @@ http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2904&exten
 
 #EXTINF:-1 tvg-id="TELE.5.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1018.png",Tele 5
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2942&extension=ts
-#EXTINF:-1 tvg-id="TOGGO.plus.de" group-title="BEE Kinder" tvg-logo="https://images.waipu.tv/api/channels/TOGGOPLUS/logosd.png?width=100&height=100",Toggo Plus
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2943&extension=ts
+
 #EXTINF:-1 tvg-id="Universal.Channel.HD.de" group-title="BEE Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/438.png",Universal Channel
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2944&extension=ts
 
@@ -663,15 +660,17 @@ http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=301317&ext
 #EXTINF:-1 tvg-id="WDR.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1000.png",WDR
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=8257&extension=ts
 #EXTINF:-1 tvg-id="Welt.der.Wunder.de" group-title="BEE Dokumentation" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Welt_der_Wunder.jpg/1280px-Welt_der_Wunder.jpg",WELT DER WUNDER
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=WELT+DER+WUNDER
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115154&extension=ts
 #EXTINF:-1 tvg-id="ZDF.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1063.png",ZDF
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2823&extension=ts
 #EXTINF:-1 tvg-id="ZDFinfo.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1013.png",ZDF info
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2824&extension=ts
 #EXTINF:-1 tvg-id="ZDFneo.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1015.png",ZDF neo
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2825&extension=ts
-#EXTINF:-1 tvg-id="SUPER.RTL.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/993.png",Super RTL
-plugin://plugin.video.BauBauVavoo/?action=channels&group=Germany&name=SUPER+RTL
+#EXTINF:-1 tvg-id="TOGGO.plus.de" group-title="BEE Kinder" tvg-logo="https://images.waipu.tv/api/channels/TOGGOPLUS/logosd.png?width=100&height=100",Toggo Plus
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2943&extension=ts
+#EXTINF:-1 tvg-id="TOGGO.plus.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/993.png",Toggo
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=27116&extension=ts
 #EXTINF:-1 tvg-id="SWR/SR.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1030.png",SWR
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2852&extension=ts
 
