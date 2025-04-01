@@ -519,7 +519,7 @@ http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2858&exten
 #EXTINF:-1 tvg-id="ARD-alpha.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1007.png",ARD alpha
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=184228&extension=ts
 #EXTINF:-1 tvg-id="SONY.AXN.de" group-title="BEE Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/AXN_Black_logo_%282015%29.svg/240px-AXN_Black_logo_%282015%29.svg.png",AXN Black
-http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2860&extension=ts
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115168&extension=ts
 
 #EXTINF:-1 tvg-id="Sony.Channel.de" group-title="BEE Sky" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/AXN_White_logo_%282015%29.svg/1920px-AXN_White_logo_%282015%29.svg.png",AXN White
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2936&extension=ts
@@ -661,6 +661,8 @@ http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=301317&ext
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=8257&extension=ts
 #EXTINF:-1 tvg-id="Welt.der.Wunder.de" group-title="BEE Dokumentation" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Welt_der_Wunder.jpg/1280px-Welt_der_Wunder.jpg",WELT DER WUNDER
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=115154&extension=ts
+#EXTINF:-1 tvg-id="SPIEGEL.Geschichte.de" group-title="Dokumentation" tvg-logo="http://epggw.a1.net/img/station/lightbg/100x100/486.png",Spiegel Geschichte
+http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2936&extension=ts
 #EXTINF:-1 tvg-id="ZDF.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1063.png",ZDF
 http://mutant.arrox.top:80/play/live.php?mac=00:1A:79:01:41:4A&stream=2823&extension=ts
 #EXTINF:-1 tvg-id="ZDFinfo.de" group-title="BEE Standard" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1013.png",ZDF info
