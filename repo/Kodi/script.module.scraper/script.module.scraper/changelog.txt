@@ -1,1 +1,1 @@
-Serien-Stream and SerienHD removed
+Diverse änderung im Code, Vavoo aus Scraper entfernt und Hoster + Abspieler Anzeiger hinzugefügt

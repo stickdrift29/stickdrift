@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import os, sys, xbmc, xbmcplugin, xbmcgui, xbmcaddon, requests, six, json, threading, urllib3
+import os, sys, xbmc, xbmcplugin, xbmcgui, xbmcaddon, requests, six, json, threading, urllib3, time
 from six.moves.urllib.parse import parse_qsl, urlparse
 from resources.lib import tools, settings
 from resources.lib.gui.gui import cGui
@@ -162,15 +162,15 @@ def searchGlobal(sSearchText, searchtitles, isSerie, _type, _id, season, episode
 		if settings.skip == "Ok": sources.append(result)
 	return sources
 
-def callApi(action, params, method="GET", headers=None, **kwargs):
-	tools.logger.debug("Action:%s params: %s" % (action,json.dumps(params)))
-	if not headers: headers = dict()
-	headers["auth-token"] = tools.getAuthSignature()
-	resp = session.request(method, ("https://www2.vavoo.to/ccapi/" + action), params=params, headers=headers, **kwargs)
-	resp.raise_for_status()
-	data = resp.json()
-	tools.logger.debug("callApi res: %s" % json.dumps(data))
-	return data
+#def callApi(action, params, method="GET", headers=None, **kwargs):
+#	tools.logger.debug("Action:%s params: %s" % (action,json.dumps(params)))
+#	if not headers: headers = dict()
+#	headers["auth-token"] = tools.getAuthSignature()
+#	resp = session.request(method, ("https://www2.vavoo.to/ccapi/" + action), params=params, headers=headers, **kwargs)
+#	resp.raise_for_status()
+#	data = resp.json()
+#	tools.logger.debug("callApi res: %s" % json.dumps(data))
+#	return data
 
 def callApi2(action, params):
 	res = callApi(action, params, verify=False)
@@ -243,21 +243,24 @@ def _get(_type, _id, season, episode):
 		try:
 			if resolver and resolver.relevant_resolvers(urlparse(mirror['url']).hostname):
 				url = resolver.resolve(mirror['url'])
-			elif 'hd-stream' in mirror['url']:
-				id = mirror['url'].split('/')[-1]
-				posturl = 'https://hd-stream.to/api/source/%s' % id
-				data = {'r': 'https://kinoger.to/', 'd': 'hd-stream.to'}
-				response = session.post(posturl, data)
-				if response.status_code != 200: continue
-				links = response.json()['data']
-				links = sorted(links, key=lambda x: int(x['label'].replace('p', '')), reverse=True)
-				url = links[0]['file']
+			#elif 'hd-stream' in mirror['url']:
+			#	id = mirror['url'].split('/')[-1]
+			#	posturl = 'https://hd-stream.to/api/source/%s' % id
+			#	data = {'r': 'https://kinoger.to/', 'd': 'hd-stream.to'}
+			#	response = session.post(posturl, data)
+			#	if response.status_code != 200: continue
+			#	links = response.json()['data']
+			#	links = sorted(links, key=lambda x: int(x['label'].replace('p', '')), reverse=True)
+			#	url = links[0]['file']
 			else:
 				res = callApi2('open', {'link': mirror['url']})
 				url = res[-1].get('url')
 			if url:
 				headers = {}; params = {}
 				newurl = url
+				if "https" in newurl:
+					newurl, headers = newurl.strip("https")
+					headers = dict(parse_qsl(headers))
 				if "|" in newurl:
 					newurl, headers = newurl.split("|")
 					headers = dict(parse_qsl(headers))
@@ -274,15 +277,15 @@ def _get(_type, _id, season, episode):
 	return False
 
 def play(_type, _id, season, episode):
-	if xbmcaddon.Addon().getSetting('vavoo') == 'true':
-		from lib import vjackson
-		#url = xbmc.executebuiltin('RunPlugin(plugin://plugin.video.vavooto/?action=get&id=movie.%s&find=true)' % _id) if _type == "movie" else xbmc.executebuiltin('RunPlugin(plugin://plugin.video.vavooto/?action=get&id=%s.%s&s=%s&e=%s&find=true)' %(_type, _id,season, episode))
-		param = {"id": "movie.%s" %_id,  "find":"true"} if _type == "movie" else {"id": "series.%s" %_id, "s": season, "e": episode,  "find":"true"}
-		url = vjackson._get(param)
-		if url: return _play(url)
 	data = tools.get_data({"id":"%s.%s" % (_type, _id)})
 	if _type == "tv": isSerie, name, releaseDate = True, data["name"], data["first_air_date"]
 	else: isSerie, name, releaseDate = False, data["title"], data["release_date"]
+	#if xbmcaddon.Addon().getSetting('vavoo') == 'true':
+	#	from lib import vjackson
+		#url = xbmc.executebuiltin('RunPlugin(plugin://plugin.video.vavooto/?action=get&id=movie.%s&find=true)' % _id) if _type == "movie" else xbmc.executebuiltin('RunPlugin(plugin://plugin.video.vavooto/?action=get&id=%s.%s&s=%s&e=%s&find=true)' %(_type, _id,season, episode))
+	#	param = {"id": "movie.%s" %_id, "n":name, "find":"true"} if _type == "movie" else {"id": "series.%s" %_id, "n":name, "s": season, "e": episode,  "find":"true"}
+	#	url = vjackson._get(param)
+	#	if url: return _play(url)
 	searchYear=int(releaseDate[:4])
 	results = data.get("alternative_titles", {}).get("results")
 	searchtitles = [a["title"] for a in results] if results else []
@@ -295,17 +298,21 @@ def play(_type, _id, season, episode):
 	total = len(hosters)
 	dialog.create("Suche gestartet ...", "Teste Streams")
 	for count, k in enumerate(hosters, 1):
-		dialog.update(int(count/total*100), "Teste Stream %s/%s" % (count, total))
+		dialog.update(int(count/total*100), "Teste Stream %s/%s\nSeite: %s\nLink: %s" % (count, total, k["site"], k["link"]))
 		if dialog.iscanceled(): return showFailedNotification("Abgebrochen")
 		import resolveurl as resolver
 		try:
 			if k.get("resolved"): url = k["link"]
+			
 			else:
 				stream = plugin(k, True)[0]
 				url =  resolver.resolve(stream["streamUrl"])
 			if not isinstance(url, str): raise Exception("kein Link")
 			headers = {}; params = {}
 			newurl = url
+			if "https" in newurl:
+				newurl, headers = newurl.strip("https")
+				headers = dict(parse_qsl(headers))
 			if "|" in newurl:
 				newurl, headers = newurl.split("|")
 				headers = dict(parse_qsl(headers))
@@ -315,25 +322,36 @@ def play(_type, _id, season, episode):
 			res = session.get(newurl, headers=headers, params=params, stream=True)
 			if not res.ok: raise Exception("Kann Seite nicht erreichen")
 			if "text" in res.headers.get("Content-Type","text"): raise Exception("Keine Videodatei")
-			else:
-				tools.logger.info("Spiele :%s" % url)
-				return _play(url)
 		except Exception as e:
 			tools.logger.error(e)
 			import traceback
 			tools.logger.debug(traceback.format_exc())
-		finally: del resolver
+			continue
+		else:
+			tools.logger.info("Spiele :%s" % url)
+			del resolver
+			dialog.close()
+			return _play(url)
+			
+	del resolver
 	dialog.close()
 	return showFailedNotification()
 
 def _play(url):
-	try:dialog.close()
-	except: pass
 	o = xbmcgui.ListItem(xbmc.getInfoLabel("ListItem.Label"))
-	o.setPath(url)
 	o.setProperty("IsPlayable", "true")
 	if ".m3u8" in url:
-		if six.PY2: o.setProperty("inputstreamaddon", "inputstream.adaptive")
+		if six.PY2: 
+			o.setProperty("inputstreamaddon", "inputstream.adaptive")
+			o.setProperty("inputstream.adaptive.manifest_type", "hls")
 		else: o.setProperty("inputstream", "inputstream.adaptive")
-		o.setProperty("inputstream.adaptive.manifest_type", "hls")
+		o.setProperty('inputstream.adaptive.config', '{"ssl_verify_peer":false}')
+		if "|" in url:
+			url, headers = url.split("|")
+			o.setProperty('inputstream.adaptive.common_headers', headers)
+			o.setProperty('inputstream.adaptive.stream_headers', headers)
+		#if "?" in url:
+			#url, params = url.split("?")
+			#o.setProperty('inputstream.adaptive.stream_params', params)
+	o.setPath(url)
 	xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, o)
