@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import os, sys, xbmc, xbmcplugin, xbmcgui, xbmcaddon, requests, six, json, threading, urllib3, time
+import os, sys, xbmc, xbmcplugin, xbmcgui, xbmcaddon, requests, six, json, threading, urllib3
 from six.moves.urllib.parse import parse_qsl, urlparse
 from resources.lib import tools, settings
 from resources.lib.gui.gui import cGui
@@ -12,7 +12,7 @@ urllib3.disable_warnings()
 
 def showFailedNotification(msg="Keine Streams gefunden"):
 	tools.logger.info(msg)
-	xbmc.executebuiltin("Notification(%s,%s,%s,%s)" % ("Scraper",msg,5000,tools.addonInfo("icon")))
+	xbmc.executebuiltin("Notification(%s,%s,%s,%s)" % ("xStream Scraper",msg,5000,tools.addonInfo("icon")))
 	o = xbmcgui.ListItem(xbmc.getInfoLabel("ListItem.Label"))
 	xbmcplugin.setResolvedUrl(int(sys.argv[1]), False, o)
 
@@ -108,7 +108,7 @@ def searchGlobal(sSearchText, searchtitles, isSerie, _type, _id, season, episode
 			if isSerie: aPlugins.append({'id': w, 'name': w.capitalize()})
 			else:
 				if w != "serienstream": aPlugins.append({'id': w, 'name': w.capitalize()})
-	dialog.create("Scraper Suche gestartet ...", "Suche ...")
+	dialog.create("xStream Scraper Suche gestartet ...", "Suche ...")
 	for count, pluginEntry in enumerate(aPlugins):
 		t = threading.Thread(target=_pluginSearch, args=(pluginEntry, sSearchText, isSerie, oGui), name=pluginEntry["name"])
 		threads += [t]
@@ -162,15 +162,15 @@ def searchGlobal(sSearchText, searchtitles, isSerie, _type, _id, season, episode
 		if settings.skip == "Ok": sources.append(result)
 	return sources
 
-#def callApi(action, params, method="GET", headers=None, **kwargs):
-#	tools.logger.debug("Action:%s params: %s" % (action,json.dumps(params)))
-#	if not headers: headers = dict()
-#	headers["auth-token"] = tools.getAuthSignature()
-#	resp = session.request(method, ("https://www2.vavoo.to/ccapi/" + action), params=params, headers=headers, **kwargs)
-#	resp.raise_for_status()
-#	data = resp.json()
-#	tools.logger.debug("callApi res: %s" % json.dumps(data))
-#	return data
+def callApi(action, params, method="GET", headers=None, **kwargs):
+	tools.logger.debug("Action:%s params: %s" % (action,json.dumps(params)))
+	if not headers: headers = dict()
+	headers["auth-token"] = tools.getAuthSignature()
+	resp = session.request(method, ("https://www2.vavoo.to/ccapi/" + action), params=params, headers=headers, **kwargs)
+	resp.raise_for_status()
+	data = resp.json()
+	tools.logger.debug("callApi res: %s" % json.dumps(data))
+	return data
 
 def callApi2(action, params):
 	res = callApi(action, params, verify=False)
@@ -243,24 +243,21 @@ def _get(_type, _id, season, episode):
 		try:
 			if resolver and resolver.relevant_resolvers(urlparse(mirror['url']).hostname):
 				url = resolver.resolve(mirror['url'])
-			#elif 'hd-stream' in mirror['url']:
-			#	id = mirror['url'].split('/')[-1]
-			#	posturl = 'https://hd-stream.to/api/source/%s' % id
-			#	data = {'r': 'https://kinoger.to/', 'd': 'hd-stream.to'}
-			#	response = session.post(posturl, data)
-			#	if response.status_code != 200: continue
-			#	links = response.json()['data']
-			#	links = sorted(links, key=lambda x: int(x['label'].replace('p', '')), reverse=True)
-			#	url = links[0]['file']
+			elif 'hd-stream' in mirror['url']:
+				id = mirror['url'].split('/')[-1]
+				posturl = 'https://hd-stream.to/api/source/%s' % id
+				data = {'r': 'https://kinoger.to/', 'd': 'hd-stream.to'}
+				response = session.post(posturl, data)
+				if response.status_code != 200: continue
+				links = response.json()['data']
+				links = sorted(links, key=lambda x: int(x['label'].replace('p', '')), reverse=True)
+				url = links[0]['file']
 			else:
 				res = callApi2('open', {'link': mirror['url']})
 				url = res[-1].get('url')
 			if url:
 				headers = {}; params = {}
 				newurl = url
-				if "https" in newurl:
-					newurl, headers = newurl.strip("https")
-					headers = dict(parse_qsl(headers))
 				if "|" in newurl:
 					newurl, headers = newurl.split("|")
 					headers = dict(parse_qsl(headers))
@@ -280,12 +277,12 @@ def play(_type, _id, season, episode):
 	data = tools.get_data({"id":"%s.%s" % (_type, _id)})
 	if _type == "tv": isSerie, name, releaseDate = True, data["name"], data["first_air_date"]
 	else: isSerie, name, releaseDate = False, data["title"], data["release_date"]
-	#if xbmcaddon.Addon().getSetting('vavoo') == 'true':
-	#	from lib import vjackson
+	if xbmcaddon.Addon().getSetting('vavoo') == 'true':
+		from lib import vjackson
 		#url = xbmc.executebuiltin('RunPlugin(plugin://plugin.video.vavooto/?action=get&id=movie.%s&find=true)' % _id) if _type == "movie" else xbmc.executebuiltin('RunPlugin(plugin://plugin.video.vavooto/?action=get&id=%s.%s&s=%s&e=%s&find=true)' %(_type, _id,season, episode))
-	#	param = {"id": "movie.%s" %_id, "n":name, "find":"true"} if _type == "movie" else {"id": "series.%s" %_id, "n":name, "s": season, "e": episode,  "find":"true"}
-	#	url = vjackson._get(param)
-	#	if url: return _play(url)
+		param = {"id": "movie.%s" %_id, "n":name, "find":"true"} if _type == "movie" else {"id": "series.%s" %_id, "n":name, "s": season, "e": episode,  "find":"true"}
+		url = vjackson._get(param)
+		if url: return _play(url)
 	searchYear=int(releaseDate[:4])
 	results = data.get("alternative_titles", {}).get("results")
 	searchtitles = [a["title"] for a in results] if results else []
@@ -303,16 +300,12 @@ def play(_type, _id, season, episode):
 		import resolveurl as resolver
 		try:
 			if k.get("resolved"): url = k["link"]
-			
 			else:
 				stream = plugin(k, True)[0]
 				url =  resolver.resolve(stream["streamUrl"])
 			if not isinstance(url, str): raise Exception("kein Link")
 			headers = {}; params = {}
 			newurl = url
-			if "https" in newurl:
-				newurl, headers = newurl.strip("https")
-				headers = dict(parse_qsl(headers))
 			if "|" in newurl:
 				newurl, headers = newurl.split("|")
 				headers = dict(parse_qsl(headers))
@@ -332,7 +325,6 @@ def play(_type, _id, season, episode):
 			del resolver
 			dialog.close()
 			return _play(url)
-			
 	del resolver
 	dialog.close()
 	return showFailedNotification()
