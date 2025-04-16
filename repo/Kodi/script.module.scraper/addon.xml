@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.module.scraper" name="Scraper" provider-name="michaz1988" version="2.7.11">
+<addon id="script.module.scraper" name="Scraper" provider-name="michaz1988" version="2.7.12">
 	<requires>
 		<import addon="plugin.video.vavooto"/>
         <import addon="script.module.requests"/>
@@ -16,7 +16,7 @@
     <extension point="xbmc.addon.metadata">
         <assets>
             <icon>icon.png</icon>
-            <screenshot>icon.png</screenshot>
+            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
