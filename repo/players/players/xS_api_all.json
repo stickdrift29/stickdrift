@@ -1,7 +1,7 @@
 {
-    "name"              : "[COLORlightblue]API_Suchmaschine[/COLOR]",
+    "name"              : "[COLORyellow]API Suche[/COLOR]",
 	"plugin" 			: "plugin.video.xstream",
-	"priority"          : 10,
+	"priority"          : 20,
 	"language"          : "de",
 	"is_resolvable"     : "true",
 	"assert"            :{
@@ -11,8 +11,7 @@
 							"search_episode":   ["showname"]  
 						},
 	"fallback"			:{
-							"play_movie": "xS_GlobalSearch.json search_movie",
-							"play_episode": "xS_GlobalSearch.json search_episode"
+							"play_movie": "xS_GlobalSearch.json search_movie"
 						},
     "play_movie" 		:[
 							"plugin://plugin.video.xstream/?function=showSearch&site=api_all",
@@ -21,18 +20,9 @@
 						],						
 	"play_episode"      :[
 							"plugin://plugin.video.xstream/?function=showSearch&site=api_all",
-
-							{
-								"keyboard": "{showname}"
-							},
-							
-								{
-									"title": "(?i).*{showname}.*Staffel.*?{season}"
-								},
-								{
-									"title": "(?i).*Episode.*{episode}"
-								}
-							
+							{"keyboard": "{showname}"},
+							{"title": "(?i).*{showname}.*Staffel.*?{season}"},
+							{"title": "(?i).*Episode.*{episode}"}
                         ]
 }
 
