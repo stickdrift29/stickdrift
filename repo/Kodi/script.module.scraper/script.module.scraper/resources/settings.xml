@@ -17,7 +17,7 @@
   <setting default="true" id="aniworld" label="AniWorld" type="bool"/>
   <setting default="true" id="einschalten" label="Einschalten" type="bool"/>
   <setting default="true" id="filmpalast" label="FilmPalast" type="bool"/>
-  <setting default="true" id="flimmerstube" label="Flimmerstube" type="bool"/>
+  <!--<setting default="false" id="flimmerstube" label="Flimmerstube" type="bool"/>-->
   <setting default="true" id="hdfilme" label="HD Filme" type="bool"/>
   <setting default="true" id="hdfilme_1" label="FHD Filme" type="bool"/>
   <setting default="false" id="internetarchive" label="Internet Archive" type="bool"/>
