@@ -1,7 +1,7 @@
 {
 	"name" 				: "[COLORdeepskyblue]SerienStream[/COLOR]",
 	"plugin" 			: "plugin.video.xstream",
-	"priority"          : 2,
+	"priority"          : 170,
 	"language"          : "de",
 	"is_resolvable"     : "true",
 	"assert"            :{
@@ -14,7 +14,7 @@
 	"play_episode" 		:[
 							"plugin://plugin.video.xstream/?function=showSearch&site=serienstream",
 							{"keyboard": "{showname}"},
-							{"title": "(?i)^(\\[.*\\])?{showname}(\\[.*\\])?$"},
+							{"title": "{showname}"},
 							{"return": "true", "season": "{season}", "episode": "{episode}"},
 							{"season": "{season}"},
 							{"season": "{season}", "episode": "{episode}"}

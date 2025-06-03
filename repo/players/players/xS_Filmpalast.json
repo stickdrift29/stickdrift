@@ -1,7 +1,7 @@
 {
     "name"              : "[COLORgreen]FilmPalast[/COLOR]",
 	"plugin" 			: "plugin.video.xstream",
-	"priority"          : 3,
+	"priority"          : 40,
 	"language"          : "de",
 	"is_resolvable"     : "true",
 	"assert"            :{

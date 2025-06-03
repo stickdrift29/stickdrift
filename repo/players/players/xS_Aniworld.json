@@ -1,7 +1,7 @@
 {
 	"name" 				: "[COLORdeepskyblue]Aniworld[/COLOR]",
 	"plugin" 			: "plugin.video.xstream",
-	"priority"          : 1,
+	"priority"          : 10,
 	"language"          : "de",
 	"is_resolvable"     : "true",
 	"assert"            :{
