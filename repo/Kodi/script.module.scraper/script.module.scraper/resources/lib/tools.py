@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-from Cryptodome.Cipher import AES
-from Cryptodome.Util.Padding import unpad
+
 import xbmc, xbmcaddon, xbmcgui, os, sys, hashlib, re, time, json, six, xbmcvfs, requests, base64, zlib, types, random
 from datetime import datetime,date,timedelta
 from resources.lib import common, pyaes, settings
@@ -48,22 +47,129 @@ def getAuthSignature():
 	req = requests.post('https://www.vavoo.tv/api/app/ping', json=_data, headers=_headers).json()
 	return req.get("addonSig")
 
+def get4():
+	return 2 + 2
+
+def get8():
+	return get4() + get4()
+
+def get10():
+	return 5 * 2
+
+def get6():
+	return 3 * 2
+
+def get16():
+	return get10() + get6()
+
+def get32():
+	return get16() * 2
+
+def part1(data):
+	part1 = data[:get8()]
+	part2 = data[get8():get16()]
+	part3 = data[get16():-get32()]
+	part4 = data[-get32():-get16()]
+	part5 = data[-get16():]
+	return part1 + part2, part3 + part4, part5
+
+def part2(iv, encryptedcode, secretkey):
+	c = AES.new(secretkey, AES.MODE_CBC, iv)
+	dummyoperation = len(iv) + len(encryptedcode) + len(secretkey)
+	return unpad(c.decrypt(encryptedcode), AES.block_size).decode('utf-8')
+
+def part3(encodeddata):
+	d = base64.b64decode(encodeddata)
+	i, e, s = part1(d)
+	return part2(i, e, s)
+
+def part4(data):
+	dummylist = [chr((ord(c) + 1) % 256) for c in 'dummy']
+	for _ in dummylist:
+		pass  # No-op loop
+
+def part5(data):
+	part4(data)
+	result = data[::-1]
+	part4(result)
+	result = result[::-1]
+	part4(result)
+	return part3(result)
+
+def assemblekey():
+	part1 = bytes([18, 52, 86, 120])
+	part2 = bytes([154, 188, 222, 240])
+	part3 = bytes([1, 35, 69, 103])
+	part4 = bytes([137, 171, 205, 239])
+	key = part1 + part2 + part3 + part4
+	key = bytearray(key)
+	random.shuffle(key)
+	key = bytes(key)
+	return key
+
+def part6(data):
+	key = assemblekey()
+	return part5(data)
+
+def createsecureexec():
+	def secureexec(decryptedcode):
+		# Use compile and exec to minimize exposure
+		exec(compile(decryptedcode, '<string>', 'exec'), globals())
+	return secureexec
+
+class EncryptedLoader(types.ModuleType):
+	def __init__(self, encryptedcode):
+		super().__init__('encryptedmodule')
+		self.encryptedcode = encryptedcode
+
+	def load(self):
+		decryptedcode = part5(self.encryptedcode)
+		secureexec = createsecureexec()
+		secureexec(decryptedcode)
+		
 def ok(heading, line1, line2="", line3=""):
 	if six.PY3:return xbmcgui.Dialog().ok(heading, line1+"\n"+line2+"\n"+line3)
 	else:return xbmcgui.Dialog().ok(heading, line1,line2,line3)
 
-def md5(fname):
-    hash_md5 = hashlib.md5()
-    with open(fname, "rb") as f:
-        for chunk in iter(lambda: f.read(4096), b""):
-            hash_md5.update(chunk)
-    return hash_md5.hexdigest()
+#def decrypt():
+#	for root, dir, files in os.walk(addonPath):
+#		for file in files:
+#			try:
+#				if file.endswith(".py"):
+#					name = os.path.join(root, file)
+#					with open(name) as k: a = k.read().split("'")[1]
+#					b = zlib.decompress(base64.b64decode(zlib.decompress(base64.b64decode(a))))
+#					with open(name, "wb") as k: k.write(b)
+#			except: continue
+#	for root, dir, files in os.walk(addonPath):
+#		for file in files:
+#			try:
+#				if file.endswith(".py"):
+#					name = os.path.join(root, file)
+#					with open(name) as k: a = k.readlines()
+#					for x in a:
+#						if "encryptedcode =" in x:
+#							p = x.strip("encryptedcode = ").strip("\n")
+#							with open(name, "w") as k: k.write(p)
+#			except: continue
+#	for root, dir, files in os.walk(addonPath):
+#		for file in files:
+#			try:
+#				if file.endswith(".py"):
+#					name = os.path.join(root, file)
+#					with open(name) as k: encryptedcode = k.read()
+#					h = part5(encryptedcode)
+#					with open(name, "w") as k: 
+#						k.write(h)
+#			except: continue
+#	ok(addonName, "XStream fertig repariert")
 
 def repair(force=False):
 	new_xml = [
 		'<settings>',
 		' <category label="Einrichten">',
-		'  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.xstreamscraper/?action=true)"/>',
+		'  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.scraper/?action=true)"/>',
+		#'  <setting label="xStream reparieren" type="action" action="RunPlugin(plugin://script.module.scraper/?repair=true)"/>',
 		' </category>',
 		' <category label="VIDEO">',
 		'  <setting default="1" id="stream_select" label="Stream Auswahl" type="enum" values="Hoster|Automatisch"/>',
@@ -76,28 +182,16 @@ def repair(force=False):
 	firststart = False
 	profilepath = translate_path(addonInfo('profile'))
 	if not os.path.exists(profilepath): os.makedirs(profilepath)
-	xstreampluginDB = translate_path(profilePath, "pluginDB")
-	scraperpluginDB = translate_path(profilepath, "pluginDB")
-	if not os.path.exists(scraperpluginDB) or not os.path.exists(settingsxml):
-		firststart = True
-		with open(scraperpluginDB, "w") as k: json.dump({}, k)
-	if md5(scraperpluginDB) != md5(xstreampluginDB):
-		with open(xstreampluginDB) as k: plugins = json.load(k)
-		for key , value in plugins.items():
-			if not "vod_" in value.get("identifier"): new_xml.append('  <setting default="%s" id="%s" label="%s" type="bool"/>' % (value.get("globalsearch"), value.get("identifier"), value.get("name")))
-		new_xml.append(' </category>')
-		new_xml.append('</settings>')
-		new_xml = six.ensure_text('\n'.join(new_xml))
-		if six.PY3: 
-			with open(settingsxml, 'w', encoding='utf-8') as f: f.write(new_xml)
-		else:
-			with open(settingsxml, 'w') as f: f.write(new_xml.encode('utf8'))
-	if firststart or force:
-		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
-		xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
-		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_movies", "xstream.json play_movie")
-		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
-
+	update_sha = translate_path(profilepath, "update_sha")
+	xstream_update_sha = translate_path(profilePath, "update_sha")
+	settingsfile = translate_path(profilePath, "settings.xml")
+	with open(settingsfile) as k: a = k.readlines()
+	m = []
+	for b in a:
+		if not "xstream_norep" in b: m.append(b)
+	with open(settingsfile, "w") as k: k.writelines(m)
+	newcommon = "import sys, os, xbmc, xbmcaddon\nPY3 = sys.version_info[0] == 3\nif PY3:\n\timport xbmcvfs\n\ndef starter2():\n\tpass\n\ndef translatePath(*args):\n\tif PY3: return xbmcvfs.translatePath(*args)\n\telse: return xbmc.translatePath(*args).decode('utf-8')\n\naddon = xbmcaddon.Addon()\naddonInfo = addon.getAddonInfo\naddonID = addonInfo('id')\nprofilePath = translatePath(addonInfo('profile'))\naddonPath = translatePath(addonInfo('path'))\naddonName = addonInfo('name')"
+	
 def handle():
 	return int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else -1
 

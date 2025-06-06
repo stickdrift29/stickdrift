@@ -15,6 +15,7 @@
 
  <category label="Scraper">
   <setting default="true" id="aniworld" label="AniWorld" type="bool"/>
+  <setting default="true" id="api_all" label="API Suchmaschine" type="bool"/>
   <setting default="true" id="einschalten" label="Einschalten" type="bool"/>
   <setting default="true" id="filmpalast" label="FilmPalast" type="bool"/>
   <!--<setting default="false" id="flimmerstube" label="Flimmerstube" type="bool"/>-->
