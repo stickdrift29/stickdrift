@@ -108,7 +108,7 @@ def searchGlobal(sSearchText, searchtitles, isSerie, _type, _id, season, episode
 			if isSerie: aPlugins.append({'id': w, 'name': w.capitalize()})
 			else:
 				if w != "serienstream": aPlugins.append({'id': w, 'name': w.capitalize()})
-	dialog.create("Scraper Suche gestartet ...", "Suche ...")
+	dialog.create("Suche gestartet ...", "Suche ...")
 	for count, pluginEntry in enumerate(aPlugins):
 		t = threading.Thread(target=_pluginSearch, args=(pluginEntry, sSearchText, isSerie, oGui), name=pluginEntry["name"])
 		threads += [t]
