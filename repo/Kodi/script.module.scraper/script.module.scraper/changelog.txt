@@ -1,3 +1,5 @@
+Version 2.7.17 Settings Angepasst
+
 Version 2.7.16 Anpassungen an player
 
 Version 2.7.15 API_Suchmaschine hinzugefügt
