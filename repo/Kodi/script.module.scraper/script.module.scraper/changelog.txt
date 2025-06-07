@@ -1,4 +1,4 @@
-Version 2.7.19 Vavoo wieder hinzugefügt
+Version 2.7.20 Vavoo wieder hinzugefügt
 
 Version 2.7.17 Settings Angepasst
 
