@@ -11,6 +11,7 @@ def main():
 	from six.moves.urllib.parse import parse_qsl
 	params = dict(parse_qsl(sys.argv[2][1:]))
 	tmdb_id = params.get("id")
+	title = params.get("title", "")
 	action = params.get("action")
 	repair = params.get("repair")
 	season = int(params.get("season", 0))

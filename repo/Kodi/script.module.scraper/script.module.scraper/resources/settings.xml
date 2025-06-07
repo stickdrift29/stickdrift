@@ -1,8 +1,8 @@
 <settings>
  <category label="Einrichten">
-  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.xstreamscraper/?action=true)"/>
+  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.scraper/?action=true)"/>
+  <!--<setting label="xStream reparieren" type="action" action="RunPlugin(plugin://script.module.scraper/?repair=true)"/>-->
  </category>
- <!--
  <category label="VIDEO">
   <setting default="1" id="stream_select" label="Stream Auswahl" type="enum" values="Hoster|Automatisch"/>
   <setting default="true" id="auto_try_next_stream" type="bool" subsetting="true" visible="eq(-1,0)" label="Automatisch nächsten ähnlichen Stream versuchen"/>
@@ -10,7 +10,7 @@
  <category label="VAVOO">
   <setting default="true" id="vavoo" label="Vavoo" type="bool"/>
  </category>
- -->
+
  <category label="Scraper">
   <setting default="true" id="aniworld" label="AniWorld" type="bool"/>
   <setting default="true" id="api_all" label="API Suchmaschine" type="bool"/>
@@ -34,9 +34,9 @@
   <setting default="true" id="topstreamfilm" label="Topstreamfilm" type="bool"/>
   <setting default="false" id="dokus" label="Dokumentationen" type="bool"/>
   <setting default="false" id="kids_tube" label="Kids Tube" type="bool"/>
-  <setting default="false" id="vod_huhu" label="vod_huhu" type="bool"/>
-  <setting default="false" id="vod_kool" label="vod_kool" type="bool"/>
-  <setting default="false" id="vod_oha" label="vod_oha" type="bool"/>
-  <setting default="false" id="vod_vavoo" label="vod_vavoo" type="bool"/>  
+  <setting default="true" id="vod_huhu" label="vod_huhu" type="bool"/>
+  <setting default="true" id="vod_kool" label="vod_kool" type="bool"/>
+  <setting default="true" id="vod_oha" label="vod_oha" type="bool"/>
+  <setting default="true" id="vod_vavoo" label="vod_vavoo" type="bool"/>  
  </category>
 </settings>

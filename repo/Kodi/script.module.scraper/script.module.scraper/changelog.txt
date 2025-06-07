@@ -1,3 +1,5 @@
+Version 2.7.19 Vavoo wieder hinzugefügt
+
 Version 2.7.17 Settings Angepasst
 
 Version 2.7.16 Anpassungen an player
