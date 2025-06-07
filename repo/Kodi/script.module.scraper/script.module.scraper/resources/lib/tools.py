@@ -64,13 +64,6 @@ def repair(force=False):
 		' <category label="Einrichten">',
 		'  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.xstreamscraper/?action=true)"/>',
 		' </category>',
-		' <category label="VIDEO">',
-		'  <setting default="1" id="stream_select" label="Stream Auswahl" type="enum" values="Hoster|Automatisch"/>',
-		'  <setting default="true" id="auto_try_next_stream" type="bool" subsetting="true" visible="eq(-1,0)" label="Automatisch nächsten ähnlichen Stream versuchen"/>',
-		' </category>',
-		' <category label="VAVOO">',
-		'  <setting default="true" id="vavoo" label="Vavoo" type="bool"/>',
-		' </category>',
 		' <category label="Scraper">']
 	firststart = False
 	profilepath = translate_path(addonInfo('profile'))
