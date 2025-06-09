@@ -1,0 +1,16 @@
+Version 2.7.20 Vavoo wieder hinzugefügt
+
+Version 2.7.17 Settings Angepasst
+
+Version 2.7.16 Anpassungen an player
+
+Version 2.7.15 API_Suchmaschine hinzugefügt
+
+Version 2.7.13 Flimmerstube entfernt
+
+Version 2.7.12 fanart hinzugefügt geändert
+
+
+Version 2.7.11 Icon geändert
+
+Version 2.7.9  VOD Hinzugefügt ( VAVOO,Kool,Huhu und Oha )
