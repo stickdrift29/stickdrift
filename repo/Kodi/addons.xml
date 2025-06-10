@@ -1,34 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addons>
-        <addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="3.0.19">
-	        <extension point="xbmc.addon.repository" name="Stickdrift Repository">
-                <dir maxversion="21.7.700">
-                    <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Kodi/addons.xml</info>
-                    <checksum>https://stickdrift29.github.io/stickdrift/repo/Kodi/addons.xml.md5</checksum>
-                    <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Kodi/</datadir>
-                </dir>
-                <dir minversion="21.9.700">
-                    <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Kodi/Piers/addons.xml</info>
-                    <checksum>https://stickdrift29.github.io/stickdrift/repo/Kodi/Piers/addons.xml.md5</checksum>
-                    <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Kodi/Piers/</datadir>
-                </dir>
-                <dir>
-				    <info compressed="false">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml</info>
-				    <checksum>https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml.md5</checksum>
-				    <datadir zip="true">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/_zips</datadir>
-				    <hashes>false</hashes>
-			    </dir>
+<addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="3.0.20">
+	    <extension point="xbmc.addon.repository" name="Stickdrift repo">
+            <dir>
+                <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Kodi/addons.xml</info>
+                <checksum>https://stickdrift29.github.io/stickdrift/repo/Kodi/addons.xml.md5</checksum>
+                <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Kodi/</datadir>
+            </dir>
+
+			<dir minversion="19.9.701" maxversion="20.9.700">
+                <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Nexus/addons.xml</info>
+                <checksum>https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Nexus/addons.xml.md5</checksum>
+                <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Nexus/</datadir>
+            </dir>
+			<dir minversion="21.0.0"  maxversion="21.7.700">
+                <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Omega/addons.xml</info>
+                <checksum>https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Omega/addons.xml.md5</checksum>
+                <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Omega/</datadir>
+            </dir>
+			<dir minversion="21.9.700">
+                <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Piers/addons.xml</info>
+                <checksum>https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Piers/addons.xml.md5</checksum>
+                <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Piers/</datadir>
+            </dir>
+            <dir>
+				<info compressed="false">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml</info>
+				<checksum>https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml.md5</checksum>
+				<datadir zip="true">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/_zips</datadir>
+				<hashes>false</hashes>
+			</dir>
             <dir>
 			    <info compressed="false">https://michaz1988.github.io/repo/addons.xml</info>
 			    <checksum>https://michaz1988.github.io/repo/addons.xml.md5</checksum>
 			    <datadir zip="true">https://michaz1988.github.io/repo/</datadir>
 		    </dir>
+            
             <dir>
                 <info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
                 <checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
                 <datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
             </dir>
-                <dir minversion="19.0.0" maxversion="22.0.0">
+            <dir minversion="19.0.0" maxversion="22.0.0">
                 <info compressed="false">https://kodi-unlimited-support.de/repo/data/addons.xml.gz</info>
                 <checksum verify="sha256">https://kodi-unlimited-support.de/repo/data/addons.xml.gz.sha256</checksum>
                 <datadir zip="true">https://kodi-unlimited-support.de/repo/data</datadir>
@@ -62,7 +73,7 @@
                 <checksum>https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/addons.xml.md5</checksum>
                 <datadir zip="true">https://raw.githubusercontent.com/dobbelina/repository.dobbelina/master/</datadir>
 		    </dir>
-            <dir>
+			<dir>
       			<info compressed="false">https://github.com/euro2000/magellan.github.io/raw/main/addons.xml</info>
       			<checksum>https://github.com/euro2000/magellan.github.io/raw/main/addons.xml.md5</checksum>
       			<datadir zip="true">https://github.com/euro2000/magellan.github.io/raw/main</datadir>
@@ -81,36 +92,15 @@
       			<datadir zip="true">https://github.com/euro2000/magellan.github.io/raw/main/matrix</datadir>
       			<hashes>false</hashes>
     		</dir>
-            </extension>
-            <extension point="xbmc.addon.metadata">
-                <summary>Kodi</summary>
-                <description lang="de">Ansammlungen von Verschiedenen Addons welche teilweise Modifiziert wurden. Dieses Repository verweist auch unteranderem zu Anderen Repositorys, somit mist das eintragen verschiedener Quellen nicht nötig.</description>
-                <disclaimer></disclaimer>
-                <platform>all</platform>
-                <assets>
-			        <icon>icon.png</icon>
-		        </assets>
-            </extension>
-        </addon>
-        <addon id="script.module.scraper" name="Scraper" provider-name="michaz1988" version="2.7.20">
-	<requires>
-		<import addon="plugin.video.vavooto"/>
-        <import addon="script.module.requests"/>
-        <import addon="script.module.six"/>
-        <import addon="script.module.resolveurl"/>
-        <import addon="plugin.video.xstream"/>
-        <!-- for remote debug -->
-        <import addon="script.module.pydevd" optional="true"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <!--<extension point="xbmc.service" library="service.py" start="startup" />-->
-    <extension point="xbmc.addon.metadata">
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Kodi</summary>
+            <description lang="de">Addons von stickdrift29</description>
+            <disclaimer></disclaimer>
+            <platform>all</platform>
+            <assets>
+			    <icon>icon.png</icon>
+		    </assets>
+        </extension>
 </addon>
 </addons>
