@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.xstream" name="xStream Repository" version="1.2.4-Piers" provider-name="xStream-Team">
+<addon id="repository.xstream" name="xStream Repository" version="1.2.6" provider-name="xStream-Team">
 	<extension point="xbmc.addon.repository" name="xStream Repository">
-		<dir minversion="21.7.700" maxversion="22.9.700">
+		<dir minversion="21.3.700" maxversion="22.9.700">
             <info compressed="false">https://raw.githubusercontent.com/streamxstream/xStreamRepo/repo/zips/addons.xml</info>
 			<checksum verify="sha256">https://raw.githubusercontent.com/streamxstream/xStreamRepo/repo/zips/addons.xml.sha256</checksum>
             <datadir zip="true">https://raw.githubusercontent.com/streamxstream/xStreamRepo/repo/zips/</datadir>
