@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="3.0.27">
+<addon id="repository.stickdrift" name="Stickdrift Repository" provider-name="stickdrift29" version="3.0.28">
 	    <extension point="xbmc.addon.repository" name="Stickdrift repo">
             <dir>
                 <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Kodi/addons.xml</info>
@@ -18,10 +18,10 @@
                 <checksum>https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Omega/addons.xml.md5</checksum>
                 <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Omega/</datadir>
             </dir>
-			<dir minversion="21.3.700" maxversion="22.9.700">
-                <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Piers/addons.xml</info>
-                <checksum>https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Piers/addons.xml.md5</checksum>
-                <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Piers/</datadir>
+			<dir minversion="21.3.700"  maxversion="22.9.700">
+                <info compressed="false">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Piers1/addons.xml</info>
+                <checksum>https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Piers1/addons.xml.md5</checksum>
+                <datadir zip="true">https://stickdrift29.github.io/stickdrift/repo/Kodi/zips/Piers1/</datadir>
             </dir>
             <dir>
 				<info compressed="false">https://raw.githubusercontent.com/bugatsinho/bugatsinho.github.io/master/addons.xml</info>
