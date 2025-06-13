@@ -80,17 +80,8 @@ def repair(force=False):
 	if not os.path.exists(scraperpluginDB) or not os.path.exists(settingsxml):
 		firststart = True
 		with open(scraperpluginDB, "w") as k: json.dump({}, k)
-	if md5(scraperpluginDB) != md5(xstreampluginDB):
-		with open(xstreampluginDB) as k: plugins = json.load(k)
-		for key , value in plugins.items():
-			if not "vod_" in value.get("identifier"): new_xml.append('  <setting default="%s" id="%s" label="%s" type="bool"/>' % (value.get("globalsearch"), value.get("identifier"), value.get("name")))
-		new_xml.append(' </category>')
-		new_xml.append('</settings>')
-		new_xml = six.ensure_text('\n'.join(new_xml))
-		if six.PY3: 
-			with open(settingsxml, 'w', encoding='utf-8') as f: f.write(new_xml)
-		else:
-			with open(settingsxml, 'w') as f: f.write(new_xml.encode('utf8'))
+
+
 	if firststart or force:
 		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
 		xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
