@@ -1,4 +1,8 @@
+Version 2.7.23 Label Änderung TMDB-Helper Einrichten geändert in TMDB Player Aktualisieren
+
 Version 2.7.22 Fehlerbeseitung für settings.xml
+
+Version 2.7.21 Test für piers
 
 Version 2.7.20 Vavoo wieder hinzugefügt
 
@@ -11,7 +15,6 @@ Version 2.7.15 API_Suchmaschine hinzugefügt
 Version 2.7.13 Flimmerstube entfernt
 
 Version 2.7.12 fanart hinzugefügt geändert
-
 
 Version 2.7.11 Icon geändert
 

@@ -62,7 +62,7 @@ def repair(force=False):
 	new_xml = [
 		'<settings>',
 		' <category label="Einrichten">',
-		'  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.xstreamscraper/?action=true)"/>',
+		'  <setting label="TMDB Player Aktualisieren" type="action" action="RunPlugin(plugin://script.module.Scraper/?action=true)"/>',
 		' </category>',
 		' <category label="VIDEO">',
 		'  <setting default="1" id="stream_select" label="Stream Auswahl" type="enum" values="Hoster|Automatisch"/>',

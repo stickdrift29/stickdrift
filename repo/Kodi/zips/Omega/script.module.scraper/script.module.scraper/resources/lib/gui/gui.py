@@ -35,7 +35,7 @@ class cGui:
 	def createListItem(self, oGuiElement):
 		pass
 
-	def __createContextMenu(self, oGuiElement, listitem, bIsFolder, sUrl):
+	def __createenu(self, oGuiElement, listitem, bIsFolder, sUrl):
 		pass
 
 	def setEndOfDirectory(self, success=True):

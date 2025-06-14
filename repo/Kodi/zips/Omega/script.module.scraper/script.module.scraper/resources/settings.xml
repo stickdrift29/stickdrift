@@ -1,6 +1,6 @@
 <settings>
  <category label="Einrichten">
-  <setting label="TMDB-HELPER einrichten" type="action" action="RunPlugin(plugin://script.module.scraper/?action=true)"/>
+  <setting label="TMDB Player Aktualisieren" type="action" action="RunPlugin(plugin://script.module.scraper/?action=true)"/>
   <!--<setting label="xStream reparieren" type="action" action="RunPlugin(plugin://script.module.scraper/?repair=true)"/>-->
  </category>
  <category label="VIDEO">
