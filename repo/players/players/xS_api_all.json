@@ -11,7 +11,8 @@
 							"search_episode":   ["showname"]  
 						},
 	"fallback"			:{
-							"play_movie": "xS_GlobalSearch.json search_movie"
+							"play_movie": "xS_GlobalSearch.json search_movie",
+							"play_episode": "xS_GlobalSearch.json search_episode"
 						},
     "play_movie" 		:[
 							"plugin://plugin.video.xstream/?function=showSearch&site=api_all",
