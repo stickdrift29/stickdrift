@@ -1,3 +1,5 @@
+Version 2.7.5 Code anpassungen
+
 Version 2.7.23 Label Änderung TMDB-Helper Einrichten geändert in TMDB Player Aktualisieren
 
 Version 2.7.22 Fehlerbeseitung für settings.xml
