@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys, xbmcaddon, xbmcplugin
 from xbmcgui import ListItem
-from resources.lib import tools
+from resources.lib import tools,control
 
 def main():
 	if not xbmcaddon.Addon().getSetting("firststart") == "true":
@@ -14,6 +14,7 @@ def main():
 	title = params.get("title", "")
 	action = params.get("action")
 	repair = params.get("repair")
+	settings = params.get("settings")
 	season = int(params.get("season", 0))
 	episode = int(params.get("episode", 0))
 	type = "tv" if season !=0 and episode !=0 else "movie"
@@ -22,6 +23,8 @@ def main():
 		scraper.play(type, tmdb_id, season, episode)
 	elif repair:
 		tools.repair(True)
+	elif settings:
+		control.openSettings()
 	elif action:
 		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("players_url", "https://stickdrift29.github.io/stickdrift/repo/players.zip")
 		xbmc.executebuiltin('RunScript(plugin.video.themoviedb.helper, update_players)')
@@ -29,8 +32,9 @@ def main():
 		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
 	else: 
 		xbmcplugin.setContent(int(sys.argv[1]), "files")
-		xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?action=true" %sys.argv[0], ListItem("TMDB Player Aktualisieren"), False)
+		#xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?action=true" %sys.argv[0], ListItem("TMDB Player Aktualisieren"), False)
 		#xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?repair=true" %sys.argv[0], ListItem("xStream reparieren"), False)
+		xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?settings=true" %sys.argv[0], ListItem("Einstellungen"), False)
 		xbmcplugin.endOfDirectory(int(sys.argv[1]), succeeded=True, cacheToDisc=True)
 
 if __name__ == '__main__':

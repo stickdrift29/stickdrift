@@ -10,7 +10,7 @@
   <setting default="true" id="vavoo" label="Vavoo" type="bool"/>
  </category>
 
- <category label="Scraper">
+ <category label="Seiten">
   <setting default="true" id="aniworld" label="AniWorld" type="bool"/>
   <setting default="true" id="api_all" label="API Suchmaschine" type="bool"/>
   <setting default="false" id="burningseries" label="BurningSeries" type="bool"/>
