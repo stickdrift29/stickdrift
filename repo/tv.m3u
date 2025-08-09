@@ -23,7 +23,7 @@
 #EXTINF:-1 tvg-id="COMEDY.CENTRAL.de" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/1073.png",Comedy Central
   plugin://plugin.video.vavooto/?name=COMEDY CENTRAL
 
-#EXTINF:-1 tvg-id="Crime. .Investigation.de" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/945.png",Crime   Investigation HD 
+#EXTINF:-1 tvg-id="Crime.+.Investigation.de" group-title="Sky" tvg-logo="http://epggw.a1.net/img/station/darkbg/100x100/945.png",Crime + Investigation HD 
   plugin://plugin.video.vavooto/?name=CRIME+%2B+INVESTIGATION
 
 
