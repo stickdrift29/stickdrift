@@ -32,8 +32,7 @@ def main():
 		xbmcaddon.Addon("plugin.video.themoviedb.helper").setSetting("default_player_episodes", "xstream.json play_episode")
 	else: 
 		xbmcplugin.setContent(int(sys.argv[1]), "files")
-		#xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?action=true" %sys.argv[0], ListItem("TMDB Player Aktualisieren"), False)
-		#xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?repair=true" %sys.argv[0], ListItem("xStream reparieren"), False)
+		#xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?action=true" %sys.argv[0], ListItem("TMDB-HELPER einrichten"), False)
 		xbmcplugin.addDirectoryItem(int(sys.argv[1]), "%s?settings=true" %sys.argv[0], ListItem("Einstellungen"), False)
 		xbmcplugin.endOfDirectory(int(sys.argv[1]), succeeded=True, cacheToDisc=True)
 
