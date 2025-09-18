@@ -1,0 +1,206 @@
+# Script Skip Intro language file
+# Addon Name: Skip Intro
+# Addon id: script.skipintro
+# Addon Provider: aenema,Blatorone
+msgid ""
+msgstr ""
+"Project-Id-Version: script.skipintro\n"
+"Report-Msgid-Bugs-To: https://blatorone.github.io/repository.blatorone/repo/script.skipintro\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-02-26 13:31+0000\n"
+"Last-Translator: Blatorone\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#32001"
+msgid "SKIP INTRO "
+msgstr "Intro überspringen "
+
+msgctxt "#32002"
+msgid "Skip Value (seconds)"
+msgstr "Überspringen Wert (Sekunden)"
+
+msgctxt "#32003"
+msgid "Start Promt At (seconds)"
+msgstr "Aufforderung ab (Sekunden)"
+
+msgctxt "#32004"
+msgid "Enable Off/On"
+msgstr "Auto-Skip Aus/An"
+
+msgctxt "#32005"
+msgid "Auto-Skip"
+msgstr "Auto-Skip"
+
+msgctxt "#32006"
+msgid "Enabled"
+msgstr "Aktiviert"
+
+msgctxt "#32007"
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+msgctxt "#32008"
+msgid "New Value"
+msgstr "Neuer Wert"
+
+msgctxt "#32009"
+msgid "Ignore TV Show"
+msgstr "Serie Ignorieren"
+
+msgctxt "#32010"
+msgid "Manage Ignore TV Shows"
+msgstr "Serien ignorieren Verwalten"
+
+msgctxt "#32011"
+msgid "Default Value for Skip"
+msgstr "Standardwert zum überspringen"
+
+msgctxt "#32012"
+msgid "Manage Auto Skip"
+msgstr "Automatisches überspringen verwalten"
+
+msgctxt "#32013"
+msgid "Invalid mode."
+msgstr "Ungültiger Modus."
+
+msgctxt "#32014"
+msgid "no mode passed."
+msgstr "kein Modus übergeben."
+
+msgctxt "#32015"
+msgid "Error"
+msgstr "Fehler"
+
+msgctxt "#32016"
+msgid "JSON format invalid."
+msgstr "JSON-Format ungültig."
+
+msgctxt "#32017"
+msgid "No series found in the Database."
+msgstr "Keine Serien in der Datenbank gefunden."
+
+msgctxt "#32018"
+msgid "Ignore"
+msgstr "Ignorieren"
+
+msgctxt "#32019"
+msgid "Confirm"
+msgstr "Betsätigen"
+
+msgctxt "#32020"
+msgid "%s really delete?"
+msgstr "%s Wirklich löschen?"
+
+msgctxt "#32021"
+msgid "%s deleted"
+msgstr "%s gelöscht"
+
+msgctxt "#32022"
+msgid "Default"
+msgstr "Standard"
+
+msgctxt "#32023"
+msgid "Switch Auto-Modus"
+msgstr "Auto-Modus umschalten"
+
+msgctxt "#32024"
+msgid "Switch Ignore TV Shows"
+msgstr "Serien ignorieren umschalten"
+
+msgctxt "#32025"
+msgid "Delete TV Show"
+msgstr "Serie löschen"
+
+msgctxt "#32026"
+msgid "Auto Skip"
+msgstr "Automatisch übersprungen"
+
+msgctxt "#32027"
+msgid "Change start time"
+msgstr "Start-Zeit ändern"
+
+msgctxt "#32028"
+msgid "Change skip time"
+msgstr "Skip-Zeit ändern"
+
+msgctxt "#32029"
+msgid "New start time (in seconds) for '%s':"
+msgstr "Neue Start-Zeit (Sekunden) für '%s':"
+
+msgctxt "#32030"
+msgid "New skip time (in seconds) for '%s':"
+msgstr "Neue Skip-Zeit (Sekunden) für '%s':"
+
+msgctxt "#32031"
+msgid "%s: Start time set to %ss"
+msgstr "%s: Start-Zeit auf %ss gesetzt"
+
+msgctxt "#32032"
+msgid "%s: Skip time set to %ss"
+msgstr "%s: Skip-Zeit auf %ss gesetzt"
+
+msgctxt "#32033"
+msgid "Delete"
+msgstr "Löschen"
+
+msgctxt "#32034"
+msgid "Change Skip Time"
+msgstr "Überspringen Zeit ändern"
+
+msgctxt "#32035"
+msgid "Change Start Time"
+msgstr "Start Zeit ändern"
+
+msgctxt "#32036"
+msgid "Default Value"
+msgstr "Standardwert"
+
+msgctxt "#32037"
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgctxt "#32041"
+msgid "Set Outro Time"
+msgstr "Outro-Zeit setzen"
+
+msgctxt "#32042"
+msgid "Outro Time in Seconds for %s"
+msgstr "Outro-Zeit in Sekunden für %s"
+
+msgctxt "#32043"
+msgid "Outro Time set to for – %s: %s s"
+msgstr "Outro-Zeit gespeichert – %s: %s s"
+
+msgctxt "#32044"
+msgid "Outro-Automatik"
+msgstr "Outro-Automatik"
+
+msgctxt "#32045"
+msgid "SwitchOutro-Automatik"
+msgstr "Outro-Automatik umschalten"
+
+msgctxt "#32046"
+msgid "Play Next Episode?"
+msgstr "Nächste Folge Abspielen?"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

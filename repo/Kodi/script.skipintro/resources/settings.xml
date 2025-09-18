@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="32037">
+        <setting id="set_skiptime" type="action" label="32034" action="RunScript(script.skipintro,mode=set_skip)" />
+        <setting id="set_starttime" type="action" label="32035" action="RunScript(script.skipintro,mode=set_start)" />
+        <setting id="manage_service" type="action" label="32010" action="RunScript(script.skipintro,mode=toggle_service)" />
+        <setting id="manage_auto" type="action" label="32012" action="RunScript(script.skipintro,mode=toggle_auto)" />
+        <setting id="delete_series" type="action" label="32033" action="RunScript(script.skipintro,mode=delete)" />
+        <setting id="set_outrotime" type="action" label="32041" action="RunScript(script.skipintro,mode=set_outro)" />
+        <setting id="manage_outro_auto" type="action" label="32045" action="RunScript(script.skipintro,mode=toggle_outro_auto)" />
+        <setting id="manage_outro_enabled" type="action" label="Outro aktivieren/deaktivieren" action="RunScript(script.skipintro,mode=toggle_outro_enabled)" />
+
+    </category>
+    <category label="32036">
+        <setting id="default.skip" type="slider" label="32011" default="45" range="10,600" option="int" />
+    </category>
+</settings>
+

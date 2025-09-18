@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="9999">
+	<onload>AlarmClock(hidemenu,setfocus(9999),02:00,true)</onload>
+	<onunload>CancelAlarm(hidemenu,true)</onunload>
+	<defaultcontrol always="true">9001</defaultcontrol>
+	<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+	<controls>
+		<control type="image">
+                
+                <left>0</left>
+                <bottom>12</bottom>
+                <width>fullscreenWidth</width>
+                <height>80</height>
+                <texture>discsurface30%.png</texture>
+				<colordiffuse>darkgrey</colordiffuse>
+                <aspectratio>black</aspectratio>
+                <visible>!window.isactive(FullscreenInfo)</visible>
+            </control>
+		<control type="grouplist" id="9001">
+			<posx>25%</posx>
+			<bottom>-75</bottom>
+			<width>1200</width>
+			<height>150</height>
+			<align>left</align>
+			<itemgap>20</itemgap>
+			<orientation>horizontal</orientation>
+			<control type="button" id="201">
+				<onclick>Action(Close)</onclick>
+				<description>Later Button</description>
+				
+				<height>50</height>
+        		<width>auto</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label></label>
+				<font>buttonTitle</font>
+				<textcolor>white</textcolor>
+        		<focusedcolor>black</focusedcolor>
+				<texturefocus colordiffuse="ff87cefa">discsurface.png</texturefocus>				
+				<textoffsetx>10</textoffsetx>
+			</control>
+			<control type="button" id="202">
+				<onclick>Action(Close)</onclick>
+				<top>50</top>
+				<description>Never Button</description>
+				
+				<height>50</height>
+        		<width>auto</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label></label>
+				<textcolor>white</textcolor>
+        		<focusedcolor>black</focusedcolor>
+				<texturefocus colordiffuse="ff87cefa">discsurface.png</texturefocus>				
+				<font>buttonTitle</font>
+				<textoffsetx>10</textoffsetx>
+			</control>
+			<control type="button" id="210">
+				<onclick>Action(Close)</onclick>
+				<top>100</top>
+				<description>Never Button</description>
+				
+				<height>50</height>
+        		<width>auto</width>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label></label>
+				<textcolor>white</textcolor>
+        		<focusedcolor>black</focusedcolor>
+				<texturefocus colordiffuse="ff87cefa">discsurface.png</texturefocus>			
+				<font>buttonTitle</font>
+				<textoffsetx>10</textoffsetx>
+				
+			</control>
+			<control type="button" id="9999">
+            <posx>-500</posx>
+            <posy>0</posy>
+            <width>1-col</width>
+            <height>2-row</height>
+			<onfocus>action(close)</onfocus>
+			
+        </control>
+			<!--
+			<control type="button" id="211">
+    			<top>150</top>
+    			<description>Toggle Service</description>
+    			<height>50</height>
+    			<width>auto</width>
+    			<align>center</align>
+    			<aligny>center</aligny>
+    			<label>Service ein/aus</label>
+    			<textcolor>white</textcolor>
+    			<focusedcolor>black</focusedcolor>
+    			<texturefocus colordiffuse="ff87cefa">discsurface.png</texturefocus>
+    			<font>buttonTitle</font>
+    			<textoffsetx>10</textoffsetx>
+			</control>
+			-->
+		</control>
+	</controls>
+</window>
