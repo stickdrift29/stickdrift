@@ -7,13 +7,13 @@
   <setting default="true" id="auto_try_next_stream" type="bool" subsetting="true" visible="eq(-1,0)" label="Automatisch nächsten ähnlichen Stream versuchen"/>
  </category>
  <category label="VAVOO">
-  <setting default="false" id="vavoo" label="Vavoo" type="bool"/>
+  <setting default="False" id="vavoo" label="Vavoo" type="bool"/>
  </category>
  <category label="Seiten">
-  <setting default="true" id="vod_huhu" label="vod_huhu" type="bool"/>
-  <setting default="true" id="vod_kool" label="vod_kool" type="bool"/>
-  <setting default="true" id="vod_oha" label="vod_oha" type="bool"/>
-  <setting default="true" id="vod_vavoo" label="vod_vavoo" type="bool"/>
+  <setting default="false" id="vod_huhu" label="vod_huhu" type="bool"/>
+  <setting default="false" id="vod_kool" label="vod_kool" type="bool"/>
+  <setting default="false" id="vod_oha" label="vod_oha" type="bool"/>
+  <setting default="false" id="vod_vavoo" label="vod_vavoo" type="bool"/>
   <setting default="true" id="aniworld" label="AniWorld" type="bool"/>
   <setting default="false" id="api_all" label="API Suchmaschine" type="bool"/>
   <setting default="false" id="dokus" label="Dokumentationen" type="bool"/>
@@ -26,7 +26,7 @@
   <setting default="false" id="kinoger" label="KinoGer" type="bool"/>
   <setting default="true" id="kinokiste" label="Kinokiste" type="bool"/>
   <setting default="true" id="kinox" label="KinoX" type="bool"/>
-  <setting default="true" id="kkiste" label="KKiste" type="bool"/>
+  <setting default="false" id="kkiste" label="KKiste" type="bool"/>
   <setting default="false" id="megakino" label="Megakino" type="bool"/>
   <setting default="true" id="moflix-stream" label="Moflix-Stream" type="bool"/>
   <setting default="true" id="movie2k" label="Movie2K" type="bool"/>

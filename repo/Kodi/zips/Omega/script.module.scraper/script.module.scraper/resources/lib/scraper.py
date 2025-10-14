@@ -209,10 +209,10 @@ def play(_type, _id, season, episode):
 	if _type == "tv": isSerie, name, releaseDate = True, data["name"], data["first_air_date"]
 	else: isSerie, name, releaseDate = False, data["title"], data["release_date"]
 	if xbmcaddon.Addon().getSetting('vavoo') == 'true':
-		from lib import vjackson
+		from vavoo import vjackson
 		#url = xbmc.executebuiltin('RunPlugin(plugin://plugin.video.vavooto/?action=get&id=movie.%s&find=true)' % _id) if _type == "movie" else xbmc.executebuiltin('RunPlugin(plugin://plugin.video.vavooto/?action=get&id=%s.%s&s=%s&e=%s&find=true)' %(_type, _id,season, episode))
 		param = {"id": "movie.%s" %_id, "n":name, "find":"true"} if _type == "movie" else {"id": "series.%s" %_id, "n":name, "s": season, "e": episode,  "find":"true"}
-		url = vjackson._get(param)
+		url = vjackson.get(param)
 		if url: return _play(url)
 	searchYear=int(releaseDate[:4])
 	results = data.get("alternative_titles", {}).get("results")
