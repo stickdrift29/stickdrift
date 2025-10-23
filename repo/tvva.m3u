@@ -309,7 +309,8 @@ plugin://plugin.video.vavooto/?name=GERMANY BOX AMAZON PRIME
 
 
 #EXTINF:-1 tvg-id="DAZN.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN 1
-  plugin://plugin.video.vavooto/?name=DAZN 1
+  plugin://plugin.video.vavooto/?name=DAZN+1+BAR
+
 #EXTINF:-1 tvg-id="DAZN.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/659_sky_logo_dazn1-hd_tvguide.png",DAZN Sport 1
   plugin://plugin.video.vavooto/?name=DAZN SPORT 1
 
@@ -317,7 +318,7 @@ plugin://plugin.video.vavooto/?name=GERMANY BOX AMAZON PRIME
 
 
 #EXTINF:-1 tvg-id="DAZN.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN 2
-  plugin://plugin.video.vavooto/?name=DAZN 2
+  plugin://plugin.video.vavooto/?name=DAZN+2+BAR
 #EXTINF:-1 tvg-id="DAZN.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/900_sky_logo_dazn2-hd_tvguide.png",DAZN Sport 2
   plugin://plugin.video.vavooto/?name=DAZN SPORT 2
 
