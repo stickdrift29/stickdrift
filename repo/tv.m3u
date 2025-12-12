@@ -22,7 +22,7 @@
 #EXTINF:-1 tvg-id="COMEDY.CENTRAL.de" group-title="Sky" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/comedycentral.png",Comedy Central
   plugin://plugin.video.vavooto/?name=COMEDY CENTRAL
 
-#EXTINF:-1 tvg-id="Crime.+.Investigation.de" group-title="Sky" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/crimeinvestigation.png",Crime + Investigation HD 
+#EXTINF:-1 tvg-id="Crime.+.Investigation.de" group-title="Sky" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/crime+investigation.png",Crime + Investigation HD 
   plugin://plugin.video.vavooto/?name=CRIME+%2B+INVESTIGATION
 
 #EXTINF:-1 tvg-id="Das.Erste.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/ard.png",Das Erste
@@ -33,7 +33,7 @@
   plugin://plugin.video.vavooto/?name=KRONE HIT TV
 #EXTINF:-1 tvg-id="DMAX.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/dmax.png",DMAX
   plugin://plugin.video.vavooto/?name=DMAX
-#EXTINF:-1 tvg-id="Discovery.HD.de" group-title="Dokumentation" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/discoveryhd.png",Discovery
+#EXTINF:-1 tvg-id="Discovery.HD.de" group-title="Dokumentation" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/discovery.png",Discovery
   plugin://plugin.video.vavooto/?name=DISCOVERY
 #EXTINF:-1 tvg-id="Disney.Channel.de" group-title="Kinder" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/disneychannel.png",Disney Channel
   plugin://plugin.video.vavooto/?name=DISNEY CHANNEL
@@ -43,13 +43,13 @@
   plugin://plugin.video.vavooto/?name=EUROSPORT 1
 #EXTINF:-1 tvg-id="Eurosport.2.de" group-title="Sport" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/eurosport2.png",Eurosport 2
   plugin://plugin.video.vavooto/?name=EUROSPORT 2
-#EXTINF:-1 tvg-id="GEO.Television.de" group-title="Dokumentation" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/geotelevision.png",Geo HD
+#EXTINF:-1 tvg-id="GEO.Television.de" group-title="Dokumentation" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/geotv.png",Geo HD
   plugin://plugin.video.vavooto/?name=GEO TV
 #EXTINF:-1 tvg-id="Motorvision.TV.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/52_sky_logo_motorvision_b.png",Motorvision
   plugin://plugin.video.vavooto/?name=MOTORVISION
-#EXTINF:-1 tvg-id="DE: Heimatkanal.de" group-title="Sky" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/deheimatkanal.png",Heimatkanal
+#EXTINF:-1 tvg-id="DE: Heimatkanal.de" group-title="Sky" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/heimatkanal.png",Heimatkanal
   plugin://plugin.video.vavooto/?name=HEIMATKANAL
-#EXTINF:-1 tvg-id="HISTORY.HD.de" group-title="Dokumentation" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/historyhd.png",History
+#EXTINF:-1 tvg-id="HISTORY.HD.de" group-title="Dokumentation" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/history.png",History
   plugin://plugin.video.vavooto/?name=HISTORY
 #EXTINF:-1 tvg-id="HR.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/hr.png",HR
   plugin://plugin.video.vavooto/?name=HR
@@ -57,13 +57,13 @@
   plugin://plugin.video.vavooto/?name=JUKEBOX
 #EXTINF:-1 tvg-id="kabel.eins.de" group-title="Standard" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kabel_eins_Logo_2015.svg/1280px-Kabel_eins_Logo_2015.svg.png",Kabel 1
   plugin://plugin.video.vavooto/?name=KABEL 1
-#EXTINF:-1 tvg-id="kabel.eins.CLASSICS.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/kabeleinsclassics.png",Kabel 1 Classics
+#EXTINF:-1 tvg-id="kabel.eins.CLASSICS.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/kabel1classics.png",Kabel 1 Classics
   plugin://plugin.video.vavooto/?name=KABEL 1 CLASSICS
-#EXTINF:-1 tvg-id="kabel.eins.Doku.de" group-title="Dokumentation" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/kabeleinsdoku.png",Kabel 1 Doku
+#EXTINF:-1 tvg-id="kabel.eins.Doku.de" group-title="Dokumentation" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/kabel1doku.png",Kabel 1 Doku
   plugin://plugin.video.vavooto/?name=KABEL 1 DOKU
 #EXTINF:-1 tvg-id="KiKA.de" group-title="Kinder" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/kika.png",KiKA
   plugin://plugin.video.vavooto/?name=KIKA
-#EXTINF:-1 tvg-id="KinoweltTV.de" group-title="Filme" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/kinowelttv.png",Kinowelt
+#EXTINF:-1 tvg-id="KinoweltTV.de" group-title="Filme" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/kinowelt.png",Kinowelt
   plugin://plugin.video.vavooto/?name=KINOWELT
 #EXTINF:-1 tvg-id="MDR.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/mdr.png",MDR
   plugin://plugin.video.vavooto/?name=MDR
@@ -123,9 +123,9 @@
   plugin://plugin.video.vavooto/?name=SAT 1 EMOTIONS
 #EXTINF:-1 tvg-id="SAT.1.Gold.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/sat1gold.png",Sat 1 Gold
   plugin://plugin.video.vavooto/?name=SAT 1 GOLD
-#EXTINF:-1 tvg-id="Servus.TV.Österreich.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/servustvoesterreich.png",Servus TV
+#EXTINF:-1 tvg-id="Servus.TV.Österreich.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/servustv.png",Servus TV
   plugin://plugin.video.vavooto/?name=SERVUS TV
-#EXTINF:-1 tvg-id="Silverline.de" group-title="Sky" tvg-logo="https://images.waipu.tv/api/channels/SILVERLINE/logosamsungsd.png?width=256&height=256",Silverline
+#EXTINF:-1 tvg-id="Silverline.de" group-title="Sky" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/silverline.png",Silverline
   plugin://plugin.video.vavooto/?name=SILVERLINE
 #EXTINF:-1 tvg-id="sixx.de" group-title="Standard" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Sixx.svg/300px-Sixx.svg.png",Sixx
   plugin://plugin.video.vavooto/?name=SIXX
@@ -139,13 +139,13 @@
   plugin://plugin.video.vavooto/?name=TAGESSCHAU24
 #EXTINF:-1 tvg-id="TELE.5.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/tele5.png",Tele 5
   plugin://plugin.video.vavooto/?name=TELE 5
-#EXTINF:-1 tvg-id="TOGGO.plus.de" group-title="Kinder" tvg-logo="https://images.waipu.tv/api/channels/TOGGOPLUS/logosd.png?width=100&height=100",Toggo Plus
+#EXTINF:-1 tvg-id="TOGGO.plus.de" group-title="Kinder" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/toggoplus.png",Toggo Plus
   plugin://plugin.video.vavooto/?name=TOGGO PLUS
-#EXTINF:-1 tvg-id="Universal.Channel.HD.de" group-title="Sky" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/universalchannelhd.png",Universal Channel
+#EXTINF:-1 tvg-id="Universal.Channel.HD.de" group-title="Sky" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/universaltv.png",Universal Channel
   plugin://plugin.video.vavooto/?name=UNIVERSAL TV
 #EXTINF:-1 tvg-id="VOX.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/vox.png",Vox
   plugin://plugin.video.vavooto/?name=VOX
-#EXTINF:-1 tvg-id="VOXup.de" group-title="Standard" tvg-logo="https://images.waipu.tv/api/channels/VOXUP/logosd.png?width=100&height=100",Vox UP
+#EXTINF:-1 tvg-id="VOXup.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/voxup.png",Vox UP
   plugin://plugin.video.vavooto/?name=VOX UP
 #EXTINF:-1 tvg-id="Warner.TV.Comedy.de" group-title="Sky" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/warnertvcomedy.png",WarnerTV Comedy
   plugin://plugin.video.vavooto/?name=WARNER TV COMEDY
@@ -165,7 +165,7 @@
   plugin://plugin.video.vavooto/?name=ZDF NEO
 #EXTINF:-1 tvg-id="SUPER.RTL.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/superrtl.png",Super RTL
   plugin://plugin.video.vavooto/?name=SUPER RTL
-#EXTINF:-1 tvg-id="SWR/SR.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/swrsr.png",SWR
+#EXTINF:-1 tvg-id="SWR/SR.de" group-title="Standard" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/swr.png",SWR
   plugin://plugin.video.vavooto/?name=SWR
 
 #EXTINF:-1 tvg-id="Sky.Atlantic.HD.de" group-title="Sky" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/2_sky_logo_skyatlantichd_tvguide.png",Sky Atlantic
@@ -191,7 +191,7 @@
 #EXTINF:-1 tvg-id="Sky.Replay.de" group-title="Sky" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/888_sky_logo_sky-replay-hd_tvguide.png",Sky Replay
   plugin://plugin.video.vavooto/?name=SKY REPLAY
 
-#EXTINF:-1 tvg-id="DE: Sky Box Thriller" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/6/68/Sky_Cinema_Thriller_HD_2020_DE_Logo.png",Sky Box Thriller
+#EXTINF:-1 tvg-id="DE: Sky Box Thriller" group-title="Filme" tvg-logo="https://raw.githubusercontent.com/michaz1988/michaz1988.github.io/main/logos/skycinemathriller.png",Sky Box Thriller
   plugin://plugin.video.vavooto/?name=SKY SELECT
 #EXTINF:-1 tvg-id="DE: Sky Select" group-title="Filme" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sky_Select_-_Logo_2016.svg/768px-Sky_Select_-_Logo_2016.svg.png",Sky Select
   plugin://plugin.video.vavooto/?name=SKY SELECT
