@@ -321,29 +321,29 @@
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/531_sky_logo_sky-sport-buli-uhd_tvguide.png",Sky Bundesliga
   plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",Sky Bundesliga 1
-  plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA 1
+  plugin://plugin.video.vavooto/?name=SKY+SPORT+BUNDESLIGA+1
 
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.2.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/120_sky_logo_skybundesligahd3_tvguide.png",Sky Bundesliga 2
-  plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA 2
+  plugin://plugin.video.vavooto/?name=SKY+SPORT+BUNDESLIGA+2
 
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.3.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/121_sky_logo_skybundesligahd4_tvguide.png",Sky Bundesliga 3
-  plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA 3
+  plugin://plugin.video.vavooto/?name=SKY+SPORT+BUNDESLIGA+3
 
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.4.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/122_sky_logo_skybundesligahd5_tvguide.png",Sky Bundesliga 4
-  plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA 4
+  plugin://plugin.video.vavooto/?name=SKY+SPORT+BUNDESLIGA+4
 
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.5.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/123_sky_logo_skybundesligahd6_tvguide.png",Sky Bundesliga 5
-  plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA 5
+  plugin://plugin.video.vavooto/?name=SKY+SPORT+BUNDESLIGA+5
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.6.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/124_sky_logo_skybundesligahd7_tvguide.png",Sky Bundesliga 6
-  plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA 6
+  plugin://plugin.video.vavooto/?name=SKY+SPORT+BUNDESLIGA+6
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.7.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/125_sky_logo_skybundesligahd8_tvguide.png",Sky Bundesliga 7
-  plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA 7
+  plugin://plugin.video.vavooto/?name=SKY+SPORT+BUNDESLIGA+7
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.8.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/126_sky_logo_skybundesligahd9_tvguide.png",Sky Bundesliga 8
-  plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA 8
+  plugin://plugin.video.vavooto/?name=SKY+SPORT+BUNDESLIGA+8
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.9.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/127_sky_logo_skybundesligahd10_tvguide.png",Sky Bundesliga 9
-  plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA 9
+  plugin://plugin.video.vavooto/?name=SKY+SPORT+BUNDESLIGA+9
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.10.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/998_sky_logo_sky-sport-buli-10-hd_tvguide.png",Sky Bundesliga 10
-  plugin://plugin.video.vavooto/?name=SKY BUNDESLIGA 10
+  plugin://plugin.video.vavooto/?name=SKY+SPORT+BUNDESLIGA+10
 
 #EXTINF:-1 tvg-id="Sky.Sport.Bundesliga.1.de" group-title="Sport" tvg-logo="https://www.sky.de/static/img/senderlogos_dark/119_sky_logo_skybundesligahd2_tvguide.png",DB LIGA 1 Achtung nur Test!
   plugin://plugin.video.vavooto/?name=DB LIGA 1
